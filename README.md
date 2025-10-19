@@ -29,7 +29,8 @@ This script (`GEO_Extraction.R`) reads a list of GEO Series IDs (GSEs), retrieve
 install.packages(c("readxl","writexl","dplyr","stringr","purrr","lubridate",
                    "progressr","tibble","furrr","data.table","rvest","httr","jsonlite"))
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
-BiocManager::install("GEOquery")```
+BiocManager::install("GEOquery")
+```
 
 ## Usage
 From terminal:
