@@ -2,7 +2,7 @@
 
 
 ## Overview on GEO_Extraction.R
-This script (`GEO_Extraction.R`) reads a list of GEO Series IDs (GSEs), pulls study‐level and sample‐level metadata from NCBI GEO, enriches it with PubMed→PMCID/DOI using the NIH ID Converter API, and writes a tidy Excel workbook.
+This script (`GEO_Extraction.R`) reads a list of GEO Series IDs (GSEs), pulls study‐level and sample‐level metadata from NCBI GEO, maps the PubMed→PMCID/DOI using the NIH ID Converter API, and outputs an excel output.
 
 - **Input:** `ids.csv` (one ID per line; accepts `GSE12345`, `gse12345`, or just `12345`)
 - **Output:** `gse_metadata_full.xlsx` with two sheets:
