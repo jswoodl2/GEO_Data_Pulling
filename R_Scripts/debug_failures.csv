@@ -1,0 +1,31 @@
+"GEO_ID","error"
+"GSE200185119","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200214007","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200272695","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200247712","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200247711","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200230783","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200232526","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200270174","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200270170","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
+"GSE200232692","Error in `httr2::req_perform()`:
+! HTTP 404 Not Found.
+"
