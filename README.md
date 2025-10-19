@@ -39,8 +39,6 @@ By default, the script processes **all IDs** in `ids.csv`.
   12346
   gse12347
   ```
-- The script normalizes IDs (adds “GSE”, uppercases).  
-- Rows without digits are discarded.
 
 ## Output
 - `gse_metadata_full.xlsx` (Excel workbook)
