@@ -258,9 +258,9 @@ get_single_gse_full = function(geo_id) {
 #---------------------------------
 # Main workflow
 #---------------------------------
-gse_df = read.csv("~/Desktop/ids.csv", header = FALSE, stringsAsFactors = FALSE)
+gse_df = read.csv("gse.csv", header = FALSE, stringsAsFactors = FALSE)
 geo_ids = convert_to_gse(as.character(gse_df[[1]]))
-geo_ids = geo_ids[1:30]  # adjust for testing comment out this line to run the entire thing
+geo_ids = geo_ids[1:10]  # adjust for testing comment out this line to run the entire thing
 
 plan(multisession, workers = 4)
 handlers(global = TRUE)
