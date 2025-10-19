@@ -31,14 +31,15 @@ install.packages(c("readxl","writexl","dplyr","stringr","purrr","lubridate",
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 BiocManager::install("GEOquery")
 
-
 ## Usage
 From terminal:
 ```bash
 Rscript GEO_Extraction.R
 ```
+Or in Rstudio:  
+```bash
+ source("GEO_Extraction.R
+```
 
-## or from Rstudio: 
-``` source("GEO_Extraction.R```
 By default, the script processes **all IDs** in `ids.csv`.  
 (For testing, you can limit to first 10 IDs by uncommenting `geo_ids = geo_ids[1:10]`).
