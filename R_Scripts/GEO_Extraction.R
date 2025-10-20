@@ -1,3 +1,6 @@
+#setwd("C:/Users/White/OneDrive/Documents/GitHub/GEO_Data_Pulling/R_Scripts")
+#source("GEO_Extraction.R")
+
 #################
 # Load packages #
 #################
