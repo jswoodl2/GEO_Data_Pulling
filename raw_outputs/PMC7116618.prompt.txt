@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Nature Nature 358 wtpa Nature 0028-0836 1476-4687 pmc-is-collection-domain yes pmc-collection-title UKPMC Funders Author Manuscripts PMC7116618 PMC7116618.1 7116618 7116618 EMS109371 33361811 10.1038/s41586-020-03071-0 EMS109371 WTPA109371 WTMS109371 UKMS109371 1 Article RANK links thymic regulatory T cells to fetal loss and gestational diabetes in pregnancy Paolino Magdalena 1 2 3 † Koglgruber Rubina 1 Cronin Shane J. F. 1 Uribesalgo Iris 1 Rauscher Esther 1 Harreiter Jürgen 4 Schuster Michael 5 Bancher-Todesca Dagmar 6 Pranjic Blanka 1 Novatchkova Maria 1 Fededa Juan P. 1 7 White Andrea J. 8 Sigl Verena 1 Dekan Sabine 9 Penz Thomas 5 Bock Christoph 5 10 Kenner Lukas 9 11 12 13 14 Holländer Georg A. 15 16 17 Anderson Graham 8 Kautzky-Willer Alexandra 4 18 Penninger Josef M. 1 19 † 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 † Correspondence and requests for materials magdalena.paolino@ki.se josef.penninger@imba.oeaw.ac.at Competing interests 01 1 2021 23 12 2020 589 7842 373520 442 447 30 12 2020 01 07 2021 01 07 2021 22 01 2021 16 06 2024 Successful pregnancies rely on adaptations within the mother 1 2 3 4 5 Rank Tnfrsf11a reg reg + Rank reg Rank reg reg reg reg reg pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

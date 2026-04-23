@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Biol Reprod Biol Reprod 675 biolreprod biolreprod Biology of Reproduction 0006-3363 1529-7268 Oxford University Press PMC10873279 PMC10873279.1 10873279 10873279 37883444 10.1093/biolre/ioad146 ioad146 1 Editor's Choice Research Article AcademicSubjects/MED00773 AcademicSubjects/SCI01070 Extracellular vesicles from mouse trophoblast cells: Effects on neural progenitor cells and potential participants in the placenta–brain axis † Kinkade Jessica A Biomedical Sciences, University of Missouri Columbia, MO USA Division of Animal Sciences, University of Missouri Columbia, MO USA Seetharam Arun S Department of Ecology, Evolution and Organismal Biology, Iowa State University Ames, IA USA Department of Genetics, Development and Cell Biology, Iowa State University Ames, IA USA Sachdev Shrikesh Division of Animal Sciences, University of Missouri Columbia, MO USA Bivens Nathan J Genomics Technology Core Facility, University of Missouri Columbia, MO USA Phinney Brett S Proteomics Core UC Davis Genome Center, University of California Davis, CA USA Grigorean Gabriela Proteomics Core UC Davis Genome Center, University of California Davis, CA USA Roberts R Michael Division of Animal Sciences, University of Missouri Columbia, MO USA Tuteja Geetu Department of Genetics, Development and Cell Biology, Iowa State University Ames, IA USA Rosenfeld Cheryl S Biomedical Sciences, University of Missouri Columbia, MO USA MU Institute of Data Science and Informatics, University of Missouri Columbia, MO USA Genetics Area Program, University of Missouri Columbia, MO USA Thompson Center for Autism and Neurobehavioral Disorders, University of Missouri Columbia, MO USA Correspondence: rosenfeldc@missouri.edu Grant Support: 2 2024 26 10 2023 110 2 456005 310 328 31 1 2023 12 10 2023 21 10 2023 21 11 2023 26 10 2024 26 10 2024 18 02 2024 26 10 2024 © The Author(s) 2023. Published by Oxford University Press on behalf of Society for the Study of Reproduction. All rights reserved. For permissions, please e-mail: journals.permissions@oup.com. 2023 https://academic.oup.com/pages/standard-publication-reuse-rights This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/pages/standard-publication-reuse-rights Abstract The fetal brain of the mouse is thought to be dependent upon the placenta as a source of serotonin (5-hydroxytryptamine; 5-HT) and other factors. How factors reach the developing brain remains uncertain but are postulated here to be part of the cargo carried by placental extracellular vesicles (EV). We have analyzed the protein, catecholamine, and small RNA content of EV from mouse trophoblast stem cells (TSC) and TSC differentiated into parietal trophoblast giant cells (pTGC), potential primary purveyors of 5-HT. Current studies examined how exposure of mouse neural progenitor cells (NPC) to EV from either TSC or pTGC affect their transcriptome profiles. The EV from trophoblast cells contained relatively high amounts of 5-HT, as well as dopamine and norepinephrine, but there were no significant differences between EV derived from pTGC and from TSC. Content of miRNA and small nucleolar (sno)RNA, however, did differ according to EV source, and snoRNA were upregulated in EV from pTGC. The primary inferred targets of the microRNA (miRNA) from both pTGC and TSC were mRNA enriched in the fetal brain. NPC readily internalized EV, leading to changes in their transcriptome profiles. Transcripts regulated were mainly ones enriched in neural tissues. The transcripts in EV-treated NPC that demonstrated a likely complementarity with miRNA in EV were mainly up- rather than downregulated, with functions linked to neuronal processes. Our results are consistent with placenta-derived EV providing direct support for fetal brain development and being an integral part of the placenta–brain axis. Extracellular vesicles (EV) from mouse trophoblast cells contain 5-HT and small RNA that might affect neural transcripts, and neuronal progenitor cells internalize and respond to such EV by changes in gene expression linked to neuron development. Graphical abstract https://smart.servier.com/ https://creativecommons.org/licenses/by/3.0/ http://creativecommons.org/licenses/by/4.0 Marcel.Tisch@uibk.ac.at placenta placenta–brain axis proteomics neurotransmitters serotonin small RNAs NSF 10.13039/100000001 1726447 NIH 10.13039/100000002 R01HD096083 R01HD094937 1R01ES025547 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes -qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

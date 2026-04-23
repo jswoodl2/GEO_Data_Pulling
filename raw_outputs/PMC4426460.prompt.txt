@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC4426460 PMC4426460.1 4426460 4426460 25870291 10.1073/pnas.1504778112 201504778 1 PNAS Plus Biological Sciences Developmental Biology PNAS Plus Heightened potency of human pluripotent stem cell lines created by transient BMP4 exposure BMP4 heightened potency in pluripotent stem cells Yang Ying a 1 Adachi Katsuyuki b 1 Sheridan Megan A. c Alexenko Andrei P. a Schust Danny J. b Schulz Laura C. b Ezashi Toshihiko a Roberts R. Michael a c 2 a c University of Missouri MO b University of Missouri MO 2 robertsrm@missouri.edu Contributed by R. Michael Roberts, March 10, 2015 (sent for review October 30, 2014; reviewed by James Cross and Michael J. Soares) Author contributions: Y.Y., K.A., T.E., and R.M.R. designed research; Y.Y., K.A., M.A.S., and A.P.A. performed research; Y.Y., K.A., A.P.A., D.J.S., L.C.S., T.E., and R.M.R. analyzed data; and Y.Y., K.A., T.E., and R.M.R. wrote the paper. Reviewers: J.C., University of Calgary Faculty of Medicine, Calgary, Canada; and M.J.S., University of Kansas Medical Center. 1 The authors declare no conflict of interest. 5 5 2015 13 4 2015 112 18 252827 E2337 E2346 13 04 2015 14 05 2015 01 06 2025 Freely available online through the PNAS open access option. PNAS Plus Significance Statements 112 18 5 5 2015 5558 5560 Proceedings of the National Academy of Sciences of the United States of America PMC4426426 Significance Human ES cells (ESCs) and induced pluripotent stem cells (iPSCs) can differentiate along all the major cell lineages of the embryo proper, but there is evidence that they can also give rise to extraembryonic placental trophoblast. This observation is controversial because human ESCs (hESCs) are considered to arise from a part of the embryo that does not contribute to trophoblast. Here, we describe stable, self-renewing stem cell lines derived from hESCs and iPSCs by brief exposure to bone morphogenetic protein 4 (BMP4) that appear poised to differentiate readily along all the main developmental cell lineages, including placental trophoblast. BMP4 signaling may thus play a role in the early embryo by establishing a cell state permissive for trophoblast development. Human pluripotent stem cells (PSCs) show epiblast-type pluripotency that is maintained with ACTIVIN/FGF2 signaling. Here, we report the acquisition of a unique stem cell phenotype by both human ES cells (hESCs) and induced pluripotent stem cells (iPSCs) in response to transient (24–36 h) exposure to bone morphogenetic protein 4 (BMP4) plus inhibitors of ACTIVIN signaling (A83-01) and FGF2 ( PD173074 NANOG LEFTY1 LEFTY2 PD173074 PD173074 biological sciences developmental biology pluripotent stem cells totipotent trophoblast Foundation for the National Institutes of Health (FNIH) 100000009 R01HD067759 Foundation for the National Institutes of Health (FNIH) 100000009 R01HD077108 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

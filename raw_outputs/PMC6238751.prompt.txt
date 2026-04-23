@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+JCI Insight JCI Insight 3101 jciinsight JCI Insight JCI Insight 2379-3708 American Society for Clinical Investigation PMC6238751 PMC6238751.1 6238751 6238751 30385711 10.1172/jci.insight.95625 95625 1 Research Article Aberrant DNA methylation of hypothalamic angiotensin receptor in prenatal programmed hypertension Kawakami-Mori Fumiko nkawakam-tky@umin.ac.jp 1 2 http://orcid.org/0000-0001-9542-847X Nishimoto Mitsuhiro nishimoto-tky@umin.ac.jp 1 Reheman Latapati 3 Kawarazaki Wakako wkawarazaki-tky@umin.ac.jp 1 Ayuzawa Nobuhiro ayuzawa-tky@umin.ac.jp 1 http://orcid.org/0000-0002-9411-1611 Ueda Kohei koueda-tky@umin.net 1 Hirohama Daigoro daigoro-daigoro@hotmail.co.jp 1 Kohno Daisuke daisuke.kohno@gunma-u.ac.jp 4 http://orcid.org/0000-0003-1680-1243 Oba Shigeyoshi sooba-npr@umin.ac.jp 1 http://orcid.org/0000-0002-8742-5129 Shimosawa Tatsuo tshimo-tky@umin.ac.jp 3 Marumo Takeshi tmarumo.npr@gmail.com 1 Fujita Toshiro Toshiro.FUJITA@rcast.u-tokyo.ac.jp 1 1 2 3 4 Address correspondence to: Toshiro Fujita, Division of Clinical Epigenetics, Research Center for Advanced Science and Technology, The University of Tokyo, 4-6-1 Komaba, Meguroku, Tokyo 153-8904, Japan. Phone: 81.3.5452.5070; Email: Toshiro.FUJITA@rcast.u-tokyo.ac.jp nishimoto-tky@umin.ac.jp Authorship note: Conflict of interest: 2 11 2018 2 11 2018 3 21 324128 e95625 9 6 2017 27 9 2018 02 11 2018 21 11 2018 01 11 2024 Copyright © 2018, American Society for Clinical Investigation 2018 American Society for Clinical Investigation This article is available online at https://insight.jci.org/articles/view/95625 Maternal malnutrition, which causes prenatal exposure to excessive glucocorticoid, induces adverse metabolic programming, leading to hypertension in offspring. In offspring of pregnant rats receiving a low-protein diet or dexamethasone, a synthetic glucocorticoid, mRNA expression of angiotensin receptor type 1a ( Agtr1a Dnmt3a Agtr1a Agtr1a Agtr1a Dnmt3a Agtr1a Dnmt3a Agtr1a Dnmt3a Agtr1a Agtr1a Dnmt3a Epigenetic modulation of hypothalamic angiotensin signaling contributes to salt-sensitive hypertension induced by prenatal glucocorticoid excess in offspring of mothers that are malnourished during pregnancy. Development Epigenetics Hypertension JSPS, AMED-CREAST Japan Grant Number 15H05788 AMED JP18ek0210093 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

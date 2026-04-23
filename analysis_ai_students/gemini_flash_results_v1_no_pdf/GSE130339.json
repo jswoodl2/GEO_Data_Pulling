@@ -1,0 +1,297 @@
+[
+  {
+    "Supervisor/Contact/Corresponding author name": {
+      "answer": "Victoria K. Cortessis and Nandor Gabor Than",
+      "confidence": "high",
+      "reason": "Both are listed as corresponding authors with asterisks in the author list.",
+      "evidence": [
+        {
+          "quote": "Victoria K. Cortessis 1 2 * ... Nandor Gabor Than 1 3 5 6 *",
+          "source": "Main text, Author list"
+        }
+      ]
+    },
+    "Supervisor/Contact/Corresponding author email": {
+      "answer": "victoria.cortessis@med.usc.edu, than.gabor@ttk.hu",
+      "confidence": "high",
+      "reason": "Emails for the corresponding authors are provided in the affiliations section.",
+      "evidence": [
+        {
+          "quote": "victoria.cortessis@med.usc.edu than.gabor@ttk.hu",
+          "source": "Main text, Author list"
+        }
+      ]
+    },
+    "Main topic of the publication": {
+      "answer": "Dysregulation of placental functions and immune pathways in complete hydatidiform moles (CHMs)",
+      "confidence": "high",
+      "reason": "The paper uses RNA-Seq and protein analysis to characterize molecular features of CHM compared to normal 1st trimester placenta.",
+      "evidence": [
+        {
+          "quote": "We analyzed high-dimensional RNA and protein data to characterize molecular features of complete hydatidiform moles (CHMs) and corresponding pathologic pathways.",
+          "source": "Main text, Abstract"
+        }
+      ]
+    },
+    "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+      "answer": "1st",
+      "confidence": "high",
+      "reason": "Samples were collected during the first trimester (8-14 weeks GA).",
+      "evidence": [
+        {
+          "quote": "Molar tissues were obtained between 8 2/7 and 14 0/7 weeks of gestational age",
+          "source": "Main text, Methods, Section 4.1.1"
+        },
+        {
+          "quote": "Gestational age-matched control chorionic villous tissues were obtained... from surgical elective pregnancy terminations.",
+          "source": "Main text, Methods, Section 4.1.1"
+        }
+      ]
+    },
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Complete hydatidiform moles do not contain a fetus, and controls were 1st trimester terminations.",
+      "evidence": []
+    },
+    "Gestational Age at delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Gestational age at the time of procedure (evacuation/termination) is provided in the text and tables.",
+      "evidence": [
+        {
+          "quote": "Gestational age at tissue collection (days) 79.2 (58\u201398) 84.2 (77\u2013124)",
+          "source": "Main text, Table 7"
+        },
+        {
+          "quote": "Gestational age at the procedure (days) 64.4 \u00b1 18.2 62.3 \u00b1 11.8",
+          "source": "Main text, Table 8"
+        }
+      ]
+    },
+    "GA at delivery (weeks)": {
+      "answer": "8.3-14",
+      "confidence": "high",
+      "reason": "The ranges provided correspond to approximately 8 to 14 weeks gestation.",
+      "evidence": [
+        {
+          "quote": "Molar tissues were obtained between 8 2/7 and 14 0/7 weeks of gestational age by therapeutic surgical dilation and curettage.",
+          "source": "Main text, Methods, Section 4.1.1"
+        }
+      ]
+    },
+    "Gestational Age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Sample collection occurred during the surgical procedure at the specified gestational ages.",
+      "evidence": [
+        {
+          "quote": "Molar tissues were obtained between 8 2/7 and 14 0/7 weeks of gestational age",
+          "source": "Main text, Methods, Section 4.1.1"
+        }
+      ]
+    },
+    "GA at sample collection (weeks)": {
+      "answer": "8.3-14",
+      "confidence": "high",
+      "reason": "The paper specifies collection occurred between 8 2/7 and 14 weeks.",
+      "evidence": [
+        {
+          "quote": "Molar tissues were obtained between 8 2/7 and 14 0/7 weeks of gestational age",
+          "source": "Main text, Methods, Section 4.1.1"
+        }
+      ]
+    },
+    "Sex of Offspring Provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Offspring (placental) sex was provided for the control group in the discovery study.",
+      "evidence": [
+        {
+          "quote": "RNA-Seq count data for additional late first trimester control placentas (22 XY and 17 XX) were downloaded from GEO",
+          "source": "Main text, Methods, Section 4.3.1"
+        }
+      ]
+    },
+    "Parity provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Pregnancy history was abstracted but parity is not explicitly reported in the paper or tables.",
+      "evidence": []
+    },
+    "Gravidity provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Pregnancy history was abstracted but gravidity is not explicitly reported in the results or tables.",
+      "evidence": []
+    },
+    "Number of offspring per pregnancy provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The number of offspring per pregnancy (e.g., singletons) is not explicitly stated, although CHM is typically a singleton condition.",
+      "evidence": []
+    },
+    "Self-reported race/ethnicity of mother provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Table 8 and Table 7 list race/ethnicity of the participants.",
+      "evidence": [
+        {
+          "quote": "Race/ethnicity ... Hispanic 29 (100%)",
+          "source": "Main text, Table 8"
+        }
+      ]
+    },
+    "Genetic ancestry or genetic strain provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The paper does not report genetic ancestry analysis.",
+      "evidence": []
+    },
+    "Maternal Height provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Maternal height is not reported.",
+      "evidence": []
+    },
+    "Maternal Pre-pregnancy Weight provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Maternal pre-pregnancy weight is not reported, only BMI was mentioned as abstracted data.",
+      "evidence": []
+    },
+    "Paternal Height provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal height is not reported.",
+      "evidence": []
+    },
+    "Paternal Weight provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal weight is not reported.",
+      "evidence": []
+    },
+    "Maternal age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Maternal age is provided in Table 7 and Table 8.",
+      "evidence": [
+        {
+          "quote": "Age (years) at procedure ... 31.9 \u00b1 9.5",
+          "source": "Main text, Table 8"
+        }
+      ]
+    },
+    "Paternal age at sample collection provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal age is not reported.",
+      "evidence": []
+    },
+    "Samples from pregnancy complications collected": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The study specifically focuses on Complete Hydatidiform Mole (CHM), a pregnancy complication.",
+      "evidence": [
+        {
+          "quote": "analyzed high-dimensional RNA and protein data to characterize molecular features of complete hydatidiform moles (CHMs)",
+          "source": "Main text, Abstract"
+        }
+      ]
+    },
+    "Mode of delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The method of evacuation/termination (D&C) is specified.",
+      "evidence": [
+        {
+          "quote": "Molar tissues were obtained between 8 2/7 and 14 0/7 weeks of gestational age by therapeutic surgical dilation and curettage.",
+          "source": "Main text, Methods, Section 4.1.1"
+        }
+      ]
+    },
+    "Pregnancy complications in data set (list)": {
+      "answer": [
+        "Complete Hydatidiform Mole",
+        "Persistent Gestational Trophoblastic Disease",
+        "Recurrent Gestational Trophoblastic Disease"
+      ],
+      "confidence": "high",
+      "reason": "These diagnoses are explicitly listed in the group definitions.",
+      "evidence": [
+        {
+          "quote": "Group 1: D&C then cured; Group 2: Persistent GTD; Group 4: Recurrent GTD",
+          "source": "Main text, Table 9"
+        }
+      ]
+    },
+    "Fetal complications listed (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "CHM pregnancies lack a fetus.",
+      "evidence": []
+    },
+    "Fetal complications in data set (list)": {
+      "answer": [],
+      "confidence": "high",
+      "reason": "CHM pregnancies lack a fetus.",
+      "evidence": []
+    },
+    "Other Phenotypes Provided (list)": {
+      "answer": [
+        "WHO score",
+        "tumor size",
+        "pretreatment beta-hCG",
+        "metastatic sites",
+        "p57 expression status",
+        "BMI"
+      ],
+      "confidence": "high",
+      "reason": "These clinical features were collected as part of the study.",
+      "evidence": [
+        {
+          "quote": "Tumor characteristics and markers included the World Health Organization (WHO) score, histology subtype, tumor size, pretreatment beta-hCG, metastatic sites, and number.",
+          "source": "Main text, Methods, Section 4.1.2"
+        },
+        {
+          "quote": "p57 immunostaining confirmation of CHM",
+          "source": "Main text, Table 8"
+        }
+      ]
+    },
+    "Hospital/Center where samples were collected": {
+      "answer": "Los Angeles County (LAC) + USC Medical Center and Maternity Private Clinic",
+      "confidence": "high",
+      "reason": "Samples were collected from several locations in the USA and Hungary.",
+      "evidence": [
+        {
+          "quote": "Eligible subjects were identified upon presentation to Los Angeles County (LAC) and USC Medical Center.",
+          "source": "Main text, Methods, Section 4.1.1"
+        },
+        {
+          "quote": "tissues collected at USC and at Maternity Private Clinic",
+          "source": "Main text, Methods, Section 4.2.4"
+        }
+      ]
+    },
+    "Country where samples were collected": {
+      "answer": [
+        "USA",
+        "Hungary"
+      ],
+      "confidence": "high",
+      "reason": "Samples were collected in Los Angeles, USA and Budapest, Hungary.",
+      "evidence": [
+        {
+          "quote": "Keck School of Medicine, USC (Los Angeles, CA, USA)",
+          "source": "Main text, Affiliations"
+        },
+        {
+          "quote": "Maternity Private Clinic (Budapest, Hungary)",
+          "source": "Main text, Affiliations"
+        }
+      ]
+    }
+  }
+]

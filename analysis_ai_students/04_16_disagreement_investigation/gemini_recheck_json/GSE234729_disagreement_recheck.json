@@ -1,0 +1,8 @@
+{
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper and its supplements report clinical metrics such as birth weight, birth weight percentile, infant sex, and gestational age, but they do not explicitly list or categorize specific clinical fetal complications (e.g., intrauterine growth restriction, neonatal intensive care unit admission, or respiratory distress syndrome).",
+    "evidence": []
+  }
+}

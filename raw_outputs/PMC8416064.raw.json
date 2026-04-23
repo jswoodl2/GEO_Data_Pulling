@@ -1,0 +1,39 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Huang Yafei",
+  "Supervisor/Contact/Corresponding author email": "huangy2018@hust.edu.cn",
+  "Main topic of the publication": "This study investigates the role of γδ T cells in recurrent spontaneous abortion (RSA) by analyzing peripheral blood from RSA patients and healthy women, finding that activated γδ T cells with higher CD107a expression and inflammatory potential are present during early pregnancy in RSA patients.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "1st",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 8.4,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "Yes",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Recurrent Spontaneous Abortion"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "γδ T cell phenotypes",
+    "PD1 expression",
+    "CD107a expression",
+    "IL-17A secretion",
+    "CCL8 expression"
+  ],
+  "Hospital/Center where samples were collected": "Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology",
+  "Country where samples were collected": "China"
+}

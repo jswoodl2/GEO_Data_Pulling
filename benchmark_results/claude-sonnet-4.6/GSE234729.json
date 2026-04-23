@@ -1,0 +1,145 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Omonigho Aisagbonhi",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "oaisagbonhi@health.ucsd.edu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study investigates placental gene expression differences in severe preeclampsia (sPE) across African, Asian, and European ancestry groups using bulk RNA sequencing. It aims to elucidate why persons of African ancestry experience worse preeclampsia outcomes, identifying upregulation of canonical preeclampsia genes and allograft rejection/adaptive immune response genes.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "Premature",
+    "confidence": "medium",
+    "reasoning": "The study involves severe preeclampsia placentas, which are typically delivered preterm; however, the paper text does not explicitly state gestational age at delivery or trimester, so this is inferred from the clinical context of severe PE."
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper text provided does not explicitly mention birthweight data for the offspring."
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The provided paper text does not explicitly state gestational age at delivery in the excerpt given."
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "No numeric gestational age at delivery is mentioned in the provided text."
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper text does not explicitly state gestational age at placental sample collection."
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "No specific gestational age at sample collection is mentioned in the provided text."
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The provided text does not mention sex of offspring."
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Parity is not mentioned in the provided paper text."
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Gravidity is not mentioned in the provided paper text."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper text does not mention singleton vs. multiple pregnancies."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal height is not mentioned in the provided text."
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal pre-pregnancy weight is not mentioned in the provided text."
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal age is not explicitly mentioned in the provided text excerpt."
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Mode of delivery is not mentioned in the provided text."
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Severe preeclampsia"
+    ],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper text does not explicitly list fetal complications."
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "medium",
+    "reasoning": "No fetal complications are mentioned in the provided text."
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Normotensive controls",
+      "African ancestry",
+      "Asian ancestry",
+      "European ancestry",
+      "Cardiomyopathy"
+    ],
+    "confidence": "medium",
+    "reasoning": "The paper mentions normotensive controls stratified by ancestry and references cardiomyopathy as a keyword/associated condition."
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "The specific hospital or center is not named in the provided text, though the authors are affiliated with UC San Diego (health.ucsd.edu)."
+  },
+  "Country where samples were collected": {
+    "answer": "United States",
+    "confidence": "medium",
+    "reasoning": "Author affiliations and email domain (health.ucsd.edu) indicate UC San Diego, USA, though the country is not explicitly stated in the text."
+  }
+}

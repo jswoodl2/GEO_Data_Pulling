@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Toxicol Sci Toxicol Sci 776 toxsci toxsci Toxicological Sciences 1096-6080 1096-0929 Oxford University Press PMC10695431 PMC10695431.1 10695431 10695431 37399109 10.1093/toxsci/kfad062 kfad062 1 Neurotoxicology AcademicSubjects/MED00305 AcademicSubjects/SCI01040 Machine learning reveals common transcriptomic signatures across rat brain and placenta following developmental organophosphate ester exposure Newell Andrew J Department of Biological Sciences, North Carolina State University USA Jima Dereje Molecular Education, Technology, and Research Innovation Center, North Carolina State University USA Reading Benjamin Department of Biological Sciences, North Carolina State University USA https://orcid.org/0000-0003-1278-2890 Patisaul Heather B Department of Biological Sciences, North Carolina State University USA Center for Human Health and the Environment, North Carolina State University USA To whom correspondence should be addressed at Department of Biological Sciences, 127 David Clark Labs, North Carolina State University, Raleigh, NC 27695, USA. E-mail: ajnewel2@ncsu.edu 9 2023 03 7 2023 195 1 444226 103 122 11 7 2023 03 07 2023 05 12 2023 29 08 2025 © The Author(s) 2023. Published by Oxford University Press on behalf of the Society of Toxicology. All rights reserved. For permissions, please e-mail: journals.permissions@oup.com 2023 https://academic.oup.com/pages/standard-publication-reuse-rights This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/pages/standard-publication-reuse-rights Abstract Toxicogenomics is a critical area of inquiry for hazard identification and to identify both mechanisms of action and potential markers of exposure to toxic compounds. However, data generated by these experiments are highly dimensional and present challenges to standard statistical approaches, requiring strict correction for multiple comparisons. This stringency often fails to detect meaningful changes to low expression genes and/or eliminate genes with small but consistent changes particularly in tissues where slight changes in expression can have important functional differences, such as brain. Machine learning offers an alternative analytical approach for “omics” data that effectively sidesteps the challenges of analyzing highly dimensional data. Using 3 rat RNA transcriptome sets, we utilized an ensemble machine learning approach to predict developmental exposure to a mixture of organophosphate esters (OPEs) in brain (newborn cortex and day 10 hippocampus) and late gestation placenta of male and female rats, and identified genes that informed predictor performance. OPE exposure had sex specific effects on hippocampal transcriptome, and significantly impacted genes associated with mitochondrial transcriptional regulation and cation transport in females, including voltage-gated potassium and calcium channels and subunits. To establish if this holds for other tissues, RNAseq data from cortex and placenta, both previously published and analyzed via a more traditional pipeline, were reanalyzed with the ensemble machine learning methodology. Significant enrichment for pathways of oxidative phosphorylation and electron transport chain was found, suggesting a transcriptomic signature of OPE exposure impacting mitochondrial metabolism across tissue types and developmental epoch. Here we show how machine learning can complement more traditional analytical approaches to identify vulnerable “signature” pathways disrupted by chemical exposures and biomarkers of exposure. artificial intelligence toxicogenomics neurodevelopment OPFR OPE flame retardants neurotoxicology hippocampus cortex placenta National Institutes of Environmental Health Sciences # ES028110 NIH 10.13039/100000002 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

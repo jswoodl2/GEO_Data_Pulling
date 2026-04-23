@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Immunol J. Immunol. 319 nihpa Journal of immunology (Baltimore, Md. : 1950) 0022-1767 1550-6606 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC7415599 PMC7415599.1 7415599 7415599 NIHMS1604043 32690654 10.4049/jimmunol.2000184 NIHMS1604043 NIHPA1604043 1 Article Interferons drive development of novel interleukin-15-responsive macrophages Gordon Scott M. * § Nishiguchi Mailyn A. § Chase Julie M. ¶ Mani Sneha # Mainigi Monica A. # Behrens Edward M. § ¶ * § ¶ # Address correspondence and reprint requests to Dr. Edward M. Behrens, Children’s Hospital of Philadelphia, 3615 Civic Center Blvd, Room 1107A ARC, Philadelphia, PA 19107. Office Phone: 215-590-7180, Office Fax: Fax: 215-590-1258, behrens@email.chop.edu S.M.G., M.A.N., J.M.C., and S.M. performed experiments. S.M.G. and E.M.B. wrote the manuscript. M.A.N., J.M.C., S.M., and M.A.M. critically reviewed the manuscript. The authors have declared that no conflict of interest exists. 20 7 2020 15 8 2020 205 4 363043 1113 1124 19 06 2020 15 08 2021 15 08 2021 11 08 2020 16 06 2024 Disruption in homeostasis of interleukin-15 (IL-15) is linked to poor maternal and fetal outcomes during pregnancy. The only cells described to respond to IL-15 at the early maternal-fetal interface have been natural killer (NK) cells. We now show a novel population of macrophages, evident in several organs but enriched in the uterus of mice and humans, expressing the β chain of the IL-15 receptor complex (CD122) and responding to IL-15. CD122+ macrophages (CD122+Macs) are morphologic, phenotypic, and transcriptomic macrophages that can derive from bone marrow monocytes. CD122+Macs develop in the uterus and placenta with kinetics that mirror interferon (IFN) activity at the maternal-fetal interface. Macrophage colony-stimulating factor (M-CSF) permits macrophages to express CD122, and IFNs are sufficient to drive expression of CD122 on macrophages. Neither Type-I nor Type-II IFNs are required to generate CD122+Macs, however. In response to IL-15, CD122+Macs activate the ERK signaling cascade and enhance production of proinflammatory cytokines after stimulation with the Toll-like receptor 9 agonist CpG. Finally, we provide evidence of human cells that phenocopy murine CD122+Macs in secretory phase endometrium during the implantation window and in first-trimester uterine decidua. Our data support a model wherein IFNs local to the maternal-fetal interface direct novel IL-15-responsive macrophages with the potential to mediate IL-15 signals critical for optimal outcomes of pregnancy. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

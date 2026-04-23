@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc Natl Acad Sci U S A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC7959495 PMC7959495.1 7959495 7959495 33087576 10.1073/pnas.2009201117 202009201 1 Biological Sciences Applied Biological Sciences PLA2G6 guards placental trophoblasts against ferroptotic injury https://orcid.org/0000-0001-5317-4512 Beharier Ofer a https://orcid.org/0000-0002-3474-1697 Tyurin Vladimir A. b Goff Julie P. a Guerrero-Santoro Jennifer a https://orcid.org/0000-0003-4358-8791 Kajiwara Kazuhiro a https://orcid.org/0000-0001-9644-771X Chu Tianjiao a https://orcid.org/0000-0003-0287-2091 Tyurina Yulia Y. a https://orcid.org/0000-0003-0794-4939 St Croix Claudette M. c https://orcid.org/0000-0001-6852-4976 Wallace Callen T. c Parry Samuel d https://orcid.org/0000-0001-7341-3277 Parks W. Tony e https://orcid.org/0000-0002-7245-1885 Kagan Valerian E. b https://orcid.org/0000-0003-2969-6737 Sadovsky Yoel a f 1 a University of Pittsburgh b University of Pittsburgh c University of Pittsburgh d University of Pennsylvania School of Medicine e University of Toronto f University of Pittsburgh 1 ysadovsky@mwri.magee.edu Edited by R. Michael Roberts, University of Missouri, Columbia, MO, and approved September 8, 2020 (received for review May 12, 2020) Author contributions: O.B., V.E.K., and Y.S. designed research; O.B., V.A.T., J.P.G., J.G.-S., K.K., C.M.S.C., C.T.W., and S.P. performed research; O.B., V.A.T., T.C., Y.Y.T., C.M.S.C., W.T.P., V.E.K., and Y.S. analyzed data; O.B., V.E.K., and Y.S. wrote the paper; V.A.T. and Y.Y.T. performed lipidomics analysis; C.M.S.C. analyzed cell images; and W.T.P. examined placenta pathology. Competing interest statement: Y.S. is a consultant to Illumina, Inc. 3 11 2020 21 10 2020 117 44 377577 27319 27328 21 04 2021 21 04 2021 23 03 2021 14 10 2025 2020 https://www.pnas.org/site/aboutpnas/licenses.xhtml Published under the PNAS license Significance Placental dysfunction has been causally linked to major pregnancy complications that are implicated in maternal–fetal morbidity and mortality, but the mechanisms underlying placental dysfunction are largely unknown. The recently identified ferroptotic cell death is characterized by excessive accumulation of hydroperoxide phosphatidylethanolamines. While oxidative damage commonly defines placental dysfunction, the role of ferroptosis in this process is largely unknown. We found that preterm birth is associated with ferroptotic signals, and that inhibition of GPX4, which converts unstable lipid hydroperoxides to nontoxic lipid alcohols, causes ferroptotic injury in primary human trophoblasts and in mouse pregnancy. Importantly, we found that the phospholipase PLA2G6 mitigates trophoblast and placental ferroptosis. Together, we identified placental ferroptosis and established a role for PLA2G6 in attenuating ferroptosis. The recently identified ferroptotic cell death is characterized by excessive accumulation of hydroperoxy-arachidonoyl (C20:4)- or adrenoyl (C22:4)- phosphatidylethanolamine (Hp-PE). The selenium-dependent glutathione peroxidase 4 (GPX4) inhibits ferroptosis, converting unstable ferroptotic lipid hydroperoxides to nontoxic lipid alcohols in a tissue-specific manner. While placental oxidative stress and lipotoxicity are hallmarks of placental dysfunction, the possible role of ferroptosis in placental dysfunction is largely unknown. We found that spontaneous preterm birth is associated with ferroptosis and that inhibition of GPX4 causes ferroptotic injury in primary human trophoblasts and during mouse pregnancy. Importantly, we uncovered a role for the phospholipase PLA2G6 (PNPLA9, iPLA2beta), known to metabolize Hp-PE to lyso-PE and oxidized fatty acid, in mitigating ferroptosis induced by GPX4 inhibition in vitro or by hypoxia/reoxygenation injury in vivo. Together, we identified ferroptosis signaling in the human and mouse placenta, established a role for PLA2G6 in attenuating trophoblastic ferroptosis, and provided mechanistic insights into the ill-defined placental lipotoxicity that may inspire PLA2G6-targeted therapeutic strategies. ferroptosis PLA2G6 GPX4 placenta trophoblast HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 P01HD069316 Yoel Sadovsky March of Dimes Foundation (March of Dimes) 100000912 N/A Samuel Parry Yoel Sadovsky 25 Club of Magee-Womens Hospital N/A Ofer Beharier Yoel Sadovsky Magee-Womens Research Institute Postdoctoral Fellowship N/A Ofer Beharier Yoel Sadovsky Jikei University School of Medicine (Jikei University) 501100007962 N/A Kazuhiro Kajiwara pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-re r Beharier Yoel Sadovsky Magee-Womens Research Institute Postdoctoral Fellowship N/A Ofer Beharier Yoel Sadovsky Jikei University School of Medicine (Jikei University) 501100007962 N/A Kazuhiro Kajiwara pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

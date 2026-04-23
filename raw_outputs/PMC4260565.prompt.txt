@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC4260565 PMC4260565.1 4260565 4260565 25413365 10.1073/pnas.1413624111 201413624 1 Biological Sciences Genetics Comparison of the transcriptional landscapes between human and mouse tissues Comparison of human and mouse transcriptomes Lin Shin a b 1 Lin Yiing c 1 Nery Joseph R. d Urich Mark A. d Breschi Alessandra e f Davis Carrie A. g Dobin Alexander g Zaleski Christopher g Beer Michael A. h Chapman William C. c Gingeras Thomas R. g i Ecker Joseph R. d j 2 Snyder Michael P. a 2 a Stanford University CA b Stanford University CA c Washington University School of Medicine MO d The Salk Institute for Biological Studies CA e Centre for Genomic Regulation and UPF Spain f Universitat Pompeu Fabra Spain g Cold Spring Harbor Laboratory NY h Johns Hopkins University MD i Affymetrix, Inc. CA j The Salk Institute for Biological Studies CA 2 ecker@salk.edu mpsnyder@stanford.edu Contributed by Joseph R. Ecker, July 23, 2014 (sent for review May 23, 2014) Author contributions: S.L., Y.L., W.C.C., T.R.G., J.R.E., and M.P.S. designed research; S.L., Y.L., J.R.N., M.A.U., and A.D. performed research; S.L., Y.L., and W.C.C. contributed new reagents/analytic tools; S.L., Y.L., A.B., C.A.D., A.D., C.Z., and M.A.B. analyzed data; and S.L., Y.L., J.R.E., and M.P.S. wrote the paper. 1 The authors declare no conflict of interest. 2 12 2014 20 11 2014 111 48 246316 17224 17229 20 11 2014 10 12 2014 21 03 2024 Freely available online through the PNAS open access option. Significance To date, various studies have found similarities between humans and mice on a molecular level, and indeed, the murine model serves as an important experimental system for biomedical science. In this study of a broad number of tissues between humans and mice, high-throughput sequencing assays on the transcriptome and epigenome reveal that, in general, differences dominate similarities between the two species. These findings provide the basis for understanding the differences in phenotypes and responses to conditions in humans and mice. Although the similarities between humans and mice are typically highlighted, morphologically and genetically, there are many differences. To better understand these two species on a molecular level, we performed a comparison of the expression profiles of 15 tissues by deep RNA sequencing and examined the similarities and differences in the transcriptome for both protein-coding and -noncoding transcripts. Although commonalities are evident in the expression of tissue-specific genes between the two species, the expression for many sets of genes was found to be more similar in different tissues within the same species than between species. These findings were further corroborated by associated epigenetic histone mark analyses. We also find that many noncoding transcripts are expressed at a low level and are not detectable at appreciable levels across individuals. Moreover, the majority lack obvious sequence homologs between species, even when we restrict our attention to those which are most highly reproducible across biological replicates. Overall, our results indicate that there is considerable RNA expression diversity between humans and mice, well beyond what was described previously, likely reflecting the fundamental physiological differences between these two organisms. transcriptome epigenome species comparison noncoding transcripts pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

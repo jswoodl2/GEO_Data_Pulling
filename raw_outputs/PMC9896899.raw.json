@@ -1,0 +1,39 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Nancy F. Krebs",
+  "Supervisor/Contact/Corresponding author email": "Nancy.Krebs@cuanschutz.edu",
+  "Main topic of the publication": "This study examines the interactions between maternal malnutrition and heat stress during pregnancy on fetal growth in a resource-limited setting in Pakistan, utilizing data from the Women First Preconception Nutrition trial to analyze the impact of ambient temperature on neonatal anthropometry at birth.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "2nd",
+    "3rd",
+    "Term"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 34,
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "Yes",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "No",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Birth length",
+    "Head circumference"
+  ],
+  "Hospital/Center where samples were collected": "Aga Khan University",
+  "Country where samples were collected": "Pakistan"
+}

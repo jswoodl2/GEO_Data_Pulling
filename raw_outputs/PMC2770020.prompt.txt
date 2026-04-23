@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Biol Reprod 675 biolreprod bire Biol Reprod Biology of Reproduction 0006-3363 1529-7268 Oxford University Press PMC2770020 PMC2770020.1 2770020 2770020 19571260 10.1095/biolreprod.109.078139 1 Research Article Gamete Biology Characterization of Conserved and Nonconserved Imprinted Genes in Swine 1 COMPARATIVE IMPRINTING ANALYSIS IN SWINE Bischoff Steve R. 3 4 5 Tsai Shengdar 3 4 5 Hardison Nicholas 4 6 Motsinger-Reif Alison A. 6 Freking Brad A. 7 Nonneman Dan 7 Rohrer Gary 7 Piedrahita Jorge A. 2 4 5 Department of Molecular Biomedical Sciences, 4 5 6 U.S. Meat Animal Research Center, 7 2 jorge_piedrahita@ncsu.edu 1 7 2009 11 2009 81 5 182520 906 920 14 4 2009 18 5 2009 14 6 2009 01 11 2010 01 11 2010 03 04 2013 © 2009 by the Society for the Study of Reproduction, Inc. To increase our understanding of imprinted genes in swine, we carried out a comprehensive analysis of this gene family using two complementary approaches: expression and phenotypic profiling of parthenogenetic fetuses, and analysis of imprinting by pyrosequencing. The parthenote placenta and fetus were smaller than those of controls but had no obvious morphological differences at Day 28 of gestation. By Day 30, however, the parthenote placentas had decreased chorioallantoic folding, decreased chorionic ruggae, and reduction of fetal-maternal interface surface in comparison with stage-matched control fetuses. Using Affymetrix Porcine GeneChip microarrays and/or semiquantitative PCR, brain, fibroblast, liver, and placenta of Day 30 fetuses were profiled, and 25 imprinted genes were identified as differentially expressed in at least one of the four tissue types: AMPD3 CDKN1C COPG2 DHCR7 DIRAS3 IGF2 IGF2AS IGF2R MEG3 MEST NAP1L5 NDN NNAT OSBPL1A PEG3 APEG3 PEG10 PLAGL1 PON2 PPP1R9A SGCE SLC38A4 SNORD107 SNRPN TFPI2 DIRAS3 PLAGL1 SGCE SLC38A4 DIRAS3 DLK1 H19 IGF2AS NNAT MEST PEG10 PHLDA2 PLAGL1 SGCE SNORD107 ASB4 ASCL2 CD81 COMMD1 DCN DLX5 H13 Expression profiling of porcine parthenote and biparental fetuses combined with pyrosequencing-based allelic quantification using reciprocal crosses confirms the imprinting status of 36 genes in several fetal tissues at Day 30 of gestation. assisted reproductive technology comparative genomic imprinting epigenetics gene regulation genomic imprinting parthenogenesis placenta swine parthenote pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

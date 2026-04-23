@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Placenta Placenta 319 nihpa Placenta 0143-4004 1532-3102 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC3343317 PMC3343317.1 3343317 3343317 NIHMS89843 19036436 10.1016/j.placenta.2008.10.009 NIHMS89843 NIHPA89843 1 Article Hyperosmolar stress induces global mRNA responses in placental trophoblast stem cells that emulate early post-implantation differentiation Liu J 1 Xu W 2 Sun T 1 Wang F 1 Puscheck E 1 Brigstock D 3 Wang QT 5 Davis R 5 Rappolee DA 1 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 drappole@med.wayne.edu 25 11 2008 1 2009 30 1 209673 66 73 15 02 2012 04 05 2012 04 05 2012 17 04 2025 Hyperosmolar stress acts in two ways on the implanting embryo and its major constituent, placental trophoblast stem cells (TSC). Stress causes homeostasis that slows development with lesser cell accumulation, increased cell cycle arrest, and apoptosis. Stress may also cause placental differentiation at implantation. To test for the homeostatic and differentiation-inducing consequences of stress, TSC were exposed to hyperosmolar stress for 24hr and tested using whole mouse genome arrays and Real-time quantitative (Q)PCR. At 0.5hr, all 31 highly changing mRNA (>1.5-fold compared with unstressed TSC) decreased, but by 24hr 158/288 genes were upregulated. Many genes upregulated at 24hr were near baseline levels in unstressed TSC, suggesting new transcription. Thus few genes change during the early stress response, but by 24hr TSC have adapted to start new transcription with large gene sets. Types of genes upregulated at 24hr included homeostatic genes regulating growth and DNA damage induced (GADD45β/γ), activator protein (AP)-1 (junB/junC/ATF3/4), heat shock proteins (HSP22/68), and cyclin-dependent kinase inhibitor [CDKI; p15, p21]. But, stress also induced transcription factors that mediate TSC differentiation to trophoblast giant cells (TGC)(Stra13, HES1, GATA-binding2), placental hormones [proliferin, placental lactogen (PL)1, prolactin-like peptide (PLP)M], and extracellular matrix genes (CCN1/2). Transcription factors for later placental cell lineages, spongiotrophoblast (MASH2, TPBPα) and syncytiotrophoblast (GCM1, TEF5) and placental hormones (PLPA, PLII), were not induced by 24hr stress. Thus stress induced the temporal and spatial placental differentiation normal after implantation. Although differentiation was induced, markers of TSC stemness such as inhibitor of differentiation (ID)2 remained at 100% of levels of unstressed TSC, suggesting that retained mRNA might mediate dedifferentiation were stress to subside. microarray placental trophoblast stem cells hyperosmolar stress differentiation pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

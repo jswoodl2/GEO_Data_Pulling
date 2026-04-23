@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Stem Cells Transl Med Stem Cells Transl Med 2027 sctm Stem Cells Translational Medicine Stem Cells Translational Medicine 2157-6564 2157-6580 Oxford University Press PMC4414224 PMC4414224.1 4414224 4414224 25824141 10.5966/sctm.2014-0253 20140253 1 4 15 Fetal and Neonatal Stem Cells Conditioned Medium From Human Amniotic Mesenchymal Stromal Cells Limits Infarct Size and Enhances Angiogenesis Fetal Stromal Cell Secretome for Myocardial Repair Danieli Patrizia a b * Malpasso Giuseppe a b c * Ciuffreda Maria Chiara a b * Cervio Elisabetta a b Calvillo Laura d Copes Francesco a b Pisano Federica a b Mura Manuela a b Kleijn Lennaert e de Boer Rudolf A. e Viarengo Gianluca f Rosti Vittorio g Spinillo Arsenio h Roccio Marianna h Gnecchi Massimiliano a b c i a b f g h c d e i Correspondence: Massimiliano Gnecchi, M.D., Ph.D., Department of Cardiothoracic and Vascular Sciences, Coronary Care Unit and Laboratory of Clinical and Experimental Cardiology, Fondazione IRCCS Policlinico San Matteo, Viale Golgi, 19, 27100 Pavia, Italy. Telephone: 39-0382-501-881 m.gnecchi@unipv.it * Contributed equally. 5 2015 30 3 2015 4 5 252407 448 458 05 11 2014 02 2 2015 01 05 2016 01 05 2016 14 04 2016 07 07 2024 ©AlphaMed Press 2015 The goal of this study was to elucidate whether human amniotic membrane-derived mesenchymal stromal cells (hAMCs) can exert beneficial paracrine effects on infarcted rat hearts. In particular, the administration of hAMC-conditioned medium repaired ischemic damage through cardioprotection and angiogenesis. Finally, several putative active paracrine mediators that might account for the effects observed were identified by gene and protein arrays. The paracrine properties of human amniotic membrane-derived mesenchymal stromal cells (hAMCs) have not been fully elucidated. The goal of the present study was to elucidate whether hAMCs can exert beneficial paracrine effects on infarcted rat hearts, in particular through cardioprotection and angiogenesis. Moreover, we aimed to identify the putative active paracrine mediators. hAMCs were isolated, expanded, and characterized. In vitro, conditioned medium from hAMC (hAMC-CM) exhibited cytoprotective and proangiogenic properties. In vivo, injection of hAMC-CM into infarcted rat hearts limited the infarct size, reduced cardiomyocyte apoptosis and ventricular remodeling, and strongly promoted capillary formation at the infarct border zone. Gene array analysis led to the identification of 32 genes encoding for the secreted factors overexpressed by hAMCs. Among these, midkine and secreted protein acidic and rich in cysteine were also upregulated at the protein level. Furthermore, high amounts of several proangiogenic factors were detected in hAMC-CM by cytokine array. Our results strongly support the concept that the administration of hAMC-CM favors the repair process after acute myocardial infarction. Cardiac Fetal stem cells Clinical translation Placenta pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes DJS Export v1
+---

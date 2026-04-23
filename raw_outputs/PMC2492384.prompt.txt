@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Epigenetics Epigenetics 358 wtpa Epigenetics : official journal of the DNA Methylation Society 1559-2294 1559-2308 pmc-is-collection-domain yes pmc-collection-title UKPMC Funders Author Manuscripts PMC2492384 PMC2492384.1 2492384 2492384 UKMS1758 18398312 10.4161/epi.3.2.5900 UKMS1758 WTPA1758 WTMS1758 EMS1758 1 Article Research Paper WAMIDEX A web atlas of murine genomic imprinting and differential expression Schulz Reiner 1 * Woodfine Kathryn 1 † Menheniott Trevelyan R. 1 ‡ Bourc'his Deborah 2 Bestor Timothy 3 Oakey Rebecca J. 1 1 2 3 † Present address: Department of Oncology; University of Cambridge; CRUK Cambridge Research Institute; Li Ka Shing Centre; Cambridge, United Kingdom ‡ Present address: Murdoch Children's Research Institute; Royal Children's Hospital; Parkville; Victoria Australia * reiner.schulz@genetics.kcl.ac.uk 18 3 2008 Mar-Apr 2008 3 2 170104 89 96 01 05 2008 31 07 2008 31 07 2008 16 11 2024 ©2008 Landes Bioscience 2008 The mouse is an established model organism for the study of genomic imprinting. Mice with genetic material originating from only one parent (e.g., mice with uniparental chromosomal duplications) or gene mutations leading to epigenetic deficiencies have proven to be particularly useful tools. In the process of our studies we have accumulated a large set of expression microarray measurements in samples derived from these types of mice. Here, we present the collation of these and third-party microarray data that are relevant to genomic imprinting into a Web Atlas of Murine genomic Imprinting and Differential EXpression (WAMIDEX: https://atlas.genetics.kcl.ac.uk genomic imprinting gene expression microarray uniparental duplication DNA methylation histone methylation self-organizing map Wellcome Trust : 071002 || WT pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

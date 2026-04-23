@@ -1,0 +1,38 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Mahdi Zhandi",
+  "Supervisor/Contact/Corresponding author email": "mzhandi@ut.ac.ir",
+  "Main topic of the publication": "This study investigates the gene expression profile of placentomes and clinical parameters in cows with retained placenta (RP) to understand the causes of RP development, using RNA-seq, hematologic, and histologic experiments.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Term",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 282.5,
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Retained placenta"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Milk yield",
+    "Blood cell parameters",
+    "Hormone levels"
+  ],
+  "Hospital/Center where samples were collected": "College of Agriculture Natural Resources, University of Tehran",
+  "Country where samples were collected": "Iran",
+  "PMCID": "PMC9677913"
+}

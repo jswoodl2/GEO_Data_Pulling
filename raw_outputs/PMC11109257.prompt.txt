@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Neuropsychopharmacology Neuropsychopharmacology 1448 nppharm Neuropsychopharmacology 0893-133X 1740-634X Nature Publishing Group PMC11109257 PMC11109257.1 11109257 11109257 38007547 10.1038/s41386-023-01771-5 1771 1 Article Sex differences in offspring risk and resilience following 11β-hydroxylase antagonism in a rodent model of maternal immune activation Martz Julia 1 Shelton Micah A. 2 Geist Laurel 1 http://orcid.org/0000-0002-6401-9494 Seney Marianne L. 2 http://orcid.org/0000-0001-7069-486X Kentner Amanda C. amanda.kentner@mcphs.edu 1 1 https://ror.org/02fvywg07 grid.416498.6 0000 0001 0021 3995 School of Arts & Sciences, Health Psychology Program, Massachusetts College of Pharmacy and Health Sciences, 2 https://ror.org/01an3r305 grid.21925.3d 0000 0004 1936 9000 Department of Psychiatry, University of Pittsburgh, 25 11 2023 6 2024 49 7 462880 1078 1090 10 8 2023 21 10 2023 8 11 2023 01 06 2025 01 06 2025 23 05 2024 01 06 2025 © The Author(s), under exclusive licence to American College of Neuropsychopharmacology 2023, corrected publication 2024. Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted manuscript version of this article is solely governed by the terms of such publishing agreement and applicable law. Author Correction: Sex differences in offspring risk and resilience following 11β-hydroxylase antagonism in a rodent model of maternal immune activation 49 9 5 4 2024 1492 1507 Neuropsychopharmacology PMC11251035 38580806 Maternal immune activation (MIA) puts offspring at greater risk for neurodevelopmental disorders associated with impaired social behavior. While it is known that immune signaling through maternal, placental, and fetal compartments contributes to these phenotypical changes, it is unknown to what extent the stress response to illness is involved and how it can be harnessed for potential interventions. To this end, on gestational day 15, pregnant rat dams were administered the bacterial mimetic lipopolysaccharide (LPS; to induce MIA) alongside metyrapone, a clinically available 11β-hydroxylase (11βHSD) inhibitor used to treat hypercortisolism in pregnant, lactating, and neonatal populations. Maternal, placental, and fetal brain levels of corticosterone and placental 11βHSD enzymes type 1 and 2 were measured 3-hrs post treatment. Offspring social behaviors were evaluated across critical phases of development. MIA was associated with increased maternal, placental, and fetal brain corticosterone concentrations that were diminished with metyrapone exposure. Metyrapone protected against reductions in placental 11βHSD2 in males only, suggesting that less corticosterone was inactivated in female placentas. Behaviorally, metyrapone-exposure attenuated MIA-induced social disruptions in juvenile, adolescent, and adult males, while females were unaffected or performed worse. Metyrapone-exposure reversed MIA-induced transcriptional changes in monoamine-, glutamate-, and GABA-related genes in adult male ventral hippocampus, but not in females. Taken together, these findings illustrate that MIA-induced HPA responses act alongside the immune system to produce behavioral deficits. As a clinically available drug, the sex-specific benefits and constraints of metyrapone should be investigated further as a potential means of reducing neurodevelopmental risks due to gestational MIA. Subject terms Neuroimmunology Developmental disorders Reprogramming https://doi.org/10.13039/100000025 U.S. Department of Health & Human Services | NIH | National Institute of Mental Health (NIMH) R15MH114035 R01MH120066 Seney Marianne L. Kentner Amanda C. Massachusetts College of Pharmacy and Health Sciences Center for Research and Discovery Grant U.S. Department of Health & Human Services | NIH | National Institute of Mental Health (NIMH) pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes issue-copyright-statement © American College of Neuropsychopharmacology 2024
+---

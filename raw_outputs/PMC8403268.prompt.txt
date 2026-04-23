@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Reproduction Reproduction 319 nihpa Reproduction (Cambridge, England) 1470-1626 1741-7899 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC8403268 PMC8403268.1 8403268 8403268 NIHMS1693591 33784241 10.1530/REP-20-0483 NIHMS1693591 NIHPA1693591 1 Article Implications for Preeclampsia: Hypoxia-Induced Notch Promotes Trophoblast Migration Perlman Barry E D.O. 1 Merriam Audrey A. M.D. 2 Lemenze Alexander Ph.D. 3 4 Zhao Qingshi Ph.D. 1 Begum Salma Ph.D. 1 Nair Mohan Ph.D. 1 Wu Tracy B.S. 1 Wapner Ronald J. M.D. 5 Kitajewski Jan K. Ph.D. 6 Shawber Carrie J. Ph.D. 5 Douglas Nataki C. M.D., Ph.D. 1 4 1 2 3 4 5 6 Author contribution statement B.E.P., A.A.M., R.J.W., C.J.S., J.K.K. and N.C.D designed the study and critically reviewed the manuscript. B.E.P., A.A.M., T.W., M.N., Q.Z. and S.B. conducted the experiments, performed data analysis and wrote the initial draft of the manuscript. A.L. performed the bioinformatic analyses and wrote, reviewed and edited the manuscript. B.E.P., A.A.M., A.L., C.J.S., and N.C.D prepared the final draft of the manuscript. Corresponding Author: nataki.dougals@rutgers.edu Declaration of interest The authors declare there is no conflict of interest that could be perceived as prejudicing the impartiality of the research reported. 14 5 2021 14 5 2021 161 6 388962 681 696 17 08 2021 14 05 2022 14 05 2022 30 08 2021 11 06 2024 In the 1 st st st in vitro nd rd hypoxia Notch signaling trophoblast HTR-8/SVneo preeclampsia pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

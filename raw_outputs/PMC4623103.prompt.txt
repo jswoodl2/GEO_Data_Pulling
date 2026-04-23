@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Epigenetics Epigenetics 1363 epig Epigenetics 1559-2294 1559-2308 Taylor & Francis PMC4623103 PMC4623103.1 4623103 4623103 25437054 10.4161/15592294.2014.970052 970052 1 Research Paper Using RNA sequencing for identifying gene imprinting and random monoallelic expression in human placenta RNA sequencing of human placenta Metsalu Tauno 1 † Viltrop Triin 2 3 † Tiirats Airi 4 Rajashekar Balaji 1 Reimann Ene 5 6 Kõks Sulev 6 Rull Kristiina 7 Milani Lili 8 Acharya Ganesh 9 10 Basnet Purusotam 9 Vilo Jaak 1 Mägi Reedik 8 Metspalu Andres 8 Peters Maire 2 11 Haller-Kikkatalo Kadri 2 11 12 Salumets Andres 2 3 11 * 1 Institute of Computer Science; University of Tartu Estonia 2 Competence Center on Reproductive Medicine and Biology Estonia 3 Department of Biomedicine; Institute of Biomedicine and Translational Medicine University of Tartu Estonia 4 Children's Clinic; Tartu University Hospital Estonia 5 Core Facility of Clinical Genomics; University of Tartu Estonia 6 Department of Pathophysiology; Institute of Biomedicine and Translational Medicine University of Tartu Estonia 7 Women's Clinic; Tartu University Hospital Estonia 8 Estonian Genome Center; University of Tartu Estonia 9 Women's Health and Perinatology Research Group; Department of Clinical Medicine Faculty of Health Sciences; University of Tromsø and Department of Obstetrics and Gynecology University Hospital of Northern Norway Norway 10 Department of Clinical Sciences; Intervention and Technology Karolinska Institute Sweden 11 Department of Obstetrics and Gynecology; University of Tartu Estonia 12 Immunology Group; Institute of Biomedicine and Translational Medicine University of Tartu Estonia † The authors wish it to be known that, in their opinion, the first 2 authors – Metsalu, Tauno and Viltrop, Triin – should be regarded as joint First Authors. * Correspondence to: Andres Salumets andres.salumets@ccrmb.ee 10 2014 30 10 2014 9 10 259905 1397 1409 12 5 2014 1 8 2014 22 8 2014 30 10 2015 10 11 2015 04 06 2025 © Taylor & Francis Group, LLC 2014 Taylor & Francis Group Given the possible critical importance of placental gene imprinting and random monoallelic expression on fetal and infant health, most of those genes must be identified, in order to understand the risks that the baby might meet during pregnancy and after birth. Therefore, the aim of the current study was to introduce a workflow and tools for analyzing imprinted and random monoallelic gene expression in human placenta, by applying whole-transcriptome (WT) RNA sequencing of placental tissue and genotyping of coding DNA variants in family trios. Ten family trios, each with a healthy spontaneous single-term pregnancy, were recruited. Total RNA was extracted for WT analysis, providing the full sequence information for the placental transcriptome. Parental and child blood DNA genotypes were analyzed by exome SNP genotyping microarrays, mapping the inheritance and estimating the abundance of parental expressed alleles. Imprinted genes showed consistent expression from either parental allele, as demonstrated by the SNP content of sequenced transcripts, while monoallelically expressed genes had random activity of parental alleles. We revealed 4 novel possible imprinted genes ( LGALS8 LGALS14 PAPPA2 SPTLC3 AIM1 PEG10 RHOBTB3 ZFAT-AS1 ABP1 BCLAF1 IFI30 ZFAT Keywords allele-specific expression imprinting placenta random monoallelic expression RNA sequencing short read mapping pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

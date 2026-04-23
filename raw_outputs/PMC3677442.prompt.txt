@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC3677442 PMC3677442.1 3677442 3677442 23613587 10.1073/pnas.1304889110 201304889 1 Biological Sciences Developmental Biology From the Cover Fundamental differences in endoreplication in mammals and Drosophila Analysis of endoreplication parameters in mouse Sher Noa a 1 2 Von Stetina Jessica R. a 1 Bell George W. a Matsuura Shinobu b Ravid Katya b Orr-Weaver Terry L. a c 3 a c Massachusetts Institute of Technology MA b Boston University School of Medicine MA 3 weaver@wi.mit.edu Contributed by Terry L. Orr-Weaver, March 13, 2013 (sent for review December 4, 2012) Author contributions: N.S., J.R.V.S., K.R., and T.L.O.-W. designed research; N.S., J.R.V.S., and S.M. performed research; N.S., J.R.V.S., G.W.B., and T.L.O.-W. analyzed data; and N.S., J.R.V.S., and T.L.O.-W. wrote the paper. 1 2 The authors declare no conflict of interest. 4 6 2013 23 4 2013 110 23 223847 9368 9373 23 04 2013 20 06 2013 18 12 2024 Freely available online through the PNAS open access option. Making big cells: One size does not fit all 110 24 30 5 2013 9621 9622 Proceedings of the National Academy of Sciences of the United States of America PMC3683767 23723347 Throughout the plant and animal kingdoms specific cell types become polyploid, increasing their DNA content to attain a large cell size. In mammals, megakaryocytes (MKs) become polyploid before fragmenting into platelets. The mammalian trophoblast giant cells (TGCs) exploit their size to form a barrier between the maternal and embryonic tissues. The mechanism of polyploidization has been investigated extensively in Drosophila Drosophila Drosophila Drosophila DNA replication polytene pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,321 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Omonigho Aisagbonhi",
+    "confidence": "high",
+    "reason": "The author is explicitly identified as the corresponding author in the author list and contact section.",
+    "evidence": [
+      {
+        "quote": "* Corresponding author: Address: 9444 Medical Center Drive (1-200) La Jolla, CA 92037, oaisagbonhi@health.ucsd.edu",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "oaisagbonhi@health.ucsd.edu",
+    "confidence": "high",
+    "reason": "The email address is provided in the corresponding author contact section.",
+    "evidence": [
+      {
+        "quote": "oaisagbonhi@health.ucsd.edu",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Comparison of placental transcriptomes and histopathology in severe preeclampsia across African, Asian, and European ancestries.",
+    "confidence": "high",
+    "reason": "The study aims to elucidate placental contributions to preeclampsia outcomes in different ancestry groups using bulk RNA sequencing.",
+    "evidence": [
+      {
+        "quote": "To elucidate placental contribution to worse PE outcomes in African ancestry pregnancies, we performed bulk RNA sequencing on 50 placentas from persons with severe PE (sPE) of African (n=9), Asian (n=18) and European (n=23) ancestries",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "3rd",
+      "Term",
+      "Premature"
+    ],
+    "confidence": "high",
+    "reason": "Gestational ages range from ~32 weeks (premature/3rd) to ~38 weeks (term).",
+    "evidence": [
+      {
+        "quote": "Gestational age ... 33.5 + 4.8 [African sPE], 38.4 + 3.0 [African control]",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Birthweight is reported for all study groups in multiple tables.",
+    "evidence": [
+      {
+        "quote": "Birth weight (g) ... 1916.3 + 1006.1 [African sPE]",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Gestational age at delivery is provided in the demographic tables.",
+    "evidence": [
+      {
+        "quote": "Gestational age ... 33.5 + 4.8",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "32.3–38.4",
+    "confidence": "high",
+    "reason": "This is the range of mean gestational ages reported across the sPE and control groups in the supplemental tables.",
+    "evidence": [
+      {
+        "quote": "Gestational age ... 32.3 + 5.2 [African sPE RNASeq group], 38.1 + 1.3 [African control RNASeq group]",
+        "source": "Supplemental Table 3"
+      }
+    ]
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Placental samples were collected at the time of delivery.",
+    "evidence": [
+      {
+        "quote": "The study specimens were obtained from 2655 singleton parturitions... collection of placental tissue.",
+        "source": "Main text, Study cohort selection"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "32.3–38.4",
+    "confidence": "high",
+    "reason": "Sample collection occurred at parturition, so the GA matches delivery GA.",
+    "evidence": [
+      {
+        "quote": "Gestational age ... 34.6 + 4.8 [Asian sPE RNASeq group]",
+        "source": "Supplemental Table 3"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Fetal sex is reported in the demographic tables.",
+    "evidence": [
+      {
+        "quote": "Infant sex ... Male ... Female",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Parity is included in the patient demographic tables.",
+    "evidence": [
+      {
+        "quote": "Parity ... 1.2 + 1.4",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Gravidity is included in the patient demographic tables.",
+    "evidence": [
+      {
+        "quote": "Gravidity ... 3.2 + 2.5",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study specifies that specimens were obtained from singleton parturitions.",
+    "evidence": [
+      {
+        "quote": "The study specimens were obtained from 2655 singleton parturitions",
+        "source": "Main text, Study cohort selection"
+      }
+    ]
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Maternal ancestry was self-reported as African, Asian, or European.",
+    "evidence": [
+      {
+        "quote": "The demographic data collected included maternal ancestry",
+        "source": "Main text, Obstetric Data"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The researchers validated self-reported ancestry using RNA-seq-based ancestry inference.",
+    "evidence": [
+      {
+        "quote": "We then validated the self-reported maternal ancestries using a previously published method for inferring ancestry from RNAseq data",
+        "source": "Main text, Study cohort selection"
+      }
+    ]
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal height is not reported, only BMI.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper reports BMI at <20 weeks and at delivery, but not absolute pre-pregnancy weight.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No paternal biometric data is provided.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No paternal biometric data is provided.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Maternal age at delivery/collection is provided in the demographic tables.",
+    "evidence": [
+      {
+        "quote": "Maternal age at delivery ... 28.6 + 5.2",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal age is not mentioned.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Samples were collected from patients with severe preeclampsia (sPE).",
+    "evidence": [
+      {
+        "quote": "we performed bulk RNA sequencing on 50 placentas from persons with severe PE (sPE)",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Mode of delivery (C-section vs Vaginal) is provided for all groups.",
+    "evidence": [
+      {
+        "quote": "Mode of delivery ... C-section ... Vaginal",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Severe preeclampsia",
+      "Chronic hypertension",
+      "Diabetes mellitus",
+      "Gestational diabetes",
+      "Peripartum cardiomyopathy",
+      "Unexplained tachycardia",
+      "Renal failure",
+      "Stroke"
+    ],
+    "confidence": "high",
+    "reason": "These complications are listed as either inclusion criteria, demographic characteristics, or outcomes evaluated in the study.",
+    "evidence": [
+      {
+        "quote": "maternal history of diabetes, maternal history of chronic hypertension... maternal pregnancy complications including renal failure, stroke, unexplained tachycardia, or peripartum cardiomyopathy.",
+        "source": "Main text, Obstetric Data"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "IUGR is specifically mentioned as a collected data point.",
+    "evidence": [
+      {
+        "quote": "documented sPE, intrauterine growth restriction (IUGR)",
+        "source": "Main text, Obstetric Data"
+      }
+    ]
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Intrauterine growth restriction",
+      "Low birth weight"
+    ],
+    "confidence": "high",
+    "reason": "IUGR and birth weight below normal ranges are discussed.",
+    "evidence": [
+      {
+        "quote": "documented sPE, intrauterine growth restriction (IUGR)",
+        "source": "Main text, Obstetric Data"
+      }
+    ]
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Maternal BMI (at <20 weeks and at delivery)",
+      "Birth weight percentile",
+      "Placental histology (MVM, PVFD)",
+      "Syncytiotrophoblast CD123 expression"
+    ],
+    "confidence": "high",
+    "reason": "These additional physiological and pathological measurements were recorded for the study cohort.",
+    "evidence": [
+      {
+        "quote": "maternal body mass index (BMI)... birth weight percentile... placental histology",
+        "source": "Main text, Obstetric Data"
+      },
+      {
+        "quote": "Placental syncytiotrophoblast CD123 expression by immunohistochemistry correlates with placental DEseq2 normalized IL3RA expression levels",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "University of California, San Diego (UCSD) affiliated hospitals",
+    "confidence": "high",
+    "reason": "The source of the study specimens is explicitly named in the methods.",
+    "evidence": [
+      {
+        "quote": "The study specimens were obtained from 2655 singleton parturitions at UCSD-affiliated hospitals",
+        "source": "Main text, Study cohort selection"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "USA",
+    "confidence": "high",
+    "reason": "The study was conducted at the University of California, San Diego, which is in the USA.",
+    "evidence": [
+      {
+        "quote": "University of California, San Diego, La Jolla, California, USA",
+        "source": "Main text, Author Information"
+      }
+    ]
+  }
+}

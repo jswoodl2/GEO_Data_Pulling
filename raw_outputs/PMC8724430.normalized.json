@@ -1,0 +1,47 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Dana A. M. Mustafa",
+  "Supervisor/Contact/Corresponding author email": "d.mustafa@erasmusmc.nl",
+  "Main topic of the publication": "This study investigates immunological alterations in early- and late-onset preeclampsia placentas using a targeted expression profile approach, finding that the placental innate immune system is altered in early-onset preeclampsia compared to uncomplicated pregnancies, with distinct immunological profiles between the two subtypes.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "Premature",
+    "Term"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 39.0,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Preeclampsia"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Fetal growth restriction"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "Hypertension",
+    "Body mass index",
+    "Diastolic blood pressure",
+    "Systolic blood pressure",
+    "Mean arterial pressure",
+    "Urinary protein/creatinine ratio",
+    "Placenta weight"
+  ],
+  "Hospital/Center where samples were collected": "Erasmus MC",
+  "Country where samples were collected": "Netherlands",
+  "PMCID": "PMC8724430"
+}

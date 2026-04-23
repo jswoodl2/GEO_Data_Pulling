@@ -1,0 +1,225 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Julia E. Rager",
+    "confidence": "high",
+    "reason": "The paper explicitly lists Julia E. Rager as the corresponding author.",
+    "evidence": [
+      {
+        "quote": "* Corresponding Author jrager@unc.edu",
+        "source": "Main text, Author Information"
+      },
+      {
+        "quote": "Rager Julia E. a c e *",
+        "source": "Main text, Author List"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "jrager@unc.edu",
+    "confidence": "high",
+    "reason": "The corresponding author's email is explicitly provided.",
+    "evidence": [
+      {
+        "quote": "* Corresponding Author jrager@unc.edu",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Placental genomic and epigenomic signatures associated with infant birth weight",
+    "confidence": "high",
+    "reason": "The title and abstract explicitly state the focus on placental mRNA and miRNA signatures associated with infant birth weight.",
+    "evidence": [
+      {
+        "quote": "Placental Genomic and Epigenomic Signatures Associated with Infant Birth Weight Highlight Mechanisms Involved in Collagen and Growth Factor Signaling",
+        "source": "Main text, Title"
+      },
+      {
+        "quote": "Birth weight (BW) represents an important clinical and toxicological measure... Placental Genomic and Epigenomic Signatures Associated with Infant Birth Weight",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "Not Provided",
+    "confidence": "low",
+    "reason": "The provided text and supplements do not explicitly state the gestational age or trimester of the cohort, although birth weight is an outcome at delivery.",
+    "evidence": []
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "While birth weight is the primary variable and unit (grams) is mentioned in tables, the actual birth weights or summary statistics (e.g., mean, SD) are not provided in the snippet.",
+    "evidence": [
+      {
+        "quote": "representing the change in gene expression associated with each one-unit change in infant birth weight (grams) on the logarithmic scale.",
+        "source": "Supplemental Table S2"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Gestational age at delivery is not mentioned in the provided paper text or supplements.",
+    "evidence": []
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high",
+    "reason": "The specific gestational age in weeks is not provided.",
+    "evidence": []
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Gestational age at sample collection is not provided.",
+    "evidence": []
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high",
+    "reason": "No sample collection timing is mentioned in weeks.",
+    "evidence": []
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper provides sex-stratified findings for both males and females in the supplementary tables.",
+    "evidence": [
+      {
+        "quote": "Table S2. Sex-stratified findings of mRNAs with expression levels significantly (padj < 0.10) associated with infant BW in males and females.",
+        "source": "Supplemental Table S2"
+      },
+      {
+        "quote": "Table S4. Sex-stratified findings of miRNAs with expression levels significantly (padj < 0.10) associated with infant BW in males and females.",
+        "source": "Supplemental Table S4"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Parity is not mentioned in the text or supplements.",
+    "evidence": []
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Gravidity is not mentioned.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The number of offspring (e.g., singletons vs twins) is not explicitly mentioned.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal race/ethnicity is not provided in the snippet or tables.",
+    "evidence": []
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No genetic ancestry or strain information is provided.",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal height is not provided.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal pre-pregnancy weight is not provided.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal height is not provided.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal weight is not provided.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal age is not provided.",
+    "evidence": []
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal age is not provided.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "The paper focuses on birth weight but does not explicitly state that samples were collected from specific pregnancy complications like preeclampsia or gestational diabetes.",
+    "evidence": []
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Mode of delivery is not provided.",
+    "evidence": []
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [],
+    "confidence": "high",
+    "reason": "No pregnancy complications are listed in the provided material.",
+    "evidence": []
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No fetal complications are listed.",
+    "evidence": []
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high",
+    "reason": "No fetal complications are mentioned.",
+    "evidence": []
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Infant Birth Weight",
+      "Sex of offspring"
+    ],
+    "confidence": "high",
+    "reason": "Birth weight is the main phenotype studied, and sex is used for stratified analysis.",
+    "evidence": [
+      {
+        "quote": "Associated with Infant Birth Weight",
+        "source": "Main text, Title"
+      },
+      {
+        "quote": "Sex-stratified findings of mRNAs... in males and females",
+        "source": "Supplemental Table S2"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reason": "Author affiliations are not fully listed in the snippet, and the hospital of collection is not stated.",
+    "evidence": []
+  },
+  "Country where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reason": "The snippet mentions the corresponding author's email (unc.edu), suggesting the USA, but the text does not explicitly state the collection country.",
+    "evidence": []
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Margareta D. Pisarska",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "pisarskam@cshs.org",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This cohort study examined first-trimester placental transcriptomic profiles from chorionic villus samples in pregnancies conceived spontaneously, with non-IVF fertility treatment, or with IVF. The goal was to determine whether fertility treatment or underlying infertility is associated with differential placental gene expression during early placentation.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "1st",
+    "confidence": "high"
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The excerpt mentions pregnancy outcomes and viable offspring, but it does not explicitly report birthweight values."
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Delivery is referenced only as resulting in viable offspring; no explicit gestational age at delivery is given in the provided text."
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": 12,
+    "confidence": "medium"
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Baseline demographics are mentioned broadly, but parity is not explicitly stated in the provided excerpt."
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The text does not explicitly mention gravidity, even though baseline demographics were collected."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The excerpt states pregnancies resulted in viable offspring but does not explicitly report singleton versus multiple gestations."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Maternal demographics are referenced generally, but race/ethnicity is not explicitly listed in the provided text."
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Although baseline maternal demographics were collected, maternal height is not explicitly reported in the excerpt."
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The provided text does not explicitly mention pre-pregnancy weight."
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Paternal demographics are mentioned generally, but paternal height is not explicitly reported in the excerpt."
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Paternal demographics are referenced, but paternal weight is not explicitly stated in the provided text."
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium"
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The excerpt mentions outcomes but does not explicitly state cesarean or vaginal delivery mode."
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [],
+    "confidence": "low",
+    "reasoning": "Pregnancy complications are mentioned as collected outcomes, but no specific complications are named in the provided text."
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "fertility treatment group (spontaneous, non-IVF fertility treatment, IVF)",
+      "maternal demographics",
+      "paternal demographics",
+      "fetal demographics",
+      "maternal medical conditions",
+      "pregnancy outcomes",
+      "placental gene expression by RNA sequencing"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Academic Medical Center",
+    "confidence": "medium"
+  },
+  "Country where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "low",
+    "reasoning": "The corresponding author email suggests Cedars-Sinai in the United States, but the excerpt does not explicitly state the country."
+  }
+}

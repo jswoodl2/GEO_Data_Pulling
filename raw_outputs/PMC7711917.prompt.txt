@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Biol Reprod Biol Reprod 675 biolreprod biolreprod Biology of Reproduction 0006-3363 1529-7268 Oxford University Press PMC7711917 PMC7711917.1 7711917 7711917 32902612 10.1093/biolre/ioaa155 ioaa155 1 Research Article AcademicSubjects/MED00773 AcademicSubjects/SCI01070 Transforming growth factor beta signaling and decidual integrity in mice † Fang Xin Department of Veterinary Integrative Biosciences Texas A&M University USA Ni Nan Department of Veterinary Integrative Biosciences Texas A&M University USA Gao Yang Department of Veterinary Integrative Biosciences Texas A&M University USA Lydon John P Department of Molecular and Cellular Biology Baylor College of Medicine USA Ivanov Ivan Department of Veterinary Physiology and Pharmacology Texas A&M University USA Rijnkels Monique Department of Veterinary Integrative Biosciences Texas A&M University USA Bayless Kayla J Department of Molecular and Cellular Medicine Texas A&M University Health Science Center USA Li Qinglei Department of Veterinary Integrative Biosciences Texas A&M University USA Correspondence qli@cvm.tamu.edu 12 2020 09 9 2020 103 6 370050 1186 1198 2 3 2020 28 7 2020 1 9 2020 3 9 2020 09 09 2021 09 09 2021 26 12 2020 31 03 2024 © The Author(s) 2020. Published by Oxford University Press on behalf of Society for the Study of Reproduction. All rights reserved. For permissions, please e-mail: journals.permissions@oup.com 2020 This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model Abstract Transforming growth factor beta (TGFβ) signaling regulates multifaceted reproductive processes. It has been shown that the type 1 receptor of TGFβ (TGFBR1) is indispensable for female reproductive tract development, implantation, placental development, and fertility. However, the role of TGFβ signaling in decidual development and function remains poorly defined. Our objective is to determine the impact of uterine-specific deletion of Tgfbr1 Tgfbr1 Tgfbr1 Summary Sentence TGFBR1 uterus decidualization endometrium TGFβ signaling NIH 10.13039/100000002 R01HD087236 NICHD 10.13039/100000071 HD042311 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

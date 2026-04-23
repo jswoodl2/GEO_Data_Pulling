@@ -1,0 +1,67 @@
+{
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper explicitly compares birthweight (size) between the patient clusters in the results and mentions clinical metadata is provided in the supplement.",
+    "evidence": [
+      {
+        "quote": "Within this subset of 48 cases, transcriptional cluster 1 patients (N = 19) demonstrated healthier pregnancies... whereas cluster 2 (N = 11) and 3 (N = 13) were significantly younger, and their babies smaller, compared to cluster 1 (p < 0.05).",
+        "source": "Main text, Results section, Clinical characteristics and global methylation patterns"
+      },
+      {
+        "quote": "SGA Small-for-gestational-age; AGA Average-for-gestational-age",
+        "source": "Main text, Abbreviations"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study explicitly mentions using fetal sex as a covariate in the differential methylation analysis and states clinical information is in the supplement.",
+    "evidence": [
+      {
+        "quote": "Within transcriptional clusters 2 and 3, controlling for fetal sex and gestational age in the identification of differentially methylated sites, compared to the healthier cluster 1, dramatically reduced the number of significant sites",
+        "source": "Main text, Results section, Differentially methylated positions between transcriptional clusters"
+      },
+      {
+        "quote": "clinical information for our cohort can be found in the supplement of our prior publication [3] and Additional file 2: Table S1.",
+        "source": "Main text, Availability of data and materials"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Parity is not mentioned in the main text or the provided supplementary tables.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal race or ethnicity is not reported in the main text or the provided supplementary material.",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal height or stature is not reported in the provided text.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper reports maternal age findings (stating clusters 2 and 3 were significantly younger) and points to the supplement for clinical information.",
+    "evidence": [
+      {
+        "quote": "Within this subset of 48 cases, transcriptional cluster 1 patients (N = 19) demonstrated healthier pregnancies... whereas cluster 2 (N = 11) and 3 (N = 13) were significantly younger, and their babies smaller, compared to cluster 1 (p < 0.05).",
+        "source": "Main text, Results section, Clinical characteristics and global methylation patterns"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Mode of delivery (e.g., vaginal vs cesarean) is not mentioned in the provided text or supplements.",
+    "evidence": []
+  }
+}

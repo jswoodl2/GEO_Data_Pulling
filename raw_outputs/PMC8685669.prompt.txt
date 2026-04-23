@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc Natl Acad Sci U S A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC8685669 PMC8685669.1 8685669 8685669 34876522 10.1073/pnas.2111267118 202111267 1 412 Biological Sciences Developmental Biology Intersection of regulatory pathways controlling hemostasis and hemochorial placentation Muto Masanaga a b 1 https://orcid.org/0000-0002-3309-669X Chakraborty Damayanti a b 2 https://orcid.org/0000-0001-9672-4158 Varberg Kaela M. a b Moreno-Irusta Ayelen a b https://orcid.org/0000-0002-6742-4591 Iqbal Khursheed a b https://orcid.org/0000-0001-6294-5294 Scott Regan L. a b McNally Ross P. a b https://orcid.org/0000-0003-1472-9743 Choudhury Ruhul H. c d https://orcid.org/0000-0001-8777-9261 Aplin John D. c d Okae Hiroaki e Arima Takahiro e Matsumoto Shoma f https://orcid.org/0000-0003-0645-6183 Ema Masatsugu f Mast Alan E. g h https://orcid.org/0000-0001-5415-7896 Grundberg Elin a b i j https://orcid.org/0000-0001-7158-1592 Soares Michael J. a b i k 3 a University of Kansas Medical Center b University of Kansas Medical Center c The University of Manchester United Kingdom d University of Manchester United Kingdom e Tohoku University Graduate School of Medicine Japan f Shiga University of Medical Science Japan g Versiti Blood Research Institute h Medical College of Wisconsin i Children’s Mercy Research Institute, Children’s Mercy j Children’s Mercy k University of Kansas Medical Center 3 msoares@kumc.edu Edited by Thomas Spencer, Division of Animal Sciences, University of Missouri, Columbia, MO; received June, 22, 2021; accepted October 29, 2021 Author contributions: M.M., K.I., and M.J.S. designed research; M.M., D.C., K.M.V., A.M.-I., K.I., R.L.S., R.P.M., and M.J.S. performed research; K.I., R.H.C., J.D.A., H.O., T.A., A.E.M., and E.G. contributed new reagents/analytic tools; M.M., D.C., A.M.-I., K.I., S.M., M.E., and M.J.S. analyzed data; and M.M. and M.J.S. wrote the paper. 1 2 The authors declare no competing interest. 7 12 2021 14 12 2021 118 50 396091 e2111267118 29 10 2021 07 06 2022 07 06 2022 07 01 2022 22 01 2025 2021 https://www.pnas.org/site/aboutpnas/licenses.xhtml Published under the PNAS license Significance Trophoblast cell–guided uterine spiral artery remodeling is a key event in successful hemochorial placentation. Connections between coagulopathies and diseases of placentation are compelling. Tissue factor pathway inhibitor (TFPI) is a prominent regulator of blood coagulation and an intriguing constituent of trophoblast cells situated at the uterine–placental interface. The actions of TFPI extend beyond controlling hemostasis and directly affect trophoblast cell development. TFPI facilitates the differentiation of rat and human trophoblast stem cells into the invasive/extravillous trophoblast cell lineage and promotes intrauterine trophoblast invasion and trophoblast-guided uterine spiral artery remodeling at the maternal–fetal interface. Thus, TFPI is a conserved regulator of a fundamental event determining the efficacy of the hemochorial placenta. Hemochorial placentation is characterized by the development of trophoblast cells specialized to interact with the uterine vascular bed. We utilized trophoblast stem (TS) cell and mutant rat models to investigate regulatory mechanisms controlling trophoblast cell development. TS cell differentiation was characterized by acquisition of transcript signatures indicative of an endothelial cell-like phenotype, which was highlighted by the expression of anticoagulation factors including tissue factor pathway inhibitor (TFPI). TFPI localized to invasive endovascular trophoblast cells of the rat placentation site. Disruption of TFPI in rat TS cells interfered with development of the endothelial cell-like endovascular trophoblast cell phenotype. Similarly, TFPI was expressed in human invasive/extravillous trophoblast (EVT) cells situated within first-trimester human placental tissues and following differentiation of human TS cells. TFPI was required for human TS cell differentiation to EVT cells. We next investigated the physiological relevance of TFPI at the placentation site. Genome-edited global TFPI loss-of-function placenta hemostasis trophoblast cell uterine spiral artery Lalor Foundation 1 Masanaga Muto Kaela M Varberg Ayelen Moreno-Irusta Michael J Soares Lalor Foundation 1 Masanaga Muto Kaela M Varberg Ayelen Moreno-Irusta Michael J Soares Lalor Foundation 1 Masanaga Muto Kaela M Varberg Ayelen Moreno-Irusta Michael J Soares American Heat Association 1 Masanaga Muto Kaela M Varberg Ayelen Moreno-Irusta Michael J Soares HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 HD096809 Kaela M Varberg Michael J Soares HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 HD020676 Kaela M Varberg Michael J Soares HHS | NIH | Eu alor Foundation 1 Masanaga Muto Kaela M Varberg Ayelen Moreno-Irusta Michael J Soares American Heat Association 1 Masanaga Muto Kaela M Varberg Ayelen Moreno-Irusta Michael J Soares HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 HD096809 Kaela M Varberg Michael J Soares HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 HD020676 Kaela M Varberg Michael J Soares HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 HD079363 Kaela M Varberg Michael J Soares HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 HD099638 Kaela M Varberg Michael J Soares The Sosland Foundation 1 Masanaga Muto Kaela M Varberg Ayelen Moreno-Irusta Michael J Soares pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

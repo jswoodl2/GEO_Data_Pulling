@@ -1,0 +1,133 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Julia E. Rager",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "jrager@unc.edu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study investigates placental genomic and epigenomic signatures associated with infant birth weight, focusing on mechanisms involving collagen and growth factor signaling. It examines how placental molecular features, including microRNAs, relate to birth weight as an indicator of newborn health.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The provided text identifies the study as placental and birth weight related, implying delivery samples, but it does not explicitly state the gestational timing or whether placentas were collected at term."
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The excerpt centers on birth weight and placental signatures but does not explicitly report gestational age at delivery."
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Placental samples were likely collected at delivery, but the excerpt does not explicitly provide gestational age at collection."
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The provided text does not mention infant sex, though it may be included elsewhere in the full paper."
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "No maternal reproductive history variables such as parity are shown in the excerpt."
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The excerpt does not report gravidity or related maternal obstetric history."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The text refers to infant birth weight but does not explicitly state singleton versus multiple gestations."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "No maternal race or ethnicity information appears in the provided text."
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The excerpt does not include participant demographic tables or maternal age information."
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "placental genomic signatures",
+      "placental epigenomic signatures",
+      "microRNAs",
+      "collagen signaling",
+      "growth factor signaling"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  }
+}

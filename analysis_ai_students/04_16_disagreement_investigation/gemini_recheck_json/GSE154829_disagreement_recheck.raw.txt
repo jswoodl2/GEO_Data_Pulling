@@ -1,0 +1,73 @@
+[
+  {
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper provides summary statistics for infant birth weight, reporting a mean of 981.1 g (SD 265.6).",
+      "evidence": [
+        {
+          "quote": "The birth weight of the infants ranged from 410 to 1615 g (mean = 981.1, SD = 265.6).",
+          "source": "Main text, Section 3.1"
+        },
+        {
+          "quote": "representing the change in gene expression associated with each one-unit change in infant birth weight (grams) on the logarithmic scale.",
+          "source": "Supplemental Table S2 (NIHMS1618812-supplement-1.xlsx)"
+        }
+      ]
+    },
+    "Gestational Age at delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper reports the gestational age range and mean for the study cohort.",
+      "evidence": [
+        {
+          "quote": "The gestational age of the infants ranged from 23 to 27 weeks (mean = 25.8, SD = 1.5).",
+          "source": "Main text, Section 3.1"
+        }
+      ]
+    },
+    "Gestational Age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Placental samples were collected at birth, and the paper explicitly provides the gestational age of the infants at that time.",
+      "evidence": [
+        {
+          "quote": "Placental samples were collected within 30 min of delivery... Gestational age (GA) was determined by the date of the last menstrual period.",
+          "source": "Main text, Section 2.1"
+        },
+        {
+          "quote": "The gestational age of the infants ranged from 23 to 27 weeks (mean = 25.8, SD = 1.5).",
+          "source": "Main text, Section 3.1"
+        }
+      ]
+    },
+    "Number of offspring per pregnancy provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The paper reports the total number of infants (n=379) but does not explicitly provide the number of offspring per pregnancy or the breakdown of plurality (singletons vs. multiples).",
+      "evidence": []
+    },
+    "Self-reported race/ethnicity of mother provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Maternal race and ethnicity data are reported in the demographic characteristics table (Table 1).",
+      "evidence": [
+        {
+          "quote": "Maternal race/ethnicity (White (Non-Hispanic), Black (Non-Hispanic), or Other) were recorded.",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Maternal age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Maternal age at the time of delivery (which corresponds to sample collection for placental tissue) is reported as summary statistics.",
+      "evidence": [
+        {
+          "quote": "Maternal age ranged from 14 to 46 years (mean = 28.3, SD = 6.4).",
+          "source": "Main text, Section 3.1"
+        }
+      ]
+    }
+  }
+]

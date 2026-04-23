@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Clin Invest J. Clin. Invest 120 jcinvest J CLIN INVEST The Journal of Clinical Investigation 0021-9738 1558-8238 American Society for Clinical Investigation PMC3999620 PMC3999620.1 3999620 3999620 23934129 10.1172/JCI66966 66966 1 Research Article Reversal of gene dysregulation in cultured cytotrophoblasts reveals possible causes of preeclampsia Zhou Yan 1 2 3 Gormley Matthew J. 1 2 3 Hunkapiller Nathan M. 1 2 3 Kapidzic Mirhan 1 2 3 Stolyarov Yana 1 2 3 Feng Victoria 1 2 3 Nishida Masakazu 1 2 3 Drake Penelope M. 1 2 3 Bianco Katherine 1 2 3 4 Wang Fei 1 2 3 McMaster Michael T. 1 2 3 Fisher Susan J. 1 2 3 4 5 1 2 3 4 5 Address correspondence to: Susan J. Fisher, University of California, 35 Medical Center Way (MB 0665), San Francisco, California, 94143-0665, USA. Phone: 415.476.5297; Fax: 415.476.1635; E-mail: sfisher@cgl.ucsf.edu 24 6 2013 1 7 2013 123 7 224501 2862 2872 24 9 2012 4 4 2013 24 06 2013 28 04 2014 21 03 2024 Copyright © 2013, American Society for Clinical Investigation 2013 Reversal of gene dysregulation in cultured cytotrophoblasts reveals possible causes of preeclampsia 123 10 1 10 2013 4541 4541 The Journal of Clinical Investigation PMC3786723 Preeclampsia: a link between trophoblast dysregulation and an antiangiogenic state 123 7 24 6 2013 2775 2777 The Journal of Clinical Investigation PMC3999621 23934119 During human pregnancy, a subset of placental cytotrophoblasts (CTBs) differentiates into cells that aggressively invade the uterus and its vasculature, anchoring the progeny and rerouting maternal blood to the placenta. In preeclampsia (PE), CTB invasion is limited, reducing placental perfusion and/or creating intermittent flow. This syndrome, affecting 4%–8% of pregnancies, entails maternal vascular alterations (e.g., high blood pressure, proteinuria, and edema) and, in some patients, fetal growth restriction. The only cure is removal of the faulty placenta, i.e., delivery. Previously, we showed that defective CTB differentiation contributes to the placental component of PE, but the causes were unknown. Here, we cultured CTBs isolated from PE and control placentas for 48 hours, enabling differentiation and invasion. In various severe forms of PE, transcriptomics revealed common aberrations in CTB gene expression immediately after isolation, including upregulation of SEMA3B pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

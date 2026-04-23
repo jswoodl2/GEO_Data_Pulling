@@ -1,0 +1,42 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Sylvie Girard",
+  "Supervisor/Contact/Corresponding author email": "girard.sylvie@mayo.edu",
+  "Main topic of the publication": "This study aimed to understand the immune contribution to postpartum preeclampsia (PPPE) at the time of diagnosis and uncover the predictive potential of perinatal biomarkers for early postnatal identification of high-risk patients by analyzing placentas and blood samples from PPPE patients and comparing them to uncomplicated pregnancies.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "Term",
+    "1st"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 39.6,
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Preeclampsia",
+    "Postpartum preeclampsia"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Blood pressure",
+    "BMI",
+    "Hypertension",
+    "Diabetes mellitus"
+  ],
+  "Hospital/Center where samples were collected": "Sainte-Justine Hospital Research Center",
+  "Country where samples were collected": "Canada"
+}

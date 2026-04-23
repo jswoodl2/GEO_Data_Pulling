@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Clin Invest J. Clin. Invest 120 jcinvest J Clin Invest The Journal of Clinical Investigation 0021-9738 1558-8238 American Society for Clinical Investigation PMC5749543 PMC5749543.1 5749543 5749543 29202469 10.1172/JCI95937 95937 1 Research Article H3K27me3 dynamics dictate evolving uterine states in pregnancy and parturition Nancy Patrice patricenancy@gmail.com 1 Siewiera Johan JohanPierreRobert.Siewiera@ucsf.edu 1 2 http://orcid.org/0000-0003-3052-0253 Rizzuto Gabrielle Gabrielle.Rizzuto@ucsf.edu 3 Tagliani Elisa elisa.tagliani5@gmail.com 1 Osokine Ivan ivan.osokine@ucsf.edu 2 Manandhar Priyanka Priyanka.Manandhar@ucsf.edu 2 http://orcid.org/0000-0003-4451-126X Dolgalev Igor igor.dolgalev@nyumc.org 1 Clementi Caterina c.clementi@celmatix.com 1 http://orcid.org/0000-0002-7512-8477 Tsirigos Aristotelis aristotelis.tsirigos@nyumc.org 1 Erlebacher Adrian adrian.erlebacher@ucsf.edu 1 2 1 2 3 Address correspondence to: Adrian Erlebacher, Department of Laboratory Medicine, UCSF, 513 Parnassus Avenue, Medical Sciences, S-1057B, San Francisco, California 94143-0451, USA. Phone: 415.502.3583; Email: adrian.erlebacher@ucsf.edu Authorship note: Conflict of interest: 27 11 2017 2 1 2018 128 1 303862 233 247 26 6 2017 17 10 2017 02 04 2018 02 04 2018 02 03 2018 18 07 2024 Copyright © 2018, American Society for Clinical Investigation 2018 American Society for Clinical Investigation This article is available online at https://www.jci.org/articles/view/95937 Uncovering the causes of pregnancy complications such as preterm labor requires greater insight into how the uterus remains in a noncontractile state until term and then surmounts this state to enter labor. Here, we show that dynamic generation and erasure of the repressive histone modification tri-methyl histone H3 lysine 27 (H3K27me3) in decidual stromal cells dictate both elements of pregnancy success in mice. In early gestation, H3K27me3-induced transcriptional silencing of select gene targets ensured uterine quiescence by preventing the decidua from expressing parturition-inducing hormone receptors, manifesting type 1 immunity, and most unexpectedly, generating myofibroblasts and associated wound-healing responses. In late gestation, genome-wide H3K27 demethylation allowed for target gene upregulation, decidual activation, and labor entry. Pharmacological inhibition of H3K27 demethylation in late gestation not only prevented term parturition, but also inhibited delivery while maintaining pup viability in a noninflammatory model of preterm parturition. Immunofluorescence analysis of human specimens suggested that similar regulatory events might occur in the human decidua. Together, these results reveal the centrality of regulated gene silencing in the uterine adaptation to pregnancy and suggest new areas in the study and treatment of pregnancy disorders. Reproductive Biology Epigenetics Fibrosis Obstetrics/gynecology NIH-NIAID R01AI106745 March of Dimes Foundation https://doi.org/10.13039/100000912 #6-FY13-80 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

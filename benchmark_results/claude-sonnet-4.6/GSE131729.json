@@ -1,0 +1,137 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "James C. Cross",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "jcross@ucalgary.ca",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study examines patterns of cell growth (hyperplasia, hypertrophy, and endoreduplication) in the mouse placenta during normal gestation and investigates how a chronic maternal low protein diet alters placental development and function in a sexually dimorphic manner.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "Term",
+    "confidence": "medium",
+    "reasoning": "The study uses mouse embryonic days E8.5 through E18.5 (day before delivery), which spans most of mouse gestation up to near-term; the paper describes E18.5 as 'just before term', so samples span development up to term."
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "Gestational age at sample collection is provided in embryonic days (E8.5 to E18.5) for mice, not in weeks; mouse gestational age in weeks is not directly translatable to human weeks in this context."
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium",
+    "reasoning": "Litter size is mentioned as a covariate in the statistical analysis, implying it was recorded, though specific litter size values are not explicitly tabulated."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal weight was recorded before and after dissection of the uterus, but pre-pregnancy weight specifically is not reported; the weight recorded appears to be at time of dissection during pregnancy."
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium",
+    "reasoning": "The paper states that four-week-old female mice were maintained for four weeks before mating, implying they were approximately eight weeks old at mating/sample collection, which is explicitly stated."
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Intrauterine growth restriction (IUGR)"
+    ],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Placental weight",
+      "Fetal weight",
+      "Placental efficiency (fetal to placental weight ratio)",
+      "Maternal weight",
+      "Placental zone volumes (labyrinth, junctional zone)",
+      "Trophoblast cell number and volume",
+      "Cell proliferation markers (Ki67, phospho-histone H3)",
+      "DNA ploidy of trophoblast cells",
+      "Nutrient transporter gene expression",
+      "RNA sequencing gene expression profiles",
+      "Litter size"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "University of Calgary",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "Canada",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Nataki C. Douglas",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "nataki.dougals@rutgers.edu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "The study investigates how hypoxia-induced Notch signaling affects trophoblast migration and discusses the implications of this pathway for preeclampsia. It focuses primarily on in vitro trophoblast models rather than a clinical pregnancy cohort.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "Not Provided",
+    "confidence": "low",
+    "reasoning": "The provided text indicates an in vitro trophoblast study related to preeclampsia but does not clearly state a pregnancy sampling timepoint or delivery stage."
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "preeclampsia"
+    ],
+    "confidence": "medium"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "hypoxia",
+      "Notch signaling",
+      "trophoblast migration"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Rutgers",
+    "confidence": "low",
+    "reasoning": "The corresponding author email indicates Rutgers affiliation, but the provided text does not explicitly name a sample collection hospital or center."
+  },
+  "Country where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "low",
+    "reasoning": "No explicit country of sample collection is stated in the provided text."
+  }
+}

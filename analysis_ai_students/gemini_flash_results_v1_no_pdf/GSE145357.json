@@ -1,0 +1,292 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Nardhy Gomez-Lopez",
+    "confidence": "high",
+    "reason": "The lead contact and corresponding author is explicitly named on the title page and in the STAR Methods section.",
+    "evidence": [
+      {
+        "quote": "Further information and requests for resources and reagents should be directed to and will be fulfilled by the lead contact, Nardhy Gomez-Lopez (nardhy.gomez-lopez@wayne.edu)",
+        "source": "Main text, STAR Methods, Lead Contact"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "nardhy.gomez-lopez@wayne.edu",
+    "confidence": "high",
+    "reason": "The corresponding email address is provided on the title page and in the STAR Methods.",
+    "evidence": [
+      {
+        "quote": "nardhy.gomez-lopez@wayne.edu",
+        "source": "Main text, Title Page"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "The role of regulatory T cells (Tregs) in idiopathic preterm labor/birth and adverse neonatal outcomes.",
+    "confidence": "high",
+    "reason": "The title and abstract explicitly state that the study investigates how Treg reduction/depletion contributes to idiopathic preterm labor and fetal growth restriction.",
+    "evidence": [
+      {
+        "quote": "Regulatory T Cells Play a Role in a Subset of Idiopathic Preterm Labor/Birth and Adverse Neonatal Outcomes",
+        "source": "Main text, Title"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "3rd",
+      "Term",
+      "Premature"
+    ],
+    "confidence": "high",
+    "reason": "The study focuses on late gestation (3rd trimester) in mice and compares term labor/birth (Term) with idiopathic preterm labor/birth (Premature) in humans.",
+    "evidence": [
+      {
+        "quote": "Tregs modulate immune responses in the third period of pregnancy.",
+        "source": "Main text, In Brief"
+      },
+      {
+        "quote": "we collected decidual tissues from women with PTL and birth or term labor/birth (TIL), as well as gestational age-matched non-labor controls (preterm without labor [PTNL] or term without labor [TNL])",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study provides birthweights for the mouse model neonates and fetuses.",
+    "evidence": [
+      {
+        "quote": "Weights of neonates born to non-Treg-depleted-, partially Treg-depleted-, and totally Treg-depleted- Foxp3 DTR",
+        "source": "Main text, Figure 3, Legend"
+      },
+      {
+        "quote": "Weights of (I) fetuses and (J) their placentas",
+        "source": "Main text, Figure 3, Legend"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study classifies human samples by term or preterm status and defines delivery monitoring for the mouse model.",
+    "evidence": [
+      {
+        "quote": "gestational age-matched non-labor controls (preterm without labor [PTNL] or term without labor [TNL])",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reason": "While human cohorts are defined as 'preterm' or 'term' and mouse delivery is monitored, specific average week values for the human cohort are not provided in the snippet (likely in referenced Table S1).",
+    "evidence": []
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper provides specific gestational days for mouse sample collection and classifies human samples by clinical status.",
+    "evidence": [
+      {
+        "quote": "verify placental weights... and their placentas from... dams at 18.5 dpc.",
+        "source": "Main text, STAR Methods"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": 2.64,
+    "confidence": "high",
+    "reason": "Sample collection in the mouse model is specifically performed at 18.5 dpc, which converts to 2.64 weeks.",
+    "evidence": [
+      {
+        "quote": "dams at 18.5 dpc",
+        "source": "Main text, STAR Methods"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The sex of the human or mouse offspring is not specified in the text or supplementary gene/GO lists provided.",
+    "evidence": []
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "Parity is likely in Supplemental Table 1, but this table's metadata is not included in the provided text snippet.",
+    "evidence": []
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "Gravidity is not mentioned in the available text or supplements.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "Litter sizes for individual pregnancies are not explicitly reported, although total rates and numbers of litters are mentioned.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal race and ethnicity are not mentioned in the provided text.",
+    "evidence": []
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study explicitly specifies the mouse strains used (B6 and BALB/c).",
+    "evidence": [
+      {
+        "quote": "B6.129(Cg)-Foxp3 tm3(DTR/GFP)Ayr... C57BL/6... BALB/c",
+        "source": "Main text, STAR Methods"
+      }
+    ]
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal height is not recorded in the paper.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal pre-pregnancy weight is not recorded.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal physical characteristics are not mentioned.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal physical characteristics are not mentioned.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "Maternal age is not explicitly stated in the main text or available supplements.",
+    "evidence": []
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal age is not provided.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Human decidual tissues were collected from women with idiopathic preterm labor and other complications.",
+    "evidence": [
+      {
+        "quote": "we collected decidual tissues from women with PTL and birth... or term labor/birth (TIL)",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper distinguishes between vaginal delivery and elective cesarean section for the human cohort.",
+    "evidence": [
+      {
+        "quote": "decidual leukocytes following spontaneous vaginal delivery and elective cesarean section",
+        "source": "Main text, STAR Methods"
+      }
+    ]
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Idiopathic preterm labor/birth",
+      "Preterm labor with acute intra-amniotic inflammation",
+      "Chronic chorioamnionitis"
+    ],
+    "confidence": "high",
+    "reason": "These specific clinical conditions are listed as study groups in the Results and Figure legends.",
+    "evidence": [
+      {
+        "quote": "women with PTNL, iPTL, iPTL+CI, or PTL+AI",
+        "source": "Main text, Figure 1, Legend"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Fetal growth restriction and neonatal mortality are specifically investigated.",
+    "evidence": [
+      {
+        "quote": "The loss of Tregs induces fetal growth restriction",
+        "source": "Main text, Results"
+      },
+      {
+        "quote": "a subset of neonates born to Treg-depleted dams died before weaning age",
+        "source": "Main text, Discussion"
+      }
+    ]
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Fetal growth restriction",
+      "Neonatal mortality"
+    ],
+    "confidence": "high",
+    "reason": "These complications are discussed as outcomes of Treg depletion.",
+    "evidence": [
+      {
+        "quote": "The loss of maternal Tregs causes alterations in placental development... signs of fetal growth restriction",
+        "source": "Main text, Discussion"
+      }
+    ]
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Maternal body temperature",
+      "Maternal blood pressure",
+      "Maternal heart rate",
+      "Uterine artery pulsatility index",
+      "Fetal heart rate",
+      "Umbilical artery pulsatility index",
+      "Placental gene expression"
+    ],
+    "confidence": "high",
+    "reason": "Physiological and molecular measurements were explicitly taken from both the mother and fetus.",
+    "evidence": [
+      {
+        "quote": "Body temperature (B) and mean blood pressure (C)... maternal heart rate, and (F) uterine artery pulsatility index",
+        "source": "Main text, Figure 5, Legend"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Perinatology Research Branch (NICHD/NIH)",
+    "confidence": "high",
+    "reason": "The center is explicitly identified in the STAR Methods section.",
+    "evidence": [
+      {
+        "quote": "Human placental basal plate (decidua basalis) and chorioamniotic membrane (decidua parietalis) samples were obtained at the Perinatology Research Branch, an intramural program of the Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD)",
+        "source": "Main text, STAR Methods"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "USA",
+    "confidence": "high",
+    "reason": "The lead author's affiliation (Wayne State University) and the government agency (NICHD/NIH) are based in the United States.",
+    "evidence": [
+      {
+        "quote": "Wayne State University, Detroit, MI",
+        "source": "Main text, Author Affiliations (implied via PRB/Wayne State location)"
+      }
+    ]
+  }
+}

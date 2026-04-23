@@ -1,0 +1,37 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Wu Ji",
+  "Supervisor/Contact/Corresponding author email": "jiwu@sjtu.edu.cn",
+  "Main topic of the publication": "This study profiles messenger RNA, long non-coding RNA, and circular RNA (circRNA) expression in placentas from normal and severe pre-eclampsia (SPE) pregnancies to identify potential novel blood biomarkers for early pre-eclampsia, focusing on the role of hsa_circ_0036877.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "3rd",
+    "Term"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 24,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Pre-eclampsia",
+    "Severe pre-eclampsia"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "International Peace Maternity and Child Health Hospital of China Welfare Institute",
+  "Country where samples were collected": "China"
+}

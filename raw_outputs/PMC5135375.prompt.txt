@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC5135375 PMC5135375.1 5135375 5135375 27807143 10.1073/pnas.1612626113 201612626 1 PNAS Plus Biological Sciences Developmental Biology PNAS Plus HIF-KDM3A-MMP12 regulatory circuit ensures trophoblast plasticity and placental adaptations to hypoxia Plasticity and placental health Chakraborty Damayanti a b 1 Cui Wei a b 2 Rosario Gracy X. a b 3 Scott Regan L. a b Dhakal Pramod a b Renaud Stephen J. a b 4 Tachibana Makoto c Rumi M. A. Karim a b Mason Clifford W. a d Krieg Adam J. a d 5 Soares Michael J. a b d 1 a University of Kansas Medical Center KS b University of Kansas Medical Center KS c Tokushima University Japan d University of Kansas Medical Center KS 1 dchakraborty@kumc.edu msoares@kumc.edu Edited by R. Michael Roberts, University of Missouri–Columbia, Columbia, MO, and approved October 5, 2016 (received for review July 31, 2016) Author contributions: D.C. and M.J.S. designed research; D.C., W.C., G.X.R., R.L.S., and P.D. performed research; M.T. and C.W.M. contributed new reagents/analytic tools; D.C., S.J.R., M.A.K.R., A.J.K., and M.J.S. analyzed data; and D.C. and M.J.S. wrote the paper. 2 3 4 5 The authors declare no conflict of interest. 15 11 2016 2 11 2016 113 46 280088 E7212 E7221 15 05 2017 15 05 2017 07 12 2016 20 06 2025 PNAS Plus Significance Statements 113 46 15 11 2016 12904 12907 Proceedings of the National Academy of Sciences of the United States of America PMC5135301 Significance The hemochorial placenta is a dynamic structure endowed with responsibilities controlling the extraction of maternal resources, ensuring fetal development and preserving maternal health. A healthy placenta exhibits plasticity and can adapt to environmental challenges. Such adaptations can be executed through instructive actions on trophoblast stem cells, influencing their abilities to expand and differentiate into specialized cells that accommodate the challenge. Hypoxia, when appropriately timed, promotes invasive trophoblast-directed uterine spiral artery remodeling. Hypoxia activates hypoxia inducible factor-dependent expression of lysine demethylase 3A, modifying the histone landscape on key target genes, including matrix metallopeptidase 12, which acts to facilitate trophoblast invasion and uterine vascular remodeling. Plasticity and adaptations at the maternal–fetal interface safeguard placental development and the healthy progression of pregnancy. The hemochorial placenta develops from the coordinated multilineage differentiation of trophoblast stem (TS) cells. An invasive trophoblast cell lineage remodels uterine spiral arteries, facilitating nutrient flow, failure of which is associated with pathological conditions such as preeclampsia, intrauterine growth restriction, and preterm birth. Hypoxia plays an instructive role in influencing trophoblast cell differentiation and regulating placental organization. Key downstream hypoxia-activated events were delineated using rat TS cells and tested in vivo, using trophoblast-specific lentiviral gene delivery and genome editing. DNA microarray analyses performed on rat TS cells exposed to ambient or low oxygen and pregnant rats exposed to ambient or hypoxic conditions showed up-regulation of genes characteristic of an invasive/vascular remodeling/inflammatory phenotype. Among the shared up-regulated genes was matrix metallopeptidase 12 (MMP12). To explore the functional importance of MMP12 in trophoblast cell-directed spiral artery remodeling, we generated an Mmp12 Mmp12 Mmp12 Mmp12 placenta hypoxia trophoblast invasion epigenetics plasticity HHS | NIH | National Institute of Child Health and Human Development (NICHD) 100000071 HD020676 HHS | NIH | National Institute of Child Health and Human Development (NICHD) 100000071 HD079363 American Heart Association (AHA) 100000968 0725751Z pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

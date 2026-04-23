@@ -1,0 +1,348 @@
+[
+  {
+    "Supervisor/Contact/Corresponding author name": {
+      "answer": "Nardhy Gomez-Lopez",
+      "confidence": "high",
+      "reason": "Listed as the corresponding author in the author section and lead contact in STAR Methods.",
+      "evidence": [
+        {
+          "quote": "Nardhy Gomez-Lopez ... * nardhy.gomez-lopez@wayne.edu",
+          "source": "Main text, Author section"
+        },
+        {
+          "quote": "Further information and requests for resources and reagents should be directed to and will be fulfilled by the lead contact, Nardhy Gomez-Lopez (nardhy.gomez-lopez@wayne.edu)",
+          "source": "Main text, STAR Methods"
+        }
+      ]
+    },
+    "Supervisor/Contact/Corresponding author email": {
+      "answer": "nardhy.gomez-lopez@wayne.edu",
+      "confidence": "high",
+      "reason": "Directly stated in the author affiliations/contact section.",
+      "evidence": [
+        {
+          "quote": "nardhy.gomez-lopez@wayne.edu",
+          "source": "Main text, Author section"
+        }
+      ]
+    },
+    "Main topic of the publication": {
+      "answer": "Investigating the role of regulatory T cells (Tregs) in the pathophysiology of idiopathic preterm labor and adverse neonatal outcomes.",
+      "confidence": "high",
+      "reason": "The abstract and title explicitly define the research focus on Tregs and their reduction in idiopathic preterm labor.",
+      "evidence": [
+        {
+          "quote": "These findings provide mechanistic evidence supporting a role for Tregs in the pathophysiology of idiopathic preterm labor/birth and adverse neonatal outcomes.",
+          "source": "Main text, Summary"
+        }
+      ]
+    },
+    "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+      "answer": [
+        "3rd",
+        "Term",
+        "Premature"
+      ],
+      "confidence": "high",
+      "reason": "The study analyzes preterm labor (premature/3rd trimester) and term labor (Term) cases.",
+      "evidence": [
+        {
+          "quote": "Gomez-Lopez et al. provide evidence that Tregs modulate immune responses in the third period of pregnancy.",
+          "source": "Main text, In Brief"
+        },
+        {
+          "quote": "we collected decidual tissues from women with PTL and birth or term labor/birth (TIL), as well as gestational age-matched non-labor controls (preterm without labor [PTNL] or term without labor [TNL])",
+          "source": "Main text, Results"
+        }
+      ]
+    },
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Offspring birthweight is provided in Supplemental Tables S1 and S2.",
+      "evidence": [
+        {
+          "quote": "Birthweight (grams; median [IQR]) ... 2122.5 (1773.8-2201.3) ... 3205 (3058.8-3551.3)",
+          "source": "Supplemental Table 1"
+        },
+        {
+          "quote": "Birthweight (grams; median [IQR])a 1522.5 (951.8- 2202.5) ... 3422.5 (3037.5-3670)",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Gestational Age at delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Gestational age at delivery is reported for various study groups in Supplemental Tables S1 and S2.",
+      "evidence": [
+        {
+          "quote": "Gestational age at delivery (weeks; median [IQR]) ... 35.5 (34.5-35.9) ... 40.1 (39.7-40.6)",
+          "source": "Supplemental Table 1"
+        },
+        {
+          "quote": "Gestational age at delivery (weeks; median [IQR]) ... 32.4 (28.9-34.7) ... 40.7 (39.1-41.1)",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "GA at delivery (weeks)": {
+      "answer": "32.4 - 40.7",
+      "confidence": "high",
+      "reason": "Medians across the various cohorts range from 32.4 weeks (PTNL) to 40.7 weeks (TIL+AI).",
+      "evidence": [
+        {
+          "quote": "32.4 (28.9-34.7) ... 35.1 (34.2-36.2) ... 35.1 (31.9-36.4) ... 29.3 (22-31.9) ... 39.1 (39-39.3) ... 39 (38.6-40.3) ... 39.1 (38.2-40) ... 40.7 (39.1-41.1)",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Gestational Age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "medium",
+      "reason": "Placental and decidual samples were obtained at the time of delivery; therefore, the gestational age at collection corresponds to the GA at delivery.",
+      "evidence": [
+        {
+          "quote": "Human placental basal plate (decidua basalis) and chorioamniotic membrane (decidua parietalis) samples were obtained ... from women with PTL and birth or term labor/birth (TIL)",
+          "source": "Main text, Results"
+        }
+      ]
+    },
+    "GA at sample collection (weeks)": {
+      "answer": "32.4 - 40.7",
+      "confidence": "medium",
+      "reason": "GA at delivery is provided in the supplement, and samples were collected at the time of delivery.",
+      "evidence": [
+        {
+          "quote": "Gestational age at delivery (weeks; median [IQR]) ... 32.4 (28.9- 34.7) ... 40.7 (39.1- 41.1)",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Sex of Offspring Provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Offspring sex was not explicitly reported in the text or supplementary tables.",
+      "evidence": []
+    },
+    "Parity provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Supplemental Tables S1 and S2 provide primiparity data.",
+      "evidence": [
+        {
+          "quote": "Primiparity ... 16.7% (1/6) ... 12.5% (1/8)",
+          "source": "Supplemental Table 1"
+        },
+        {
+          "quote": "Primiparity ... 21.4% (6/28) ... 28.6% (4/14)",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Gravidity provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Only primiparity (parity) was explicitly reported, not total number of pregnancies (gravidity).",
+      "evidence": []
+    },
+    "Number of offspring per pregnancy provided (yes/no)": {
+      "answer": "No",
+      "confidence": "medium",
+      "reason": "The study does not explicitly specify if all human pregnancies were singletons, though it is usually the default in such studies.",
+      "evidence": []
+    },
+    "Self-reported race/ethnicity of mother provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Supplemental Tables S1 and S2 categorize mothers by Black, White, Asian, Hispanic, and Other.",
+      "evidence": [
+        {
+          "quote": "Race/Ethnicity ... Black ... White ... Asian ... Hispanic ... Other",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Genetic ancestry or genetic strain provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Detailed genetic strain information is provided for the mouse models used.",
+      "evidence": [
+        {
+          "quote": "B6.129(Cg)-Foxp3 tm3(DTR/GFP)Ayr Foxp3 DTR EGFP",
+          "source": "Main text, Experimental Model and Subject Details"
+        }
+      ]
+    },
+    "Maternal Height provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Maternal height is not reported.",
+      "evidence": []
+    },
+    "Maternal Pre-pregnancy Weight provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Pre-pregnancy weight is not reported; BMI at collection/delivery is provided instead.",
+      "evidence": []
+    },
+    "Paternal Height provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal height is not mentioned.",
+      "evidence": []
+    },
+    "Paternal Weight provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal weight is not mentioned.",
+      "evidence": []
+    },
+    "Maternal age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Maternal age is provided in Supplemental Tables S1 and S2.",
+      "evidence": [
+        {
+          "quote": "Maternal age (years; median [IQR]) ... 28.5 (22.3-34.8) ... 27.5 (25.3-33.3)",
+          "source": "Supplemental Table 1"
+        }
+      ]
+    },
+    "Paternal age at sample collection provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal age is not reported.",
+      "evidence": []
+    },
+    "Samples from pregnancy complications collected": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Samples were specifically collected from cases of idiopathic preterm labor (iPTL) and preterm labor with intra-amniotic inflammation (PTL+AI).",
+      "evidence": [
+        {
+          "quote": "we collected decidual tissues from women with PTL and birth or term labor/birth (TIL)",
+          "source": "Main text, Results"
+        },
+        {
+          "quote": "iPTL = idiopathic preterm labor; PTL+AI = preterm labor associated with intra-amniotic inflammation/infection",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Mode of delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Mode of delivery (Cesarean section rate) is provided in Supplemental Tables S1 and S2.",
+      "evidence": [
+        {
+          "quote": "Cesarean section ... 50% (3/6) ... 37.5% (3/8)",
+          "source": "Supplemental Table 1"
+        }
+      ]
+    },
+    "Pregnancy complications in data set (list)": {
+      "answer": [
+        "Idiopathic preterm labor (iPTL)",
+        "Preterm labor associated with intra-amniotic inflammation/infection (PTL+AI)",
+        "Chronic inflammatory lesions of the placenta (CI)",
+        "Acute inflammatory lesions of the placenta (AI)"
+      ],
+      "confidence": "high",
+      "reason": "These complications are listed as cohort identifiers in the supplement and text.",
+      "evidence": [
+        {
+          "quote": "PTNL = preterm without labor; iPTL = idiopathic preterm labor; PTL+AI = preterm labor associated with intra-amniotic inflammation/infection; TNL = term without labor; TIL = term with labor; CI = chronic inflammatory lesions of the placenta; AI = acute inflammatory lesions of the placenta.",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Fetal complications listed (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Fetal growth restriction and inflammatory responses (funisitis) are mentioned.",
+      "evidence": [
+        {
+          "quote": "fetuses of Treg-depleted dams exhibited signs of fetal growth restriction",
+          "source": "Main text, Results"
+        },
+        {
+          "quote": "Fetal inflammatory response (moderate/severe acute funisitis)",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Fetal complications in data set (list)": {
+      "answer": [
+        "Fetal growth restriction (FGR)",
+        "Neonatal mortality",
+        "Acute funisitis",
+        "Fetal inflammatory response"
+      ],
+      "confidence": "high",
+      "reason": "These complications are explicitly documented in the results and tables.",
+      "evidence": [
+        {
+          "quote": "fetuses of Treg-depleted dams exhibited signs of fetal growth restriction",
+          "source": "Main text, Results"
+        },
+        {
+          "quote": "a subset of neonates born to Treg-depleted dams died before weaning age.",
+          "source": "Main text, Results"
+        },
+        {
+          "quote": "Fetal inflammatory response (moderate/severe acute funisitis)",
+          "source": "Supplemental Table 2"
+        }
+      ]
+    },
+    "Other Phenotypes Provided (list)": {
+      "answer": [
+        "Maternal BMI",
+        "Maternal Body temperature",
+        "Maternal Mean blood pressure",
+        "Maternal Heart rate",
+        "Uterine artery pulsatility index",
+        "Fetal Heart rate",
+        "Umbilical artery pulsatility index",
+        "Placental lesions (acute chorioamnionitis)",
+        "Placental weight",
+        "Fetal weight"
+      ],
+      "confidence": "high",
+      "reason": "Various maternal and fetal physiological and clinical parameters are reported in the tables and figures.",
+      "evidence": [
+        {
+          "quote": "Body mass index (kg/m2; median [IQR])",
+          "source": "Supplemental Table 2"
+        },
+        {
+          "quote": "Body temperature (B) and mean blood pressure (C) ... maternal heart rate (E) ... uterine artery pulsatility index (F) ... fetal heart rate (H) ... umbilical artery pulsatility index (I)",
+          "source": "Main text, Figure 5 Legend"
+        }
+      ]
+    },
+    "Hospital/Center where samples were collected": {
+      "answer": "Perinatology Research Branch (NICHD/NIH/Wayne State University)",
+      "confidence": "high",
+      "reason": "The STAR Methods section specifies the location of sample collection.",
+      "evidence": [
+        {
+          "quote": "Human placental basal plate (decidua basalis) and chorioamniotic membrane (decidua parietalis) samples were obtained at the Perinatology Research Branch, an intramural program of the Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD), National Institutes of Health (NIH), U. S. Department of Health and Human Services (DHHS); and Wayne State University",
+          "source": "Main text, STAR Methods"
+        }
+      ]
+    },
+    "Country where samples were collected": {
+      "answer": "USA",
+      "confidence": "high",
+      "reason": "Wayne State University and the PRB/NICHD are located in the United States (Detroit, MI).",
+      "evidence": [
+        {
+          "quote": "Perinatology Research Branch ... Wayne State University",
+          "source": "Main text, STAR Methods"
+        }
+      ]
+    }
+  }
+]

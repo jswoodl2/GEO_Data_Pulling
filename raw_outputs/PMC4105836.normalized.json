@@ -1,0 +1,41 @@
+{
+  "Supervisor/Contact/Corresponding author name": "JianFeng Chen",
+  "Supervisor/Contact/Corresponding author email": "jfchen@sibcb.ac.cn",
+  "Main topic of the publication": "This paper investigates the molecular mechanisms underlying intrahepatic cholestasis of pregnancy (ICP) by characterizing the whole-genome expression profiles of placentas from healthy women and women diagnosed with ICP, revealing involvement of multiple molecular pathways in blood vessel formation and inflammation.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "2nd",
+    "3rd"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 32.0,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Intrahepatic cholestasis of pregnancy (ICP)"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Maternal pruritus",
+    "deranged liver function",
+    "elevated serum level of bile acids"
+  ],
+  "Hospital/Center where samples were collected": "Shanghai First Maternity and Infant Hospital, Tongji University School of Medicine",
+  "Country where samples were collected": "China",
+  "PMCID": "PMC4105836"
+}

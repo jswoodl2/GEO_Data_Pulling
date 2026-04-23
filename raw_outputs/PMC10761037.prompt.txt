@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Autophagy Autophagy 1359 autoph Autophagy 1554-8627 1554-8635 Taylor & Francis PMC10761037 PMC10761037.1 10761037 10761037 37584546 10.1080/15548627.2023.2247747 2247747 1 Version of Record Research Article Research Paper The presence of blastocyst within the uteri facilitates lumenal epithelium transformation for implantation via upregulating lysosome proteostasis activity P. WANG ET AL. AUTOPHAGY Wang Peike a b Du Shuailin b Guo Chuanhui a b Ni Zhangli a b Huang Ziying b Deng Na b Bao Haili b Deng Wenbo b Lu Jinhua b Kong Shuangbo b Zhang Hua a Wang Haibin b a China Agricultural University Beijing China b The First Affiliated Hospital of Xiamen University Xiamen Fujian China CONTACT Haibin Wang haibin.wang@vip.163.com The First Affiliated Hospital of Xiamen University, Xiamen University Xiamen Fujian 361102 China Hua Zhang huazhang@cau.edu.cn China Agricultural University Beijing 100193 China Shuangbo Kong shuangbo_kong@163.com The First Affiliated Hospital of Xiamen University, Xiamen University Xiamen Fujian 361102 China This article was originally published with errors, which have now been corrected in the online version. Please see Correction ( https://doi.org/10.1080/15548627.2023.2260140 22 8 2023 2024 20 1 452157 58 75 22 08 2024 22 08 2024 03 01 2024 20 05 2025 Integra 22 12 2023 Integra 22 12 2023 18 1 2023 30 7 2023 08 8 2023 © 2023 Informa UK Limited, trading as Taylor & Francis Group 2023 Informa UK Limited, trading as Taylor & Francis Group Correction 21 6 19 9 2023 vii vii Autophagy 10.1080/15548627.2023.2260140 PMC12087479 37725507 ABSTRACT The mammalian endometrium is covered by the lumenal epithelium (Le), which directly interacts with the blastocyst and plays an important role in the establishment of reciprocal crosstalk between the embryo and receptive uterus during implantation. However, the effect of the blastocyst on uterine differentiation during the window of receptivity is far from well understood. Through transcriptomic profiling of the uterine Le isolated by laser capture microdissection (LCM), it was demonstrated that global gene expression changes occurred in Le between pseudopregnant mice without embryos and pregnant mice with embryos. Some differentially expressed genes, including upregulated Areg Ihh Lifr Msx1 Pgr Gata2 Abbreviations ACTB: actin beta; AREG: amphiregulin; ATP6V0A4: ATPase, H + 1 2 4 KEYWORDS Blastocyst embryo implantation IGF2 lysosome uterine lumenal epithelium National Key Research and Development Program of China 2022YFC2702500 and 2021YFC2700302 National Natural Science Foundation of China 10.13039/501100001809 82222026 and 81971388 National Natural Science Foundation of China 10.13039/501100001809 82288102 81830045 82030040 National Natural Science Foundation of China 10.13039/501100001809 (82288102 81830045 82030040 82222026 and 81971388) The work was supported by the National Key Research and Development Program of China [2022YFC2702500 and 2021YFC2700302]; National Natural Science Foundation of China (82288102, 81830045, 82030040, 82222026 and 81971388). pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

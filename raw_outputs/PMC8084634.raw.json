@@ -1,0 +1,39 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Shelli F. Farhadian",
+  "Supervisor/Contact/Corresponding author email": "shelli.farhadian@yale.edu",
+  "Main topic of the publication": "This study investigates the susceptibility of the human placenta to SARS-CoV-2 infection and the placental response to maternal respiratory SARS-CoV-2 infection at term, finding that maternal infection is associated with immune activation at the maternal-fetal interface even without detectable virus in the placenta.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "2nd",
+    "Term"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 38,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 22.857,
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "Yes",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Hypertension",
+    "Preeclampsia",
+    "Diabetes"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "Yale New Haven Hospital",
+  "Country where samples were collected": "United States"
+}

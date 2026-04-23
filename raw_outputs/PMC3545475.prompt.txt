@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Cell Stem Cell Cell Stem Cell 319 nihpa Cell stem cell 1934-5909 1875-9777 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC3545475 PMC3545475.1 3545475 3545475 NIHMS420701 23122293 10.1016/j.stem.2012.07.018 NIHMS420701 NIHPA420701 1 Article The transcriptional landscape of hematopoietic stem cell ontogeny McKinney-Freeman Shannon 1 2 * Cahan Patrick 1 * Li Hu * 3 4 Lacadie Scott A. 1 Huang Hsuan-Ting 1 Curran Matthew 1 Loewer Sabine 1 Naveiras Olaia 1 Kathrein Katie L. 1 Konantz Martina 5 Langdon Erin M. 1 Lengerke Claudia 5 Zon Leonard I. 1 6 Collins James J. 3 4 6 Daley George Q. 1 6 7 1 2 3 4 5 6 7 * These authors contributed equally to this work 2 11 2012 11 5 218207 701 714 26 11 2012 02 05 2013 02 05 2013 10 03 2013 05 06 2024 © 2012 ll Press. All rights reserved. 2012 Transcriptome analysis of adult hematopoietic stem cells (HSC) and their progeny has revealed mechanisms of blood differentiation and leukemogenesis, but a similar analysis of HSC development is lacking. Here, we acquired the transcriptomes of developing HSC purified from >2500 murine embryos and adult mice. We found that embryonic hematopoietic elements clustered into three distinct transcriptional states characteristic of the definitive yolk sac, HSCs undergoing specification, and definitive HSCs. We applied a network biology-based analysis to reconstruct the gene regulatory networks of sequential stages of HSC development and functionally validated candidate transcriptional regulators of HSC ontogeny by morpholino-mediated knock-down in zebrafish embryos. Moreover, we found that HSCs from in vitro differentiated embryonic stem cells closely resemble definitive HSC, yet lack a Notch-signaling signature, likely accounting for their defective lymphopoiesis. Our analysis and web resource ( http://hsc.hms.harvard.edu National Heart, Lung, and Blood Institute : NHLBI U01 HL100001 || HL National Heart, Lung, and Blood Institute : NHLBI RC2 HL102815 || HL National Institute of Diabetes and Digestive and Kidney Diseases : NIDDK R24 DK092760 || DK National Institute of Diabetes and Digestive and Kidney Diseases : NIDDK R01 DK070055 || DK National Institute of Diabetes and Digestive and Kidney Diseases : NIDDK R01 DK059279 || DK Howard Hughes Medical Institute : || HHMI_ pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Development Development 864 develop DEV Development (Cambridge, England) 0950-1991 1477-9129 Company of Biologists PMC8935213 PMC8935213.1 8935213 8935213 35050308 10.1242/dev.200013 DEV200013 1 Version of Record Human Development Reproductive Biology Human Development Research Article Immune landscape of human placental villi using single-cell analysis Toothaker Jessica M. 1 2 Olaloye Oluwabunmi 2 McCourt Blake T. 2 McCourt Collin C. 3 Silva Tatiana N. 2 Case Rebecca M. 3 Liu Peng 4 Yimlamai Dean 2 http://orcid.org/0000-0002-5447-1014 Tseng George 4 http://orcid.org/0000-0003-4804-5497 Konnikova Liza 1 2 5 6 * 1 Department of Immunology University of Pittsburgh Pittsburgh, PA USA 2 Department of Pediatrics Yale University New Haven, CT USA 3 Department of Pediatrics Children's Hospital of Pittsburgh of UPMC Pittsburgh, PA USA 4 Department of Biostatistics University of Pittsburgh Pittsburgh, PA USA 5 Department of Obstetrics, Gynecology and Reproductive Sciences Yale University New Haven, CT USA 6 Program in Human and Translational Immunology Yale University New Haven, CT USA * liza.konnikova@yale.edu Handling Editor: Florent Ginhoux Competing interests The authors declare no competing or financial interests. 15 4 2022 18 2 2022 149 8 394054 Special Issue: The Immune System in Development and Regeneration dev200013 19 7 2021 30 12 2021 18 02 2023 18 02 2023 30 03 2022 23 04 2024 © 2022. Published by The Company of Biologists Ltd 2022 http://www.biologists.com/user-licence-1-1/ ABSTRACT Maintenance of a healthy pregnancy is reliant on a successful balance between the fetal and maternal immune systems. Although the maternal mechanisms responsible have been well studied, those used by the fetal immune system remain poorly understood. Using suspension mass cytometry and various imaging modalities, we report a complex immune system within the mid-gestation (17-23 weeks) human placental villi (PV). Consistent with recent reports in other fetal organs, T cells with memory phenotypes, although rare in abundance, were detected within the PV tissue and vasculature. Moreover, we determined that T cells isolated from PV samples may be more proliferative after T cell receptor stimulation than adult T cells at baseline. Collectively, we identified multiple subtypes of fetal immune cells within the PV and specifically highlight the enhanced proliferative capacity of fetal PV T cells. Summary: KEY WORDS Placenta Immune cells Pregnancy T cells National Institutes of Health http://dx.doi.org/10.13039/100000002 5T32AI089453-10 R21HD102565 R21TR002639 University of Pittsburgh http://dx.doi.org/10.13039/100007921 University of Pittsburgh http://dx.doi.org/10.13039/100007921 Yale University http://dx.doi.org/10.13039/100005326 Binational Science Foundation 2019075 National Institutes of Health http://dx.doi.org/10.13039/100000002 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

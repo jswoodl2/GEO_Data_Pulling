@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Reprod Sci Reprod Sci 869 artmisc Reproductive Sciences 1933-7191 1933-7205 pmc-is-collection-domain yes pmc-collection-title Other Publishers PMC7255550 PMC7255550.2 7255550 7539821 32046454 10.1007/s43032-019-00101-9 101 2 Original Article Upregulation of HLA-Class I and II in Placentas Diagnosed with Villitis of Unknown Etiology Enninga Elizabeth Ann L. Enninga.elizabethann@mayo.edu 1 Leontovich Alexey A. Leontovich.alexey@mayo.edu 2 Fedyshyn Bohdana Fedyshyn.bohdana@mayo.edu 1 Wakefield Laurie Wakefield.laurie@mayo.edu 3 Gandhi Manish Gandihi.manish@mayo.edu 3 Markovic Svetomir N. Markovic.svetomir@mayo.edu 4 Ruano Rodrigo Ruano.rodrigo@mayo.edu 1 Kerr Sarah E. kerr.sarah@mayo.edu 5 1 grid.66875.3a 0000 0004 0459 167X Department of Obstetrics and Gynecology, Mayo Clinic, 2 grid.66875.3a 0000 0004 0459 167X Department of Health Science Research, Mayo Clinic, 3 grid.66875.3a 0000 0004 0459 167X Department of Transfusion Medicine, Mayo Clinic, 4 grid.66875.3a 0000 0004 0459 167X Department of Immunology, Mayo Clinic, 5 grid.66875.3a 0000 0004 0459 167X Department of Laboratory Pathology, Mayo Clinic, 6 1 2020 5 2020 27 5 366501 1129 1138 23 5 2019 17 9 2019 07 10 2020 07 10 2020 08 02 2024 7255550 10.1007/s43032-019-00101-9 NIHMS1548331 1 06 01 2020 7539821 10.1007/s43032-019-00101-9 2 06 01 2020 © Society for Reproductive Investigation 2020 The placenta utilizes many mechanisms to protect the haploidentical fetus from recognition by the maternal immune system. However, in cases of villitis of unknown etiology (VUE), maternal lymphocytes gain access into the placenta, causing significant health risks for the fetus. Evidence suggests that VUE is a rejection response between the mother and the haploidentical fetus. Therefore, we profiled human leukocyte antigen (HLA), an important predictor of transplant rejection, in VUE using placental tissue from ten patients with VUE and ten gestational age matched controls. Placentas were stained using novel multiplexed immunofluorescence (MxIF) to investigate morphology and HLA classes I and II. Gene expression was evaluated by microarray, and where available, tissue typing of mother/baby pairs was completed to determine HLA type. MxIF demonstrated strong CD8+ T cell infiltration and HLA class I staining both the distal and stem villi of VUE placentas. Compared to controls, VUE cases had significantly higher expression of HLA class II mRNA and pathway analysis demonstrated that 40% of the differentially expressed genes in VUE are related to tissue rejection. The data suggest that VUE resembles a rejection response between the mother and the fetus. It remains unknown what initiates immune recognition and why some mothers appear to be at higher risk for developing this condition than others. Understanding this etiology will be critical for developing effective interventions or prevention strategies during pregnancy. Electronic supplementary material The online version of this article (10.1007/s43032-019-00101-9) contains supplementary material, which is available to authorized users. Keywords Placenta HLA Villitis Inflammation Rejection pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes issue-copyright-statement © Society for Reproductive Investigation 2020
+---

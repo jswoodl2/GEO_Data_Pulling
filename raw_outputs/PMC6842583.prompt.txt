@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC6842583 PMC6842583.1 6842583 6842583 31636193 10.1073/pnas.1911362116 201911362 1 Biological Sciences Developmental Biology Dynamics of trophoblast differentiation in peri-implantation–stage human embryos West Rachel C. a 1 Ming Hao b 1 Logsdon Deirdre M. a 1 Sun Jiangwen c Rajput Sandeep K. a Kile Rebecca A. a Schoolcraft William B. a Roberts R. Michael d e 2 Krisher Rebecca L. a Jiang Zongliang b 2 Yuan Ye a 2 a Colorado Center for Reproductive Medicine CO b Louisiana State University LA c Old Dominion University VA d University of Missouri MO e University of Missouri MO 2 robertsrm@missouri.edu zjiang@agcenter.lsu.edu yyuan@flcolo.com Contributed by R. Michael Roberts, September 12, 2019 (sent for review July 3, 2019; reviewed by Graham J. Burton, Susan J. Fisher, and Hongmei Wang) Author contributions: Z.J. and Y.Y. designed research; R.C.W., H.M., D.M.L, S.K.R., R.A.K., Z.J., and Y.Y. performed research; W.B.S. contributed resources; W.B.S. and R.L.K. contributed project administration; R.C.W., H.M., J.S., S.K.R., Z.J., and Y.Y. analyzed data; and R.C.W., H.M., D.M.L., R.M.R., R.L.K., Z.J., and Y.Y. wrote the paper. Reviewers: G.J.B., University of Cambridge; S.J.F., University of California, San Francisco; and H.W., Chinese Academy of Sciences. 1 The authors declare no competing interest. 5 11 2019 21 10 2019 116 45 345394 22635 22644 21 04 2020 21 04 2020 16 11 2019 21 04 2020 2019 https://www.pnas.org/site/aboutpnas/licenses.xhtml Published under the PNAS license In This Issue 116 45 5 11 2019 22411 22412 Proceedings of the National Academy of Sciences of the United States of America PMC6842609 Significance The mechanisms that lead to establishment of pregnancy and formation of a functional placenta during early human development are poorly understood due to ethical and technical constraints limiting research, yet this period is when many pregnancies fail and placental pathologies are most likely initiated. We cultured donated human embryos to days 8, 10, and 12 postfertilization and, for each stage, performed single-cell RNA sequencing on the trophoblast cells that compose the early placenta and enclose the embryo proper as it implants. Over the 5 d of culture, 2 cell lineages emerged from a progenitor stem cell population. One was syncytial and produced placental hormones. The second became motile and expressed genes associated with the innate immune system and invasion. Single-cell RNA sequencing of cells from cultured human blastocysts has enabled us to define the transcriptomic landscape of placental trophoblast (TB) that surrounds the epiblast and associated embryonic tissues during the enigmatic day 8 (D8) to D12 peri-implantation period before the villous placenta forms. We analyzed the transcriptomes of 3 early placental cell types, cytoTB (CTB), syncytioTB (STB), and migratoryTB (MTB), picked manually from cultured embryos dissociated with trypsin and were able to follow sublineages that emerged from proliferating CTB at the periphery of the conceptus. A unique form of CTB with some features of STB was detectable at D8, while mature STB was at its zenith at D10. A form of MTB with a mixed MTB/CTB phenotype arose around D10. By D12, STB generation was in decline, CTB had entered a new phase of proliferation, and mature MTB cells had begun to move from the main body of the conceptus. Notably, the MTB transcriptome at D12 indicated enrichment of transcripts associated with IFN signaling, migration, and invasion and up-regulation of HLA-C, HLA-E, and HLA-G. The STB, which is distinct from the STB of later villous STB, had a phenotype consistent with intense protein export and placental hormone production, as well as migration and invasion. The studies show that TB associated with human embryos is in rapid developmental flux during peri-implantation period when it must invade, signal robustly to the mother to ensure that the pregnancy continues, and make first contact with the maternal immune system. single-cell RNA sequencing transcriptome interferon human endogenous retroviruses pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes c-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

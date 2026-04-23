@@ -1,0 +1,43 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Ganesh Santhi K.",
+  "Supervisor/Contact/Corresponding author email": "sganesh@med.umich.edu",
+  "Main topic of the publication": "This study analyzes placental transcriptomes in pregnancies complicated by preeclampsia (PreE) and superimposed preeclampsia on chronic hypertension (SI) to identify distinct gene expression profiles and refine the classification of SI versus PreE in the absence of chronic hypertension.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Preeclampsia with severe features",
+    "Chronic hypertension",
+    "Preeclampsia superimposed on chronic hypertension"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Fetal growth restriction"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "BMI",
+    "Mode of delivery"
+  ],
+  "Hospital/Center where samples were collected": "University of Michigan Von Voigtlander Women’s Hospital",
+  "Country where samples were collected": "United States"
+}

@@ -1,0 +1,40 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Soumen Paul",
+  "Supervisor/Contact/Corresponding author email": "spaul2@kumc.edu",
+  "Main topic of the publication": "This study discovers that WW domain containing transcription regulator 1 (WWTR1), a transcription cofactor and a component of the conserved Hippo signaling pathway, optimizes trophoblast progenitor self-renewal and is essential for its differentiation into the invasive extravillous trophoblast cell lineage. The findings establish WWTR1 as a critical regulator for success in human placentation and progression of a healthy pregnancy.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 28.0,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 6.0,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Preterm birth",
+    "IUGR",
+    "PE"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "Mount Sinai Hospital, University of Kansas Medical Center",
+  "Country where samples were collected": "Canada",
+  "PMCID": "PMC9457323"
+}

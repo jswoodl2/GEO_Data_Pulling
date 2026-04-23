@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Transl Res Transl Res 319 nihpa Translational research : the journal of laboratory and clinical medicine 1931-5244 1878-1810 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC10524625 PMC10524625.319 10524625 10524625 NIHMS1904695 37121539 10.1016/j.trsl.2023.04.004 NIHMS1904695 NIHPA1904695 319 Article A key role for NLRP3 signaling in preterm labor and birth driven by the alarmin S100B Galaz Jose a b c # Motomura Kenichiro a b # Romero Roberto a d e f g Liu Zhenjie a b Garcia-Flores Valeria a b Tao Li a b Xu Yi a b Done Bogdan a b Arenas-Hernandez Marcia a b Kanninen Tomi a b Farias-Jofre Marcelo a b c Miller Derek a b Tarca Adi L. a b h Gomez-Lopez Nardhy a b i * a Eunice Kennedy Shriver b c d e f g h i # These authors contributed equally AUTHOR CONTRIBUTIONS JG: KM: RR: ZL: VGF: LT: YX: MAH BD: TK: MF-J: DM: ALT: NGL: * Address correspondence to: nardhy.gomez-lopez@wayne.edu ngomezlo@med.wayne.edu DECLARATION OF INTERESTS The authors declare no competing interests. The authors have read the journal’s policy on disclosure of potential conflicts of interest. 9 2023 28 4 2023 259 446078 46 61 11 06 2023 01 09 2024 01 09 2024 28 09 2023 21 09 2024 Preterm birth remains the leading cause of neonatal morbidity and mortality worldwide. A substantial number of spontaneous preterm births occur in the context of sterile intra-amniotic inflammation, a condition that has been mechanistically proven to be triggered by alarmins. However, sterile intra-amniotic inflammation still lacks treatment. The NLRP3 inflammasome has been implicated in sterile intra-amniotic inflammation; yet, its underlying mechanisms, as well as the maternal and fetal contributions to this signaling pathway, are unclear. Here, by utilizing a translational and clinically relevant model of alarmin-induced preterm labor and birth in Nlrp3 −/− Nlrp3 Nlrp3 Nlrp3 sterile intra-amniotic inflammation inflammasome prematurity fetus neonate preterm birth parturition pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

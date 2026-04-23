@@ -1,0 +1,302 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Julia E Rager",
+    "confidence": "high",
+    "reason": "Listed as the corresponding author in the author list and contact information.",
+    "evidence": [
+      {
+        "quote": "Julia E Rager a, c, e, *",
+        "source": "Main text, Author list"
+      },
+      {
+        "quote": "* Corresponding Author : jrager@unc.edu",
+        "source": "Main text, Author information"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "jrager@unc.edu",
+    "confidence": "high",
+    "reason": "Explicitly provided in the corresponding author information.",
+    "evidence": [
+      {
+        "quote": "jrager@unc.edu",
+        "source": "Main text, Author information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Evaluation of genome-wide mRNA and miRNA expression profiles in placenta tissues associated with infant birth weight in a cohort of extremely low gestational age newborns.",
+    "confidence": "high",
+    "reason": "Stated in the abstract and title as the primary focus of the research.",
+    "evidence": [
+      {
+        "quote": "This study leveraged a robust dataset based on 390 infants born at low gestational age (ranged 23 to 27 weeks) to evaluate genome-wide expression profiles of both mRNAs and miRNAs in placenta tissues and relate these to infant BW.",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "Premature",
+    "confidence": "high",
+    "reason": "The study specifically focuses on the Extremely Low Gestational Age Newborns (ELGAN) cohort, born between 23 and 27 weeks.",
+    "evidence": [
+      {
+        "quote": "The study sample was derived from the ELGAN cohort, comprising of pregnancies that ended in live births prior to completing 28 weeks of gestation",
+        "source": "Main text, Materials and Methods, 2.1"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Table 1 lists birth weight mean and range.",
+    "evidence": [
+      {
+        "quote": "Newborn birth weight (grams) 831.4 [420\u20131418]",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Table 1 lists the mean and range for gestational age at delivery.",
+    "evidence": [
+      {
+        "quote": "Gestational age (weeks) 26 [23\u201327]",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": 26,
+    "confidence": "high",
+    "reason": "Table 1 provides a mean gestational age of 26 weeks for the cohort.",
+    "evidence": [
+      {
+        "quote": "Gestational age (weeks) 26 [23\u201327]",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Placenta samples were collected immediately after delivery.",
+    "evidence": [
+      {
+        "quote": "Placenta samples were collected immediately after each delivery",
+        "source": "Main text, Materials and Methods, 2.2"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": 26,
+    "confidence": "high",
+    "reason": "Samples were collected at delivery, which occurred at a mean GA of 26 weeks.",
+    "evidence": [
+      {
+        "quote": "Gestational age (weeks) 26 [23\u201327]",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The number and percentage of male and female infants are provided in Table 1.",
+    "evidence": [
+      {
+        "quote": "Newborn sex Male 205 (52.6) Female 185 (47.4)",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Parity is not mentioned in the text or supplementary tables.",
+    "evidence": []
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Gravidity is not reported in the paper.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Table 1 distinguishes between single and multiple-gestation pregnancies.",
+    "evidence": [
+      {
+        "quote": "Multiple-gestation pregnancy No 287 (73.6) Yes 103 (26.4)",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Maternal race is categorized as White or Non-white in Table 1.",
+    "evidence": [
+      {
+        "quote": "Maternal race White 237 (61.4) Non-white 149 (38.6)",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Only self-reported race is provided, not genetic ancestry.",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Only BMI categories are provided, which do not explicitly list height.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal weight is only reported as BMI categories.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No paternal characteristics are provided.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No paternal characteristics are provided.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Mean and range for maternal age are provided in Table 1.",
+    "evidence": [
+      {
+        "quote": "Maternal age (years) 29 [14\u201345]",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No paternal data was collected or reported.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study utilized the ELGAN cohort, which consists of extremely premature births, often associated with pregnancy complications like placental insufficiency.",
+    "evidence": [
+      {
+        "quote": "Changes in BW are influenced by multiple factors that can impact placental function... as well as pregnancy complications association with placental insufficiency",
+        "source": "Main text, Introduction"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "While delivery occurs, the specific mode (vaginal vs. cesarean) is not detailed in the paper.",
+    "evidence": []
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Extremely premature delivery",
+      "Multiple-gestation pregnancy",
+      "Maternal smoke exposure",
+      "Underweight BMI",
+      "Overweight/Obese BMI"
+    ],
+    "confidence": "high",
+    "reason": "Subject characteristics list several factors typically classified as complications or high-risk indicators.",
+    "evidence": [
+      {
+        "quote": "Multiple-gestation pregnancy",
+        "source": "Main text, Results, Table 1"
+      },
+      {
+        "quote": "Smoke exposure",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Low birth weight and extremely low gestational age are inherent to the study cohort.",
+    "evidence": [
+      {
+        "quote": "All 390 subjects were considered to have low BW as expected for children born extremely preterm.",
+        "source": "Main text, Results, 3.1"
+      }
+    ]
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Low birth weight",
+      "Extremely low gestational age"
+    ],
+    "confidence": "high",
+    "reason": "The defining characteristics of the ELGAN cohort include extreme prematurity and accompanying low birth weight.",
+    "evidence": [
+      {
+        "quote": "390 infants born at low gestational age (ranged 23 to 27 weeks)",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Maternal age",
+      "Maternal race",
+      "Maternal BMI",
+      "Maternal smoke exposure",
+      "Maternal educational attainment",
+      "Newborn sex",
+      "Birth weight",
+      "Gestational age"
+    ],
+    "confidence": "high",
+    "reason": "All listed phenotypes are summarized in Table 1.",
+    "evidence": [
+      {
+        "quote": "Table 1. Subject Characteristics.",
+        "source": "Main text, Results, Table 1"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "14 participating institutions in the ELGAN study",
+    "confidence": "high",
+    "reason": "The methods section states subjects were recruited from 14 participating institutions.",
+    "evidence": [
+      {
+        "quote": "pregnant women scheduled to give birth at one of 14 participating institutions were recruited for participation.",
+        "source": "Main text, Materials and Methods, 2.1"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "USA",
+    "confidence": "high",
+    "reason": "The affiliations and the ELGAN study context are based in the United States.",
+    "evidence": [
+      {
+        "quote": "University of North Carolina at Chapel Hill, Chapel Hill, NC, USA",
+        "source": "Main text, Author Affiliations"
+      }
+    ]
+  }
+}

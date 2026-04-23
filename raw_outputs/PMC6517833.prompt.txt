@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Development Development 864 develop DEV Development (Cambridge, England) 0950-1991 1477-9129 Company of Biologists PMC6517833 PMC6517833.1 6517833 6517833 25758223 10.1242/dev.113829 DEV113829 1 Research Article A Grhl2 Walentin Katharina 1 2 Hinze Christian 1 2 Werth Max 1 2 3 Haase Nadine 2 Varma Saaket 4 Morell Robert 5 Aue Annekatrin 1 2 Pötschke Elisabeth 1 Warburton David 4 Qiu Andong 3 Barasch Jonathan 3 Purfürst Bettina 1 Dieterich Christoph 6 Popova Elena 1 Bader Michael 1 Dechend Ralf 2 Staff Anne Cathrine 7 Yurtdas Zeliha Yesim 1 8 9 Kilic Ergin 10 Schmidt-Ott Kai M. 1 2 11 * 1 Max Delbrück Center for Molecular Medicine Robert-Rössle-Str. 10, Berlin 13125 Germany 2 Experimental and Clinical Research Center, a collaboration between the Max Delbrück Center and the Medical Faculty of the Charité Robert-Rössle-Str. 10, Berlin 13125 Germany 3 Department of Medicine Columbia University College of Physicians and Surgeons 630 West 168th Street, New York, NY 10032 USA 4 Department of Developmental Biology and Regenerative Medicine Program Saban Research Institute, Children's Hospital Los Angeles 4650 Sunset Blvd., Los Angeles, CA 90027 USA 5 Laboratory of Molecular Genetics National Institute on Deafness and Other Communication Disorders (NIDCD)/National Institutes of Health (NIH) 5 Research Court, Rockville, MD 20850 USA 6 Bioinformatics Max Planck Institute for Biology of Ageing Robert-Koch-Str. 21, Cologne 50931 Germany 7 Department of Gynecology and Obstetrics Institute of Clinical Medicine, Oslo University Hospital and University of Oslo Kirkeveien 166, Oslo 0450 Norway 8 Department of Urology Charité-Universitätsmedizin Berlin Charitéplatz 1, Berlin 10117 Germany 9 Berlin Institute of Urologic Research Berlin 10117 Germany 10 Department of Pathology Charité-Universitätsmedizin Berlin Charitéplatz 1, Berlin 10117 Germany 11 Department of Nephrology Charité-Universitätsmedizin Berlin Charitéplatz 1, Berlin 10117 Germany * kai.schmidt-ott@mdc-berlin.de 15 3 2015 10 3 2015 142 6 250552 1125 1136 5 6 2014 20 1 2015 10 03 2015 16 05 2019 13 04 2024 © 2015. Published by The Company of Biologists Ltd 2015 Healthy placental development is essential for reproductive success; failure of the feto-maternal interface results in pre-eclampsia and intrauterine growth retardation. We found that grainyhead-like 2 (GRHL2), a CP2-type transcription factor, is highly expressed in chorionic trophoblast cells, including basal chorionic trophoblast (BCT) cells located at the chorioallantoic interface in murine placentas. Placentas from Grhl2 Grhl2 Grhl2 Grhl2 Grhl2 Grhl2 −/− Spint1 Grhl2 Summary: Placenta defects Epithelial differentiation Epithelial morphogenesis Spint1 Basement membrane defects pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

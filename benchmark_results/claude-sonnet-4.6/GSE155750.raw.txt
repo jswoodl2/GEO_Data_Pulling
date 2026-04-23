@@ -1,0 +1,124 @@
+```json
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Nataki C. Douglas",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "nataki.dougals@rutgers.edu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This paper investigates how hypoxia-induced Notch signaling promotes trophoblast migration in vitro, with implications for understanding the pathophysiology of preeclampsia.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "1st",
+    "confidence": "medium",
+    "reasoning": "The paper text references the 1st trimester in the context of trophoblast biology and in vitro studies, consistent with early placentation research relevant to preeclampsia."
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The study appears to use an in vitro cell line (HTR-8/SVneo) rather than clinical samples from pregnancies with complications, though preeclampsia is the disease context studied."
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": ["Preeclampsia"],
+    "confidence": "medium",
+    "reasoning": "Preeclampsia is the primary disease context of the study, but it is studied in vitro rather than through direct clinical sample collection from affected pregnancies."
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": ["Trophoblast migration", "Hypoxia", "Notch signaling"],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "The authors are affiliated with Rutgers and Columbia institutions in the United States, but the country of sample collection is not explicitly stated in the provided text."
+  }
+}
+```

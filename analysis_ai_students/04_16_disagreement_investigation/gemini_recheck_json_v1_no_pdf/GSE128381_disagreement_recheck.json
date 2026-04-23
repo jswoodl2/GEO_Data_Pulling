@@ -1,0 +1,59 @@
+{
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The gestational age at birth is provided in Table 1, and the methods specify that placental tissue was collected within 1 hour after delivery.",
+    "evidence": [
+      {
+        "quote": "Gestational age, weeks 38.9 \u00b1 2.1",
+        "source": "Main paper text, Table 1"
+      },
+      {
+        "quote": "Placental tissue was collected within 1 h after delivery.",
+        "source": "Main paper text, Materials and Methods section"
+      }
+    ]
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper explicitly describes the study population as consisting of mother-newborn pairs and provides matching counts (n=183) for both mothers and newborns in Table 1.",
+    "evidence": [
+      {
+        "quote": "183 mother-newborn pairs from the ENVIRONAGE cohort",
+        "source": "Main paper text, Materials and Methods section"
+      },
+      {
+        "quote": "Characteristics of study population (n = 183)",
+        "source": "Main paper text, Table 1"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper provides ethnicity and geographic ancestry based on the native country of the grandparents, but it does not report genetic ancestry determined by molecular markers or genomic analysis.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study population included mothers with gestational diabetes and gestational hypertension, and placental samples were collected from these individuals for the transcriptome analysis.",
+    "evidence": [
+      {
+        "quote": "Gestational diabetes 6 (3.3) Gestational hypertension 8 (4.4)",
+        "source": "Main paper text, Table 1"
+      },
+      {
+        "quote": "Sensitivity analysis: exclusion of mothers with gestational diabetes.",
+        "source": "Supplemental Material, Data_Sheet_1.docx, Table S7"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "While the paper categorizes newborns by birth weight percentiles (low/high), it does not list specific clinical fetal complications, distress, or anomalies.",
+    "evidence": []
+  }
+}

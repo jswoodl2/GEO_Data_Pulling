@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Genome Res 102 genores GENOME Genome Research 1088-9051 1549-5469 Cold Spring Harbor Laboratory Press PMC3012930 PMC3012930.1 3012930 3012930 21088282 10.1101/gr.109173.110 1 Research Tissue-specific disallowance of housekeeping genes: The other face of cell differentiation Thorrez et al. Disallowed genes Thorrez Lieven 1 2 3 Laudadio Ilaria 4 Van Deun Katrijn 3 Quintens Roel 1 3 Hendrickx Nico 1 3 Granvik Mikaela 1 3 Lemaire Katleen 1 3 Schraenen Anica 1 3 Van Lommel Leentje 1 3 Lehnert Stefan 1 3 Aguayo-Mazzucato Cristina 5 Cheng-Xue Rui 6 Gilon Patrick 6 Van Mechelen Iven 3 Bonner-Weir Susan 5 Lemaigre Frédéric 4 Schuit Frans 1 3 7 1 2 3 4 5 6 7 frans.schuit@med.kuleuven.be 1 2011 21 1 192964 95 105 19 4 2010 9 11 2010 01 01 2011 27 01 2011 28 01 2011 Copyright © 2011 by Cold Spring Harbor Laboratory Press Freely available online through the Genome Research We report on a hitherto poorly characterized class of genes that are expressed in all tissues, except in one. Often, these genes have been classified as housekeeping genes, based on their nearly ubiquitous expression. However, the specific repression in one tissue defines a special class of “disallowed genes.” In this paper, we used the intersection-union test to screen for such genes in a multi-tissue panel of genome-wide mRNA expression data. We propose that disallowed genes need to be repressed in the specific target tissue to ensure correct tissue function. We provide mechanistic data of repression with two metabolic examples, exercise-induced inappropriate insulin release and interference with ketogenesis in liver. Developmentally, this repression is established during tissue maturation in the early postnatal period involving epigenetic changes in histone methylation. In addition, tissue-specific expression of microRNAs can further diminish these repressed mRNAs. Together, we provide a systematic analysis of tissue-specific repression of housekeeping genes, a phenomenon that has not been studied so far on a genome-wide basis and, when perturbed, can lead to human disease. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC2666995 PMC2666995.1 2666995 2666995 19307558 10.1073/pnas.0811841106 7486 1 Biological Sciences Developmental Biology The endometrium responds differently to cloned versus fertilized embryos Bauersachs Stefan a b Ulbrich Susanne E. c Zakhartchenko Valeri a Minten Megan d Reichenbach Myriam a Reichenbach Horst-Dieter e Blum Helmut b Spencer Thomas E. d Wolf Eckhard a b 1 a b c d e 1 ewolf@lmb.uni-muenchen.de Edited by George E. Seidel, Jr., Colorado State University, Fort Collins, CO, and approved February 20, 2009 Author contributions: S.B., H.B., and E.W. designed research; S.B., S.E.U., V.Z., M.M., M.R., H.-D.R., and T.E.S. performed research; S.B. and S.E.U. analyzed data; and S.B., T.E.S., and E.W. wrote the paper. Conflict of interest: no conflict of interest. 7 4 2009 23 3 2009 106 14 178070 5681 5686 20 11 2008 07 10 2009 07 10 2009 03 04 2013 Although somatic cell nuclear transfer (SCNT) cloning is more efficient in cattle than in any other species tested so far, there is a high rate of pregnancy failure that has been linked to structural and functional abnormalities of the placenta. We tested the hypothesis that these changes may originate from disturbed embryo–maternal interactions in the peri-implantation period. Therefore, we evaluated the response of the endometrium to SCNT embryos (produced from 7 different fetal fibroblast cell lines) as compared with embryos derived from in vitro fertilization (IVF). SCNT embryos and IVF embryos were cultured under identical conditions to the blastocyst stage (day 7) and were transferred to corresponding recipients, which were slaughtered at day 18 of pregnancy. The mRNA profiles of endometrium samples were obtained using a custom cDNA microarray enriched for transcripts differentially expressed in the endometrium and/or oviduct epithelium during the estrous cycle and/or early pregnancy. Overall, the variation in mRNA profiles was greater in the SCNT group than in the IVF group. Furthermore, 58 transcripts were differentially abundant in endometria from SCNT and IVF pregnancies. Prominent examples are orphan nuclear receptor COUP-TFII and connexin 43, both known to play important roles in uterine receptivity and conceptus placentation. These findings suggest that placental failure in bovine clone pregnancies may originate from abnormal embryo–maternal communication that develops during the peri-implantation period. Endometrium transcriptome profiles may serve as a tool to evaluate SCNT embryos for their ability to establish pregnancy and develop a functional placenta. Bos taurus cloning early pregnancy gene expression microarray pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

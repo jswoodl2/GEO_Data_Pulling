@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Epigenetics Epigenetics 1363 epig Epigenetics 1559-2294 1559-2308 Taylor & Francis PMC8143248 PMC8143248.1 8143248 8143248 33045922 10.1080/15592294.2020.1816774 1816774 1 Version of Record Research Article Research Paper Cell-free DNA Methylation and Transcriptomic Signature Prediction of Pregnancies with Adverse Outcomes G. DEL VECCHIO ET AL. EPIGENETICS https://orcid.org/0000-0001-5156-3231 Del Vecchio Giorgia a * Li Qingjiao b * Li Wenyuan c * Thamotharan Shanthie a Tosevska Anela d https://orcid.org/0000-0003-3351-5791 Morselli Marco d Sung Kyunghyun e https://orcid.org/0000-0001-5010-659X Janzen Carla f Zhou Xianghong c Pellegrini Matteo d Devaskar Sherin U. a a Los Angeles California USA b The Eighth Affiliated Hospital, Sun Yat-sen University Shenzhen China c David Geffen School of Medicine at UCLA Los Angeles California USA d Cellular and Developmental Biology, University of California Los Angeles California USA e University of California Los Angeles California USA f David Geffen School of Medicine at UCLA Los Angeles California USA CONTACT Sherin U. Devaskar sdevaskar@mednet.ucla.edu * These authors contributed equally to this work. 13 10 2020 2021 16 6 382454 642 661 13 10 2021 13 10 2021 08 06 2021 13 10 2021 © 2020 Informa UK Limited, trading as Taylor & Francis Group 2020 Informa UK Limited, trading as Taylor & Francis Group ABSTRACT Although analysis of maternal plasma cell-free content has been employed for screening of genetic abnormalities within a pregnancy, limited attention has been paid to its use for the detection of adverse pregnancy outcomes (APOs) based on placental function. Here we investigated cell-free DNA and RNA content of 102 maternal and 25 cord plasma samples. Employing a novel deconvolution methodology, we found that during the first trimester, placenta-specific DNA increased prior to the subsequent development of gestational diabetes with no change in patients with preeclampsia while decreasing with maternal obesity. Moreover, using cell-free RNA sequencing, APOs revealed 71 differentially expressed genes early in pregnancy. We noticed the upregulation of S100A8, MS4A3, and MMP8 that have been already associated with APOs but also the upregulation of BCL2L15 and the downregulation of ALPL that have never been associated with APOs. We constructed a classifier with a positive predictive ability (AUC) of 0.91 for APOs, 0.86 for preeclampsia alone and 0.64 for GDM. We conclude that placenta-specific cell-free nucleic acids during early gestation provide the possibility of predicting APOs prior to the emergence of characteristic clinical features. KEYWORDS Cell-free DNA cell-free RNA high-risk pregnancy preeclampsia gestational diabetes gestational hypertension NIH 10.13039/100000002 R01HD089714 National Institutes of Health 10.13039/100000002 R01HD089714 National Institutes of Health 10.13039/100000002 U01HD087221 National Institutes of Health 10.13039/100000002 R01HD00015 This work was supported by grants from the National Institutes of Health (NIH) R01HD089714 and R01HD00015 (to S.U.D in support of the DNA and RNA investigations) and U01HD087221 (to S.U.D, C.J. & K.S. in support of the clinical trial inclusive of sample collection); National Institutes of Health [R01HD089714]; National Institutes of Health [U01HD087221]; National Institutes of Health [R01HD00015]. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Hypertension Hypertension 319 nihpa Hypertension (Dallas, Tex. : 1979) 0194-911X 1524-4563 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC10192030 PMC10192030.1 10192030 10192030 NIHMS1883393 36987911 10.1161/HYPERTENSIONAHA.122.20807 NIHMS1883393 NIHPA1883393 1 Article Transcriptomics-based subphenotyping of the human placenta enabled by weighted correlation network analysis in early-onset preeclampsia with and without fetal growth restriction http://orcid.org/0000-0001-7366-3903 Ackerman William E. IV MD 1 Buhimschi Catalin S. MD, MBA 1 Brown Thomas L. PhD 2 Zhao Guomao BSc 1 Summerfield Taryn L. MS 3 Buhimschi Irina A. MD, MMS 1 1 2 3 Author Contributions Designed research: WEA, CSB, and IAB conceived and developed the study design. Performed research: CSB and IAB participated in patient recruitment, abstraction of clinical data, and the collection and processing of the biological specimens; WEA, GZ, and TLS executed the RNA extraction and qPCR experiments. Analyzed data: WEA, TLB, and IAB conducted the data analysis with input from CSB. Wrote the paper: WEA wrote the first draft of the manuscript with input from CSB, TLB, and IAB. All authors participated with reviewing the findings of the work and contributed with critical revisions to the drafts of the manuscript. Corresponding Author weackerm@uic.edu 6 2023 29 3 2023 80 6 436036 1363 1374 30 03 2023 01 06 2024 01 06 2024 19 05 2023 15 06 2024 Background: Placental disorders contribute to pregnancy complications, including preeclampsia (PE) and fetal growth restriction (FGR), but debate regarding their specific pathobiology persists. Our objective was to apply transcriptomics with weighted gene correlation network analysis (WGCNA) to further clarify the placental dysfunction in these conditions. Methods: We performed RNA sequencing with WGNCA using human placental samples (n=30), separated into villous tissue and decidua basalis, and clinically grouped as follows: (1) early-onset PE (EOPE)+FGR (n=7); (2) normotensive, nonanomalous preterm FGR (n=5); (2) EOPE without FGR (n=8); (4) spontaneous idiopathic preterm birth (PTB, n=5) matched for gestational age (GA); and (5) uncomplicated term births (TB, n=5). Our data was compared with RNA-seq datasets from public databases ( GSE114691 GSE148241 Results: We identified 14 correlated gene modules in our specimens, of which most were significantly correlated with birthweight and maternal blood pressure. Of the 3 network modules consistently predictive of EOPE±FGR across datasets, we prioritized a co-expression gene group enriched for hypoxia-response and metabolic pathways for further investigation. Cluster analysis based on transcripts from this module and the glycolysis/gluconeogenesis metabolic pathway consistently distinguished a subset of EOPE±FGR samples with an expression signature suggesting modified tissue bioenergetics. We demonstrated that the expression ratios of LDHA LDHB PDK1 GOT1 Conclusions: We provide novel evidence for a molecular subphenotype consistent with a glycolytic metabolic shift that occurs more frequently but not universally in placental specimens of EOPE±FGR. Graphical Abstract hypertension placenta preeclampsia fetal growth restriction RNA sequencing transcriptomics pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

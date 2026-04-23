@@ -1,0 +1,39 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Enrico Stefani",
+  "Supervisor/Contact/Corresponding author email": "estefani@ucla.edu",
+  "Main topic of the publication": "This study compares the gene expression profile of rat myometrium before parturition (21 days pregnant) and during delivery using high-density DNA microarray, identifying genes that are upregulated and downregulated during the transition from late pregnancy to parturition.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "Term"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 21.0,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 21.0,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "No",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Gene expression in myometrium",
+    "Parturition",
+    "Labor",
+    "Smooth muscle contraction"
+  ],
+  "Hospital/Center where samples were collected": "David Geffen School of Medicine at UCLA",
+  "Country where samples were collected": "United States",
+  "PMCID": "PMC2636924"
+}

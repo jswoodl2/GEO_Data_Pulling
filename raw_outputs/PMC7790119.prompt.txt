@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Am J Physiol Endocrinol Metab Am J Physiol Endocrinol Metab 623 ajpendo Am J Physiol Endocrinol Metab AJPENDO American Journal of Physiology - Endocrinology and Metabolism 0193-1849 1522-1555 American Physiological Society PMC7790119 PMC7790119.1 7790119 7790119 32954824 10.1152/ajpendo.00190.2020 E-00190-2020 1 Research Article Maternal hypercortisolemia alters placental metabolism: a multiomics view MULTIOMIC ANALYSIS OF OVINE PLACENTA IN HYPERCORTISOLEMIA Joseph Serene 1 Walejko Jacquelyn M. 2 4 Zhang Sicong 3 4 Edison Arthur S. 3 4 5 Keller-Wood Maureen 1 6 1 University of Florida Gainesville, Florida 2 University of Florida Gainesville Florida 3 University of Georgia Athens, Georgia 4 University of Georgia Athens, Georgia 5 University of Georgia Athens, Georgia 6 University of Florida Gainesville, Florida Correspondence: M. Keller-Wood ( kellerwd@cop.ufl.edu 1 11 2020 21 9 2020 319 5 372416 E950 E960 1 5 2020 20 8 2020 15 9 2020 01 11 2021 01 11 2021 28 01 2021 19 04 2023 Copyright © 2020 the American Physiological Society 2020 American Physiological Society Previous studies have suggested that increases in maternal cortisol or maternal stress in late pregnancy increase the risk of stillbirth at term. In an ovine model with increased maternal cortisol over the last 0.20 of gestation, we have previously found evidence of disruption of fetal serum and cardiac metabolomics and altered expression of genes related to mitochondrial function and metabolism in biceps femoris, diaphragm, and cardiac muscle. The present studies were designed to test for effects of chronically increased maternal cortisol on gene expression and metabolomics in placentomes near term. We hypothesized that changes in placenta might underlie or contribute to the alterations in fetal serum metabolomics and thereby contribute to changes in striated muscle metabolism. Placentomes were collected from pregnancies in early labor (143 ± 1 days gestation) of control ewes ( n −1 −1 n cortisol ; fetus ; metabolism NIH HD057871 HD87306 Maureen Keller-Wood pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

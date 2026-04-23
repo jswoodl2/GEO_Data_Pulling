@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Cell Stem Cell Cell Stem Cell 319 nihpa Cell stem cell 1934-5909 1875-9777 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC10230549 PMC10230549.1 10230549 10230549 NIHMS1893426 37146582 10.1016/j.stem.2023.04.003 NIHMS1893426 NIHPA1893426 1 Article Bovine blastocyst-like structures derived from stem cell cultures Pinzón-Arteaga Carlos A. 1 12 Wang Yinjuan 2 12 Wei Yulei 1 3 12 Ribeiro Orsi Ana Elisa 1 5 Li Leijie 4 Scatolin Giovanna 2 Liu Lizhong 1 Sakurai Masahiro 1 Ye Jianfeng 6 Ming Hao 2 Yu Leqian 1 7 8 Li Bo 6 Jiang Zongliang 2 9 * Wu Jun 1 10 11 13 * 1 2 3 4 5 6 7 8 9 10 11 12 13 Author contributions C.A.P-A., Y.Wang., Z.J. and J.W. conceptualized, designed, analyzed, and interpreted the experimental results. C.A.P-A., Y.Wang. and Y.Wei. performed blastoid generation experiments. M.S. helped with in vitro fertilization of bovine embryos. Y.W. and L.Y. helped with immunostaining. C.A.P-A. and Y.Wang. performed extended in vitro culture of bovine blastocysts and blastoids. C.A.P-A., G.S., Y.Wang., H. M. and Z.J. performed embryo transfer experiments. J.Y. and B.L. prepared scRNA-seq library. C.A.P-A., A.E.R.O. and L.I. performed scRNA-seq analysis. Z.J. and J.W. supervised the study. C.A.P-A., Z.J. and J.W. wrote the manuscript with inputs from all authors. * z.jiang1@ufl.edu Jun2.Wu@UTSouthwestern.edu Declaration of interests C.A.P-A., Y.Wang., Y.Wei., Z.J. and J.W., are co-inventors on US provisional patent application 63/370,068 relating to Bovine blastocysts like structures and uses thereof. 04 5 2023 30 5 436951 611 616.e7 26 04 2023 04 05 2024 04 05 2024 01 06 2023 06 10 2024 SUMMARY Understanding the mechanisms of blastocyst formation and implantation is critical for improving farm animal reproduction but is hampered by a limited supply of embryos. Here, we developed an efficient method to generate bovine blastocyst-like structures (termed blastoids) via assembling bovine trophoblast stem cells and expanded potential stem cells. Bovine blastoids resemble blastocysts in morphology, cell composition, single-cell transcriptomes, in vitro Graphical Abstract eTOC Pinzon-Arteaga et al. develop a method for the efficient generation and in vitro pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

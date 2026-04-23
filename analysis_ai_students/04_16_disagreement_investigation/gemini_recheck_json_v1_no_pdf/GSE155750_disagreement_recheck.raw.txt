@@ -1,0 +1,38 @@
+{
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The text and supplementary material do not mention the parity (number of previous births) of the participants.",
+    "evidence": []
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The text and supplementary material do not mention the gravidity (total number of pregnancies) of the participants.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "While the text mentions that '32 pregnancies resulted in live births', it does not explicitly state whether these were singleton or multiple pregnancies.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The study does not report the race or ethnicity of the participants.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Although the text mentions that the preeclamptic pregnancies were 'matched, based on maternal age' with healthy controls, the actual age values are never reported.",
+    "evidence": []
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The text mentions 'deliveries at term' in the Supplementary Figure 1 legend but does not specify the mode (vaginal vs. cesarean).",
+    "evidence": []
+  }
+}

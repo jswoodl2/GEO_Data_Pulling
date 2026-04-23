@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Mol Cell Biol 91 molcellb MCB Molecular and Cellular Biology 0270-7306 1098-5549 Taylor & Francis PMC3126346 PMC3126346.1 3126346 3126346 21300784 10.1128/MCB.01047-10 1047-10 1 Articles Lineage Conversion of Murine Extraembryonic Trophoblast Stem Cells to Pluripotent Stem Cells ▿ † Kuckenberg Peter 1 Peitz Michael 4 Kubaczka Caroline 1 Becker Astrid 3 Egert Angela 1 Wardelmann Eva 2 Zimmer Andreas 3 Brüstle Oliver 4 Schorle Hubert 1 * 1 2 3 4 * Department of Developmental Pathology, Institute of Pathology, University of Bonn Medical School, Sigmund-Freud-Str. 25, 53127 Bonn, Germany 49-228-28716342 49-228-28719757 hubert.schorle@ukb.uni-bonn.de 4 2011 31 8 198066 1748 1756 8 9 2010 8 10 2010 27 1 2011 01 10 2011 01 10 2011 02 07 2011 17 11 2024 Copyright © 2011, American Society for Microbiology 2011 American Society for Microbiology In mammals, the first cell fate decision is initialized by cell polarization at the 8- to 16-cell stage of the preimplantation embryo. At this stage, outside cells adopt a trophectoderm (TE) fate, whereas the inside cell population gives rise to the inner cell mass (ICM). Prior to implantation, transcriptional interaction networks and epigenetic modifications divide the extraembryonic and embryonic fate irrevocably. Here, we report that extraembryonic trophoblast stem cell (TSC) lines are converted to induced pluripotent stem cells (TSC-iPSCs) by overexpressing Oct4, Sox2, Klf4, and cMyc. Methylation studies and gene array analyses indicated that TSC-iPSCs had adopted a pluripotent potential. The rate of conversion was lower than those of somatic reprogramming experiments, probably due to the unique genetic network controlling extraembryonic lineage fixation. Both in vitro in vivo pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

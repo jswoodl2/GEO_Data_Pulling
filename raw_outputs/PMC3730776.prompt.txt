@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Am J Pathol Am. J. Pathol 338 amjpathol The American Journal of Pathology 0002-9440 1525-2191 American Society for Investigative Pathology PMC3730776 PMC3730776.1 3730776 3730776 23770347 10.1016/j.ajpath.2013.05.006 AJPA1394 1 Regular Article Growth Factors, Cytokines, and Cell Cycle Molecules N N Sundaram Sruthi ∗ Ashby Charles R. Jr. ∗ Pekson Ryan ∗ Sampat Vaishali ∗ Sitapara Ravikumar ∗ Mantell Lin ∗ Chen Chih-Hung ∗ Yen Haoting ∗ Abhichandani Khushboo ∗ Munnangi Swapna ∗ Khadtare Nikhil ∗ Stephani Ralph A. ∗ Reznik Sandra E. rezniks@stjohns.edu ∗ † ‡ ∗ Department of Pharmaceutical Sciences, St. John's University, Queens, New York Department of Pathology, Montefiore Medical Center, Albert Einstein College of Medicine, Bronx, New York Departments of Obstetrics and Gynecology and Women's Health, Montefiore Medical Center, Albert Einstein College of Medicine, Bronx, New York ∗ rezniks@stjohns.edu 8 2013 183 2 225870 422 430 1 5 2013 01 08 2014 01 08 2014 25 06 2014 03 04 2024 © 2013 American Society for Investigative Pathology. Published by Elsevier Inc. All rights reserved. 2013 American Society for Investigative Pathology This document may be redistributed and reused, subject to certain conditions Corrections 183 5 11 2013 1698 1698 The American Journal of Pathology PMC5691334 29143755 Corrections 184 4 4 2014 1253 1253 The American Journal of Pathology PMC5691323 29143740 The proinflammatory response leads to various types of pathologic pathways, including the development of preterm birth. Preterm birth occurs in 12% of deliveries in the United States and causes more than 70% of perinatal morbidity and mortality. The most common cause of spontaneous preterm birth is intrauterine infection in the mother. There is accumulating evidence indicating that the release of proinflammatory cytokines plays a critical role in the pathogenesis of inflammation-associated premature delivery. We found that the common organic solvent, N N in vitro pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

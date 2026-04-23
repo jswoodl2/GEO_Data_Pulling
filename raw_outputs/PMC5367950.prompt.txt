@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Stem Cells Stem Cells 319 nihpa Stem cells (Dayton, Ohio) 1066-5099 1549-4918 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC5367950 PMC5367950.1 5367950 5367950 NIHMS839496 28032673 10.1002/stem.2563 NIHMS839496 NIHPA839496 1 Article Dental pulp stem cells model early life and imprinted DNA methylation patterns Dunaway Keith 1 2 3 4 Goorha Sarita 8 9 10 Matelski Lauren 3 4 6 Urraca Nora 8 Lein Pamela J. 3 4 7 Korf Ian 2 Reiter Lawrence T. 8 9 10 LaSalle Janine M. 1 2 3 4 1 2 3 4 5 6 7 8 9 10 Address correspondence to: Janine LaSalle, Ph.D., Medical Microbiology and Immunology, University of California, Davis, One Shields Ave, Davis, CA 95616; (530) 754-7598 phone; (503) 752-8692 fax; jmlasalle@ucdavis.edu Disclosures: The authors have no conflicts to disclose. 19 1 2017 4 2017 35 4 289969 981 988 03 01 2017 01 04 2018 01 04 2018 28 03 2017 17 06 2024 Early embryonic stages of pluripotency are modeled for epigenomic studies primarily with human embryonic stem cells (ESC) or induced pluripotent stem cells (iPSCs). For analysis of DNA methylation, however, ESCs and iPSCs do not accurately reflect the DNA methylation levels found in preimplantation embryos. Whole genome bisulfite sequencing (WGBS) approaches have revealed the presence of large partially methylated domains (PMDs) covering 30–40% of the genome in oocytes, preimplantation embryos, and placenta. In contrast, ESCs and iPSCs show abnormally high levels of DNA methylation compared to inner cell mass (ICM) or placenta. Here we show that dental pulp stem cells (DPSCs), derived from baby teeth and cultured in serum-containing media, have PMDs and mimic the ICM and placental methylome more closely than iPSCs and ESCs. By principal component analysis, DPSC methylation patterns were more similar to two other neural stem cell types of human derivation (EPI-NCSC and LUHMES) and placenta than were iPSCs, ESCs or other human cell lines (SH-SY5Y, B lymphoblast, IMR90). To test the suitability of DPSCs in modeling epigenetic differences associated with disease, we compared methylation patterns of DPSCs derived from children with chromosome 15q11.2–q13.3 maternal duplication (Dup15q) to controls. Differential methylation region (DMR) analyses revealed the expected Dup15q hypermethylation at the imprinting control region, as well as hypomethylation over SNORD116 Graphical abstract The global DNA methylome profiles (right) identified from human dental pulp stem cells (DPSCs) derived from exfoliated baby teeth are more similar to those of early life tissues derived from the embryo and placenta than induced pluripotent stem cells (iPSCs) derived from skin. For investigation of human diseases with altered DNA methylation patterns, such as Dup15q syndrome, DPSCs are a relevant cell culture model. epigenetics epigenomics DNA methylation neural stem cells teeth dental pulp stem cells human disease models imprinting pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

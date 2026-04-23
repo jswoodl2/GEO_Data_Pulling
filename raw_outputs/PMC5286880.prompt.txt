@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Virol J. Virol 89 jvirol JVI Journal of Virology 0022-538X 1098-5514 American Society for Microbiology (ASM) PMC5286880 PMC5286880.1 5286880 5286880 27974560 10.1128/JVI.01905-16 01905-16 1 Pathogenesis and Immunity Zika Virus Infects Early- and Midgestation Human Maternal Decidual Tissues, Inducing Distinct Innate Tissue Responses in the Maternal-Fetal Interface ZIKV Infection in Maternal Decidual Tissues Weisblum et al. Weisblum Yiska a b Oiknine-Djian Esther a b Vorontsov Olesya M. a b Haimov-Kochman Ronit c Zakay-Rones Zichria b Meir Karen d Shveiky David c Elgavish Sharona e Nevo Yuval e Roseman Moshe e Bronstein Michal f Stockheim David g From Ido a b Eisenberg Iris c Lewkowicz Aya A. c Yagel Simcha c Panet Amos b Wolf Dana G. a a b c d e f g Perlman Stanley Editor University of Iowa Address correspondence to Dana G. Wolf, dana.wolf@ekmd.huji.ac.il Y.W. and E.O.-D. contributed equally to this work. Citation https://doi.org/10.1128/JVI.01905-16 14 12 2016 31 1 2017 15 2 2017 91 4 286673 e01905-16 21 9 2016 1 12 2016 31 07 2017 31 07 2017 08 02 2017 01 11 2019 Copyright © 2017 American Society for Microbiology. 2017 American Society for Microbiology All Rights Reserved Correction for Weisblum et al., “Zika Virus Infects Early- and Midgestation Human Maternal Decidual Tissues, Inducing Distinct Innate Tissue Responses in the Maternal-Fetal Interface” 93 22 29 10 2019 e01451-19 Journal of Virology PMC6819936 31662489 ABSTRACT Zika virus (ZIKV) has emerged as a cause of congenital brain anomalies and a range of placenta-related abnormalities, highlighting the need to unveil the modes of maternal-fetal transmission. The most likely route of vertical ZIKV transmission is via the placenta. The earliest events of ZIKV transmission in the maternal decidua, representing the maternal uterine aspect of the chimeric placenta, have remained unexplored. Here, we show that ZIKV replicates in first-trimester human maternal-decidual tissues grown ex vivo IMPORTANCE KEYWORDS congenital HCMV congenital Zika virus decidua decidual innate immune response intrauterine transmission organ culture placenta European Union Seventh Framework Programme 562 FP7 316655 Dana G. Wolf Israeli Ministry of Health 310998 Dana G. Wolf Israel Science Foundation (ISF) https://doi.org/10.13039/501100003977 275/13 Dana G. Wolf pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes cover-date February 2017 access-type free
+---

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+RNA Biol 319 nihpa RNA biology 1547-6286 1555-8584 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC2783191 PMC2783191.1 2783191 2783191 NIHMS109486 19246989 10.4161/rna.6.2.8050 NIHMS109486 NIHPA109486 1 Article Prediction and verification of mouse tRNA gene families Coughlin Daniel J. 1 Babak Tomas 2 Nihranz Chad 1 Hughes Timothy R. 2 3 Engelke David R. 1 * 1 2 3 * engelke@umich.edu 1 5 2009 Apr–Jun 2009 6 2 183070 195 202 13 04 2009 25 11 2009 25 11 2009 16 11 2024 Background Transfer RNA (tRNA) gene predictions are complicated by challenges such as structural variation, limited sequence conservation and the presence of highly reiterated short interspersed sequences (SINEs) that originally derived from tRNA genes or tRNA-like transcription units. Annotation of “tRNA genes” in sequenced genomes generally have not been accompanied by experimental verification of the expression status of predicted sequences. Results To address this for mouse tRNA genes, we have employed two programs, tRNAScan-SE and ARAGORN, to predict the tRNA genes in the nuclear genome, resulting in diverse but overlapping predicted gene sets. From these, we removed known SINE repeats and sorted the genes into predicted families and single-copy genes. In particular, four families of intron-containing tRNA genes were predicted for the first time in mouse, with introns in positions and structures similar to the well characterized intron-containing tRNA genes in yeast. We verified the expression of the predicted tRNA genes by microarray analysis. We then confirmed the expression of appropriately sized RNA for the four intron-containing tRNA gene families, as well as the other 30 tRNA gene families creating an index of expression-verified mouse tRNAs. Conclusions These confirmed tRNA genes represent all anticodons and all known mammalian tRNA structural groups, as well as a variety of predicted “rogue” tRNA genes within families with altered anticodon identities. mammalian tRNA SINE tRNA intron tRNA families nuclear tRNA rogue tRNAs pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

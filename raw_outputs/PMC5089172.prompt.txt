@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Sci Immunol Sci Immunol 319 nihpa Science immunology 2470-9468 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC5089172 PMC5089172.1 5089172 5089172 NIHMS824028 27819066 10.1126/sciimmunol.aah4576 NIHMS824028 NIHPA824028 1 Article GROUP B STREPTOCOCCUS CIRCUMVENTS NEUTROPHILS AND NEUTROPHIL EXTRACELLULAR TRAPS DURING AMNIOTIC CAVITY INVASION AND PRETERM LABOR Boldenow Erica 1 Gendrin Claire 1 * Ngo Lisa 1 * Bierle Craig 1 * Vornhagen Jay 1 2 * Coleman Michelle 1 Merillat Sean 1 Armistead Blair 1 2 Whidbey Christopher 1 2 Alishetti Varchita 1 Santana-Ufret Veronica 1 Ogle Jason 3 Gough Michael 3 Srinouanprachanh Sengkeo 4 MacDonald James W 4 Bammler Theo K 4 Bansal Aasthaa 5 Liggitt H. Denny 6 Rajagopal Lakshmi 1 2 # Waldorf Kristina M Adams 7 # 1 2 3 4 5 6 7 # adamsk@u.washington.edu lakshmi.rajagopal@seattlechildrens.org * Equal Contribution COMPETING INTERESTS: 14 10 2016 10 2016 1 4 278271 eaah4576 20 10 2016 01 04 2017 01 04 2017 02 11 2016 17 06 2024 Preterm birth is a leading cause of neonatal morbidity and mortality. Although microbial invasion of the amniotic cavity (MIAC) is associated with the majority of early preterm births, the temporal events that occur during MIAC and preterm labor are not known. Group B Streptococci (GBS) are β-hemolytic, gram-positive bacteria, which commonly colonize the vagina but have been recovered from the amniotic fluid in preterm birth cases. To understand temporal events that occur during MIAC, we utilized a unique chronically catheterized nonhuman primate model that closely emulates human pregnancy. This model allows monitoring of uterine contractions, timing of MIAC and immune responses during pregnancy-associated infections. Here, we show that adverse outcomes such as preterm labor, MIAC, and fetal sepsis were observed more frequently during infection with hemolytic GBS when compared to nonhemolytic GBS. Although MIAC was associated with systematic progression in chorioamnionitis beginning with chorionic vasculitis and progressing to neutrophilic infiltration, the ability of the GBS hemolytic pigment toxin to induce neutrophil cell death and subvert killing by neutrophil extracellular traps (NETs) in placental membranes in vivo pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

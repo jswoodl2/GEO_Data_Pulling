@@ -1,0 +1,315 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "James C. Cross",
+    "confidence": "high",
+    "reason": "James C. Cross is listed as the corresponding author with an asterisk and contact email.",
+    "evidence": [
+      {
+        "quote": "* E-mail: jcross@ucalgary.ca",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "jcross@ucalgary.ca",
+    "confidence": "high",
+    "reason": "The email is explicitly provided in the author information section.",
+    "evidence": [
+      {
+        "quote": "* E-mail: jcross@ucalgary.ca",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Patterns of placental cell growth (proliferation, endoreduplication, and hypertrophy) during normal mouse development and adaptations to a chronic maternal low protein diet.",
+    "confidence": "high",
+    "reason": "The abstract and title clearly state the objectives of describing placental growth patterns and adaptations to malnutrition.",
+    "evidence": [
+      {
+        "quote": "The objectives of our current study were first to describe the patterns of cell proliferation and endoreduplication during the time course of normal gestation and then to see how these normal patterns of development and function are affected by a chronic low protein maternal diet.",
+        "source": "Main text, Introduction"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "2nd",
+      "3rd",
+      "Term"
+    ],
+    "confidence": "high",
+    "reason": "The study collects samples from embryonic day (E) 8.5 (equivalent to human 2nd trimester for mice) through E18.5, which is described as term.",
+    "evidence": [
+      {
+        "quote": "pregnant females were dissected every two days, beginning at embryonic day (E) 8.5 through E18.5.",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "E18.5, just before term",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Fetal weights at term (E18.5) are reported in results and supplementary data as a proxy for birthweight.",
+    "evidence": [
+      {
+        "quote": "Fetuses and placentas were dissected and weighed on E13.5, 16.5, and 18.5 (day before delivery).",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "Fetal weights separated by sex and embryonic day (E).",
+        "source": "Main text, Figure 3 legend"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The study sacrifices mice for dissection on specific embryonic days; it does not report the day of natural delivery for a live-birth cohort.",
+    "evidence": [
+      {
+        "quote": "Fetuses and placentas were dissected and weighed on E13.5, 16.5, and 18.5 (day before delivery).",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high",
+    "reason": "Gestational age at delivery is not reported in weeks, and mice were sacrificed prior to delivery.",
+    "evidence": []
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Sample collection times (E8.5, E10.5, E12.5, E13.5, E14.5, E15.5, E16.5, E18.5) are explicitly stated.",
+    "evidence": [
+      {
+        "quote": "beginning at embryonic day (E) 8.5 through E18.5.",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high",
+    "reason": "Sample collection timing is provided in embryonic days (E) rather than weeks.",
+    "evidence": []
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Fetal sex was determined using Sry gene PCR and data are stratified by sex.",
+    "evidence": [
+      {
+        "quote": "the presence of a region of the Sry gene was used to identify males.",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "Male fetuses showed intrauterine growth restriction (IUGR) by embryonic day (E) 18.5... whereas female fetuses showed IUGR as early as E16.5.",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study specifies that nulliparous females were used.",
+    "evidence": [
+      {
+        "quote": "Nulliparous females were randomly divided into two groups",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "While parity is implicitly reported as zero (nulliparous), gravidity as a clinical metric is not explicitly provided.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Litter size was recorded and used as a covariate in the statistical analyses.",
+    "evidence": [
+      {
+        "quote": "To control for interpregnancy variation, litter size and maternal weight were specified as covariates.",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "This is a mouse study; race/ethnicity is not applicable.",
+    "evidence": []
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The mouse strains (CD1 and C57BL/6) are clearly identified.",
+    "evidence": [
+      {
+        "quote": "CD1 mice (Charles River) were mated",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "C57BL/6 mice were used to assess the impact of a low protein diet during pregnancy.",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal height is not reported (typical for mouse studies).",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Weight trajectories are shown in figures, but specific baseline pre-pregnancy weights are not reported in the text or tables.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal biometrics are not reported.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal biometrics are not reported.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The starting age of the mice (4 weeks) and the experimental timeline are mentioned, but specific maternal ages at the time of sacrifice/collection are not provided in demographics.",
+    "evidence": []
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal age is not mentioned.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study specifically includes a cohort of pregnancies complicated by maternal low protein diet and resulting IUGR.",
+    "evidence": [
+      {
+        "quote": "In response to feeding a low protein diet to mothers prior to and during pregnancy, to mimic chronic malnutrition, we found that this normal program was altered",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Mice were sacrificed for tissue collection; natural delivery mode is not applicable.",
+    "evidence": []
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Maternal malnutrition",
+      "Low protein diet",
+      "Intrauterine growth restriction (IUGR)"
+    ],
+    "confidence": "high",
+    "reason": "Maternal malnutrition/diet restriction and IUGR are the primary complications investigated.",
+    "evidence": [
+      {
+        "quote": "In response to feeding a low protein diet to mothers prior to and during pregnancy, to mimic chronic malnutrition",
+        "source": "Main text, Abstract"
+      },
+      {
+        "quote": "Male fetuses showed intrauterine growth restriction (IUGR) by embryonic day (E) 18.5",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "IUGR is explicitly mentioned as a fetal complication resulting from the maternal diet.",
+    "evidence": [
+      {
+        "quote": "Male fetuses showed intrauterine growth restriction (IUGR) by embryonic day (E) 18.5, just before term, whereas female fetuses showed IUGR as early as E16.5.",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Intrauterine growth restriction (IUGR)"
+    ],
+    "confidence": "high",
+    "reason": "IUGR is the main fetal complication identified and quantified.",
+    "evidence": [
+      {
+        "quote": "Male fetuses showed intrauterine growth restriction (IUGR) by embryonic day (E) 18.5",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Fetal weight",
+      "Placental weight",
+      "Fetal to placental weight ratio (Placental efficiency)",
+      "Trophoblast cell ploidy (DNA content)",
+      "Labyrinth zone volume/area",
+      "Junctional zone area",
+      "Spongiotrophoblast cell number/size",
+      "Glycogen trophoblast cell area",
+      "Nutrient transporter gene expression (Glut1, Glut3, Slc38a1, Slc38a2, Slc38a4, Igf2 P0)",
+      "Whole placenta RNA sequencing transcriptome"
+    ],
+    "confidence": "high",
+    "reason": "These measurements are detailed in the results and figures as primary outcomes of the study.",
+    "evidence": [
+      {
+        "quote": "Fetal, placental, and maternal biometry were analyzed",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "Sinusoidal trophoblast giant cell (S-TGC) and spongiotrophoblast (SpT) cell ploidy",
+        "source": "Main text, Results, Figure 7 legend"
+      },
+      {
+        "quote": "RT-qPCR analysis of several nutrient transporter genes",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "University of Calgary",
+    "confidence": "high",
+    "reason": "The study was conducted at the University of Calgary, as indicated by the author affiliations and animal ethics committee details.",
+    "evidence": [
+      {
+        "quote": "The work was approved by the University of Calgary Health Sciences Animal Care Committee (AC12-0094).",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "Canada",
+    "confidence": "high",
+    "reason": "The University of Calgary is located in Canada.",
+    "evidence": [
+      {
+        "quote": "University of Calgary, Calgary Alberta",
+        "source": "Main text, Author Information"
+      }
+    ]
+  }
+}

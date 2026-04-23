@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Endocrinology Endocrinology 358 wtpa Endocrinology 0013-7227 1945-7170 pmc-is-collection-domain yes pmc-collection-title UKPMC Funders Author Manuscripts PMC3064984 PMC3064984.1 3064984 3064984 UKMS32545 18845641 10.1210/en.2008-0456 UKMS32545 WTPA32545 WTMS32545 EMS32545 1 Article Identification of Novel Trophoblast Invasion-Related Genes: Heme Oxygenase-1 Controls Motility via Peroxisome Proliferator-Activated Receptor γ Bilban Martin Haslinger Peter Prast Johanna Klinglmüller Florian Woelfel Thomas Haider Sandra Sachs Alexander Otterbein Leo E. Desoye Gernot Hiden Ursula Wagner Oswald Knöfler Martin Department of Laboratory Medicine (M.B., F.K., T.W., O.W.), Department of Obstetrics and Fetal-Maternal Medicine, Reproductive Biology Unit (P.H., J.P., S.H., M.K.), Medical University of Vienna, A-1090 Vienna, Austria; Ludwig Boltzmann Institute for Clinical and Experimental Oncology (M.B., F.K., T.W., O.W.), A-1090 Vienna, Austria; Department of Statistics and Probability Theory (F.K., T.W.), University of Technology, A-1040 Vienna, Austria; Department of Surgery (M.B., A.S., L.E.O.), Beth Israel Deaconess Medical Center, Harvard Medical School, Boston, Massachusetts 02215; and Department of Obstetrics and Gynecology (G.D., U.H.), Medical University of Graz, A-8036 Graz, Austria Address all correspondence and requests for reprints to: Martin Knöfler, Ph.D., Department of Obstetrics and Fetal-Maternal Medicine, Reproductive Biology Unit, Medical University of Vienna, Waehringer Guertel 18-20, A-1090 Vienna, Austria. martin.knoefler@meduniwien.ac.at 09 10 2008 2 2009 150 2 195374 1000 1013 15 02 2011 28 03 2011 28 03 2011 06 06 2024 Copyright © 2009 by The Endocrine Society 2009 Invasion of cytotrophoblasts (CTBs) into uterine tissues is essential for placental development. To identify molecules regulating trophoblast invasion, mRNA signatures of purified villous (CTB, poor invasiveness) and extravillous trophoblasts (EVTs) (high invasiveness) isolated from first trimester human placentae and villous explant cultures, respectively, were compared using GeneChip analyses yielding 991 invasion/migration-related transcripts. Several genes involved in physiological and pathological cell invasion, including A disintegrin and metalloprotease-12, -19, -28, as well as Spondin-2, were up-regulated in EVTs. Pathway prediction analyses identified several functional modules associated with either the invasive or noninvasive trophoblast phenotype. One of the genes that was down-regulated in the invasive mRNA pool, heme oxygenase-1 (HO-1), was selected for functional analyses. Real-time PCR analyses, Western blotting, and immunofluorescence of first trimester placentae and differentiating villous explant cultures demonstrated down-regulation of HO-1 in invasive EVTs as compared with CTBs. Modulation of HO-1 expression in loss-of as well as gain-of function cell models (BeWo and HTR8/SVneo, respectively) demonstrated an inverse relationship of HO-1 expression with trophoblast migration in transwell and wound healing assays. Importantly, HO-1 expression led to an increase in protein levels and activity of the nuclear hormone receptor peroxisome proliferator activated receptor (PPAR) γ γ γ Austrian Science Fund FWF : P 17894-B14 || FWF_ pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

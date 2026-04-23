@@ -1,0 +1,19 @@
+[
+  {
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper provides birthweight data for all study clusters, reported as standardized 'Newborn weight z-scores' in the supplementary clinical tables.",
+      "evidence": [
+        {
+          "quote": "Newborn weight z-score | 0.15 (1.06) | -1.51 (0.59) | -1.77 (0.46) | -1.25 (1.05) | < 0.01",
+          "source": "Supplementary Table 1 (13148_2018_463_MOESM2_ESM.pdf)"
+        },
+        {
+          "quote": "Within this subset of 48 cases, transcriptional cluster 1 patients (N = 19) were predominately healthy and delivered average-for-gestational-age (AGA) infants at term",
+          "source": "Main text, Results section (Clinical characteristics and global methylation patterns)"
+        }
+      ]
+    }
+  }
+]

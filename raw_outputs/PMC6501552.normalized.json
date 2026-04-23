@@ -1,0 +1,39 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Tim S. Nawrot",
+  "Supervisor/Contact/Corresponding author email": "tim.nawrot@uhasselt.be",
+  "Main topic of the publication": "This study investigates the molecular mechanisms linking maternal pre-pregnancy BMI and fetal growth by conducting a genome-wide placental transcriptome analysis to identify functional pathways involved in the developmental programming of metabolic health.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Term",
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 38.9,
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "Yes",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Gestational diabetes",
+    "Gestational hypertension"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Maternal pre-pregnancy BMI",
+    "Gestational weight gain",
+    "Smoking status during pregnancy"
+  ],
+  "Hospital/Center where samples were collected": "East-Limburg Hospital",
+  "Country where samples were collected": "Belgium",
+  "PMCID": "PMC6501552"
+}

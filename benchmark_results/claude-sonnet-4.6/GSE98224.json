@@ -1,0 +1,135 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Brian J. Cox",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "b.cox@utoronto.ca",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study investigates DNA methylation differences in placental transcriptional subtypes of preeclampsia using Infinium HumanMethylation450 arrays on 48 placentas, integrating epigenomic and transcriptomic data to identify epigenetic regulation underlying 'canonical' and 'immunological' PE subtypes.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "Term",
+    "confidence": "medium",
+    "reasoning": "The paper refers to delivered placentas from a highly annotated cohort and discusses preeclampsia (diagnosed after 20 weeks), with samples purchased from a biobank; the paper does not explicitly state gestational age at delivery but the context of delivered placentas and preeclampsia subtypes (including early-onset) suggests term or near-term delivery."
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium",
+    "reasoning": "The paper mentions controlling for gestational age and notes that clusters 2 and 3 are significantly younger than cluster 1, implying GA at delivery was recorded, though specific mean values are not explicitly tabulated in the visible text."
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "While gestational age is mentioned as a covariate and clusters differ in GA, no specific numeric mean GA at delivery is explicitly stated in the paper text."
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium",
+    "reasoning": "Gestational age is used as a covariate in the analysis and samples are from delivered placentas, so GA at collection (delivery) is implicitly provided, though not explicitly tabulated in the visible text."
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "No specific numeric mean gestational age at sample collection is explicitly stated in the paper text."
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Preeclampsia"
+    ],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium",
+    "reasoning": "The paper mentions chromosomal abnormalities in cluster 5 placentas and references SGA (small-for-gestational-age) in abbreviations, indicating fetal complications are noted."
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Chromosomal abnormalities",
+      "Small-for-gestational-age (SGA)"
+    ],
+    "confidence": "medium",
+    "reasoning": "Cluster 5 is noted to have known chromosomal abnormalities, and SGA is listed as an abbreviation, suggesting these fetal complications are present in the dataset."
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "DNA methylation",
+      "Gene expression",
+      "Placental transcriptional subtypes/clusters",
+      "Fetal sex"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Research Centre for Women's and Infants' Health (RCWIH) BioBank",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "Canada",
+    "confidence": "high"
+  }
+}

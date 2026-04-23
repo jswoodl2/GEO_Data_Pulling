@@ -1,0 +1,48 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Kristin L. Connor",
+  "Supervisor/Contact/Corresponding author email": "kristin.connor@carleton.ca",
+  "Main topic of the publication": "This paper investigates the placental transcriptome in fetuses with isolated spina bifida (SB) compared to controls, aiming to identify dysregulated genes and networks, especially those critical for fetoplacental growth and nutrient sensitivity, to better understand SB and its comorbidities.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "3rd",
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 34.1,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "Yes",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Ventriculomegaly",
+    "Talipes",
+    "Arnold Chiari",
+    "lemon sign",
+    "right feet dorsiflexed",
+    "bilateral indentation of frontal bones"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "Birthweight z score",
+    "Dietary Inflammatory Index (DII) scores",
+    "adequacy of total fruit and vegetable intakes",
+    "intake of refined grains"
+  ],
+  "Hospital/Center where samples were collected": "Mount Sinai Hospital, Toronto",
+  "Country where samples were collected": "Canada",
+  "PMCID": "PMC10804907"
+}

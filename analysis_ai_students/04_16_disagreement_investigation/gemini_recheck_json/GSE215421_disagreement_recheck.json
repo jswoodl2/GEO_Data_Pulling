@@ -1,0 +1,50 @@
+{
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper lists 'fetal demographics' and 'outcomes' as main outcome measures but does not report specific values for birthweight in the provided abstract or supplemental tables.",
+    "evidence": []
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The abstract mentions gestational age at sample collection (11\u201313 weeks) but does not provide the gestational age at the time of delivery.",
+    "evidence": []
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The provided text mentions 'fetal demographics' as a measure but does not explicitly report the sex of the offspring.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "There is no mention of maternal race or ethnicity values in the provided main text or supplemental materials.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal weight or BMI is not reported in the provided snippet or supplemental tables.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper lists maternal demographics as a main outcome measure, but no specific maternal age values are provided in the provided text.",
+    "evidence": []
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The abstract lists 'paternal demographics' as a measure, but no paternal age values are reported in the provided sections.",
+    "evidence": []
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The text mentions 'delivery of viable offspring' as a criterion, but it does not specify the mode (e.g., vaginal or cesarean).",
+    "evidence": []
+  }
+}

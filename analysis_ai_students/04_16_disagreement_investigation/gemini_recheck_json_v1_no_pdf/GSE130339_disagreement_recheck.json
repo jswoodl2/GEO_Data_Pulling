@@ -1,0 +1,25 @@
+{
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The study provides 'gestational age at tissue collection' and 'gestational age at the procedure' for first-trimester samples (molar pregnancies and elective terminations), but does not explicitly report a 'gestational age at delivery' as none of the pregnancies reached a delivery stage.",
+    "evidence": []
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper explicitly states the sex chromosome content for the control placental samples used in the RNA-Seq analysis.",
+    "evidence": [
+      {
+        "quote": "RNA-Seq count data for additional late first trimester control placentas (22 XY and 17 XX) were downloaded from GEO (AccNo: GSE109082 [23,106,107])",
+        "source": "Main text, Section 4.3.1. Analysis of mRNA Expression (RNA-Seq Data)"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper describes the methods of tissue acquisition (e.g., dilation and curettage, surgical elective terminations), but it does not report these as a 'mode of delivery' in the standard obstetric sense (vaginal or cesarean birth).",
+    "evidence": []
+  }
+}

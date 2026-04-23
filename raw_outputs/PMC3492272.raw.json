@@ -1,0 +1,42 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Maris Laan",
+  "Supervisor/Contact/Corresponding author email": "maris.laan@ut.ee",
+  "Main topic of the publication": "This study focuses on transcriptome profiling of genes with significant expressional changes in the placenta from early to mid-pregnancy, investigating how these changes may affect late pregnancy and exploring their potential as biomarkers for pregnancy complications.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "2nd",
+    "Term"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "Yes",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Preeclampsia",
+    "Gestational diabetes"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "affected fetal growth",
+    "small-for-gestational-age newborns",
+    "large-for-gestational-age newborns"
+  ],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "Women’s Clinic of Tartu University Hospital, Estonia",
+  "Country where samples were collected": "Estonia"
+}

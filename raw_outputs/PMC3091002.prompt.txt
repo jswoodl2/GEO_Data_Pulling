@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Cell Stem Cell 319 nihpa Cell stem cell 1934-5909 1875-9777 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC3091002 PMC3091002.1 3091002 3091002 NIHMS285841 21549327 10.1016/j.stem.2011.03.008 NIHMS285841 NIHPA285841 1 Article MAP3K4/CBP Regulated H2B Acetylation Controls Epithelial-Mesenchymal Transition in Trophoblast Stem Cells Abell Amy N. 1 6 * Jordan Nicole Vincent 1 6 Huang Weichun 5 Prat Aleix 3 Midland Alicia A. 4 Johnson Nancy L. 1 Granger Deborah A. 1 Mieczkowski Piotr A. 2 Perou Charles M. 3 Gomez Shawn M. 4 Li Leping 5 Johnson Gary L. 1 * 1 2 3 4 5 * amy_abell@med.unc.edu gary_johnson@med.unc.edu 6 These authors contributed equally to this work The authors have no conflict of interest. 6 5 2011 8 5 196463 525 537 15 04 2011 06 05 2012 06 05 2012 02 05 2012 06 06 2024 © 2011 ll Press Inc. All rights reserved. 2011 SUMMARY Epithelial stem cells self-renew while maintaining multipotency, but the dependence of stem cell properties on maintenance of the epithelial phenotype is unclear. We previously showed that trophoblast stem (TS) cells lacking the protein kinase MAP3K4 maintain properties of both stemness and epithelial-mesenchymal transition (EMT). Here, we show that MAP3K4 controls the activity of the histone acetyltransferase CBP, and that acetylation of histones H2A and H2B by CBP is required to maintain the epithelial phenotype. Combined loss of MAP3K4/CBP activity represses expression of epithelial genes and causes TS cells to undergo EMT while maintaining their self-renewal and multipotency properties. The expression profile of MAP3K4 deficient TS cells defines an H2B acetylation regulated gene signature that closely overlaps with that of human breast cancer cells. Taken together, our data define an epigenetic switch that maintains the epithelial phenotype in TS cells and reveal previously unrecognized genes potentially contributing to breast cancer. National Institute of General Medical Sciences : NIGMS R01 GM030324-34 || GM National Institute of Diabetes and Digestive and Kidney Diseases : NIDDK R01 DK037871-29 || DK pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

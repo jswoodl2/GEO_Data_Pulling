@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Reprod Sci Reprod Sci 1718 sprsx RSX Reproductive Sciences 1933-7191 1933-7205 Society for Reproductive Investigation PMC6348426 PMC6348426.1 6348426 6348426 28693373 10.1177/1933719117716779 10.1177_1933719117716779 1 Original Articles Prenatal Growth Patterns and Birthweight Are Associated With Differential DNA Methylation and Gene Expression of Cardiometabolic Risk Genes in Human Placentas: A Discovery-Based Approach Chen Pao-Yang PhD 1 Chu Alison MD 2 Liao Wen-Wei MS 1 Rubbi Liudmilla PhD 3 Janzen Carla MD, PhD 4 Hsu Fei-Man MS 1 Thamotharan Shanthie BVSC 2 Ganguly Amit PhD 2 Lam Larry PhD 3 Montoya Dennis PhD 3 Pellegrini Matteo PhD 3 Devaskar Sherin U. MD 2 1 2 3 4 Sherin U. Devaskar, Division of Neonatology and Developmental Biology, Department of Pediatrics, David Geffen School of Medicine at UCLA, 10833 Le Conte Avenue, MDCC 22-402, Los Angeles, CA 90095, USA. Email: sdevaskar@mednet.ucla.edu Declaration of Conflicting Interests: 11 7 2017 4 2018 25 4 328312 523 539 01 04 2019 01 04 2019 05 02 2019 01 04 2019 © The Author(s) 2017 2017 Society for Gynecologic Investigation Inherent genetic programming and environmental factors affect fetal growth in utero. Epidemiologic data in growth-altered fetuses, either intrauterine growth restricted (IUGR) or large for gestational age (LGA), demonstrate that these newborns are at increased risk of cardiometabolic disease in adulthood. There is growing evidence that the in utero environment leads to epigenetic modification, contributing to eventual risk of developing heart disease or diabetes. In this study, we used reduced representation bisulfite sequencing to examine genome-wide DNA methylation variation in placental samples from offspring born IUGR, LGA, and appropriate for gestational age (AGA) and to identify differential methylation of genes important for conferring risk of cardiometabolic disease. We found that there were distinct methylation signatures for IUGR, LGA, and AGA groups and identified over 500 differentially methylated genes (DMGs) among these group comparisons. Functional and gene network analyses revealed expected relationships of DMGs to placental physiology and transport, but also identified novel pathways with biologic plausibility and potential clinical importance to cardiometabolic disease. Specific loci for DMGs of interest had methylation patterns that were strongly associated with anthropometric presentations. We further validated altered gene expression of these specific DMGs contributing to vascular and metabolic diseases (SLC36A1, PTPRN2, CASZ1, IL10), thereby establishing transcriptional effects toward assigning functional significance. Our results suggest that the gene expression and methylation state of the human placenta are related and sensitive to the intrauterine environment, as it affects fetal growth patterns. We speculate that these observed changes may affect risk for offspring in developing adult cardiometabolic disease. intrauterine growth restriction (IUGR) placenta developmental programming of cardiometabolic disease DNA methylation large for gestational age (LGA) Eunice Kennedy Shriver National Institute of Child Health and Human Development https://doi.org/10.13039/100009633 K12HD034610 R01HD089714 National Institutes of Health https://doi.org/10.13039/100000002 10.13039/100000002 1R01GM095656-01A1 KL2TR001882 National Institute of Child Health and Human Development https://doi.org/10.13039/100000071 1U01HD087221 National Health Research Institutes https://doi.org/10.13039/501100004737 NHRI-EXI03-10324SC pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

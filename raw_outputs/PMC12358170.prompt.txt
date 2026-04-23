@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Life Sci Life Sci 319 nihpa Life sciences 0024-3205 1879-0631 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC12358170 PMC12358170.1 12358170 12358170 NIHMS2096248 35940219 10.1016/j.lfs.2022.120867 NIHMS2096248 NIHPA2096248 1 Article Expression of CYP450 enzymes in human fetal membranes and its implications in xenobiotic metabolism during pregnancy Kammala Ananth Kumar a Lintao Ryan C.V. a b Vora Natasha a Mosebarger Angela a Khanipov Kamil c Golovko George c Yaklic Jerome L. d Peltier Morgan R. e Conrads Thomas P. f g Menon Ramkumar a * a b c d e f g * ra2menon@utmb.edu 15 10 2022 06 8 2022 307 495094 120867 120867 30 07 2025 17 08 2025 18 08 2025 18 08 2025 Background: Environmental exposure to toxicants is a major risk factor for spontaneous preterm birth (PTB, <37 weeks). Toxicants and drugs administered to patients are metabolized primarily by the cytochrome P450 (CYP450) system. Along with the adult and fetal liver, the placenta, a critical feto-maternal interface organ, expresses CYP450 enzymes that metabolize these xenobiotics. However, the contribution of the fetal membranes, another tissue of the feto-maternal interface, to the expression of CYP450 enzymes and the detoxification of xenobiotics remains unknown. Aims: This study characterized CYP450 expression and determined the functional activity of CYP450 enzymes in fetal membranes. Main methods: RNA sequencing (RNA-Seq) of placental and fetal membrane tissues and cells was done. Differential expressions of CYP450 genes were compared and validated via reverse transcription-quantitative polymerase chain reaction (RT-qPCR) between the two tissues. The functional activity of major CYP450 enzymes was determined using a fluorophore-based enzymatic assay in the presence and absence of their corresponding inhibitors. Key findings: With the exception of genes that regulate cholesterol metabolism, the expression profile of CYP450 genes was similar between placental and fetal membranes tissues/cells. RT-qPCR analysis confirmed these findings with significant levels of mRNA for major CYP450 genes being detectable in amnion epithelial cells (AECs) and chorion trophoblasts cells (CTCs). Biochemical analyses revealed significant CYP450 enzymatic activities that were sensitive to specific inhibitors for both AECs and CTCs, suggesting that the genes were expressed as functional enzymes. Significance: This is the first study to determine global expression of CYP450 enzymes in fetal membranes which may play a role in xenobiotic metabolism during pregnancy. Given that many women are exposed to environmental toxins or require medications during pregnancy, a better understanding of their role in metabolism is required to develop safer therapeutics and prevent adverse outcomes. Fetal membrane Placenta Cytochrome P450 Drug metabolism Toxicant metabolism Pharmacokinetics Pregnancy pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

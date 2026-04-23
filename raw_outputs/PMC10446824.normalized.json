@@ -1,0 +1,40 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Samir M Parikh",
+  "Supervisor/Contact/Corresponding author email": "Samir.Parikh@utsouthwestern.edu",
+  "Main topic of the publication": "This paper investigates the role of hypoxia-inducible factor 1 (HIF-1) signaling in placental aging and its potential to provoke preterm labor. The study uses transcriptomic analysis of mouse and human placenta to demonstrate that HIF-1 stabilization is a hallmark of advanced gestational timepoints, accompanied by mitochondrial dysregulation and cellular senescence, and provides evidence for the role of placental aging in signaling that promotes the onset of labor.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "2nd",
+    "3rd",
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 34.0,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "No",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Mitochondrial abundance",
+    "Cellular senescence"
+  ],
+  "Hospital/Center where samples were collected": "Beth Israel Deaconess Medical Center",
+  "Country where samples were collected": "United States",
+  "PMCID": "PMC10446824"
+}

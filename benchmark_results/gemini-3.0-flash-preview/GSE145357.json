@@ -1,0 +1,150 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Nardhy Gomez-Lopez",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "nardhy.gomez-lopez@wayne.edu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "The study investigates the role of regulatory T cells (Tregs) in late pregnancy, demonstrating that their reduction at the maternal-fetal interface is associated with idiopathic preterm labor and adverse neonatal outcomes.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "3rd",
+      "Term",
+      "Premature"
+    ],
+    "confidence": "high"
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "low",
+    "reasoning": "While the paper references human cohorts and matches them by gestational age in Supplemental Tables S1 and S2, the specific mean weeks are not listed in the provided text."
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "low",
+    "reasoning": "Gestational ages for sample collection (delivery) are described as belonging to 'preterm' and 'term' categories and are documented in tables not fully detailed in this snippet."
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Parity is likely included in the clinical demographic tables (S1, S2) mentioned, but it is not explicitly stated in the text."
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Gravidity is likely included in the clinical demographic tables (S1, S2) mentioned, but it is not explicitly stated in the text."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The text discusses mouse litters and human cohorts but does not provide specific values for the average number of offspring per pregnancy."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The paper mentions comparing demographic data for human subjects but does not explicitly list the specific race or ethnicity categories."
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Maternal age is mentioned as part of the demographic data comparison in the methods but the specific values are not provided in the text snippet."
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Idiopathic preterm labor",
+      "Preterm birth",
+      "Chorioamnionitis",
+      "Intra-amniotic inflammation",
+      "Acute histologic chorioamnionitis"
+    ],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Preterm birth",
+      "Adverse neonatal outcomes",
+      "Neonatal mortality",
+      "Fetal growth restriction"
+    ],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Treg frequency",
+      "Tc17 cell frequency",
+      "Th17 cell frequency",
+      "Treg suppression activity",
+      "Maternal cytokine concentrations (CCL7, IL-22, IFN-gamma)",
+      "Uterine artery pulsatility index",
+      "Umbilical artery pulsatility index",
+      "Maternal blood pressure",
+      "Placental gene expression (RNA-seq)"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Perinatology Research Branch, Wayne State University/Detroit Medical Center",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "USA",
+    "confidence": "high"
+  }
+}

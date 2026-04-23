@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Biol Chem 567 jbc JBC The Journal of Biological Chemistry 0021-9258 1083-351X American Society for Biochemistry and Molecular Biology PMC2857000 PMC2857000.1 2857000 2857000 20139068 10.1074/jbc.M109.086389 M109.086389 1 Signal Transduction Cell Biology Generation of Human Induced Pluripotent Stem Cells from Umbilical Cord Matrix and Amniotic Membrane Mesenchymal Cells * Cai Jinglei ‡ Li Wen ‡ Su Huanxing § Qin Dajiang ‡ Yang Jiayin ‡ Zhu Fan ‡ Xu Jianyong ‡ He Wenzhi ‡ Guo Xiangpeng ‡ Labuda Krystyna ¶ Peterbauer Anja ‖ Wolbank Susanne ¶ Zhong Mei ** Li Zhiyuan ‡ Wu Wutian § So Kwok-Fai § Redl Heinz ¶ Zeng Lingwen ‡ Esteban Miguel Angel ‡ 1 Pei Duanqing ‡ 2 From the ‡ the § the ¶ the ‖ the ** 1 86-20-3201-5201 86-20-3201-5299 esteban@gibh.org 2 86-20-3201-5201 86-20-3201-5299 pei_duanqing@gibh.ac.cn 9 4 2010 5 2 2010 285 15 186502 11227 11234 21 11 2009 2 2 2010 09 04 2010 09 04 2011 03 07 2024 © 2010 by The American Society for Biochemistry and Molecular Biology, Inc. The umbilical cord and placenta are extra-embryonic tissues of particular interest for regenerative medicine. They share an early developmental origin and are a source of vast amounts of cells with multilineage differentiation potential that are poorly immunogenic and without controversy. Moreover, these cells are likely exempt from incorporated mutations when compared with juvenile or adult donor cells such as skin fibroblasts or keratinocytes. Here we report the efficient generation of induced pluripotent stem cells (iPSCs) from mesenchymal cells of the umbilical cord matrix (up to 0.4% of the cells became reprogrammed) and the placental amniotic membrane (up to 0.1%) using exogenous factors and a chemical mixture. iPSCs from these 2 tissues homogeneously showed human embryonic stem cell (hESC)-like characteristics including morphology, positive staining for alkaline phosphatase, normal karyotype, and expression of hESC-like markers including Nanog, Rex1, Oct4, TRA-1–60, TRA-1–80, SSEA-3, and SSEA-4. Selected clones also formed embryonic bodies and teratomas containing derivatives of the 3 germ layers, and could as well be readily differentiated into functional motor neurons. Among other things, our cell lines may prove useful for comparisons between iPSCs derived from multiple tissues regarding the extent of the epigenetic reprogramming, differentiation ability, stability of the resulting lineages, and the risk of associated abnormalities. Cell Differentiation General Transcription Factors Induced Pluripotent Stem (iPS) Cell Neurodifferentiation Stem Cell Placenta Reprogramming pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

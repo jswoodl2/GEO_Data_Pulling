@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Biol Reprod Biol. Reprod 675 biolreprod bire Biol Reprod Biology of Reproduction 0006-3363 1529-7268 Oxford University Press PMC3509780 PMC3509780.1 3509780 3509780 22993381 10.1095/biolreprod.112.103218 Manuscript Number: BIOLREPROD/2012/103218 1 Research Article Pregnancy Leptin and the Placental Response to Maternal Food Restriction During Early Pregnancy in Mice 1 LEPTIN AND THE PLACENTA DURING FOOD RESTRICTION Schulz Laura Clamon 2 3 Schlitt Jessica M. 3 4 Caesar Gerialisa 3 4 Pennington Kathleen A. 3 3 4 2 schulzl@missouri.edu 19 9 2012 11 2012 87 5 216816 120 5 7 2012 5 8 2012 14 9 2012 01 11 2013 01 11 2013 29 06 2024 © 2012 by the Society for the Study of Reproduction, Inc. 2012 ABSTRACT Several studies have demonstrated that maternal undernutrition or overnutrition during pregnancy can have negative consequences for the health of children born to these pregnancies, but the physiological mechanisms by which this occurs are not completely understood. During periods of food restriction, concentrations of leptin decline, whereas leptin is elevated in obesity, suggesting that it may play a role in the response to altered nutrition during pregnancy. This study compares placental development and global placental gene expression profiles at Day 11.5 in pregnant control mice, mice that were undernourished, and mice that were undernourished but given leptin. Placentas from mothers exposed to food restriction preserved the placental labyrinth zone at the expense of the junctional zone, an effect abrogated in the restricted plus leptin group, which had a significant decrease in the labyrinth zone area compared with controls. Similarly, there were more significant differences in gene expression between placentas from control and restricted plus leptin mothers (1128 differentially expressed genes) than between placentas of control and restricted mothers (281 differentially expressed genes). We conclude that the presence of high concentrations of circulating leptin during food restriction disrupts the normal adaptive response of the placenta to reduced energy availability. Elevated maternal leptin disrupts the response of the placenta to maternal food restriction during early pregnancy. developmental origin of adult health and disease (DOHAD) leptin trophoblast undernutrition pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

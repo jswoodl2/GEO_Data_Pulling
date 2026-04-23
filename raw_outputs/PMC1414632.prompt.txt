@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC1414632 PMC1414632.2 1414632 1459380 16567644 10.1073/pnas.0508035103 1447 2 Biological Sciences Medical Sciences Gene expression patterns in human placenta Sood Ruchira * Zehnder James L. † Druzin Maurice L. ‡ Brown Patrick O. * § Departments of *Biochemistry, † ‡ § pbrown@pmgm2.stanford.edu Edited by R. Michael Roberts, University of Missouri, Columbia, MO, and approved January 17, 2006 Author contributions: R.S., J.L.Z., M.L.D., and P.O.B. designed research and analyzed data; R.S. performed research; M.L.D. contributed new reagents/analytic tools; and R.S. and P.O.B. wrote the paper. Conflict of interest statement: No conflicts declared. 4 4 2006 27 3 2006 103 14 130966 5478 5483 19 9 2005 04 04 2006 24 05 2006 05 05 2024 © 2006 by The National Academy of Sciences of the USA 2006 Freely available online through the PNAS open access option. The placenta is the principal metabolic, respiratory, excretory, and endocrine organ for the first 9 months of fetal life. Its role in fetal and maternal physiology is remarkably diverse. Because of the central role that the placenta has in fetal and maternal physiology and development, the possibility that variation in placental gene expression patterns might be linked to important abnormalities in maternal or fetal health, or even variations in later life, warrants investigation. As an initial step, we used DNA microarrays to analyze gene expression patterns in 72 samples of amnion, chorion, umbilical cord, and sections of villus parenchyma from 19 human placentas from successful full-term pregnancies. The umbilical cord, chorion, amnion, and villus parenchyma samples were readily distinguished by differences in their global gene-expression patterns, many of which seemed to be related to physiology and histology. Differentially expressed genes have roles that include placental trophoblast secretion, signal transduction, metabolism, immune regulation, cell adhesion, and structure. We found interindividual differences in expression patterns in villus parenchyma and systematic differences between the maternal, fetal, and intermediate layers. A group of genes that was expressed in both the maternal and fetal villus parenchyma sections of placenta included genes that may be associated with preeclampsia. We identified sets of genes whose expression in placenta was significantly correlated with the sex of the fetus. This study provides a rich and diverse picture of the molecular variation in the placenta from healthy pregnancies. microarray pregnancy transcriptome preeclampsia pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes PDF
+---

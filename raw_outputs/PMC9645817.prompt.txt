@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Nature Nature 319 nihpa Nature 0028-0836 1476-4687 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC9645817 PMC9645817.1 9645817 9645817 NIHMS1808640 35418685 10.1038/s41586-022-04571-x NIHMS1808640 NIHPA1808640 1 Article MAPPING HUMAN HAEMATOPOIETIC STEM CELLS FROM HAEMOGENIC ENDOTHELIUM TO BIRTH Calvanese Vincenzo 1 2 3 § * Capellera-Garcia Sandra 1 2 § Ma Feiyang 1 2 4 § Fares Iman 1 2 Liebscher Simone 5 Ng Elizabeth S 6 Ekstrand Sophia 1 2 Aguadé-Gorgorió Júlia 1 2 Vavilina Anastasia 1 2 Lefaudeux Diane 7 8 Nadel Brian 1 Li Jacky Y 6 Wang Yanling 1 Lee Lydia K 9 Ardehali Reza 2 10 Iruela-Arispe M. Luisa 11 Pellegrini Matteo 1 2 Stanley Ed G 6 12 13 Elefanty Andrew G 6 12 13 Schenke-Layland Katja 5 10 14 15 Mikkola Hanna K.A. 1 2 * 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 § These authors contributed equally. Author contributions V.C., S.C.G. and H.K.A.M. designed experiments and interpreted data. F.M. led the bioinformatic analysis, which was also performed by V.C. and S.C.G. and assisted by I.F., S.E., B.N. and J.L. V.C. and S.C.G. performed and/or supervised wet lab experiments and related data analysis, assisted by I.F. and J.A.G. S.L. coordinated the tissue collection and procurement and performed the immunofluorescence experiments. A.V. assisted with immunofluorescence data analysis. E.S.N., E.G.S., J.L. and A.G.E. generated the hPSC in vitro * Correspondence and requests for materials hmikkola@mcdb.ucla.edu v.calvanese@ucl.ac.uk Competing interests: 4 2022 13 4 2022 604 7906 421107 534 540 26 10 2022 09 11 2022 14 11 2022 13 06 2024 Human hematopoietic stem cell (HSC) ontogeny is poorly defined due to the inability to identify HSCs as they emerge and mature in different hematopoietic sites. We created a single-cell transcriptome map of human hematopoietic tissues from 1 st in vivo pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

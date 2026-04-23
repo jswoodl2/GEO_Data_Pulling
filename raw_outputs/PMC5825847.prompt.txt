@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Development Development 864 develop DEV Development (Cambridge, England) 0950-1991 1477-9129 Company of Biologists PMC5825847 PMC5825847.1 5825847 5825847 29361559 10.1242/dev.156273 DEV156273 1 203 208 210 Human Development Comparative analysis of mouse and human placentae across gestation reveals species-specific regulators of placental development http://orcid.org/0000-0002-7423-9167 Soncin Francesca 1 3 Khater Marwa 2 3 To Cuong 2 3 Pizzo Donald 1 http://orcid.org/0000-0003-4446-5478 Farah Omar 1 3 http://orcid.org/0000-0002-9442-8029 Wakeland Anna 1 3 http://orcid.org/0000-0001-6580-7524 Arul Nambi Rajan Kanaga 1 3 Nelson Katharine K. 1 3 Chang Ching-Wen 1 3 http://orcid.org/0000-0003-3846-7653 Moretto-Zita Matteo 1 3 Natale David R. 2 Laurent Louise C. 2 3 * http://orcid.org/0000-0001-5963-2246 Parast Mana M. 1 3 * 1 Department of Pathology University of California San Diego La Jolla, CA 92093 USA 2 Department of Reproductive Medicine University of California San Diego La Jolla, CA 92093 USA 3 Sanford Consortium for Regenerative Medicine, La Jolla, CA, 92037, USA * llaurent@ucsd.edu mparast@ucsd.edu Competing interests The authors declare no competing or financial interests. 15 1 2018 145 2 307266 dev156273 17 6 2017 9 1 2018 15 01 2019 15 01 2019 20 03 2018 15 02 2024 © 2018. Published by The Company of Biologists Ltd 2018 Novel markers in the human placenta. 145 2 29 1 2018 e0205 e0205 Development 29378826 ABSTRACT An increasing body of evidence points to significant spatio-temporal differences in early placental development between mouse and human, but a detailed comparison of placentae in these two species is missing. We set out to compare placentae from both species across gestation, with a focus on trophoblast progenitor markers. We found that CDX2 and ELF5, but not EOMES, are expressed in early post-implantation trophoblast subpopulations in both species. Genome-wide expression profiling of mouse and human placentae revealed clusters of genes with distinct co-expression patterns across gestation. Overall, there was a closer fit between patterns observed in the placentae when the inter-species comparison was restricted to human placentae through gestational week 16 (thus, excluding full-term samples), suggesting that the developmental timeline in mouse runs parallel to the first half of human placental development. In addition, we identified VGLL1 as a human-specific marker of proliferative cytotrophoblast, where it is co-expressed with the transcription factor TEAD4. As TEAD4 is involved in trophectoderm specification in the mouse, we posit a regulatory role for VGLL1 in early events during human placental development. Highlighted Article: KEY WORDS Placenta Trophoblast stem cells Placental development Cytotrophoblast Placental progenitors Comparative study National Institute of Child Health and Human Development http://dx.doi.org/10.13039/100000071 R01-NIH HD07110 California Institute for Regenerative Medicine http://dx.doi.org/10.13039/100000900 RN3-06396 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

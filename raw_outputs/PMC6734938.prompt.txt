@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Cancer Res Cancer Res. 319 nihpa Cancer research 0008-5472 1538-7445 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC6734938 PMC6734938.1 6734938 6734938 NIHMS1530299 31123087 10.1158/0008-5472.CAN-18-2931 NIHMS1530299 NIHPA1530299 1 Article Asporin Restricts Mesenchymal Stromal Cell Differentiation, Alters the Tumor Microenvironment, and Drives Metastatic Progression Hughes Robert M. 1 2 3 Simons Brian W. 1 Khan Hamda 1 2 3 Miller Rebecca 1 2 3 Kugler Valentina 1 2 3 Torquato Samantha 1 2 3 Theodros Debebe 2 3 Haffner Michael C. 2 3 4 Lotan Tamara 2 3 4 Huang Jessie 5 Davicioni Elai 6 An Steven S. 2 3 5 7 Riddle Ryan C. 8 Thorek Daniel L. J. 9 Garraway Isla P. 10 Fertig Elana J. 2 3 Isaacs John T. 1 2 3 Brennen W. Nathaniel 2 3 Park Ben H. 2 3 7 Hurley Paula J. 1 2 3 * 1 2 3 4 5 6 7 8 9 10 * Correspondence: phurley2@jhmi.edu Disclosure of Potential Conflicts of Interest Elai Davicioni is the President and CSO, Director of GenomeDx. Ben H. Park is a consultant for Foundation Medicine, Roche, H3 Biomedicine, Casdin Capital, Loxo Oncology, and Lilly, all outside the submitted work. No potential conflicts of interest were disclosed by the other authors. 23 5 2019 15 7 2019 79 14 341697 3636 3650 13 07 2019 15 07 2020 15 07 2020 11 09 2019 01 07 2025 Tumor progression to metastasis is not cancer cell autonomous, but rather involves the interplay of multiple cell types within the tumor microenvironment. Here we identify Asporin (ASPN) as a novel, secreted mesenchymal stromal cell (MSC) factor in the tumor microenvironment that regulates metastatic development. MSCs expressed high levels of ASPN, which decreased following lineage differentiation. ASPN loss impaired MSC self-renewal and promoted terminal cell differentiation. Mechanistically, secreted ASPN bound to BMP-4 and restricted BMP-4-induced MSC differentiation prior to lineage commitment. ASPN expression was distinctly conserved between MSC and cancer-associated fibroblasts (CAF). ASPN expression in the tumor microenvironment broadly impacted multiple cell types. Prostate tumor allografts in ASPN-null mice had a reduced number of tumor-associated MSCs, fewer cancer stem cells, decreased tumor vasculature, and an increased percentage of infiltrating CD8+ T cells. ASPN-null mice also demonstrated a significant reduction in lung metastases compared to wild type mice. These data establish a role for ASPN as a critical MSC factor that extensively effects the tumor microenvironment and induces metastatic progression. Asporin Mesenchymal Stem Cell Mesenchymal Stromal Cell Activated Fibroblast Reactive Stroma Cancer-Associated Fibroblast Tumor Microenvironment Prostate Cancer Bone Morphogenetic Protein-4 Differentiation Self-renewal Metastasis pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

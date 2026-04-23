@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Am J Hum Genet Am. J. Hum. Genet 203 ajhg American Journal of Human Genetics 0002-9297 1537-6605 Elsevier PMC4863666 PMC4863666.1 4863666 4863666 27153397 10.1016/j.ajhg.2016.03.027 S0002-9297(16)30062-3 1 Article Mechanisms and Disease Associations of Haplotype-Dependent Allele-Specific DNA Methylation Do Catherine cd2695@columbia.edu 1 ∗ Lang Charles F. 1 Lin John 1 Darbary Huferesh 1 Krupska Izabela 1 Gaba Aulona 1 2 Petukhova Lynn 3 Vonsattel Jean-Paul 4 Gallagher Mary P. 5 Goland Robin S. 6 Clynes Raphael A. 7 Dwork Andrew 4 Kral John G. 8 Monk Catherine 9 Christiano Angela M. 10 Tycko Benjamin bt12@columbia.edu 1 4 ∗∗ 1 2 3 4 5 6 7 8 9 10 ∗ cd2695@columbia.edu ∗∗ bt12@columbia.edu 05 5 2016 05 5 2016 98 5 269368 934 955 16 10 2015 25 3 2016 05 11 2016 05 11 2016 30 07 2016 11 06 2025 ©2016 by The American Society of Human Genetics. All rights reserved. 2016 The American Society of Human Genetics Haplotype-dependent allele-specific methylation (hap-ASM) can impact disease susceptibility, but maps of this phenomenon using stringent criteria in disease-relevant tissues remain sparse. Here we apply array-based and Methyl-Seq approaches to multiple human tissues and cell types, including brain, purified neurons and glia, T lymphocytes, and placenta, and identify 795 hap-ASM differentially methylated regions (DMRs) and 3,082 strong methylation quantitative trait loci (mQTLs), most not previously reported. More than half of these DMRs have cell type-restricted ASM, and among them are 188 hap-ASM DMRs and 933 mQTLs located near GWAS signals for immune and neurological disorders. Targeted bis-seq confirmed hap-ASM in 12/13 loci tested, including CCDC155, CD69 FRMD1 IRF1, KBTBD11 S100A ∗ MYT1L, PTPRN2, CMTM8 CELF2 NGFR HLA-DRB6 ZFP57 trans trans pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes Published: May 5, 2016
+---

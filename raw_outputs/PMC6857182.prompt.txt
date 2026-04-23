@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Nature Nature 319 nihpa Nature 0028-0836 1476-4687 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC6857182 PMC6857182.1 6857182 6857182 NIHMS1058548 28241135 10.1038/nature21374 NIHMS1058548 NIHPA1058548 1 Article An atlas of human long non-coding RNAs with accurate 5′ ends Hon Chung-Chau 1 Ramilowski Jordan A. 1 2 Harshbarger Jayson 1 2 Bertin Nicolas 2 3 † Rackham Owen J. L. 4 5 Gough Julian 4 Denisenko Elena 6 Schmeier Sebastian 6 Poulsen Thomas M. 7 Severin Jessica 1 2 Lizio Marina 1 2 Kawaji Hideya 1 2 8 Kasukawa Takeya 1 Itoh Masayoshi 1 2 8 Burroughs A. Maxwell 1 2 9 Noma Shohei 1 2 Djebali Sarah 10 11 † Alam Tanvir 12 Medvedeva Yulia A. 13 14 Testa Alison C. 15 Lipovich Leonard 16 17 Yip Chi-Wai 1 Abugessaisa Imad 1 Mendez Mickaël 1 2 † Hasegawa Akira 1 2 Tang Dave 1 2 18 Lassmann Timo 1 2 18 Heutink Peter 1 19 Babina Magda 20 Wells Christine A. 21 22 Kojima Soichi 23 Nakamura Yukio 24 25 Suzuki Harukazu 1 2 Daub Carsten O. 1 2 26 de Hoon Michiel J. L. 1 2 Arner Erik 1 2 Hayashizaki Yoshihide 2 8 Carninci Piero 1 2 Forrest Alistair R. R. 1 2 15 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 † Present addresses: Human Longevity Singapore Pte. Ltd., Singapore (N.B.); GenPhySE, Université de Toulouse, INRA, INPT, ENVT, Castanet Tolosan, France (S.D.); Department of Computer Science, University of Toronto, Ontario, Canada (M.M.). Author Contributions Correspondence and requests for materials should be addressed to A.R.R.F. ( alistair.forrest@gmail.com carninci@riken.jp The authors declare no competing financial interests. Readers are welcome to comment on the online version of the paper. 01 3 2017 09 3 2017 543 7644 345691 199 204 08 11 2019 15 11 2019 15 11 2019 16 06 2024 Reprints and permissions information is available at www.nature.com/reprints Long non-coding RNAs (lncRNAs) are largely heterogeneous and functionally uncharacterized. Here, using FANTOM5 cap analysis of gene expression (CAGE) data, we integrate multiple transcript collections to generate a comprehensive atlas of 27,919 human lncRNA genes with high-confidence 5′ ends and expression profiles across 1,829 samples from the major human primary cell types and tissues. Genomic and epigenomic classification of these lncRNAs reveals that most intergenic lncRNAs originate from enhancers rather than from promoters. Incorporating genetic and expression data, we show that lncRNAs overlapping trait-associated single nucleotide polymorphisms are specifically expressed in cell types relevant to the traits, implicating these lncRNAs in multiple diseases. We further demonstrate that lncRNAs overlapping expression quantitative trait loci (eQTL)-associated single nucleotide polymorphisms of messenger RNAs are co-expressed with the corresponding messenger RNAs, suggesting their potential roles in transcriptional regulation. Combining these findings with conservation data, we identify 19,175 potentially functional lncRNAs in the human genome. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

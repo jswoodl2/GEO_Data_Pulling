@@ -1,0 +1,38 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Myoung Hee Kim",
+  "Supervisor/Contact/Corresponding author email": "mhkim1@yuhs.ac",
+  "Main topic of the publication": "This study investigates the sexually dimorphic effects of maternal lipopolysaccharide (LPS) exposure on placental adaptation and fetal maldevelopment in mice, revealing sex-specific placental inflammation, impaired development, and transcriptional changes in response to intrauterine growth restriction.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "No",
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 17.5,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 17.5,
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Intrauterine growth restriction"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Growth retardation"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "Placental inflammation"
+  ],
+  "Hospital/Center where samples were collected": "Yonsei Biomedical Research Institute",
+  "Country where samples were collected": "Republic of Korea",
+  "PMCID": "PMC10506314"
+}

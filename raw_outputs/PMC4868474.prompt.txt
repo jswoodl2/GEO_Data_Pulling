@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC4868474 PMC4868474.1 4868474 4868474 27051068 10.1073/pnas.1601630113 201601630 1 PNAS Plus Biological Sciences Developmental Biology From the Cover PNAS Plus Comparison of syncytiotrophoblast generated from human embryonic stem cells and from term placentas Syncytiotrophoblast from human ESCs Yabe Shinichiro a Alexenko Andrei P. b Amita Mitsuyoshi b c Yang Ying b Schust Danny J. a http://orcid.org/0000-0003-2969-6737 Sadovsky Yoel d Ezashi Toshihiko b Roberts R. Michael b e 1 a University of Missouri MO b University of Missouri MO c Yamagata University Japan d University of Pittsburgh PA e University of Missouri MO 1 robertsrm@missouri.edu Contributed by R. Michael Roberts, March 10, 2016 (sent for review February 1, 2016; reviewed by Joanna James and Michael J. Soares) Author contributions: S.Y., D.J.S., T.E., and R.M.R. designed research; S.Y., A.P.A., M.A., and Y.Y. performed research; Y.S. contributed new reagents/analytic tools; S.Y., A.P.A., T.E., and R.M.R. analyzed data; and T.E. and R.M.R. wrote the paper. Reviewers: J.J., University of Auckland; and M.J.S., University of Kansas Medical Center. The authors declare no conflict of interest. 10 5 2016 5 4 2016 113 19 269555 E2598 E2607 05 04 2016 25 05 2016 07 01 2025 Freely available online through the PNAS open access option. PNAS Plus Significance Statements 113 19 10 5 2016 5155 5158 Proceedings of the National Academy of Sciences of the United States of America PMC4868465 Tipping the balance toward trophoblast development 113 19 26 4 2016 5144 5146 Proceedings of the National Academy of Sciences of the United States of America 10.1073/pnas.1604914113 PMC4868416 27118838 Significance Syncytiotrophoblast (STB) is responsible for nutrient and gas exchange in the human placenta. STB also forms when human embryonic stem cells (ESCs) differentiate to trophoblast. Here we compare ESC-derived STB with cytotrophoblasts isolated from term placentas before and after such cells had fused to form STB. Although both types of STB expressed all common trophoblast marker genes, there were dissimilarities indicative of altered function and ontology. We propose that STB derived from ESCs represents syncytial tissue encountered at the initiation of placental development. These cells may provide the first in vitro model for studying origins of diseases of placentation ranging from implantation failure and early pregnancy loss to intrauterine growth retardation and preeclampsia. Human embryonic stem cells (ESCs) readily commit to the trophoblast lineage after exposure to bone morphogenetic protein-4 (BMP-4) and two small compounds, an activin A signaling inhibitor and a FGF2 signaling inhibitor (BMP4/A83-01/PD173074; BAP treatment). During differentiation, areas emerge within the colonies with the biochemical and morphological features of syncytiotrophoblast (STB). Relatively pure fractions of mononucleated cytotrophoblast (CTB) and larger syncytial sheets displaying the expected markers of STB can be obtained by differential filtration of dispersed colonies through nylon strainers. RNA-seq analysis of these fractions has allowed them to be compared with cytotrophoblasts isolated from term placentas before and after such cells had formed syncytia. Although it is clear from extensive gene marker analysis that both ESC- and placenta-derived syncytial cells are trophoblast, each with the potential to transport a wide range of solutes and synthesize placental hormones, their transcriptome profiles are sufficiently dissimilar to suggest that the two cell types have distinct pedigrees and represent functionally different kinds of STB. We propose that the STB generated from human ESCs represents the primitive syncytium encountered in early pregnancy soon after the human trophoblast invades into the uterine wall. BMP4 human pluripotent stem cells trophoblast RNA-seq syncytiotrophoblast HHS | NIH | National Institute of Child Health and Human Development (NICHD) 100000071 R01HD077108 HHS | NIH | National Institute of Child Health and Human Development (NICHD) 100000071 R01HD067759 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes s-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

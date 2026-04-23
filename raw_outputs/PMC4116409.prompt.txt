@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Am J Physiol Endocrinol Metab Am. J. Physiol. Endocrinol. Metab 623 ajpendo AJPENDO American Journal of Physiology - Endocrinology and Metabolism 0193-1849 1522-1555 American Physiological Society PMC4116409 PMC4116409.1 4116409 4116409 23632636 10.1152/ajpendo.00076.2013 E-00076-2013 1 Articles Early growth response protein-1 mediates lipotoxicity-associated placental inflammation: role in maternal obesity Saben Jessica 1 2 Zhong Ying 1 Gomez-Acevedo Horacio 1 2 Thakali Keshari M. 1 2 Borengasser Sarah J. 1 2 Andres Aline 1 2 Shankar Kartik 1 2 1 2 Address for reprint requests and other correspondence: K. Shankar, Arkansas Children's Nutrition Center, 15 Children's Way, Slot 512-20B, Little Rock, AR 72202 ShankarKartik@uams.edu 30 4 2013 1 7 2013 305 1 225664 E1 E14 7 2 2013 29 4 2013 01 07 2014 31 07 2014 01 08 2014 Copyright © 2013 the American Physiological Society 2013 American Physiological Society Obesity is associated with low-grade chronic inflammation, which contributes to cellular dysfunction promoting metabolic disease. Obesity during pregnancy leads to a proinflammatory milieu in the placenta; however, the underlying causes for obesity-induced placental inflammation remain unclear. Here, we examine the mechanisms by which saturated fatty acids and inflammatory cytokines induce inflammation in placental trophoblasts. We conducted global transcriptomic profiling in BeWo cells following palmitate and/or TNFα treatment and gene/protein expression analyses of MAPK pathways and characterized downstream transcription factors directly regulating inflammatory cytokines. Microarray analysis revealed increased expression of genes regulating inflammation, stress response, and immediate early response in cytotrophoblasts in response to palmitic acid (PA), TNFα, or a combination of both (PA + TNFα). Both gene ontology and gene set enrichment analysis revealed MAPK and EGR-1 signaling to be upregulated in BeWo cells, which was confirmed via immunoblotting. Importantly, activation of JNK signaling was necessary for increased proinflammatory cytokine ( IL-6 TNFα IL-8 EGR1 EGR1 IL-6 TNFα IL-8 developmental programming early growth response protein-1 fatty acids gestational obesity mitogen-activated protein kinase pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

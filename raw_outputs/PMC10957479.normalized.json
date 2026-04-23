@@ -1,0 +1,41 @@
+{
+  "Supervisor/Contact/Corresponding author name": "De Coppi Paolo",
+  "Supervisor/Contact/Corresponding author email": "p.decoppi@ucl.ac.uk",
+  "Main topic of the publication": "This paper focuses on the isolation and characterization of fetal stem cells from amniotic fluid (AF) to derive primary organoids, specifically targeting gastrointestinal, renal, and pulmonary origins, and demonstrates their potential for modeling prenatal diseases like congenital diaphragmatic hernia.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "2nd",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 16.0,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "congenital diaphragmatic hernia"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "congenital diaphragmatic hernia"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "tissue-specific fetal epithelial progenitors",
+    "small intestine",
+    "kidney",
+    "lung"
+  ],
+  "Hospital/Center where samples were collected": "University College London Hospital (UCLH) Fetal Maternal Unit (FMU)",
+  "Country where samples were collected": "United Kingdom",
+  "PMCID": "PMC10957479"
+}

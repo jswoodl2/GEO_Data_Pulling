@@ -1,0 +1,23 @@
+{
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper explicitly provides the sex chromosome content (XX/XY) for the control placenta samples used in the RNA-Seq discovery study.",
+    "evidence": [
+      {
+        "quote": "RNA-Seq count data for additional late first trimester control placentas (22 XY and 17 XX) were downloaded from GEO (AccNo: GSE109082 [23,106,107]).",
+        "source": "Main text, Section 4.3.1 Analysis of mRNA Expression (RNA-Seq Data)"
+      },
+      {
+        "quote": "Sex chromosome content: 22 XY and 21 XX",
+        "source": "Main text, Table 7"
+      }
+    ]
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper does not explicitly state the number of offspring per pregnancy (e.g., singleton or twin status) for either the molar pregnancies or the control group.",
+    "evidence": []
+  }
+}

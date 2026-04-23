@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Physiol Genomics 631 physiolgenomics physiolgenomics Physiological Genomics 1094-8341 1531-2267 American Physiological Society PMC2636924 PMC2636924.1 2636924 2636924 19001510 10.1152/physiolgenomics.00290.2007 PG-00290-2007 1 Research Article Changes in global gene expression in rat myometrium in transition from late pregnancy to parturition Helguera Gustavo 1 * Eghbali Mansoureh 1 * Sforza Daniel 1 Minosyan Tamara Y. 1 Toro Ligia 1 2 3 Stefani Enrico 1 3 4 1 2 4 3 * G. Helguera and M. Eghbali share first authorship as they participated equally in this work. 1 2009 11 11 2008 36 2 176188 89 97 11 12 2007 2 11 2008 01 01 2010 01 01 2010 30 05 2024 Copyright © 1094-8341/09 $8.00 The process of parturition involves the complex interplay of factors that change the excitability and contractile activity of the uterus. We have compared the relative gene expression profile of myometrium from rats before parturition (21 days pregnant) and during delivery, using high-density DNA microarray. Of 8,740 sequences available in the array, a total of 3,782 were detected as present. From the sequences that were significantly altered, 59 genes were upregulated and 82 genes were downregulated. We were able to detect changes in genes described to have altered expression level at term, including connexin 43 and 26, cyclooxygenase 2, and oxytocin receptor, as well as novel genes that have been not previously associated with parturition. Quantitative real-time PCR on selected genes further confirmed the microarray data. Here we report for the first time that aquaporin5 (AQP5), a member of the aquaporin water channel family, was dramatically downregulated during parturition (∼100-fold by microarray and ∼50-fold by real-time PCR). The emerging profile highlights biochemical cascades occurring in a period of ∼36 h that trigger parturition and the initiation of myometrium reverse remodeling postpartum. The microarray analysis uncovered genes that were previously suspected to play a role in parturition. This regulation involves genes from immune/inflammatory response, steroid/lipid metabolism, calcium homeostasis, cell volume regulation, cell signaling, cell division, and tissue remodeling, suggesting the presence of multiple and redundant mechanisms altered in the process of birth. smooth muscle microarray labor aquaporin gene regulation pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes Address for reprint requests and other correspondence: E. Stefani, David Geffen School of Medicine at UCLA, Dept. of Anesthesiology, BH-520A CHS, Box 957115, Los Angeles, CA 90095-7115 (e-mail: estefani@ucla.edu The costs of publication of this article were defrayed in part by the payment of page charges. The article must therefore be hereby marked “ advertisement
+---

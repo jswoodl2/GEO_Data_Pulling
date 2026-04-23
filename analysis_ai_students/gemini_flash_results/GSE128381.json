@@ -1,0 +1,341 @@
+[
+  {
+    "Supervisor/Contact/Corresponding author name": {
+      "answer": "Tim S. Nawrot",
+      "confidence": "high",
+      "reason": "Listed as the corresponding author in the author information section.",
+      "evidence": [
+        {
+          "quote": "*Correspondence: Tim S. Nawrot, tim.nawrot@uhasselt.be",
+          "source": "Main text, Author Affiliations"
+        }
+      ]
+    },
+    "Supervisor/Contact/Corresponding author email": {
+      "answer": "tim.nawrot@uhasselt.be",
+      "confidence": "high",
+      "reason": "Listed as the corresponding author email.",
+      "evidence": [
+        {
+          "quote": "tim.nawrot@uhasselt.be",
+          "source": "Main text, Author Affiliations"
+        }
+      ]
+    },
+    "Main topic of the publication": {
+      "answer": "A genome-wide placental transcriptome study identifying functional pathways and co-expressed gene modules that represent the molecular link between maternal pre-pregnancy BMI and fetal growth (newborn birth weight).",
+      "confidence": "high",
+      "reason": "Stated clearly in the abstract and title.",
+      "evidence": [
+        {
+          "quote": "We conducted a genome-wide placental transcriptome study aiming at the identification of functional pathways representing the molecular link between maternal BMI and fetal growth.",
+          "source": "Main text, Abstract"
+        }
+      ]
+    },
+    "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+      "answer": [
+        "3rd",
+        "Term",
+        "Premature"
+      ],
+      "confidence": "high",
+      "reason": "The mean gestational age was 38.9 weeks, which is the 3rd trimester. The 10th-90th percentile range includes 36 weeks (premature) and up to 41 weeks (term).",
+      "evidence": [
+        {
+          "quote": "Gestational age, weeks 38.9 \u00b1 2.1",
+          "source": "Main text, Table 1"
+        },
+        {
+          "quote": "Gestational age, weeks 38.9 (36-41)",
+          "source": "Supplemental Table S1"
+        }
+      ]
+    },
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Mean birth weight and categorized birth weight frequencies are provided.",
+      "evidence": [
+        {
+          "quote": "Birth weight, g 3,328 \u00b1 532",
+          "source": "Main text, Table 1"
+        },
+        {
+          "quote": "Birth weight, g 3328 (2643-3963)",
+          "source": "Supplemental Table S1"
+        }
+      ]
+    },
+    "Gestational Age at delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Gestational age mean and range are provided in Table 1 and Supplemental Table S1.",
+      "evidence": [
+        {
+          "quote": "Gestational age, weeks 38.9 \u00b1 2.1",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "GA at delivery (weeks)": {
+      "answer": 38.9,
+      "confidence": "high",
+      "reason": "The mean gestational age at delivery is explicitly reported as 38.9 weeks.",
+      "evidence": [
+        {
+          "quote": "Gestational age, weeks 38.9 \u00b1 2.1",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Gestational Age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Placental tissue was collected within 1 hour after delivery, making the GA at sample collection equivalent to the GA at delivery.",
+      "evidence": [
+        {
+          "quote": "Placental tissue was collected within 1 h after delivery.",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "GA at sample collection (weeks)": {
+      "answer": 38.9,
+      "confidence": "high",
+      "reason": "Samples were collected immediately after delivery at 38.9 weeks.",
+      "evidence": [
+        {
+          "quote": "Placental tissue was collected within 1 h after delivery.",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Sex of Offspring Provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The number and percentage of boys are provided.",
+      "evidence": [
+        {
+          "quote": "Boys 95 (51.9%)",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Parity provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Parity is categorized and listed in Table 1.",
+      "evidence": [
+        {
+          "quote": "Parity 1 89 (48.6%) 2 71 (38.8%) \u22653 23 (12.6%)",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Gravidity provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Gravidity is not mentioned in the paper or supplementary materials.",
+      "evidence": []
+    },
+    "Number of offspring per pregnancy provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The study specifies 183 mother-newborn pairs, implying singletons.",
+      "evidence": [
+        {
+          "quote": "183 mother-newborn pairs from the ENVIR ON",
+          "source": "Main text, Abstract"
+        }
+      ]
+    },
+    "Self-reported race/ethnicity of mother provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Ethnicity is reported as European or non-European based on the country of birth of the grandparents.",
+      "evidence": [
+        {
+          "quote": "European ethnicity # 157 (85.8%)",
+          "source": "Main text, Table 1"
+        },
+        {
+          "quote": "Classification of ethnicity is based on the native country of the neonates\u2019 grandparents as either European (at least two grandparents were European) or non-European (at least three grandparents were of non-European origin).",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Genetic ancestry or genetic strain provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Ethnicity is defined based on grandparental origin, which serves as a proxy for genetic ancestry in this study.",
+      "evidence": [
+        {
+          "quote": "Classification of ethnicity is based on the native country of the neonates\u2019 grandparents",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Maternal Height provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Methods state height was measured to calculate pre-pregnancy BMI.",
+      "evidence": [
+        {
+          "quote": "Maternal height and weight were measured at the first antenatal visit (weeks 7\u20139 of gestation)",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Maternal Pre-pregnancy Weight provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Pre-pregnancy weight was retrieved from medical records to calculate BMI.",
+      "evidence": [
+        {
+          "quote": "Information on variables such as gestational age, birth weight, maternal pre-pregnancy weight, height, and weight before delivery were retrieved from the medical records of the hospital.",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Paternal Height provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal height is not mentioned.",
+      "evidence": []
+    },
+    "Paternal Weight provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal weight is not mentioned.",
+      "evidence": []
+    },
+    "Maternal age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Maternal age is listed in Table 1.",
+      "evidence": [
+        {
+          "quote": "Age, years 29.9 \u00b1 4.4",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Paternal age at sample collection provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal age is not mentioned.",
+      "evidence": []
+    },
+    "Samples from pregnancy complications collected": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Cases of gestational diabetes and hypertension were present in the cohort.",
+      "evidence": [
+        {
+          "quote": "Gestational diabetes 6 (3.3%) Gestational hypertension 8 (4.4%)",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Mode of delivery provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Mode of delivery is not listed in demographics or methodology.",
+      "evidence": []
+    },
+    "Pregnancy complications in data set (list)": {
+      "answer": [
+        "Gestational diabetes",
+        "Gestational hypertension",
+        "Maternal obesity",
+        "Maternal overweight",
+        "Maternal underweight",
+        "Maternal smoking"
+      ],
+      "confidence": "high",
+      "reason": "These complications are listed in the cohort characteristics table and used as covariates.",
+      "evidence": [
+        {
+          "quote": "Gestational diabetes 6 (3.3%) Gestational hypertension 8 (4.4%)",
+          "source": "Main text, Table 1"
+        },
+        {
+          "quote": "Obese 27 (14.8%) ... Current smoker 14 (7.6%)",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Fetal complications listed (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Low and High birth weight categories (proxies for fetal growth complications) are provided.",
+      "evidence": [
+        {
+          "quote": "Birth weight, g ... Low 19 (10.0) Normal 145 (80.0) High 19 (10.0)",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Fetal complications in data set (list)": {
+      "answer": [
+        "Low birth weight",
+        "High birth weight"
+      ],
+      "confidence": "high",
+      "reason": "Fetal outcomes include low and high birth weights, categorized by percentiles.",
+      "evidence": [
+        {
+          "quote": "Low birth weight was defined as birth weight below the 10th percentile for gestational age and sex",
+          "source": "Main text, Table 1, Footnote"
+        }
+      ]
+    },
+    "Other Phenotypes Provided (list)": {
+      "answer": [
+        "Maternal age",
+        "Maternal pre-pregnancy BMI",
+        "Gestational weight gain",
+        "Maternal smoking status",
+        "Parity",
+        "Newborn sex",
+        "Gestational age",
+        "Newborn ethnicity"
+      ],
+      "confidence": "high",
+      "reason": "These variables are listed as part of the cohort description and were used in adjusted models.",
+      "evidence": [
+        {
+          "quote": "Characteristics of study population",
+          "source": "Main text, Table 1"
+        }
+      ]
+    },
+    "Hospital/Center where samples were collected": {
+      "answer": "East-Limburg Hospital (ZOL)",
+      "confidence": "high",
+      "reason": "The hospital is mentioned in the ethics statement and as the source of medical records.",
+      "evidence": [
+        {
+          "quote": "The protocol was approved by the Ethical Committee of Hasselt University and the East-Limburg Hospital.",
+          "source": "Main text, Ethics Statement"
+        },
+        {
+          "quote": "retrieved from the medical records of the hospital.",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Country where samples were collected": {
+      "answer": "Belgium",
+      "confidence": "high",
+      "reason": "The study is part of the Belgian birth cohort ENVIR ON.",
+      "evidence": [
+        {
+          "quote": "Within the framework of the ongoing Belgian birth cohort ENVIR ON",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    }
+  }
+]

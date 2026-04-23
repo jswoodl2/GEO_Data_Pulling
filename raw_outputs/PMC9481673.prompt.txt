@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Mol Cell Mol Cell 319 nihpa Molecular cell 1097-2765 1097-4164 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC9481673 PMC9481673.1 9481673 9481673 NIHMS1821111 35863348 10.1016/j.molcel.2022.06.029 NIHMS1821111 NIHPA1821111 1 Article “Stripe” transcription factors provide accessibility to co-binding partners in mammalian genomes Zhao Yongbing 1 2 # Vartak Supriya V. 1 2 # Conte Andrea 1 2 # Wang Xiang 1 2 # Garcia David A. 3 4 # Stevens Evan 2 Jung Seol Kyoung 1 2 Kieffer-Kwon Kyong-Rim 2 Vian Laura 2 Stodola Timothy 5 Moris Francisco 6 Chopp Laura 7 Preite Silvia 8 Schwartzberg Pamela L. 8 Kulinski Joseph M. 9 Olivera Ana 9 Harly Christelle 10 Bhandoola Avinash 10 Heuston Elisabeth F. 11 Bodine David M. 11 Urrutia Raul 5 Upadhyaya Arpita 4 Weirauch Matthew T. 12 13 Hager Gordon 3 Casellas Rafael 1 2 1 2 3 4 5 6 7 8 9 10 11 12 13 Correspondence: im@ybzhao.com rafael.casellas@nih.gov # These authors contributed equally to this work Author contributions Y.Z., S.V.V., A.C., X.W., D.A.G. designed experiments. S.V.V., A.C., X.W., E.S., K-R.K-K., and L.V. performed experiments. S.J., T.S., Y.Z. performed bioinformatic analyses. F.M. provided mithramycin and analogues. L.C., S.P., P.L.S., J.M.K., A.O., C.H., A.B., E.F.H., and D.M.B. provided mouse samples. R.U., A.U., and M.T.W., and G.H. discussed results. R.C., S.V.V., A.C., X.W. and Y.Z. wrote the manuscript. 15 7 2022 417274 S1097-2765(22)00612-8 13 07 2022 15 09 2023 15 09 2023 18 09 2022 06 10 2025 Regulatory elements activate promoters by recruiting transcription factors (TFs) to specific motifs. Notably, TF-DNA interactions often depend on cooperativity with colocalized partners, suggesting an underlying cis Graphical Abstract eTOC Transcription factors are known to cooperate with each other in their interaction with cognate DNA binding motifs. Zhao et al. report a superfamily of ~30 factors that recognizes overlapping GC-rich sequences in mammalian genomes and that renders chromatin accessible to binding partners. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

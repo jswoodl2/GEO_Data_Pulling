@@ -1,0 +1,305 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Nataki C. Douglas",
+    "confidence": "high",
+    "reason": "Explicitly listed in the corresponding author section.",
+    "evidence": [
+      {
+        "quote": "Corresponding Author: Nataki C. Douglas, M.D., Ph.D., 185 South Orange Avenue, MSB E569, Newark, NJ 07103, nataki.dougals@rutgers.edu",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "nataki.dougals@rutgers.edu",
+    "confidence": "high",
+    "reason": "Explicitly listed in the corresponding author section.",
+    "evidence": [
+      {
+        "quote": "nataki.dougals@rutgers.edu",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "The role of hypoxia-induced Notch signaling in trophoblast migration and its contribution to the development of preeclampsia.",
+    "confidence": "high",
+    "reason": "The abstract and title focus on hypoxia, Notch signaling, and trophoblast motility in the context of preeclampsia.",
+    "evidence": [
+      {
+        "quote": "Our data support a role for Notch in mediating hypoxia-induced trophoblast migration, which may contribute to preeclampsia development.",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "1st",
+      "2nd",
+      "3rd",
+      "Term",
+      "Premature"
+    ],
+    "confidence": "high",
+    "reason": "Studies used a 1st trimester cell line, 1st/2nd trimester CVS samples (78-96 days), and 3rd trimester placentas from both term and premature (preterm PE) deliveries.",
+    "evidence": [
+      {
+        "quote": "43 women with singleton gestations between 78 and 96 days of gestation, provided written informed consent and enrolled for participation in the procurement and use of villus tissue",
+        "source": "Main text, Materials and Methods"
+      },
+      {
+        "quote": "4 healthy, uncomplicated pregnancies delivered at term (\u2265 37 weeks of gestation) and 4 pregnancies delivered preterm (< 37 weeks of gestation) because of PE with severe features",
+        "source": "Main text, Materials and Methods"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Table 2 provides 'Placental weight (g)', but neither Table 1 nor Table 2 provides infant birthweight.",
+    "evidence": []
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Table 1 and Table 2 provide GA at delivery in days for all subjects.",
+    "evidence": [
+      {
+        "quote": "GA at delivery (days)",
+        "source": "Main text, Table 1 and Table 2"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "29.9 - 42.1",
+    "confidence": "high",
+    "reason": "Calculated from Table 1 and Table 2. Lowest GA was 209 days (29.9 weeks) and highest was 295 days (42.1 weeks).",
+    "evidence": [
+      {
+        "quote": "260, 263, 276, 280, 266, 295 [Table 1]; 266, 276, 273, 273, 209, 253, 240, 256 [Table 2]",
+        "source": "Main text, Table 1 and Table 2"
+      }
+    ]
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "CVS GA is provided, and placental tissue was collected at delivery.",
+    "evidence": [
+      {
+        "quote": "GA at CVS (days)",
+        "source": "Main text, Table 1"
+      },
+      {
+        "quote": "collection of placental tissues was performed within 10 minutes after Cesarean delivery",
+        "source": "Main text, Materials and Methods"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "11.1 - 42.1",
+    "confidence": "high",
+    "reason": "CVS samples were collected at 11.1-13.7 weeks (78-96 days); placentas were collected at delivery (29.9-42.1 weeks).",
+    "evidence": [
+      {
+        "quote": "singleton gestations between 78 and 96 days of gestation",
+        "source": "Main text, Materials and Methods"
+      },
+      {
+        "quote": "GA at delivery (days)",
+        "source": "Main text, Table 1 and Table 2"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Provided in Table 1 (CVS result XX/XY) and Table 2 (Infant sex M/F).",
+    "evidence": [
+      {
+        "quote": "CVS result ... 46 XX [or] 46 XY",
+        "source": "Main text, Table 1"
+      },
+      {
+        "quote": "Infant sex ... F [or] M",
+        "source": "Main text, Table 2"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Listed in Tables 1 and 2 under column 'P'.",
+    "evidence": [
+      {
+        "quote": "P",
+        "source": "Main text, Table 1 and Table 2"
+      }
+    ]
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Listed in Tables 1 and 2 under column 'G'.",
+    "evidence": [
+      {
+        "quote": "G",
+        "source": "Main text, Table 1 and Table 2"
+      }
+    ]
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study specifies enrollment of singleton gestations.",
+    "evidence": [
+      {
+        "quote": "43 women with singleton gestations between 78 and 96 days of gestation",
+        "source": "Main text, Materials and Methods"
+      }
+    ]
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Tables 1 and 2 include a column for 'Race'.",
+    "evidence": [
+      {
+        "quote": "Race",
+        "source": "Main text, Table 1 and Table 2"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "Race is provided, but specific genetic ancestry components or strains (for human tissue) are not detailed.",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Not reported in the paper or supplements.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Not reported in the paper or supplements.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Not reported in the paper or supplements.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Not reported in the paper or supplements.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Tables 1 and 2 include 'Maternal age (years)'.",
+    "evidence": [
+      {
+        "quote": "Maternal age (years)",
+        "source": "Main text, Table 1 and Table 2"
+      }
+    ]
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Not reported in the paper or supplements.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Samples were collected from preeclampsia (PE) and preeclampsia with severe features (PE-SF).",
+    "evidence": [
+      {
+        "quote": "4 pregnancies delivered preterm (< 37 weeks of gestation) because of PE with severe features",
+        "source": "Main text, Materials and Methods"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Placental tissues were collected specifically after Cesarean delivery.",
+    "evidence": [
+      {
+        "quote": "collection of placental tissues was performed within 10 minutes after Cesarean delivery",
+        "source": "Main text, Materials and Methods"
+      }
+    ]
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Preeclampsia",
+      "Preeclampsia with severe features",
+      "Chronic hypertension"
+    ],
+    "confidence": "high",
+    "reason": "These complications are listed in the delivery outcome and history columns of Tables 1 and 2.",
+    "evidence": [
+      {
+        "quote": "PE; PE-SF; cHTN",
+        "source": "Main text, Table 1 and Table 2"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "While outcomes like PE-SF are linked to fetal risks, specific fetal complications for these infants are not listed in the tables.",
+    "evidence": []
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high",
+    "reason": "None listed for the specific cohort.",
+    "evidence": []
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Placental weight",
+      "Hypertension history"
+    ],
+    "confidence": "high",
+    "reason": "Table 2 provides placental weight and Tables 1/2 provide hypertension/PE history.",
+    "evidence": [
+      {
+        "quote": "Placental weight (g); Hypertension and PE history",
+        "source": "Main text, Table 2"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Columbia University Medical Center",
+    "confidence": "high",
+    "reason": "Specified in the Materials and Methods section.",
+    "evidence": [
+      {
+        "quote": "Collection of CVS and placental tissue samples were performed under an Institution Review Board approved protocol (#AAAN4357) at Columbia University Medical Center.",
+        "source": "Main text, Materials and Methods"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "USA",
+    "confidence": "high",
+    "reason": "The center is located in New York, NY.",
+    "evidence": [
+      {
+        "quote": "Columbia University Medical Center",
+        "source": "Main text, Materials and Methods"
+      }
+    ]
+  }
+}

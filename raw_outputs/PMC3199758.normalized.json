@@ -1,0 +1,41 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Nishizawa Haruki",
+  "Supervisor/Contact/Corresponding author email": "nharuki@fujita-hu.ac.jp",
+  "Main topic of the publication": "This study investigates the mechanisms underlying pre-eclampsia and unexplained fetal growth restriction (FGR) by analyzing differentially expressed genes in placental tissue from severe pre-eclamptic pregnancies, unexplained FGR pregnancies, and normal pregnancies.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Term",
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 38.1,
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Pre-eclampsia",
+    "Fetal growth restriction"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Placental weight",
+    "Systolic BP",
+    "Diastolic BP",
+    "Proteinuria",
+    "UmA PI"
+  ],
+  "Hospital/Center where samples were collected": "Fujita Health University, Japan",
+  "Country where samples were collected": "Japan",
+  "PMCID": "PMC3199758"
+}

@@ -1,0 +1,37 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Michael Cowley",
+  "Supervisor/Contact/Corresponding author email": "macowley@ncsu.edu",
+  "Main topic of the publication": "This study investigates the role of the lncRNA Tuna in cadmium-induced placental dysfunction and fetal growth restriction, focusing on its impact on the NRF2-mediated oxidative stress response pathway.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Term",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 18.5,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 18.5,
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Placental insufficiency",
+    "Fetal growth restriction"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Fetal growth restriction"
+  ],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "North Carolina State University",
+  "Country where samples were collected": "United States",
+  "PMCID": "PMC10267411"
+}

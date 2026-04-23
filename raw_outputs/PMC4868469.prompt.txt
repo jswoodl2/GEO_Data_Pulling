@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC4868469 PMC4868469.1 4868469 4868469 27078102 10.1073/pnas.1602886113 201602886 1 Biological Sciences Immunology and Inflammation A distant trophoblast-specific enhancer controls HLA-G expression at the maternal–fetal interface Distant trophoblast enhancer for HLA-G expression Ferreira Leonardo M. R. a b 1 Meissner Torsten B. a Mikkelsen Tarjei S. a c d Mallard William a c O’Donnell Charles W. d Tilburgs Tamara a Gomes Hannah A. B. a Camahort Raymond a Sherwood Richard I. e Gifford David K. f Rinn John L. a b c d g Cowan Chad A. a c d Strominger Jack L. a 1 a Harvard University MA b Harvard University MA c Harvard MA d Harvard University MA e Harvard Medical School MA f Massachusetts Institute of Technology MA g Beth Israel Deaconess Medical Center MA 1 leonardoferreira@fas.harvard.edu jlstrom@fas.harvard.edu Contributed by Jack L. Strominger, February 23, 2016 (sent for review February 5, 2016; reviewed by Koichi S. Kobayashi, Peter Parham, and Peter J. van den Elsen) Author contributions: L.M.R.F., T.B.M., R.C., J.L.R., C.A.C., and J.L.S. designed research; L.M.R.F., T.B.M., T.S.M., W.M., C.W.O., H.A.B.G., R.C., and R.I.S. performed research; L.M.R.F., T.S.M., W.M., C.W.O., R.I.S., and D.K.G. contributed new reagents/analytic tools; L.M.R.F., T.B.M., T.T., H.A.B.G., R.C., D.K.G., J.L.R., C.A.C., and J.L.S. analyzed data; and L.M.R.F., T.B.M., and J.L.S. wrote the paper. Reviewers: K.S.K., College of Medicine, Texas A&M Health Science Center; P.P., Stanford University School of Medicine; and P.J.v.d.E., Leiden University Medical Center. Conflict of interest statement: C.A.C. is a founder and scientific advisor of CRISPR Therapeutics. J.L.S. is a consultant for King Abdulaziz University (Jeddah, Saudi Arabia). 10 5 2016 13 4 2016 113 19 269555 5364 5369 10 11 2016 10 11 2016 30 07 2016 10 11 2016 Significance Successful pregnancy poses an immunological paradox, as the mother’s immune system does not reject a fetus, even though it is a partially foreign tissue. Fetal extravillous trophoblasts (EVTs) deeply invade the uterus and interact with maternal immune cells without facing rejection. The nonclassical major histocompatibility complex (MHC) molecule HLA-G is essential for immune tolerance induction in pregnancy, yet the mechanism by which EVTs uniquely express HLA-G remains unknown. Using high-throughput cis HLA-G, a nonclassical HLA molecule uniquely expressed in the placenta, is a central component of fetus-induced immune tolerance during pregnancy. The tissue-specific expression of HLA-G, however, remains poorly understood. Here, systematic interrogation of the HLA-G cis HLA-G Enhancer L Enhancer L Enhancer L HLA-G Enhancer L Enhancer L human immune gene regulation pregnancy immune tolerance MPRA CRISPR/Cas9 HHS | NIH | National Human Genome Research Institute (NHGRI) 100000051 R01HG006785 Human Frontier Science Program (HFSP) 501100000854 1K01DK101684-01 HHS | NIH | National Heart, Lung, and Blood Institute (NHBLI) 100000050 U01HL100408 HHS | NIH | National Heart, Lung, and Blood Institute (NHBLI) 100000050 U01HL10744 HHS | NIH | National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) 100000062 R01DK097768 HHS | NIH | National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) 100000062 R01DK072041 Division of Intramural Research, National Institute of Allergy and Infectious Diseases (Division of Intramural Research of the NIAID) 100006492 AI053330 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,10 @@
+[
+  {
+    "Fetal complications listed (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The paper and its supplementary materials report descriptive birth metrics such as birth weight, birth weight percentile, and gestational age, but they do not explicitly list or categorize clinical fetal complications (e.g., IUGR, neonatal respiratory distress, or stillbirth).",
+      "evidence": []
+    }
+  }
+]

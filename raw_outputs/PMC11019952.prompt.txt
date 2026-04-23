@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Virol J Virol 89 jvirol jvi Journal of Virology 0022-538X 1098-5514 American Society for Microbiology (ASM) PMC11019952 PMC11019952.1 11019952 11019952 38451085 10.1128/jvi.01935-23 01935-23 jvi.01935-23 1 Pathogenesis and Immunity virology Virology Human trophoblast stem cells restrict human cytomegalovirus replication https://orcid.org/0009-0001-7194-1540 Rollman Tyler B. 1 Investigation Writing – original draft Writing – review and editing https://orcid.org/0000-0002-9318-7470 Berkebile Zachary W. 1 Investigation Writing – review and editing https://orcid.org/0000-0002-1539-5063 Okae Hiroaki 2 Resources Bardwell Vivian J. 3 Funding acquisition Writing – original draft https://orcid.org/0000-0002-9873-1930 Gearhart Micah D. 4 Data curation Formal analysis Funding acquisition Writing – original draft https://orcid.org/0000-0002-7890-7409 Bierle Craig J. 1 Conceptualization Data curation Formal analysis Funding acquisition Investigation Methodology Project administration Writing – original draft Writing – review and editing cjbierle@umn.edu 1 Division of Pediatric Infectious Diseases, Department of Pediatrics, University of Minnesota Minneapolis Minnesota USA 2 Department of Informative Genetics, Tohoku University Graduate School of Medicine Sendai Japan 3 Developmental Biology Center, Department of Genetics, Cell Biology and Development and the Masonic Cancer Center, University of Minnesota Minneapolis Minnesota USA 4 Department of Obstetrics, Gynecology and Women’s Health, University of Minnesota Minneapolis Minnesota USA Editor Cliffe Anna Ruth University of Virginia Charlottesville Virginia USA Address correspondence to Craig J. Bierle, cjbierle@umn.edu The authors declare no conflict of interest. 4 2024 07 3 2024 98 4 460108 e01935-23 11 12 2023 18 2 2024 07 09 2024 07 09 2024 16 05 2024 26 08 2025 Copyright © 2024 American Society for Microbiology. 2024 American Society for Microbiology. https://doi.org/10.1128/ASMCopyrightv2 All Rights Reserved Human Trophoblast Stem Cells Restrict Human Cytomegalovirus Replication 14 12 2023 2023.12.13.571456 bioRxiv 10.1101/2023.12.13.571456 PMC10760179 38168202 ABSTRACT Placental infection plays a central role in the pathogenesis of congenital human cytomegalovirus (HCMV) infections and is a cause of fetal growth restriction and pregnancy loss. HCMV can replicate in some trophoblast cell types, but it remains unclear how the virus evades antiviral immunity in the placenta and how infection compromises placental development and function. Human trophoblast stem cells (TSCs) can be differentiated into extravillous trophoblasts (EVTs), syncytiotrophoblasts (STBs), and organoids, and this study assessed the utility of TSCs as a model of HCMV infection in the first-trimester placenta. HCMV was found to non-productively infect TSCs, EVTs, and STBs. Immunofluorescence assays and flow cytometry experiments further revealed that infected TSCs frequently only express immediate early viral gene products. Similarly, RNA sequencing found that viral gene expression in TSCs does not follow the kinetic patterns observed during lytic infection in fibroblasts. Canonical antiviral responses were largely not observed in HCMV-infected TSCs and TSC-derived trophoblasts. Rather, infection dysregulated factors involved in cell identity, differentiation, and Wingless/Integrated signaling. Thus, while HCMV does not replicate in TSCs, infection may perturb trophoblast differentiation in ways that could interfere with placental function. IMPORTANCE Placental infection plays a central role in human cytomegalovirus (HCMV) pathogenesis during pregnancy, but the species specificity of HCMV and the limited availability and lifespan of primary trophoblasts have been persistent barriers to understanding how infection impacts this vital organ. Human trophoblast stem cells (TSCs) represent a new approach to modeling viral infection early in placental development. This study reveals that TSCs, like other stem cell types, restrict HCMV replication. However, infection perturbs the expression of genes involved in differentiation and cell fate determination, pointing to a mechanism by which HCMV could cause placental injury. KEYWORDS human cytomegalovirus placenta trophoblast trophoblast stem cells congenital infections HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) R21HD087496, R01HD109252, R01HD098866 Bierle Craig J. Minnesota Masonic Charities (MMC) Masonic Cross-Departmental Grant in Children's Health Research Bardwell Vivian J. Bierle Craig J. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes cover-date April 2024 ross-Departmental Grant in Children's Health Research Bardwell Vivian J. Bierle Craig J. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes cover-date April 2024
+---

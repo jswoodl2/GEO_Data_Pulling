@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Am J Reprod Immunol Am J Reprod Immunol 319 nihpa American journal of reproductive immunology (New York, N.Y. : 1989) 1046-7408 1600-0897 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC8720468 PMC8720468.1 8720468 8720468 NIHMS1746531 34411378 10.1111/aji.13495 NIHMS1746531 NIHPA1746531 1 Article Multiomic Analysis Reveals Decidual-specific Transcriptional Programing of MAIT cells Vazquez Jessica 1 † Chavarria Melina 1 † Chasman Deborah A. 1 2 Schwartz Rene Welch 1 2 Tyler Chanel T. 1 Lopez Gladys 1 Fisher Rachel C. 1 Ong Irene M. 1 2 3 4 * Stanic Aleksandar K. 1 * 1 2 3 4 † JV and MC should be considered joint first author. IMO and AKS should be considered equal senior/corresponding authors. Author Contributions J.V, M.C., and A.S.K designed study. J.V., M.C., G.E.L., and C.T.T., acquired tissue samples. J.V. and M.C. performed experiments. J.V., M.C., R.C.F., and A.S.K. analyzed flow cytometry data. D.A.C., R.W.S., and I.M.O. analyzed CITE-seq and scRNA-seq data. J.V., M.C., D.A.C., I.M.O., and A.S.K., wrote manuscript. I.M.O. and A.S.K supervised project. * stanickostic@wisc.edu irene.ong@wisc.edu Conflict of interest disclosure statement 27 10 2021 12 2021 86 6 396898 e13495 e13495 17 12 2021 01 12 2022 01 12 2022 03 01 2022 11 06 2024 Problem: Mucosal-Associated Invariant T (MAIT) cells have been recently identified at the maternal-fetal interface. However, transcriptional programming of decidual MAIT cells in pregnancy remains poorly understood. Method of Study: We employed a multiomic approach to address this question. Mononuclear cells from the decidua basalis and parietalis, and control PBMCs, were analyzed via flow cytometry to investigate MAIT cells in the decidua and assess their transcription factor expression. In a separate study, both decidual and matched peripheral MAIT cells were analyzed using Cellular Indexing of Transcriptomes and Epitopes by Sequencing (CITE-seq) coupled with gene expression analysis. Lastly, decidual MAIT cells were stimulated with E.coli Results: First, we identified MAIT cells in both the decidua basalis and parietalis. CITE-seq, coupled with scRNA-seq gene expression analysis, highlighted transcriptional programming differences between decidual and matched peripheral MAIT cells at a single cell resolution. Transcription factor expression analysis further highlighted transcriptional differences between decidual MAIT cells and non-matched peripheral MAIT cells. Functionally, MAIT cells are skewed towards IFNγ and TNFα production upon stimulation, with E.coli Conclusion: MAIT cells are present in the decidua basalis and obtain a unique gene expression profile. The presence of MR1 on APCs coupled with in vitro E.coli MAIT cells Decidua Basalis Decidua Parietalis MR1 scRNA-seq CITE-seq pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

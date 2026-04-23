@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+FASEB J FASEB J 319 nihpa FASEB journal : official publication of the Federation of American Societies for Experimental Biology 0892-6638 1530-6860 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC8132511 PMC8132511.1 8132511 8132511 NIHMS1698133 33734487 10.1096/fj.202002744R NIHMS1698133 NIHPA1698133 1 Article Sex-specific effects of in vitro fertilization on adult metabolic outcomes and hepatic transcriptome and proteome in mouse Narapareddy Laren 1 2 Rhon-Calderon Eric A. 2 Vrooman Lisa A. 2 Baeza Josue 3 Nguyen Duy K. 2 Mesaros Clementina 4 Lan Yemin 2 Garcia Benjamin A. 3 Schultz Richard M. 5 Bartolomei Marisa S. http://orcid.org/0000-0001-9410-5222 2 4 1 2 3 4 5 Correspondence bartolom@pennmedicine.upenn.edu AUTHOR CONTRIBUTIONS L. Narapareddy, B.A. Garcia, R.M. Schultz, and M.S. Bartolomei designed the research; L. Narapareddy, E.A. Rhon-Calderone, L.A. Vrooman, J. Baeza, Clementina Mesaros, and D.K. Nguyen performed the research; L. Narapareddy, E.A. Rhon-Calderone, L.A. Vrooman, J. Baeza D.K. Nguyen, and Y. Lan analyzed data; L. Narapareddy, R.M. Schultz, and M.S. Bartolomei wrote the manuscript. CONFLICT OF INTERESTS The authors declare no competing or financial interests. 4 2021 35 4 382084 e21523 e21523 09 05 2021 01 04 2022 01 04 2022 20 05 2021 17 06 2024 Although in vitro fertilization (IVF) is associated with adverse perinatal outcomes, there is increasing concern about the long-term and sex-specific health implications. Augmenting our IVF mouse model to longitudinally investigate metabolic outcomes in offspring from optimal neonatal litter sizes, we found sex-specific metabolic outcomes in IVF offspring. IVF-conceived females had higher body weight and cholesterol levels compared to naturally conceived females, whereas IVF-conceived males had higher levels of triglycerides and insulin, and increased body fat composition. Through adult liver transcriptomics and proteomics, we identified sexually dimorphic dysregulation of the sterol regulatory element-binding protein (SREBP) pathways that are associated with the sex-specific phenotypes. We also found that global loss of DNA methylation in placenta was linked to higher cholesterol levels in IVF-conceived females. Our findings indicate that IVF procedures have long-lasting sex-specific effects on metabolic health of offspring and lay the foundation to utilize the placenta as a predictor of long-term outcomes. assisted reproductive technologies developmental origins of health and disease long-term health metabolic outcomes sex-specific pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

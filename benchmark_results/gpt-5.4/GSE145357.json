@@ -1,0 +1,155 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Nardhy Gomez-Lopez",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "nardhy.gomez-lopez@wayne.edu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study investigates the role of regulatory T cells (Tregs) in late pregnancy and shows that reduced functional Tregs at the maternal-fetal interface are associated with a subset of idiopathic preterm labor/birth. Using human decidual samples and mouse models, the authors show that Treg depletion can induce preterm birth, fetal growth restriction, and adverse neonatal outcomes.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "3rd",
+      "Term",
+      "Premature"
+    ],
+    "confidence": "high"
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": 39,
+    "confidence": "medium"
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": 39,
+    "confidence": "medium"
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The paper reports fetal and neonatal outcomes and weights, but no explicit fetal or neonatal sex data are described for the human cohort or mouse experiments."
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium"
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium"
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The study discusses litters and neonatal outcomes in mice, but it does not clearly report the number of offspring per pregnancy as a maternal dataset variable for the human samples."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Demographic tables are referenced but maternal height is not explicitly mentioned in the provided text."
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The provided text does not explicitly state pre-pregnancy weight, even though demographic tables are referenced."
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium"
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "idiopathic preterm labor/birth",
+      "chronic inflammation",
+      "acute inflammation",
+      "preterm labor",
+      "intra-amniotic inflammation"
+    ],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "fetal growth restriction",
+      "fetal compromise",
+      "adverse neonatal outcomes",
+      "neonatal mortality"
+    ],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Treg frequency and suppressive function",
+      "Tc17 cell frequency",
+      "Th17 cell frequency",
+      "placental histopathology",
+      "maternal cytokine concentrations",
+      "amniotic fluid cytokine concentrations",
+      "maternal body temperature",
+      "maternal blood pressure",
+      "maternal heart rate",
+      "uterine artery pulsatility index",
+      "fetal heart rate",
+      "umbilical artery pulsatility index",
+      "placental weight",
+      "fetal weight",
+      "neonatal survival",
+      "gestational length",
+      "placental RNA-seq gene expression"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Perinatology Research Branch, Eunice Kennedy Shriver National Institute of Child Health and Human Development; Center for Advanced Obstetrical Care and Research",
+    "confidence": "medium"
+  },
+  "Country where samples were collected": {
+    "answer": "United States",
+    "confidence": "medium"
+  }
+}

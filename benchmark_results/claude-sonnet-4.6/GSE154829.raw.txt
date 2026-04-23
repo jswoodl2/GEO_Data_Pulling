@@ -1,0 +1,141 @@
+```json
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Julia E. Rager",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "jrager@unc.edu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study investigates placental genomic and epigenomic signatures associated with infant birth weight, identifying mechanisms involving collagen and growth factor signaling. It examines how in utero placental gene expression and microRNAs relate to birth weight outcomes.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "Term",
+    "confidence": "medium",
+    "reasoning": "The paper focuses on placental samples and birth weight at delivery; no specific trimester of sample collection is stated in the provided text, but placental samples are typically collected at delivery (term)."
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The provided text does not explicitly mention gestational age at delivery being reported in the paper."
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "No specific gestational age at delivery is mentioned in the provided text excerpt."
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The provided text does not explicitly state gestational age at sample collection."
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "No specific gestational age at sample collection is mentioned in the provided text."
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The provided text does not mention sex of offspring being reported."
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Parity is not mentioned in the provided text excerpt."
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Gravidity is not mentioned in the provided text excerpt."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The provided text does not mention number of offspring per pregnancy."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Race/ethnicity of the mother is not mentioned in the provided text excerpt."
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Genetic ancestry or strain information is not mentioned in the provided text."
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal height is not mentioned in the provided text excerpt."
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal pre-pregnancy weight is not mentioned in the provided text excerpt."
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal age is not explicitly mentioned in the provided text excerpt."
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The provided text does not explicitly mention collection of samples from pregnancies with complications."
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Mode of delivery is not mentioned in the provided text excerpt."
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [],
+    "confidence": "medium",
+    "reasoning": "No pregnancy complications are mentioned in the provided text excerpt."
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "No fetal complications are mentioned in the provided text excerpt."
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "medium",
+    "reasoning": "No fetal complications are mentioned in the provided text excerpt."
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": ["birth weight", "placental gene expression", "placental microRNA expression", "placental epigenomic signatures"],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "The specific hospital or center where samples were collected is not mentioned in the provided text excerpt."
+  },
+  "Country where samples were collected": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "The country of sample collection is not explicitly stated in the provided text, though the authors are affiliated with US institutions."
+  }
+}
+```

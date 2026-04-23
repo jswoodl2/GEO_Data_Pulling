@@ -1,0 +1,38 @@
+{
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The provided text and supplemental material do not list parity values or counts; it is only mentioned that demographics were collected as a 'Main Outcome Measure'.",
+    "evidence": []
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The provided text and supplemental material do not mention or provide data for gravidity.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "While the paper mentions pregnancies 'resulting in the delivery of viable offspring,' it does not explicitly state the number of offspring per pregnancy (e.g., singleton, twin status).",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The provided text mentions that maternal demographics were outcome measures, but specific height values or summary statistics are not reported in the provided text or tables.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal demographics are listed as outcome measures, but no specific data for paternal height is provided in the text or supplements.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal demographics are listed as outcome measures, but no specific data for paternal weight is provided in the text or supplements.",
+    "evidence": []
+  }
+}

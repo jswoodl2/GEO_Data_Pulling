@@ -1,0 +1,40 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Peter C. K. Leung",
+  "Supervisor/Contact/Corresponding author email": "peter.leung@ubc.ca",
+  "Main topic of the publication": "This study analyzes publicly available microarray and RNA-seq datasets to reveal differences in expression of TGF-β superfamily members between gestational age-matched non-preeclamptic control and early-onset preeclampsia (EOPE) placentas, focusing on the role of BMP2 in regulating trophoblast function.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 29.0,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Early-onset preeclampsia"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Intrauterine Growth Restriction"
+  ],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "BC Women’s Hospital & Health Centre, BC Children’s Hospital Anatomical Pathology archives",
+  "Country where samples were collected": "Canada",
+  "PMCID": "PMC8712873"
+}

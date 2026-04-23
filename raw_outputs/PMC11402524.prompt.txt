@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Biol Reprod Biol Reprod 675 biolreprod biolreprod Biology of Reproduction 0006-3363 1529-7268 Oxford University Press PMC11402524 PMC11402524.1 11402524 11402524 38857377 10.1093/biolre/ioae086 ioae086 1 Editor's Choice Research Article AcademicSubjects/MED00773 AcademicSubjects/SCI01070 Obese mice have decreased uterine contractility and altered energy metabolism in the uterus at term gestation † Prifti Kevin K Center for Reproductive Health Sciences Washington University in St. Louis St. Louis, MO USA McCarthy Ronald Center for Reproductive Health Sciences Washington University in St. Louis St. Louis, MO USA Ma Xiaofeng Center for Reproductive Health Sciences Washington University in St. Louis St. Louis, MO USA Finck Brian N Department of Medicine Washington University in St. Louis St. Louis, MO USA England Sarah K Center for Reproductive Health Sciences Washington University in St. Louis St. Louis, MO USA https://orcid.org/0000-0002-6491-6910 Frolova Antonina I Center for Reproductive Health Sciences Washington University in St. Louis St. Louis, MO USA Correspondence: +3143621765 +3147474150 frolovaa@wustl.edu 9 2024 10 6 2024 111 3 470803 678 693 22 1 2024 26 5 2024 07 6 2024 19 6 2024 10 06 2025 10 06 2025 16 09 2024 10 06 2025 © The Author(s) 2024. Published by Oxford University Press on behalf of Society for the Study of Reproduction. All rights reserved. For permissions, please e-mail: journals.permissions@oup.com. 2024 https://academic.oup.com/pages/standard-publication-reuse-rights This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/pages/standard-publication-reuse-rights Abstract Over 35% of reproductive-age women in the USA have obesity, putting them at increased risk for numerous obstetric complications due to abnormal labor. While the association between maternal obesity and abnormal labor has been well documented, the mechanisms responsible for this remain understudied. The uterine smooth muscle, myometrium, has high energy needs in order to fuel regular uterine contractions during parturition. However, the precise mechanisms by which the myometrium meets its energy demands has not been defined. Here, our objective was to define the effects of obesity on energy utilization in the myometrium during labor. We generated a mouse model of maternal diet-induced obesity and found that these mice had a higher rate of dystocia than control chow-fed mice. Moreover, compared to control chow-fed mice, DIO mice at term, both before and during labor had lower in vivo spontaneous uterine contractility. Untargeted transcriptomic and metabolomic analyses suggest that diet-induced obesity is associated with elevated long-chain fatty acid uptake and utilization in the uterus, but also an accumulation of medium-chain fatty acids. Diet-induced obesity uteri also had an increase in the abundance of long chain-specific beta-oxidation enzymes, which may be responsible for the observed increase in long-chain fatty acid utilization. This altered energy substrate utilization may be a contributor to the observed contractile dysfunction. Mice with diet-induced obesity have altered uterine energy metabolism and decreased contractility resulting in labor dystocia. Graphical Abstract Graphical Abstract obesity parturition contractility fatty acids metabolism National Institute of Child Health and Human Development 10.13039/100000071 R21 HD110610 R01 HD037831 Genome Technology Access Center at the McDonnell Genome Institute at Washington University School of Medicine NCI Cancer Center P30 CA91842 Siteman Cancer Center 10.13039/100014571 ICTS/CTSA UL1TR002345 National Center for Advancing Translational Sciences 10.13039/100006108 National Institutes of Health 10.13039/100000002 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

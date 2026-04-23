@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Hum Mol Genet Hum Mol Genet 740 hmg hmg Human Molecular Genetics 0964-6906 1460-2083 Oxford University Press PMC10729866 PMC10729866.1 10729866 10729866 37740387 10.1093/hmg/ddad160 ddad160 1 Original Article AcademicSubjects/SCI01140 Higher incidence of embryonic defects in mouse offspring conceived with assisted reproduction from fathers with sperm epimutations Karahan Gurbet Department of Human Genetics, McGill University Montreal, QC, H3A 0C7 Canada Research Institute of the McGill University Health Centre Montreal, QC, H4A 3J1 Canada Martel Josée Research Institute of the McGill University Health Centre Montreal, QC, H4A 3J1 Canada Rahimi Sophia Research Institute of the McGill University Health Centre Montreal, QC, H4A 3J1 Canada Farag Mena Department of Human Genetics, McGill University Montreal, QC, H3A 0C7 Canada Matias Fernando Nutrition Research Division, Health Canada Ottawa, ON, K1A 0K9 Canada MacFarlane Amanda J Nutrition Research Division, Health Canada Ottawa, ON, K1A 0K9 Canada Chan Donovan Research Institute of the McGill University Health Centre Montreal, QC, H4A 3J1 Canada Trasler Jacquetta Department of Human Genetics, McGill University Montreal, QC, H3A 0C7 Canada Research Institute of the McGill University Health Centre Montreal, QC, H4A 3J1 Canada Department of Pharmacology and Therapeutics, McGill University Montreal, QC, H3G 1Y6 Canada Department of Pediatrics, McGill University Health Centre Montreal, QC, H4A 3J1 Canada Corresponding author. 1001 Décarie Blvd., Glen site of the RI-MUHC, EM0.2236, Montreal, QC H4A 3J1, Canada. Tel: 1-514-934-1934 ext. 25235; E-mail: jacquetta.trasler@mcgill.ca Present address: Agriculture, Food, and Nutrition Evidence Center, Texas A&M University System, Fort Worth, TX, 76102, USA 01 1 2024 22 9 2023 33 1 451314 48 63 31 5 2023 30 8 2023 13 9 2023 14 10 2023 22 09 2024 22 09 2024 20 12 2023 06 10 2025 © The Author(s) 2023. Published by Oxford University Press. All rights reserved. For Permissions, please email: journals.permissions@oup.com 2023 https://academic.oup.com/pages/standard-publication-reuse-rights This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/pages/standard-publication-reuse-rights Abstract Assisted reproductive technologies (ART) account for 1–6% of births in developed countries. While most children conceived are healthy, increases in birth and genomic imprinting defects have been reported; such abnormal outcomes have been attributed to underlying parental infertility and/or the ART used. Here, we assessed whether paternal genetic and lifestyle factors, that are associated with male infertility and affect the sperm epigenome, can influence ART outcomes. We examined how paternal factors, haploinsufficiency for Dnmt3L in vitro Dnmt3L Dnmt3L +/− Dnmt3L +/− Dnmt3L-haploinsufficiency assisted reproduction DNA methylation sperm epimutations male infertility CIHR and Genome Canada CEE-151619 Canadian Institutes of Health Research 10.13039/501100000024 FND-148425 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Hum Mol Genet Hum. Mol. Genet 740 hmg hmg Human Molecular Genetics 0964-6906 1460-2083 Oxford University Press PMC6337702 PMC6337702.1 6337702 6337702 30239726 10.1093/hmg/ddy321 ddy321 1 General Article Impact of assisted reproduction, infertility, sex and paternal factors on the placental DNA methylome Choufani Sanaa 1 Turinsky Andrei L 1 2 Melamed Nir 3 Greenblatt Ellen 4 Brudno Michael 1 2 5 Bérard Anick 6 Fraser William D 7 http://orcid.org/0000-0002-6501-4150 Weksberg Rosanna 1 8 9 Trasler Jacquetta 10 Monnier Patricia 11 3D cohort study group Fraser William D Audibert François Dubois Lise Julien Pierre Luo Zhong-Cheng Michaud Jacques Moutquin Jean-Marie Muckle Gina Séguin Jean Trasler Jacquetta Tremblay Richard Ernest Abenhaim Haim Bédard Marie-Josée Bérard Anick Bujold Emmanuel Gagnon Robert Girard Isabelle Kibar Zoha Marc Isabelle Monnier Patricia Simard Marie-Noelle Pasquier Jean-Charles Welt Michel 1 2 3 4 5 6 7 8 9 10 11 To whom correspondence should be addressed at: Jacquetta Trasler, Research Institute of the McGill University Health Centre, 1001 Boul Décarie, Block E/EM03211, Montreal, QC, Canada H4A 3J1. Tel: +514 934-1934, ext 25235; Fax: +514 933-9673; Email: jacquetta.trasler@mcgill.ca To whom correspondence should be addressed at: Rosanna Weksberg, Research Institute at The Hospital for Sick Children, 555 University Avenue, Toronto, ON, Canada M5G 1X8. Tel: +416-813-6386; Fax: +416-813-5345; Email: rweksb@sickkids.ca 01 2 2019 19 9 2018 28 3 327820 372 385 25 5 2018 13 8 2018 29 8 2018 01 02 2020 01 02 2020 26 01 2019 07 04 2024 © The Author(s) 2018. Published by Oxford University Press. All rights reserved. For Permissions, please email: journals.permissions@oup.com 2018 This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model Abstract Children conceived using Assisted Reproductive Technologies (ART) have a higher incidence of growth and birth defects, attributable in part to epigenetic perturbations. Both ART and germline defects associated with parental infertility could interfere with epigenetic reprogramming events in germ cells or early embryos. Mouse models indicate that the placenta is more susceptible to the induction of epigenetic abnormalities than the embryo, and thus the placental methylome may provide a sensitive indicator of ‘at risk’ conceptuses. Our goal was to use genome-wide profiling to examine the extent of epigenetic abnormalities in matched placentas from an ART/infertility group and control singleton pregnancies ( n GNAS SGCE KCNQT1OT1 BLCAP/NNAT in vitro Canadian Institutes of Health Research 10.13039/501100000024 CRI 88413 FND-148425 Natural Sciences and Engineering Research Council of Canada 10.13039/501100000038 418734–2012 Mount Sinai Department of Obstetrics and Gynaecology’s Research Fund Canadian Centre for Computational Genomics Geothermal Technologies Program 10.13039/100006135 Genome Canada 10.13039/100008762 Ontario Genomics Institute 10.13039/501100000092 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

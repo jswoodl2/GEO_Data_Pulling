@@ -1,0 +1,141 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Kartik Shankar and Nancy F. Krebs",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "Kartik.Shankar@cuanschutz.edu and Nancy.Krebs@cuanschutz.edu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study examines how ambient heat exposure during pregnancy trimesters affects neonatal birth anthropometry in a resource-limited setting (Thatta, Pakistan), and whether preconception maternal nutritional supplementation can modify heat stress-associated fetal growth restriction. It also investigates placental gene expression and maternal blood metabolite changes associated with heat stress.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "1st",
+      "2nd",
+      "3rd",
+      "Term"
+    ],
+    "confidence": "high"
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "The paper uses gestational-age-adjusted Z-scores and mentions ultrasound-based gestational age determination, but does not explicitly report a mean gestational age at delivery in numeric form."
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": 34,
+    "confidence": "high"
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper mentions parity as a covariate in models but does not explicitly report gravidity."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper does not explicitly report singleton vs. multiple gestations or number of offspring per pregnancy."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium",
+    "reasoning": "The paper reports BMI at preconception baseline (mean BMI 19.7 kg/m2) and mentions maternal weight measured at enrollment, implying pre-pregnancy or early pregnancy weight was recorded."
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The study is an ancillary analysis of a randomized controlled trial in a general population of women; it does not specifically target or report collecting samples from pregnancies with complications."
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [],
+    "confidence": "medium",
+    "reasoning": "The paper does not explicitly study or list specific pregnancy complications as outcomes or exposures; the focus is on heat stress and nutritional supplementation effects on fetal growth."
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Neonatal birth length",
+      "Neonatal head circumference",
+      "Neonatal birth weight",
+      "Gestational-age-adjusted Z-scores (LGAZ, WGAZ, HCGAZ)",
+      "Placental gene expression (mRNA-sequencing)",
+      "Placental protein expression (phosphorylated p70-S6K, EIF2a, 4EB-P1, AMPK)",
+      "Maternal blood metabolites (targeted metabolomics at 34 weeks)",
+      "Maternal BMI",
+      "Maternal anemia",
+      "Ambient temperature and heat index exposure by trimester",
+      "PM2.5 exposure"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Aga Khan University, Thatta, Sindh, Pakistan",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "Pakistan",
+    "confidence": "high"
+  }
+}

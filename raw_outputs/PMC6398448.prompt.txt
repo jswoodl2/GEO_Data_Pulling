@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Development Development 864 develop DEV Development (Cambridge, England) 0950-1991 1477-9129 Company of Biologists PMC6398448 PMC6398448.1 6398448 6398448 30718289 10.1242/dev.174037 DEV174037 1 208 Research Article USP22 controls multiple signaling pathways that are essential for vasculature formation in the mouse placenta http://orcid.org/0000-0003-0584-8070 Koutelou Evangelia 1 2 3 ** Wang Li 1 2 3 4 5 * Schibler Andria C. 1 2 3 5 6 * Chao Hsueh-Ping 1 2 3 4 5 Kuang Xianghong 1 2 3 Lin Kevin 1 2 3 Lu Yue 1 2 3 Shen Jianjun 1 2 3 5 Jeter Collene R. 1 2 3 Salinger Andrew 1 2 3 Wilson Marenda 7 ‡ http://orcid.org/0000-0001-6031-8414 Chen Yi Chun 5 6 7 § http://orcid.org/0000-0002-4878-9253 Atanassov Boyko S. 1 2 3 ¶ Tang Dean G. 1 2 3 ¶ http://orcid.org/0000-0002-4824-3269 Dent Sharon Y. R. 1 2 3 5 ** 1 Department of Epigenetics and Molecular Carcinogenesis University of Texas MD Anderson Cancer Center Smithville, TX 78957 USA 2 Center for Cancer Epigenetics University of Texas MD Anderson Cancer Center Smithville, TX 78957 USA 3 The University of Texas MD Anderson Cancer Center Smithville, TX 78957 USA 4 Program in Epigenetics and Molecular Carcinogenesis University of Texas MD Anderson Cancer Center Houston, TX 77030 USA 5 MD Anderson UTHealth Graduate School of Biomedical Sciences, University of Texas, Houston, TX 77030 USA 6 Program in Genes and Development University of Texas MD Anderson Cancer Center Houston, TX 77030 USA 7 The University of Texas MD Anderson Cancer Center Houston, TX 77030 USA * Present address: National Cancer Institute, National Institutes of Health, Bethesda, MD 20892, USA. ‡ Present address: Associate Dean, Graduate College, Rush University, Chicago, TX 60612, USA. § Present address: San Diego, CA, USA. ¶ Present address: Department of Pharmacology and Therapeutics, Roswell Park Comprehensive Cancer Center, Buffalo, NY 14263, USA. ** ekoutelou@mdanderson.org sroth@mdanderson.org Competing interests The authors declare no competing or financial interests. 15 2 2019 22 2 2019 146 4 330449 dev174037 28 11 2018 24 1 2019 15 02 2020 15 02 2020 22 03 2019 09 04 2024 © 2019. Published by The Company of Biologists Ltd 2019 http://www.biologists.com/user-licence-1-1/ ABSTRACT USP22, a component of the SAGA complex, is overexpressed in highly aggressive cancers, but the normal functions of this deubiquitinase are not well defined. We determined that loss of USP22 in mice results in embryonic lethality due to defects in extra-embryonic placental tissues and failure to establish proper vascular interactions with the maternal circulatory system. These phenotypes arise from abnormal gene expression patterns that reflect defective kinase signaling, including TGFβ and several receptor tyrosine kinase pathways. USP22 deletion in endothelial cells and pericytes that are induced from embryonic stem cells also hinders these signaling cascades, with detrimental effects on cell survival and differentiation as well as on the ability to form vessels. Our findings provide new insights into the functions of USP22 during development that may offer clues to its role in disease states. Highlighted Article: KEY WORDS USP22 SAGA Placenta Vascular development TGFβ signaling RTK receptors Endothelial cells Pericytes Mouse National Institutes of Health http://dx.doi.org/10.13039/100000002 R01GM096472 R01HD094400 Cancer Prevention and Research Institute of Texas RP170067 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

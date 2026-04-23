@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Drug Metab Dispos Drug Metab. Dispos 829 dmd DMD Drug Metabolism and Disposition 0090-9556 1521-009X American Society for Pharmacology and Experimental Therapeutics PMC3558854 PMC3558854.1 3558854 3558854 23175668 10.1124/dmd.112.049718 DMD_049718 1 Special Section on Drug Metabolizing Enzymes and Transporters in Pregnancy Gestational Age-Dependent Changes in Gene Expression of Metabolic Enzymes and Transporters in Pregnant Mice Gestational Changes in Metabolic Enzyme and Transport Genes Shuster Diana L. Bammler Theo K. Beyer Richard P. MacDonald James W. Tsai Jesse M. Farin Frederico M. Hebert Mary F. Thummel Kenneth E. Mao Qingcheng Departments of Pharmaceutics (D.L.S., K.E.T., Q.M.) and Pharmacy (M.F.H.), School of Pharmacy, University of Washington, Seattle, Washington; Department of Environmental and Occupational Health Sciences, School of Public Health, University of Washington, Seattle, Washington (T.K.B., R.P.B., J.W.M., J.M.T., F.M.F.); and Department of Obstetrics and Gynecology, School of Medicine, University of Washington, Seattle, Washington (M.F.H.) Address correspondence to: Department of Pharmaceutics, School of Pharmacy, University of Washington, Box 357610, Seattle, WA 98195-7610. qmao@u.washington.edu 2 2013 2 2013 41 2 218973 332 342 16 10 2012 21 11 2012 01 02 2014 01 02 2014 31 01 2014 01 02 2014 Copyright © 2013 by The American Society for Pharmacology and Experimental Therapeutics 2013 Correction to “Gestational Age-Dependent Changes in Gene Expression of Metabolic Enzymes and Transporters in Pregnant Mice” 41 3 3 2013 682 682 Drug Metabolism and Disposition 10.1124/dmd.112.03er13 PMC3583489 Pregnancy-induced changes in drug pharmacokinetics can be explained by changes in expression of drug-metabolizing enzymes and transporters and/or normal physiology. In this study, we determined gestational age-dependent expression profiles for all metabolic enzyme and transporter genes in the maternal liver, kidney, small intestine, and placenta of pregnant mice by microarray analysis. We specifically examined the expression of genes important for xenobiotic, bile acid, and steroid hormone metabolism and disposition, namely, cytochrome P450s ( Cyp Ugt Sult Abc Slc Slco Ugt Sult Cyp17a1 Cyp1a2 Cyp2 Cyp3a11 Cyp3a13 Cyp2d40 Cyp3a16 Cyp3a41a Cyp3a41b Cyp3a44 Cyp Abc Slc Abcc3 Abcb1a Abcc4 Slco4c1 Slc22a3 Oct3 National Institutes of Health T32GM007750 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes DJS Export v1
+---

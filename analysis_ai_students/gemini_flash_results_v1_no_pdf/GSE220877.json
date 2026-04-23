@@ -1,0 +1,358 @@
+[
+  {
+    "Supervisor/Contact/Corresponding author name": {
+      "answer": "Kartik Shankar and Nancy Krebs",
+      "confidence": "high",
+      "reason": "Both are listed as corresponding authors in the contact information section.",
+      "evidence": [
+        {
+          "quote": "To whom correspondence should be addressed: Email: Kartik.Shankar@cuanschutz.edu To whom correspondence should be addressed: Email: Nancy.Krebs@cuanschutz.edu",
+          "source": "Main text, Author Information"
+        }
+      ]
+    },
+    "Supervisor/Contact/Corresponding author email": {
+      "answer": "Kartik.Shankar@cuanschutz.edu; Nancy.Krebs@cuanschutz.edu",
+      "confidence": "high",
+      "reason": "The emails for both corresponding authors are explicitly provided.",
+      "evidence": [
+        {
+          "quote": "Email: Kartik.Shankar@cuanschutz.edu ... Email: Nancy.Krebs@cuanschutz.edu",
+          "source": "Main text, Author Information"
+        }
+      ]
+    },
+    "Main topic of the publication": {
+      "answer": "The impact of ambient temperature (heat stress) and maternal nutrition on fetal growth and placental gene expression in a resource-limited setting.",
+      "confidence": "high",
+      "reason": "The abstract and title clearly define the scope of the study.",
+      "evidence": [
+        {
+          "quote": "Maternal nutritional status modifies heat-associated growth restriction in women with chronic malnutrition",
+          "source": "Main text, Title"
+        },
+        {
+          "quote": "We leveraged maternal and neonatal anthropometry data from a randomized controlled trial focused on improving preconception maternal nutrition... in Thatta, Pakistan, where both nutritional deficits and heat stress are prevalent.",
+          "source": "Main text, Abstract"
+        }
+      ]
+    },
+    "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+      "answer": [
+        "1st",
+        "2nd",
+        "3rd",
+        "Term"
+      ],
+      "confidence": "high",
+      "reason": "The study analyzes heat exposure across all three trimesters and collected samples at 34 weeks and at delivery (term).",
+      "evidence": [
+        {
+          "quote": "We evaluated associations between recorded ambient temperature in defined developmental windows (T1, T2, T3) and birth outcomes.",
+          "source": "Main text, Results"
+        },
+        {
+          "quote": "Nonfasting blood samples were collected by venipuncture at 34 wk gestation",
+          "source": "Main text, Materials and Methods"
+        },
+        {
+          "quote": "Placental tissue was collected... after delivery",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Newborn weight is reported in Table S1 and used for WGAZ scores.",
+      "evidence": [
+        {
+          "quote": "Newborn weight was measured in triplicate using a Seca 334 electronic scale",
+          "source": "Main text, Materials and Methods"
+        },
+        {
+          "quote": "Newborn weight (g) 2732 \u00b1 435",
+          "source": "Main text, Table S1"
+        }
+      ]
+    },
+    "Gestational Age at delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The mean gestational age at birth is provided in the cohort characteristics table.",
+      "evidence": [
+        {
+          "quote": "Gestational age at birth (wk) 39.2 \u00b1 1.5",
+          "source": "Main text, Table S1"
+        }
+      ]
+    },
+    "GA at delivery (weeks)": {
+      "answer": 39.2,
+      "confidence": "high",
+      "reason": "The table reporting cohort characteristics lists this specific value.",
+      "evidence": [
+        {
+          "quote": "Gestational age at birth (wk) 39.2 \u00b1 1.5",
+          "source": "Main text, Table S1"
+        }
+      ]
+    },
+    "Gestational Age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper specifies when blood and placenta samples were collected.",
+      "evidence": [
+        {
+          "quote": "Nonfasting blood samples were collected by venipuncture at 34 wk gestation",
+          "source": "Main text, Materials and Methods"
+        },
+        {
+          "quote": "Placental dimensions were obtained after delivery",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "GA at sample collection (weeks)": {
+      "answer": [
+        34,
+        39.2
+      ],
+      "confidence": "high",
+      "reason": "Blood was collected at 34 weeks; placenta was collected at delivery (mean GA 39.2).",
+      "evidence": [
+        {
+          "quote": "Nonfasting blood samples were collected by venipuncture at 34 wk gestation",
+          "source": "Main text, Materials and Methods"
+        },
+        {
+          "quote": "Gestational age at birth (wk) 39.2 \u00b1 1.5",
+          "source": "Main text, Table S1"
+        }
+      ]
+    },
+    "Sex of Offspring Provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Infant sex is listed as a covariate in the statistical models for birth outcomes.",
+      "evidence": [
+        {
+          "quote": "Models were adjusted for cluster, maternal age, parity, infant sex, mode of delivery",
+          "source": "Main text, Table 3 Footnote"
+        }
+      ]
+    },
+    "Parity provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Parity is reported in Table S1 and used as a covariate.",
+      "evidence": [
+        {
+          "quote": "Parity (n) 1.6 \u00b1 1.7",
+          "source": "Main text, Table S1"
+        }
+      ]
+    },
+    "Gravidity provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The paper reports parity but does not explicitly mention gravidity.",
+      "evidence": []
+    },
+    "Number of offspring per pregnancy provided (yes/no)": {
+      "answer": "No",
+      "confidence": "medium",
+      "reason": "While the INTERGROWTH-21st standard implies singletons and the N for mothers and neonates is identical, it is not explicitly stated 'one offspring per pregnancy'.",
+      "evidence": [
+        {
+          "quote": "This analysis included data from 459 women and their neonates",
+          "source": "Main text, Results"
+        }
+      ]
+    },
+    "Self-reported race/ethnicity of mother provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The population is described as being from Thatta, Sindh, Pakistan.",
+      "evidence": [
+        {
+          "quote": "Pakistan site for whom ultrasound based gestational age was available",
+          "source": "Main text, Materials and Methods"
+        },
+        {
+          "quote": "South Asian subcontinent where women of child-bearing age... have systemic deficiencies",
+          "source": "Main text, Discussion"
+        }
+      ]
+    },
+    "Genetic ancestry or genetic strain provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Specific genetic ancestry or strain data is not reported.",
+      "evidence": []
+    },
+    "Maternal Height provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Maternal height is provided in the cohort description table.",
+      "evidence": [
+        {
+          "quote": "Maternal height (cm) 151.0 \u00b1 5.6",
+          "source": "Main text, Table S1"
+        }
+      ]
+    },
+    "Maternal Pre-pregnancy Weight provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Weight at enrollment in the preconception trial is reported.",
+      "evidence": [
+        {
+          "quote": "Maternal weight at enrollment (kg) 45.1 \u00b1 7.5",
+          "source": "Main text, Table S1"
+        },
+        {
+          "quote": "Maternal height and weight were measured at enrolment.",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Paternal Height provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal information was not collected or reported.",
+      "evidence": []
+    },
+    "Paternal Weight provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal weight is not mentioned in the text or tables.",
+      "evidence": []
+    },
+    "Maternal age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Maternal age at enrollment is reported in Table S1.",
+      "evidence": [
+        {
+          "quote": "Maternal age (y) 23.6 \u00b1 4.1",
+          "source": "Main text, Table S1"
+        }
+      ]
+    },
+    "Paternal age at sample collection provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "Paternal age is not provided.",
+      "evidence": []
+    },
+    "Samples from pregnancy complications collected": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The study focused on a cohort with chronic malnutrition and high anemia prevalence.",
+      "evidence": [
+        {
+          "quote": "In women with chronic malnutrition... underweight (BMI < 18.5; \u223c35% at preconception baseline with mean BMI 19.7) and anemia (72% at baseline) were common in women",
+          "source": "Main text, Discussion"
+        }
+      ]
+    },
+    "Mode of delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Mode of delivery is explicitly used as an adjustment factor in the multiple linear regression models.",
+      "evidence": [
+        {
+          "quote": "Models were adjusted for cluster, maternal age, parity, infant sex, mode of delivery",
+          "source": "Main text, Table 3 Footnote"
+        }
+      ]
+    },
+    "Pregnancy complications in data set (list)": {
+      "answer": [
+        "Chronic malnutrition",
+        "Anemia",
+        "Maternal underweight"
+      ],
+      "confidence": "high",
+      "reason": "These conditions are explicitly described as prevalent in the study cohort.",
+      "evidence": [
+        {
+          "quote": "underweight (BMI < 18.5; \u223c35% at preconception baseline... and anemia (72% at baseline) were common",
+          "source": "Main text, Discussion"
+        }
+      ]
+    },
+    "Fetal complications listed (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Growth restriction and associated anthropometric reductions are discussed as outcomes.",
+      "evidence": [
+        {
+          "quote": "exposure to excessive ambient heat in early pregnancy is associated with lower length and head circumference at birth.",
+          "source": "Main text, Significance Statement"
+        },
+        {
+          "quote": "maternal malnutrition and heat stress during pregnancy contribute to poor fetal growth",
+          "source": "Main text, Abstract"
+        }
+      ]
+    },
+    "Fetal complications in data set (list)": {
+      "answer": [
+        "Intrauterine growth restriction",
+        "Low birth length",
+        "Reduced head circumference"
+      ],
+      "confidence": "high",
+      "reason": "These are the specific outcomes linked to heat stress in the study findings.",
+      "evidence": [
+        {
+          "quote": "exposure to excessive ambient heat in early pregnancy is associated with lower length and head circumference at birth.",
+          "source": "Main text, Significance Statement"
+        }
+      ]
+    },
+    "Other Phenotypes Provided (list)": {
+      "answer": [
+        "Maternal BMI",
+        "Maternal weight gain",
+        "Placental length",
+        "Placental width",
+        "Placental gene expression",
+        "Placental protein expression",
+        "Maternal blood metabolites"
+      ],
+      "confidence": "high",
+      "reason": "These variables were measured and used in the analyses described in the materials and results sections.",
+      "evidence": [
+        {
+          "quote": "Maternal height and weight were measured... Placental dimensions were obtained... Placental tissue was collected... Blood metabolite analysis...",
+          "source": "Main text, Materials and Methods"
+        }
+      ]
+    },
+    "Hospital/Center where samples were collected": {
+      "answer": "Aga Khan University (Thatta site)",
+      "confidence": "high",
+      "reason": "The paper identifies the collaborating institution and specific study site in Pakistan.",
+      "evidence": [
+        {
+          "quote": "Women First Preconception Nutrition trial conducted in Thatta, Pakistan... Aga Khan University Karachi 7480\u200b0 Pakistan",
+          "source": "Main text, Abstract and Author affiliations"
+        }
+      ]
+    },
+    "Country where samples were collected": {
+      "answer": "Pakistan",
+      "confidence": "high",
+      "reason": "The study was conducted in Thatta, Pakistan.",
+      "evidence": [
+        {
+          "quote": "conducted in Thatta, Pakistan",
+          "source": "Main text, Abstract"
+        }
+      ]
+    }
+  }
+]

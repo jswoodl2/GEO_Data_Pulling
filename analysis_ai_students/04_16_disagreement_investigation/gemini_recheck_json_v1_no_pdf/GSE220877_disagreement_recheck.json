@@ -1,0 +1,14 @@
+{
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "While the study specifies that participants were from Thatta, Pakistan, it does not explicitly provide a demographic breakdown of self-reported race or ethnicity.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "The study collected placental and blood samples from a general nutritional trial cohort; although the population is described as having chronic malnutrition and infants were assessed for growth restriction, the paper does not explicitly state that samples were collected from specific clinical complications such as preeclampsia or gestational diabetes.",
+    "evidence": []
+  }
+}

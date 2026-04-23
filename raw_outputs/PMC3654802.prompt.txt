@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Alcohol Alcohol 319 nihpa Alcohol (Fayetteville, N.Y.) 0741-8329 1873-6823 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC3654802 PMC3654802.1 3654802 3654802 NIHMS463214 20053520 10.1016/j.alcohol.2009.10.002 NIHMS463214 NIHPA463214 1 Article Effects of moderate drinking during pregnancy on placental gene expression Rosenberg Martina J. Wolff Christina R. El-Emawy Ahmed Staples Miranda C. Perrone-Bizzozero Nora I. Savage Daniel D. * Department of Neurosciences, University of New Mexico School of Medicine, Albuquerque, NM 87131, USA * dsavage@salud.unm.edu 06 1 2010 Nov-Dec 2010 44 0 222920 673 690 22 04 2013 15 05 2013 15 05 2013 17 04 2025 © 2009 Elsevier Inc. All rights reserved. 2009 Many children adversely affected by maternal drinking during pregnancy cannot be identified early in life using current diagnostic criteria for fetal alcohol spectrum disorder (FASD). We conducted a preliminary investigation to determine whether ethanol-induced alterations in placental gene expression may have some utility as a diagnostic indicator of maternal drinking during pregnancy and as a prognostic indicator of risk for adverse neurobehavioral outcomes in affected offspring. Pregnant Long-Evans rats voluntarily consumed either a 0 or 5% ethanol solution 4 h each day throughout gestation. Ethanol consumption produced a mean maternal daily intermittent peak serum ethanol concentration of 84 mg/dL. Placentas were harvested on gestational day 20 for gene expression studies. Microarray analysis of more than 28,000 genes revealed that the expression of 304 known genes was altered twofold or greater in placenta from ethanol-consuming dams compared with controls. About 76% of these genes were repressed in ethanol-exposed placentas. Gene expression changes involved proteins associated with central nervous system development; organ morphogenesis; immunological responses; endocrine function; ion homeostasis; and skeletal, cardiovascular, and cartilage development. To date, quantitative real-time polymerase chain reaction analysis has confirmed significant alterations in gene expression for 22 genes, including genes encoding for three calcium binding proteins, two matrix metalloproteinases, the cannabinoid 1, galanin 2 and toll-like receptor 4, iodothyronine deiodinase 2, 11-β hydroxysteroid dehydrogenase 2, placental growth factor, transforming growth factor alpha, gremlin 1, and epithelial growth factor (EGF)-containing extracellular matrix protein. These results suggest that the expression of a sufficiently large number of placental mRNAs is altered after moderate drinking during pregnancy to warrant more detailed investigation of the placenta as a biomarker system for maternal drinking during pregnancy and as an early indicator of FASD. Furthermore, these results provide new insights into novel mechanisms on how ethanol may directly or indirectly mediate its teratogenic effects through alterations in placental function during pregnancy. Fetal alcohol spectrum disorder Ethanol Placenta Microarray qRT-PCR Biomarker National Institute on Alcohol Abuse and Alcoholism : NIAAA R21 AA015420 || AA National Institute on Alcohol Abuse and Alcoholism : NIAAA P20 AA017068 || AA pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

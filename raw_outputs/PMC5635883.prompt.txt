@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC5635883 PMC5635883.1 5635883 5635883 28923940 10.1073/pnas.1706546114 201706546 1 PNAS Plus Biological Sciences Medical Sciences PNAS Plus Defective decidualization during and after severe preeclampsia reveals a possible maternal contribution to the etiology Decidualization defect in preeclampsia Garrido-Gomez Tamara a b c d Dominguez Francisco b Quiñonero Alicia b Diaz-Gimeno Patricia b Kapidzic Mirhan c d Gormley Matthew c d Ona Katherine c d Padilla-Iserte Pablo e McMaster Michael f Genbacev Olga c d Perales Alfredo e g http://orcid.org/0000-0001-7745-4850 Fisher Susan J. c d h i 1 2 Simón Carlos a b g j 1 2 a Fundación Igenomix Spain b Spain c University of California, San Francisco CA d University of California, San Francisco CA e Hospital Universitario La Fe Spain f University of California, San Francisco CA g Valencia University Spain h University of California, San Francisco CA i University of California, San Francisco CA j Stanford University CA 2 carlos.simon@igenomix.com susan.fisher@ucsf.edu Edited by R. Michael Roberts, University of Missouri-Columbia, Columbia, MO, and approved August 11, 2017 (received for review April 20, 2017) Author contributions: O.G., A.P., S.J.F., and C.S. designed research; T.G.-G., F.D., A.Q., M.K., K.O., P.P.-I., O.G., and A.P. performed research; P.D.-G. and M.G. contributed new reagents/analytic tools; T.G.-G., M.G., S.J.F., and C.S. analyzed data; P.P.-I. collected samples; and T.G.-G., M.M., S.J.F., and C.S. wrote the paper. 1 The authors declare no conflict of interest. 3 10 2017 18 9 2017 114 40 299700 E8468 E8477 18 09 2017 16 10 2017 22 08 2018 Freely available online through the PNAS open access option. Transcriptional signature of the decidua in preeclampsia 115 24 30 5 2018 E5434 E5436 Proceedings of the National Academy of Sciences of the United States of America PMC6004439 29848633 In This Issue 114 40 3 10 2017 10503 10505 Proceedings of the National Academy of Sciences of the United States of America PMC5635861 PNAS Plus Significance Statements 114 40 3 9 2017 10530 10533 Proceedings of the National Academy of Sciences of the United States of America PMC5635945 Reply to Liu et al.: Decidualization defect in severe preeclampsia 115 33 1 8 2018 E7656 E7657 Proceedings of the National Academy of Sciences of the United States of America PMC6099866 30068606 Significance We provide evidence of a decidualization defect in the endometrium of women with severe preeclampsia (PE) that was detected at the time of delivery and persisted years after the affected pregnancy. We went on to link this defect to impaired cytotrophoblast invasion. The transcriptional signature of the defect could enable its detection before (or after) conception, which would aid the development of therapies focused on improving decidualization and perhaps preventing severe PE. In preeclampsia (PE), cytotrophoblast (CTB) invasion of the uterus and spiral arteries is often shallow. Thus, the placenta’s role has been a focus. In this study, we tested the hypothesis that decidual defects are an important determinant of the placental phenotype. We isolated human endometrial stromal cells from nonpregnant donors with a previous pregnancy that was complicated by severe PE (sPE). Compared with control cells, they failed to decidualize in vitro as demonstrated by morphological criteria and the analysis of stage-specific antigens (i.e., IGFBP1, PRL). These results were bolstered by global transcriptional profiling data that showed they were transcriptionally inert. Additionally, we used laser microdissection to isolate the decidua from tissue sections of the maternal–fetal interface in sPE. Global transcriptional profiling revealed defects in gene expression. Also, decidual cells from patients with sPE, which dedifferentiated in vitro, failed to redecidualize in culture. Conditioned medium from these cells failed to support CTB invasion. To mimic aspects of the uterine environment in normal pregnancy, we added PRL and IGFBP1, which enhanced invasion. These data suggested that failed decidualization is an important contributor to down-regulated CTB invasion in sPE. Future studies will be aimed at determining whether this discovery has translational potential with regard to assessing a woman’s risk of developing this pregnancy complication. preeclampsia human endometrial stromal cells decidua cytotrophoblast transcriptomics HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 R37 HD0762353 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppr  pregnancy complication. preeclampsia human endometrial stromal cells decidua cytotrophoblast transcriptomics HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 R37 HD0762353 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,130 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Tim S. Nawrot",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "tim.nawrot@uhasselt.be",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study investigates the placental transcriptome using weighted gene co-expression network analysis (WGCNA) to identify gene modules and hub genes associated with both maternal pre-pregnancy BMI and newborn birth weight, exploring the molecular mechanisms linking maternal obesity to fetal growth.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "Term",
+    "confidence": "medium",
+    "reasoning": "Placental tissue was collected after delivery and mean gestational age was 38.9 weeks, indicating term deliveries; the paper does not explicitly state all were term but the mean GA and context support this."
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": 38.9,
+    "confidence": "high"
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Gestational diabetes",
+      "Gestational hypertension"
+    ],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Low birth weight",
+      "High birth weight"
+    ],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Maternal pre-pregnancy BMI",
+      "Gestational weight gain",
+      "Maternal smoking status",
+      "Placental transcriptome (RNA microarray)"
+    ],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "East-Limburg Hospital",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "Belgium",
+    "confidence": "high"
+  }
+}

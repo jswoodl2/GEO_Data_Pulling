@@ -1,0 +1,121 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Nandor Gabor Than",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "than.gabor@ttk.hu",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study uses high-dimensional RNA-Seq and protein analyses to characterize the transcriptomic and molecular features of complete hydatidiform moles (CHMs) compared to normal first trimester placentas. The findings reveal dysregulation of placental functions, epigenetic programming, and immune pathways in CHMs.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "1st",
+    "confidence": "high"
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "high"
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "11.3",
+    "confidence": "medium",
+    "reasoning": "The paper reports gestational age at tissue collection in days: 79.2 days (RNA-Seq study) and 64.4 days (TMA study) for GTD samples, and 84.2 days and 62.3 days for placenta controls. Converting the RNA-Seq GTD mean of 79.2 days gives approximately 11.3 weeks, which is the most representative value for the primary discovery cohort."
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper mentions 'pregnancy history' was abstracted for TMA cases but does not explicitly report parity values in any table or results section."
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Pregnancy history is mentioned as collected but gravidity is not explicitly reported in any table or results section."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": ["Complete hydatidiform mole", "Gestational trophoblastic disease", "Invasive mole", "Choriocarcinoma", "Persistent gestational trophoblastic disease"],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": ["BMI", "Age at diagnosis", "Pretreatment beta-hCG levels", "WHO score", "Tumor size", "Metastatic sites", "Progression-free survival", "Overall survival", "p57 immunostaining", "Galectin-14 expression", "Sex chromosome content of tissue"],
+    "confidence": "high"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Los Angeles County (LAC) and USC Medical Center; Keck Medical Center of USC; Norris Comprehensive Cancer Center; Maternity Private Clinic (Hungary)",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "United States; Hungary",
+    "confidence": "high"
+  }
+}

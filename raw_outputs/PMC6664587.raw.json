@@ -1,0 +1,36 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Rosemary A. Fisher",
+  "Supervisor/Contact/Corresponding author email": "r.fisher@imperial.ac.uk",
+  "Main topic of the publication": "This paper investigates the genetic and epigenetic changes in a case of intra-placental gestational choriocarcinoma, finding a low level of mutation and a methylation profile resembling first trimester samples, suggesting that the malignancy arises from methylation aberrations during development.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Term",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 39,
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Intraplacental choriocarcinoma",
+    "Fetal distress"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Death"
+  ],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "Charing Cross Hospital Campus of Imperial College",
+  "Country where samples were collected": "Canada"
+}

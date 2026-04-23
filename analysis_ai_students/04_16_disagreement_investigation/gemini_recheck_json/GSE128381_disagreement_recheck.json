@@ -1,0 +1,59 @@
+{
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper provides the mean gestational age for the cohort and specifies that placental samples were collected within one hour of delivery.",
+    "evidence": [
+      {
+        "quote": "Gestational age, weeks 38.9 \u00b1 2.1",
+        "source": "Main paper, Table 1"
+      },
+      {
+        "quote": "Placental tissue was collected within 1 h after delivery.",
+        "source": "Main paper, Materials and Methods"
+      }
+    ]
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study explicitly specifies the use of mother-newborn pairs, indicating one offspring per pregnancy in the study set.",
+    "evidence": [
+      {
+        "quote": "we used RNA microarray (Agilent 8 \u00d7 60 K), medical records, and questionnaire data from 183 mother-newborn pairs from the ENVIR ON",
+        "source": "Main paper, Abstract"
+      },
+      {
+        "quote": "Characteristics of study population (n = 183)",
+        "source": "Main paper, Table 1"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper reports ethnicity based on questionnaires regarding the native country of the neonates' grandparents, which is demographic rather than genetic ancestry.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper lists counts for mothers with gestational diabetes and gestational hypertension and notes their inclusion in the main analysis and exclusion in sensitivity analyses.",
+    "evidence": [
+      {
+        "quote": "Gestational diabetes 6 (3.3) Gestational hypertension 8 (4.4)",
+        "source": "Main paper, Table 1"
+      },
+      {
+        "quote": "Associations between traits of interest and MEs or hub genes were assessed after excluding... mothers with gestational diabetes... mothers with gestational hypertension",
+        "source": "Main paper, Results, Sensitivity Analyses"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "The paper provides birth weight categories (low and high) as phenotypic traits, but does not list clinical fetal complications such as malformations, distress, or chromosomal abnormalities.",
+    "evidence": []
+  }
+}

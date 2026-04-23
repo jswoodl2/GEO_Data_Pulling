@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC6800347 PMC6800347.1 6800347 6800347 31570606 10.1073/pnas.1907884116 201907884 1 Biological Sciences Developmental Biology Paternal knockout of Slc38a4 http://orcid.org/0000-0003-0474-232X Matoba Shogo a b 1 Nakamuta Shoko c Miura Kento a Hirose Michiko a Shiura Hirosuke d Kohda Takashi d Nakamuta Nobuaki c Ogura Atsuo a e f g 1 a RIKEN Japan b Tokyo University of Agriculture and Technology Japan c Iwate University Japan d University of Yamanashi Japan e University of Tsukuba Japan f University of Tokyo Japan g RIKEN Cluster for Pioneering Research Japan 1 shogo.matoba@riken.jp atsuo.ogura@riken.jp Edited by Janet Rossant, Hospital for Sick Children, University of Toronto, Toronto, ON, Canada, and approved September 6, 2019 (received for review May 8, 2019) Author contributions: S.M. and A.O. designed research; S.M., S.N., K.M., M.H., H.S., T.K., and N.N. performed research; S.M., S.N., K.M., N.N., and A.O. analyzed data; and S.M. and A.O. wrote the paper. The authors declare no competing interest. 15 10 2019 30 9 2019 116 42 344032 21047 21053 30 03 2020 30 03 2020 25 10 2019 30 03 2020 2019 https://www.pnas.org/site/aboutpnas/licenses.xhtml Published under the PNAS license Significance Although it has been suggested that system A amino acid transporters are involved in mammalian placental or embryonic development, most studies in this field have relied on in vitro experiments using primary cells/cytoplasts from human placentas. The present study provides genetic evidence of the developmental roles of system A amino acid transporters and identifies Slc38a4 Slc38a4 The placenta is critical in mammalian embryonic development because the embryo’s supply of nutrients, including amino acids, depends solely on mother-to-embryo transport through it. However, the molecular mechanisms underlying this amino acid supply are poorly understood. In this study, we focused on system A amino acid transporters Slc38a1 Slc38a2 Slc38a4 Slc38a4 Slc38a4 Slc38a4 Slc38a4 Slc38a4 Slc38a4 Slc38a4 amino acid transporter SNAT placental development IUGR metabolome MEXT | Japan Society for the Promotion of Science (JSPS) 501100001691 JP16H06146 Shogo Matoba Atsuo Ogura MEXT | Japan Society for the Promotion of Science (JSPS) 501100001691 JP18H04891 Shogo Matoba Atsuo Ogura MEXT | Japan Society for the Promotion of Science (JSPS) 501100001691 JP25112009 Shogo Matoba Atsuo Ogura MEXT | Japan Society for the Promotion of Science (JSPS) 501100001691 JP23220011 Shogo Matoba Atsuo Ogura MEXT | Japan Society for the Promotion of Science (JSPS) 501100001691 JP19H05758 Shogo Matoba Atsuo Ogura pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

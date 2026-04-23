@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Reproduction Reproduction 319 nihpa Reproduction (Cambridge, England) 1470-1626 1741-7899 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC10283428 PMC10283428.1 10283428 10283428 NIHMS1904141 37078791 10.1530/REP-23-0017 NIHMS1904141 NIHPA1904141 1 Article Coumestrol Induces Oxidative Stress and Impairs Migration and Embryonic Growth Marbrey Margeaux W. 1 Douglas Elizabeth S. 1 Goodwin Emma R. 1 http://orcid.org/0000-0002-7033-9232 Caron Kathleen M. 1 1 Corresponding Author: Kathleen_caron@med.unc.edu Author Contributions MWM and KMC conceived the study and planned the experiments. MWM performed the majority of the experiments with minor help from ESD and ERG. MWM wrote the manuscript. KMC supervised the project and contributed to figure design and manuscript preparation. All authors discussed the results and interpretation of the results. Declaration of Interest There is no conflict of interest that could be perceived as prejudicing the impartiality of the research reported. 01 7 2023 15 5 2023 166 1 438755 1 11 10 06 2023 01 07 2023 01 07 2023 22 06 2023 15 06 2024 Although vegetarianism has grown in popularity especially among pregnant women, the effects of phytoestrogens in placentation lacks understanding. Factors such as cellular oxidative stress and hypoxia and external factors including cigarette smoke, phytoestrogens, and dietary supplements can regulate placental development. The isoflavone phytoestrogen coumestrol was identified in spinach and soy and was found to not cross the fetal-placental barrier. Since coumestrol could be a valuable supplement or potent toxin during pregnancy, we sought to examine its role in trophoblast cell function and placentation in a murine pregnancy. After treating trophoblast cells (HTR8/SVneo) with coumestrol and performing an RNA microarray, we determined 3,079 genes were significantly changed with the top differentially changed pathways related to the oxidative stress response, cell cycle regulation, cell migration, and angiogenesis. Upon treatment with coumestrol, trophoblast cells exhibited reduced migration and proliferation. Additionally, we observed increased reactive oxygen species accumulation with coumestrol administration. We then examined the role of coumestrol within an in vivo In Brief: Healthy development of the placenta is dependent on trophoblast cell migration and reduced oxidative stress presence. This article describes how a phytoestrogen found in spinach and soy causes impaired placental development during pregnancy. coumestrol placentation phytoestrogen oxidative stress pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

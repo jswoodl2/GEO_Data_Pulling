@@ -1,0 +1,324 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Brian J. Cox",
+    "confidence": "high",
+    "reason": "Brian J. Cox is listed with a corresponding phone number and email address in the author affiliations.",
+    "evidence": [
+      {
+        "quote": "Cox Brian J. 416-978-3241 b.cox@utoronto.ca",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "b.cox@utoronto.ca",
+    "confidence": "high",
+    "reason": "The email for Brian J. Cox is explicitly provided in the author affiliations section.",
+    "evidence": [
+      {
+        "quote": "Cox Brian J. 416-978-3241 b.cox@utoronto.ca",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Epigenetic regulation (DNA methylation) of placental gene expression in transcriptional subtypes of preeclampsia.",
+    "confidence": "high",
+    "reason": "The study investigates placental methylome differences between previously identified transcriptional clusters of preeclampsia.",
+    "evidence": [
+      {
+        "quote": "Overall, we have established DNA methylation alterations underlying a portion of the transcriptional development of “canonical” PE in cluster 2 and “immunological” PE in cluster 3.",
+        "source": "Main text, Abstract, Conclusions"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "3rd",
+      "Term",
+      "Premature"
+    ],
+    "confidence": "high",
+    "reason": "Mean gestational ages range from 31 to 36 weeks (3rd trimester), and both term and premature deliveries are explicitly reported.",
+    "evidence": [
+      {
+        "quote": "Gestational age at delivery (weeks) ... 36 (3) ... 31 (3) ... 32 (4) ... 33 (3)",
+        "source": "Supplemental Table 1"
+      },
+      {
+        "quote": "Delivery < 37 weeks ... 32 (6/19) ... 95 (18/19) ... 100 (5/5) ... 100 (5/5)",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Only newborn weight z-scores are provided, not actual birthweight in grams or kilograms.",
+    "evidence": [
+      {
+        "quote": "Newborn weight z-score ... 0.15 (1.06) ... -1.51 (0.59)",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Supplemental Table 1 reports mean gestational age at delivery for each cluster.",
+    "evidence": [
+      {
+        "quote": "Gestational age at delivery (weeks) ... 36 (3) ... 31 (3) ... 32 (4) ... 33 (3)",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": 33.29,
+    "confidence": "high",
+    "reason": "The weighted mean for the 48 samples is approximately 33.29 weeks (calculated from 19 at 36 weeks, 19 at 31, 5 at 32, and 5 at 33).",
+    "evidence": [
+      {
+        "quote": "Gestational age at delivery (weeks) ... 36 (3) ... 31 (3) ... 32 (4) ... 33 (3)",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Samples were collected at delivery, which is reported for the cohort.",
+    "evidence": [
+      {
+        "quote": "A total of 48 (out of 157) placentas from our highly annotated cohort purchased from the Research Centre for Women’s and Infants’ Health (RCWIH) BioBank [3] were utilized for our DNA methylation analysis.",
+        "source": "Main text, Methods, Sample selection"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": 33.29,
+    "confidence": "high",
+    "reason": "Placentas are collected at birth, so the sample collection age is equivalent to the gestational age at delivery.",
+    "evidence": [
+      {
+        "quote": "as with all investigations of delivered placentas, it is impossible to determine whether the observed molecular modifications are part of the cause or the consequence of the disease process.",
+        "source": "Main text, Discussion"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Supplemental Table 2 reports the percentage of male fetuses in each cluster.",
+    "evidence": [
+      {
+        "quote": "Male fetus ... 68 (13/19) ... 53 (10/19) ... 20 (1/5) ... 40 (2/5)",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Supplemental Table 2 reports the percentage of nulliparous women.",
+    "evidence": [
+      {
+        "quote": "Nulliparous ... 42 (8/19) ... 68 (13/19) ... 20 (1/5) ... 40 (2/5)",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "While specific prior pregnancy outcomes (miscarriage, termination) are listed, the total number of pregnancies (gravidity) is not explicitly reported.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper does not explicitly state whether pregnancies were singletons or multiples, although individual placentas were studied.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Supplemental Table 2 lists the maternal race categories for the cohort.",
+    "evidence": [
+      {
+        "quote": "Maternal race ... White ... Black ... Asian ... East Indian",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Only self-reported race/ethnicity is provided, not genetic ancestry analysis.",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Mean maternal height for each cluster is reported in Supplemental Table 1.",
+    "evidence": [
+      {
+        "quote": "Maternal height (cm) ... 163 (6) ... 163 (7) ... 161 (5) ... 161 (11)",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Only BMI is provided, not actual weight in kilograms.",
+    "evidence": [
+      {
+        "quote": "Maternal BMI (kg/m2) ... 26.5 (5.6)",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal height is not reported.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal weight is not reported.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Supplemental Table 1 provides maternal age for the clusters.",
+    "evidence": [
+      {
+        "quote": "Maternal age (years) ... 32.5 (4.6) ... 35.1 (5.0) ... 37.0 (4.3) ... 31.6 (7.7)",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal age is not mentioned in the paper or supplements.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study includes patients with preeclampsia, HELLP syndrome, and fetal growth restriction.",
+    "evidence": [
+      {
+        "quote": "Preeclampsia ... HELLP ... Fetal growth restriction",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Supplemental Table 2 reports the rates of vaginal delivery.",
+    "evidence": [
+      {
+        "quote": "Vaginal delivery ... 42 (8/19) ... 11 (2/19) ... 0 (0/5) ... 20 (1/5)",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Preeclampsia",
+      "HELLP syndrome",
+      "Chronic hypertension",
+      "Previous hypertensive pregnancy",
+      "Amniotic fluid deficiency"
+    ],
+    "confidence": "high",
+    "reason": "These complications are listed in the supplemental tables as clinical characteristics of the cohort.",
+    "evidence": [
+      {
+        "quote": "Preeclampsia ... HELLP ... Chronic hypertension ... Amniotic fluid deficiency",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Fetal outcomes such as growth restriction and SGA status are reported.",
+    "evidence": [
+      {
+        "quote": "Fetal growth restriction ... SGA (<10th percentile)",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Fetal growth restriction",
+      "Small-for-gestational-age (SGA)",
+      "Neonatal intensive care unit (NICU) transfer",
+      "Low Apgar scores"
+    ],
+    "confidence": "high",
+    "reason": "The paper details several fetal complications and clinical outcomes in the supplement.",
+    "evidence": [
+      {
+        "quote": "Fetal growth restriction ... SGA ... NICU transfer ... Apgar score",
+        "source": "Supplemental Tables 1 and 2"
+      }
+    ]
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Uterine artery pulsatility index",
+      "Umbilical artery pulsatility index",
+      "Middle cerebral artery pulsatility index",
+      "Proteinuria level",
+      "Placental weight z-score",
+      "Placental thickness",
+      "Maternal BMI",
+      "Maternal blood type",
+      "Biophysical profile score"
+    ],
+    "confidence": "high",
+    "reason": "Extensive clinical phenotyping was performed as shown in Supplemental Tables 1 and 2.",
+    "evidence": [
+      {
+        "quote": "Mean uterine artery PI ... Max proteinuria level ... Placental weight z-score ... Maternal BMI",
+        "source": "Supplemental Tables 1 and 2"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Research Centre for Women’s and Infants’ Health (RCWIH) BioBank (Mount Sinai Hospital)",
+    "confidence": "high",
+    "reason": "The methods state samples were obtained from the RCWIH BioBank, and ethics approval specifies Mount Sinai Hospital.",
+    "evidence": [
+      {
+        "quote": "A total of 48 (out of 157) placentas from our highly annotated cohort purchased from the Research Centre for Women’s and Infants’ Health (RCWIH) BioBank [3] were utilized",
+        "source": "Main text, Methods, Sample selection"
+      },
+      {
+        "quote": "Ethics approval was granted from the Research Ethics Boards of Mount Sinai Hospital (#13-0211-E)",
+        "source": "Main text, Ethics approval and consent to participate"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "Canada",
+    "confidence": "high",
+    "reason": "The affiliations and collection centers (Toronto, Ottawa) are in Canada.",
+    "evidence": [
+      {
+        "quote": "Department of Physiology, University of Toronto ... Department of Cellular and Molecular Medicine, University of Ottawa",
+        "source": "Main text, Author Information"
+      }
+    ]
+  }
+}

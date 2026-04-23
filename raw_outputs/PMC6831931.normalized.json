@@ -1,0 +1,40 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Lisa FP Ng",
+  "Supervisor/Contact/Corresponding author email": "lisa_ng@immunol.a-star.edu.sg",
+  "Main topic of the publication": "This study investigates the effects of Zika virus (ZIKV) infection on placental development during pregnancy by analyzing full-term placentas from three women infected with ZIKV during different trimesters, revealing unique immune responses and transcriptomic profiles associated with trimester-specific ZIKV infection.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "2nd",
+    "3rd"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "ZIKV antigen",
+    "Antibody titre",
+    "peripheral blood immune cells"
+  ],
+  "Hospital/Center where samples were collected": "KK Women's and Children's Hospital, Singapore",
+  "Country where samples were collected": "Singapore",
+  "PMCID": "PMC6831931"
+}

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Lipid Res J. Lipid Res 568 jlr jlr Journal of Lipid Research 0022-2275 1539-7262 American Society for Biochemistry and Molecular Biology PMC6824492 PMC6824492.1 6824492 6824492 31530576 10.1194/jlr.P093427 P093427 1 Patient-Oriented and Epidemiological Research Metabolism of cholesterol and progesterone is differentially regulated in primary trophoblastic subtypes and might be disturbed in recurrent miscarriages [S] Vondra Sigrid 1 * Kunihs Victoria 1 * http://orcid.org/0000-0002-3621-5594 Eberhart Tanja † Eigner Karin † Bauer Raimund † Haslinger Peter * Haider Sandra * Windsperger Karin * Klambauer Günter § Schütz Birgit ** Mikula Mario ** Zhu Xiaowei †† §§ Urban Alexander E. †† §§ Hannibal Roberta L. 2 §§ Baker Julie §§ Knöfler Martin * Stangl Herbert † Pollheimer Jürgen 3 * http://orcid.org/0000-0002-1192-0748 Röhrl Clemens 3 † *** Department of Obstetrics and Gynecology, Reproductive Biology Unit, * Medical University of Vienna Austria Departments of Medical Chemistry † Medical University of Vienna Austria Medical Genetics, ** Medical University of Vienna Austria Institute of Machine Learning, § Johannes Kepler University Linz Austria Departments of Psychiatry †† Stanford University School of Medicine CA Genetics, §§ Stanford University School of Medicine CA University of Applied Sciences Upper Austria *** Austria The RNA sequencing data in this publication have been deposited in NCBI’s Gene Expression Omnibus (Vondra et al., 2019) and are accessible through GEO Series accession number GSE126530 ( https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126530 1 S. Vondra and V. Kunihs contributed equally to this work. 2 Present address of R. L. Hannibal: Microbiology Department, Second Genome, South San Francisco, CA. 3 clemens.roehrl@fh-wels.at juergen.pollheimer@meduniwien.ac.at 11 2019 17 9 2019 60 11 344838 1922 1934 22 2 2019 12 8 2019 01 11 2020 01 11 2020 05 11 2019 01 11 2020 Copyright © 2019 Vondra et al. 2019 Vondra et al. Published under exclusive license by The American Society for Biochemistry and Molecular Biology, Inc. During pregnancy, extravillous trophoblasts (EVTs) invade the maternal decidua and remodel the local vasculature to establish blood supply for the growing fetus. Compromised EVT function has been linked to aberrant pregnancy associated with maternal and fetal morbidity and mortality. However, metabolic features of this invasive trophoblast subtype are largely unknown. Using primary human trophoblasts isolated from first trimester placental tissues, we show that cellular cholesterol homeostasis is differentially regulated in EVTs compared with villous cytotrophoblasts. Utilizing RNA-sequencing, gene set-enrichment analysis, and functional validation, we provide evidence that EVTs display increased levels of free and esterified cholesterol. Accordingly, EVTs are characterized by increased expression of the HDL-receptor, scavenger receptor class B type I, and reduced expression of the LXR and its target genes. We further reveal that EVTs express elevated levels of hydroxy-delta-5-steroid dehydrogenase 3 beta- and steroid delta-isomerase 1 (HSD3B1) (a rate-limiting enzyme in progesterone synthesis) and are capable of secreting progesterone. Increasing cholesterol export by LXR activation reduced progesterone secretion in an ABCA1-dependent manner. Importantly, HSD3B1 expression was decreased in EVTs of idiopathic recurrent spontaneous abortions, pointing toward compromised progesterone metabolism in EVTs of early miscarriages. Here, we provide insights into the regulation of cholesterol and progesterone metabolism in trophoblastic subtypes and its putative relevance in human miscarriage. placenta adenosine 5′-triphosphate binding cassette transporter A1 nuclear receptor/liver X receptor trophoblast HSD3B1 scavenger receptor class B type I early miscarriage recurrent spontaneous abortion Austrian Science Fund 10.13039/501100002428 P25763-B13 P31470-B30 Austrian National Bank 10.13039/501100004061 17613 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

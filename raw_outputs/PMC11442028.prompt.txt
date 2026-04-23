@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Am J Physiol Heart Circ Physiol Am J Physiol Heart Circ Physiol 625 ajpheart AJPHEART American Journal of Physiology - Heart and Circulatory Physiology 0363-6135 1522-1539 American Physiological Society PMC11442028 PMC11442028.1 11442028 11442028 39028280 10.1152/ajpheart.00181.2024 H-00181-2024 1 Research Article Translational Physiology Effects of in utero exposure to Δ-9-tetrahydrocannabinol on cardiac extracellular matrix expression and vascular transcriptome in rhesus macaques EFFECTS OF PRENATAL THC ON FETAL CARDIOVASCULAR SYSTEM https://orcid.org/0000-0003-3068-5621 Le Hillary H. 1 Shorey-Kendrick Lyndsey E. 2 https://orcid.org/0000-0002-5267-3376 Hinds Monica T. 1 3 4 5 https://orcid.org/0000-0001-9481-0124 McCarty Owen J. T. 1 Lo Jamie O. 6 7 * https://orcid.org/0000-0002-2853-2821 Anderson Deirdre E. J. 1 * 1 Oregon Health & Science University United States 2 Oregon Health & Science University United States 3 Oregon Health & Science University United States 4 Knight Cardiovascular Institute, Oregon Health & Science University United States 5 Oregon Health & Science University United States 6 Oregon Health & Science University United States 7 Oregon Health & Science University United States * J.O. Lo and D. E. J. Anderson contributed equally to this work. Correspondence: D. E. J. Anderson ( anderdei@ohsu.edu 1 9 2024 19 7 2024 327 3 471524 H701 H714 22 3 2024 27 6 2024 7 7 2024 01 09 2025 01 09 2025 01 10 2024 02 09 2025 Copyright © 2024 the American Physiological Society. 2024 American Physiological Society Brownie Bliss or Cardiac Risk? Unraveling the effects of prenatal THC exposure on fetal cardiac development. 2 8 2024 Am J Physiol Heart Circ Physiol 10.1152/ajpheart.00510.2024 39093003 Delta-9-tetrahydrocannabinol (THC), the psychoactive component of cannabis, remains a schedule I substance, thus safety data regarding the effects on the cardiovascular and prenatal health are limited. Importantly, there is evidence showing prenatal cannabis exposure can negatively impact fetal organ development, including the cardiovascular system. THC can cross the placenta and bind to cannabinoid receptors expressed in the developing fetus, including on endothelial cells. To understand the impact of prenatal THC exposure on the fetal cardiovascular system, we used our rhesus macaque model of prenatal daily edible THC consumption. Before conception, animals were acclimated to THC (2.5 mg/7 kg/day, equivalent to a heavy medical cannabis dose) and maintained on this dose daily throughout pregnancy. Fetal tissue samples were collected at gestational day 155 NEW & NOTEWORTHY Δ-9-tetrahydrocannabinol ; cardiovascular development ; endothelial cells ; metabolism ; RNA-sequencing ; HHS | National Institutes of Health (NIH) P51 OD01192 Jamie O. Lo American Heart Association (AHA) 10.13039/100000968 24PRE1195332 Hillary Le HHS | National Institutes of Health (NIH) 10.13039/100000002 R03 HD097116 Jamie O. Lo HHS | National Institutes of Health (NIH) 10.13039/100000002 DP1 DA056793 Jamie O. Lo HHS | National Institutes of Health (NIH) 10.13039/100000002 R01 HL101972 Owen J.T. McCarty HHS | National Institutes of Health (NIH) 10.13039/100000002 T32HL083808 (School of Medicine, Oregon Health and Science University (SOM, OHSU)) Hillary Le pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

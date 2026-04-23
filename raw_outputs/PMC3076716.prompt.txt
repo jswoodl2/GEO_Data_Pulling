@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Reproduction 319 nihpa Reproduction (Cambridge, England) 1470-1626 1741-7899 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC3076716 PMC3076716.1 3076716 3076716 NIHMS283389 21300692 10.1530/REP-10-0358 NIHMS283389 NIHPA283389 1 Article Microarray Assessment of the Influence of the Conceptus on Gene Expression in the Mouse Uterus During Decidualization McConaha ME 1 Eckstrum K 1 An J 1 Steinle JJ 2 Bany BM 1 3 4 1 2 3 4 bbany@siumed.edu 7 2 2011 4 2011 141 4 195824 511 527 25 03 2011 01 04 2012 01 04 2012 29 03 2012 06 06 2024 During pregnancy in several species including humans and rodents the endometrium undergoes decidualization. This process of differentiation from endometrial to decidual tissue occurs only after the onset of implantation in mice. It can also be artificially-induced causing the formation of deciduomal tissue. The purpose of this study was to compare the gene expression profile of the developing decidua in pregnant mice with the deciduoma formed after artificial induction in an effort to identify conceptus-influenced changes in uterine gene expression during decidualization. We induced decidualization artificially by transferring blastocyst-sized ConA-coated agarose beads into the uterus on Day 2.5 of pseudopregnancy. Recently published work has found this model to be more “physiological” than other methods. Total RNA was isolated from blastocyst and bead induced “implantation” sites of the uteri of Day 7.5 pregnant (decidua) and pseudopregnant (deciduoma) mice, respectively. This RNA was then used for microarray analysis using Mouse Illumina Beadarray chips. This analysis revealed potential differential mRNA levels of only 45 genes between the decidua and bead-induced deciduoma tissues. We confirmed the differential mRNA levels of 31 of these genes using quantitative RT-PCR. Finally, the level and localization of some of the mRNA’s for select genes ( Aldh3a1 Bcmo1, Guca2b Inhbb National Institute of Child Health & Human Development : NICHD R01 HD049010-05 || HD pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

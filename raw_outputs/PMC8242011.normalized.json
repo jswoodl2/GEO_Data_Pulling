@@ -1,0 +1,42 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Elizabeta Nemeth",
+  "Supervisor/Contact/Corresponding author email": "ENemeth@mednet.ucla.edu",
+  "Main topic of the publication": "This study uses mouse models to investigate the effects of maternal iron loading, inflammation, and their interaction on pregnancy outcomes, finding that the combination of iron excess and inflammation leads to embryo malformations and demise due to TNFα-mediated apoptosis.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "No",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 8.5,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Inflammation",
+    "Obesity"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Embryo malformations",
+    "Embryo mortality"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "Apoptosis",
+    "Oxidative stress",
+    "Endothelial dysfunction"
+  ],
+  "Hospital/Center where samples were collected": "University of California, Los Angeles",
+  "Country where samples were collected": "United States",
+  "PMCID": "PMC8242011"
+}

@@ -1,0 +1,39 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Li Ming-Qing",
+  "Supervisor/Contact/Corresponding author email": "mqli@fudan.edu.cn",
+  "Main topic of the publication": "This paper analyzes single-cell transcriptional profiles of endometrial cells during the window of implantation and decidual cells of early pregnancy to gain insights into the process of decidualization, revealing a unique IGF1+ endometrial stromal cell population associated with human decidualization.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "1st",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Recurrent implantation failure",
+    "Miscarriages"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Endometrial receptivity",
+    "Decidualization",
+    "Infertility"
+  ],
+  "Hospital/Center where samples were collected": "Hospital of Obstetrics and Gynecology, Fudan University",
+  "Country where samples were collected": "China",
+  "PMCID": "PMC9733393"
+}

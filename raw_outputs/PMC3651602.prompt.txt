@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Clin Oncol J. Clin. Oncol 660 jco JCO Journal of Clinical Oncology 0732-183X 1527-7755 American Society of Clinical Oncology PMC3651602 PMC3651602.1 3651602 3651602 19770384 10.1200/JCO.2008.20.0386 00386 1 Bios4 Guc14 Original Reports Genitourinary Cancer Identification and Validation of a Gene Expression Signature That Predicts Outcome in Adult Men With Germ Cell Tumors Korkola James E. Houldsworth Jane Feldman Darren R. Olshen Adam B. Qin Li-Xuan Patil Sujata Reuter Victor E. Bosl George J. Chaganti R.S.K. From the Cell Biology Program, Sloan-Kettering Institute for Cancer Research, New York; and Departments of Medicine, Epidemiology and Biostatistics, and Pathology, Memorial Sloan-Kettering Cancer Center, New York, NY. Corresponding author: R.S.K. Chaganti, PhD, 1275 York Ave, Box 30, Memorial Sloan-Kettering Cancer Center, New York, NY 10021; e-mail: chagantr@mskcc.org Authors' disclosures of potential conflicts of interest and author contributions are found at the end of this article. 1 11 2009 21 9 2009 27 31 182660 5240 5247 8 9 2008 28 5 2009 01 11 2010 21 05 2013 22 02 2017 © 2009 by American Society of Clinical Oncology 2009 Purpose Germ cell tumor (GCT) is the most common malignancy in young adult men. Currently, patients are risk-stratified on the basis of clinical presentation and serum tumor markers. The introduction of molecular markers could improve outcome prediction. Patients and Methods Expression profiling was performed on 74 nonseminomatous GCTs (NSGCTs) from cisplatin-treated patients (ie, training set) and on 34 similarly treated patients with NSGCTs (ie, validation set). A gene classifier was developed by using prediction analysis for microarrays (PAM) for the binary end point of 5-year overall survival (OS). A predictive score was developed for OS by using the univariate Cox model. Results In the training set, PAM identified 140 genes that predicted 5-year OS (cross-validated classification rate, 60%). The PAM model correctly classified 90% of patients in the validation set. Patients predicted to have good outcome had significantly longer survival than those with poor predicted outcome ( P P P Conclusion We have identified gene expression signatures that accurately predict outcome in patients with GCTs. These predictive genes should be useful for the prediction of patient outcome and could provide novel targets for therapeutic intervention. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

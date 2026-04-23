@@ -1,0 +1,144 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Margareta D. Pisarska",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "pisarskam@cshs.org",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study examines differences in transcriptomic profiles of first trimester placenta (during placentation) between pregnancies conceived spontaneously versus those conceived via non-IVF fertility treatments (NIFT) or in vitro fertilization (IVF), using RNA sequencing of chorionic villus samples.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "1st",
+    "confidence": "high"
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper mentions baseline maternal, paternal and fetal demographics and pregnancy outcomes as outcome measures, but birthweight is not explicitly reported in the available text."
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper mentions pregnancy outcomes but does not explicitly state gestational age at delivery in the provided text."
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reasoning": "No specific gestational age at delivery is reported in the available text."
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "12",
+    "confidence": "high",
+    "reasoning": "The paper states chorionic villus sampling was performed at gestational age 11\u201313 weeks, with 12 weeks as the midpoint/representative value."
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The paper mentions fetal demographics as an outcome measure but does not explicitly report sex of offspring in the available text."
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Parity is not explicitly mentioned in the available text."
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Gravidity is not explicitly mentioned in the available text."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The number of offspring per pregnancy (singleton vs. multiple) is not explicitly stated in the available text."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal demographics are mentioned as an outcome measure but race/ethnicity is not explicitly reported in the available text."
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Genetic ancestry is not explicitly reported in the available text."
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal height is not explicitly mentioned in the available text."
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal pre-pregnancy weight is not explicitly mentioned in the available text."
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Maternal demographics are listed as an outcome measure but specific maternal age values are not reported in the available text."
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Paternal demographics are mentioned as an outcome measure but paternal age is not explicitly reported in the available text."
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "The study collected samples from women undergoing CVS resulting in delivery of viable offspring; pregnancy complications are listed as outcome measures but the study does not appear to specifically recruit based on complications."
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Mode of delivery is not explicitly mentioned in the available text."
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [],
+    "confidence": "medium",
+    "reasoning": "Pregnancy complications are listed as an outcome measure but specific complications are not enumerated in the available text."
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reasoning": "Fetal demographics are mentioned as an outcome measure but specific fetal complications are not listed in the available text."
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "medium",
+    "reasoning": "No specific fetal complications are enumerated in the available text."
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Differential gene expression of first trimester placenta",
+      "Transcriptomic profiles",
+      "Fertility treatment type (spontaneous, NIFT, IVF)",
+      "Maternal medical conditions"
+    ],
+    "confidence": "medium"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Academic Medical Center (Cedars-Sinai Medical Center, inferred from email domain cshs.org)",
+    "confidence": "medium",
+    "reasoning": "The paper states 'Academic Medical Center' as the setting and the corresponding author email domain is cshs.org, suggesting Cedars-Sinai Medical Center, but this is not explicitly named in the available text."
+  },
+  "Country where samples were collected": {
+    "answer": "United States",
+    "confidence": "medium",
+    "reasoning": "The institution is an academic medical center with a US-based email domain (cshs.org), strongly suggesting the United States, though not explicitly stated."
+  }
+}

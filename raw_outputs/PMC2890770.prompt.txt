@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC2890770 PMC2890770.1 2890770 2890770 20479220 10.1073/pnas.0914507107 200914507 1 Biological Sciences Developmental Biology Inaugural Article Distinct histone modifications in stem cell lines and tissue lineages from the early mouse embryo Rugg-Gunn Peter J. a Cox Brian J. a Ralston Amy a 1 Rossant Janet a b 2 a Hospital for Sick Children Research Institute Canada b University of Toronto Canada 2 janet.rossant@sickkids.ca This contribution is part of the special series of Inaugural Articles by members of the National Academy of Sciences elected in 2008. Edited by Stuart H. Orkin, Harvard Medical School, Boston, MA, approved April 27, 2010 (received for review December 17, 2009) Author contributions: P.J.R.-G. and J.R. designed research; P.J.R.-G., B.J.C., and A.R. performed research; P.J.R.-G. and B.J.C. analyzed data; and P.J.R.-G., B.J.C., A.R., and J.R. wrote the paper. 1 The authors declare no conflict of interest. 15 6 2010 17 5 2010 107 24 188016 10783 10790 17 05 2010 21 07 2010 02 03 2011 Freely available online through the PNAS open access option. A unique property of the mammalian embryo is that stem cells can be derived from its early tissue lineages. These lineages will give rise to the fetus as well as essential extraembryonic tissues. Understanding how chromatin regulation participates in establishment of these lineages in the embryo and their derived stem cells provides insight that will critically inform our understanding of embryogenesis and stem cell biology. Here, we compare the genomewide location of active and repressive histone modifications in embryonic stem cells, trophoblast stem cells, and extraembryonic endoderm stem cells from the mouse. Our results show that the active modification H3K4me3 has a similar role in the three stem cell types, but the repressive modification H3K27me3 varies in abundance and genomewide distribution. Thus, alternative mechanisms mediate transcriptional repression in stem cells from the embryo. In addition, using carrier chromatin immunoprecipitation we show that bivalent histone domains seen in embryonic stem cells exist in pluripotent cells of the early embryo. However, the epigenetic status of extraembryonic progenitor cells in the embryo did not entirely reflect the extraembryonic stem cell lines. These studies indicate that histone modification mechanisms may differ between early embryo lineages and emphasize the importance of examining in vivo and in vitro progenitor cells. epigenetics methylation embryogenesis extraembryonic pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

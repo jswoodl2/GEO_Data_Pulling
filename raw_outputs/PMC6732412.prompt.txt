@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Physiol Genomics Physiol. Genomics 631 physiolgenomics Physiol Genomics PHYSIOLGENOMICS Physiological Genomics 1094-8341 1531-2267 American Physiological Society PMC6732412 PMC6732412.1 6732412 6732412 31125289 10.1152/physiolgenomics.00020.2019 PG-00020-2019 1 Research Article General Interest Spontaneous superimposed preeclampsia: chronology and expression unveiled by temporal transcriptomic analysis TRANSCRIPTOMIC ANALYSIS OF DAHL S RAT PREECLAMPTIC PREGNANCY Maeda Kenji J. 1 Showmaker Kurt C. 1 2 Johnson Ashley C. 1 2 Garrett Michael R. 1 2 3 https://orcid.org/0000-0001-7161-5502 Sasser Jennifer M. 1 1 University of Mississippi Medical Center Jackson, Mississippi 2 University of Mississippi Medical Center Jackson, Mississippi 3 University of Mississippi Medical Center Jackson, Mississippi Address for reprint requests and other correspondence: J. M. Sasser, Dept. of Pharmacology and Toxicology, Univ. of Mississippi Medical Center. 2500 No. State Str., Jackson, MS 39216 (e-mail: jsasser@umc.edu 1 8 2019 24 5 2019 51 8 341630 342 355 13 3 2019 3 5 2019 23 5 2019 01 08 2020 01 08 2020 11 09 2019 01 08 2020 Copyright © 2019 the American Physiological Society 2019 American Physiological Society Preeclampsia (PE), a multifactorial pregnancy-specific syndrome accounting for up to 8% of pregnancy complications, is a leading cause of maternal and fetal morbidity and mortality. PE is also associated with long-term risk of hypertension and stroke for both mother and fetus. Currently, the only “cure” is delivery of the baby and placenta, largely because the pathogenesis of PE is not yet fully understood. PE is associated with impaired vascular remodeling at the maternal-fetal interface and placental insufficiency; however, specific factors contributing to this impairment have not been identified. To identify molecular pathways involved in PE, we examined temporal transcriptomic changes occurring within the uterus, uterine implantation sites, and placentae from the Dahl salt-sensitive (Dahl S) rat model of superimposed PE compared with Sprague Dawley (SD) rats. We hypothesized that targeted gene analysis and whole transcriptome analysis would identify genetic factors that contribute to development of the preeclamptic phenotype in the Dahl S rat and unveil novel biomarkers, therapeutic targets, and mechanistic pathways in PE. Quantitative real-time PCR (qRT-PCR) and whole genome microarray analysis were performed on isolated total RNA from uterus ( day 0 days 7 10 days 14 20 days 0, 7, 10 14 microarray ; placenta ; preeclampsia ; pregnancy ; uterus HHS | NIH | National Heart, Lung, and Blood Institute (NHBLI) 10.13039/100000050 T32HL105324 R01HL134711 R01HL137673 HHS | NIH | National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) 10.13039/100000062 K01DK095018 HHS | NIH | National Institute of General Medical Sciences (NIGMS) 10.13039/100000057 P20GM103476 P20GM104357 P20GM121334 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Clin Sci (Lond) Clin. Sci. 319 nihpa Clinical science (London, England : 1979) 0143-5221 1470-8736 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC5989318 PMC5989318.1 5989318 5989318 NIHMS945599 29167317 10.1042/CS20171416 NIHMS945599 NIHPA945599 1 Article Rodent Vertical Sleeve Gastrectomy Alters Maternal Immune Health and Feto-placental Development Spann Redin A. 1 Lawson William J. 1 Bidwell Gene L. III 2 Zamarripa C. Austin 3 Maranon Rodrigo O. 4 9 10 Bandyopadhyay Sibali 5 10 Taylor Erin R. 6 Reckelhoff Jane F. 7 9 10 Garrett Michael R. 8 9 10 11 Grayson Bernadette E. 1 9 10 11 1 2 3 4 5 6 7 8 9 10 11 Corresponding Author: bgrayson@umc.edu No financial conflicts of interest exist. 25 1 2018 31 1 2018 132 2 314681 295 312 01 03 2018 06 06 2018 06 06 2018 18 06 2024 Bariatric surgery is increasingly employed to improve fertility and reduce obesity related co-morbidities in obese women. Surgical weight loss not only improves the chance of conception but reduces the risk of pregnancy complications including pre-eclampsia, gestational diabetes, and macrosomia. However, bariatric procedures increase the incidence of intrauterine growth restriction (IUGR), fetal demise, thromboembolism and other gestational disorders. Using our rodent model of vertical sleeve gastrectomy (VSG), we tested the hypothesis that VSG in diet-induced, obese dams would cause immune and placental structural abnormalities that may be responsible for fetal demise during pregnancy. VSG dams studied on gestational day (G) 19 had reduced circulating T cell (CD3+ and CD8+) populations compared to lean or obese controls. Further, local interleukin 1 β interleukin 1 VSG bariatric surgery pregnancy placenta development pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

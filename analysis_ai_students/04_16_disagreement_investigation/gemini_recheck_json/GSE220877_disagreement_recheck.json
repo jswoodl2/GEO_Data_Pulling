@@ -1,0 +1,8 @@
+{
+  "Samples from pregnancy complications collected": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The study analyzes a cohort from a randomized controlled trial (Women First) focused on nutritional supplementation. While the paper examines outcomes like 'growth restriction' and mentions that participants had 'chronic malnutrition' and 'anemia', it does not explicitly report collecting or categorizing samples based on clinical pregnancy complications such as preeclampsia, gestational diabetes, or specific diagnoses of IUGR; rather, it uses continuous anthropometric Z-scores to measure growth outcomes in relation to heat exposure.",
+    "evidence": []
+  }
+}

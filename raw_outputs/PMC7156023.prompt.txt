@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Fertil Steril Fertil. Steril. 319 nihpa Fertility and sterility 0015-0282 1556-5653 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC7156023 PMC7156023.1 7156023 7156023 NIHMS1576760 30611556 10.1016/j.fertnstert.2018.11.005 NIHMS1576760 NIHPA1576760 1 Article Differential Gene Expression during Placentation in Pregnancies Conceived with Different Fertility Treatments Compared to Spontaneous Pregnancies Lee Bora Ph.D. a Koeppel Alex F. Ph.D. b Wang Erica T. M.D., M.A.S. a c Gonzalez Tania L. Ph.D. a Sun Tianyanxin Ph.D. a Kroener Lindsay M.D. c Lin Yayu M.S. a Joshi Nikhil V. M.D. a c Ghadiali Tejal B.S. a Turner Stephen D. Ph.D. b Rich Stephen S. Ph.D. b Farber Charles R. Ph.D. b Rotter Jerome I. M.D. d Chen Yii-Der Ida Ph.D. d Goodarzi Mark O. M.D., Ph.D. e Guller Seth Ph.D. f Harwood Bryna M.D. g Serna Tania B. M.D. g Williams John III M.D. c h Pisarska Margareta D. M.D. a c a b c d e f g h Correspondence: pisarskam@cshs.org Author Contributions: Bora Lee, Ph.D. contributed to concept, design, sample collection and processing, data acquisition, analysis, interpretation, and writing the manuscript. Alex F. Koeppel, Ph.D. contributed to the concept, design, and RNA sequencing analysis and interpretation. Erica T. Wang, M.D., M.A.S. contributed to the concept, design, and demographic data analysis and interpretation. Tania L. Gonzalez, Ph.D. contributed to the concept, design, and sample collection, processing and data acquisition. Tianyanxin Sun, Ph.D. contributed to the concept, design, and sample collection, processing and data acquisition. Lindsay Kroener, M.D. contributed to the concept, design, and sample collection, processing and data acquisition. Yayu Lin, M.S. contributed to sample collection, processing and data acquisition. Nikhil V. Joshi, M.D. contributed to sample collection, processing and data acquisition. Tejal Ghadiali, B.S. contributed to sample collection, processing and data acquisition. Stephen D. Turner, Ph.D. contributed to the concept, design, and RNA sequencing analysis and interpretation. Stephen S. Rich, Ph.D. contributed to the concept, design, and data analysis and interpretation. Charles R. Farber, Ph.D. contributed to the concept, design, and RNA sequencing analysis and interpretation. Jerome I. Rotter, M.D. contributed to the concept, design, and data analysis and interpretation. Yii-Der Ida Chen, Ph.D. contributed to the concept, design, and data analysis and interpretation. Mark O. Goodarzi, M.D., Ph.D. contributed to the concept, design, and data analysis and interpretation. Seth Guller, Ph.D. contributed to the concept and design. Bryna Harwood, M.D. contributed to sample collection and data acquisition. Tania B. Serna, M.D. contributed to sample collection and data acquisition. John Williams III, M.D. contributed to concept, design, sample collection and processing, data acquisition, analysis and interpretation. Margareta D. Pisarska, M.D. contributed to concept, design, data acquisition, data analysis and interpretation and writing the manuscript, In addition, all authors contributed to the manuscript including drafting or revising it, provided final approval and agreed to be accountable for all aspects of the work. Conflicts of Interest: 02 1 2019 3 2019 111 3 355886 535 546 24 03 2020 14 04 2020 14 04 2020 16 06 2024 Objective: To identify differences in the transcriptomic profiles during placentation from pregnancies conceived spontaneously to those with infertility, using non-in vitro fertilization (NIFT) or in vitro fertilization (IVF). Design: Cohort study. Setting: Academic Medical Center. Patient(s): Women undergoing chorionic villus sampling at gestational age 11–13 weeks (n=141), with pregnancies that were conceived spontaneously (n=74), with NIFT (n=33), or IVF (n=34) resulting in the delivery of viable offspring. Intervention(s): Collection of chorionic villus samples from women who conceived spontaneously, with NIFT or IVF for gene expression analysis using RNA sequencing. Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics, maternal medical conditions, pregnancy complications and outcomes. Differential gene expression of first trimester placenta. Result(s): There were few differences in the transcriptome of first trimester placenta from NIFT, IVF, and spontaneous pregnancies. There was one protein-coding differentially expressed gene (DEG) between the spontaneous and infertility groups, CACNA1I CACNA1I SLC18A2 CCL21 FXYD2 PAEP DNER Conclusion(s): This is the first and largest study looking at transcriptomic profiles of first trimester placenta demonstrating similar transcriptomic profiles in pregnancies conceived using NIFT or IVF and spontaneous conceptions. Gene expression differences found to be highest in the NIFT group suggest that the underlying infertility, in addition to treatmentrelated factors, may contribute to the observed gene expression profiles. Capsule The transcriptome during placentat CL21 FXYD2 PAEP DNER Conclusion(s): This is the first and largest study looking at transcriptomic profiles of first trimester placenta demonstrating similar transcriptomic profiles in pregnancies conceived using NIFT or IVF and spontaneous conceptions. Gene expression differences found to be highest in the NIFT group suggest that the underlying infertility, in addition to treatmentrelated factors, may contribute to the observed gene expression profiles. Capsule The transcriptome during placentation of pregnancies conceived using infertility treatment are similar to that of spontaneously conceived pregnancies with gene expression differences found mainly in the non-IVF fertility treatment pregnancies. Non-IVF fertility treatment (NIFT) in vitro fertilization (IVF) placentation RNA Sequencing Transcriptome pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

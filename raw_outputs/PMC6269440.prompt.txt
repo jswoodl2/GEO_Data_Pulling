@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Cell Mol Immunol Cell Mol Immunol 2394 cmi Cellular and Molecular Immunology 1672-7681 2042-0226 Nature Publishing Group PMC6269440 PMC6269440.1 6269440 6269440 29618777 10.1038/s41423-018-0008-0 8 1 Article Three macrophage subsets are identified in the uterus during early human pregnancy http://orcid.org/0000-0003-0104-3718 Jiang Xiangxiang 1 2 Du Mei-Rong 3 Li Min 4 Wang Hongmei wanghm@ioz.ac.cn 1 1 0000 0001 1957 3309 grid.9227.e https://ror.org/034t30j35 State Key Laboratory of Stem Cell and Reproductive Biology, Institute of Zoology, Chinese Academy of Sciences, 2 0000 0004 1797 8419 grid.410726.6 https://ror.org/05qbk4x57 University of Chinese Academy of Sciences, 3 0000 0004 0619 8943 grid.11841.3d https://ror.org/01zntxs11 Laboratory for Reproductive Immunology, Hospital of Obstetrics and Gynecology, Fudan University Shanghai Medical College, 4 grid.415870.f https://ror.org/036dyz052 Department of Obstetrics and Gynecology, Navy General Hospital of the Chinese PLA, 4 4 2018 12 2018 15 12 324951 1027 1037 20 10 2017 18 1 2018 18 1 2018 01 12 2019 01 12 2019 01 08 2025 © CSI and USTC 2018, corrected publication 2025 2018 Author Correction: Three macrophage subsets are identified in the uterus during early human pregnancy 22 8 8 7 2025 954 956 Cellular and Molecular Immunology 10.1038/s41423-025-01320-8 PMC12311049 40624340 Macrophages are crucial for a successful pregnancy, and malfunctions of decidual macrophages correlate with adverse pregnancy outcomes, such as spontaneous abortion and preeclampsia. Previously, decidual macrophages were often thought to be a single population. In the present study, we identified three decidual macrophage subsets, CCR2−CD11cLO (CD11c low high high Keywords CCR2 CD11c decidual macrophage subsets extravillous trophoblast cells inflammatory balance pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes issue-copyright-statement © CSI and USTC 2018
+---

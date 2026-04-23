@@ -1,0 +1,38 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Myriam Hemberger",
+  "Supervisor/Contact/Corresponding author email": "myriam.hemberger@ucalgary.ca",
+  "Main topic of the publication": "This study investigates the impact of advanced maternal age (AMA) on the transcriptomes of placentas, brains, hearts, and facial prominences from mid-gestation mouse conceptuses, revealing that AMA increases transcriptional heterogeneity, particularly in the fetal brain, and that defects in placental development likely induce these brain alterations.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "1st",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 10.5,
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "No",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "cardiac edema",
+    "vascular defects",
+    "brain and neural tube closure defects"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "embryonic development"
+  ],
+  "Hospital/Center where samples were collected": "UCalgary’s Health Sciences Animal Resources Centre",
+  "Country where samples were collected": "United States",
+  "PMCID": "PMC9818809"
+}

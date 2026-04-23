@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Biol Chem J. Biol. Chem 567 jbc JBC The Journal of Biological Chemistry 0021-9258 1083-351X American Society for Biochemistry and Molecular Biology PMC6827284 PMC6827284.1 6827284 6827284 31519749 10.1074/jbc.RA119.009129 RA119.009129 1 Microbiology Zika virus noncoding sfRNAs sequester multiple host-derived RNA-binding proteins and modulate mRNA decay and splicing during infection ZIKV sfRNA–cellular RBPs interactions Michalski Daniel ‡ 1 https://orcid.org/0000-0003-0649-3558 Ontiveros J. Gustavo § 1 Russo Joseph ‡ Charley Phillida A. ‡ Anderson John R. ‡ Heck Adam M. § 2 Geiss Brian J. ‡ § https://orcid.org/0000-0001-8535-3435 Wilusz Jeffrey ‡ § 3 ‡ § 3 jeffrey.wilusz@colostate.edu 1 Both authors contributed equally to this work. 2 Supported in part by National Science Foundation NRT Award 1450032 and by a National Science Foundation GRFP award. Edited by Charles E. Samuel 1 11 2019 13 9 2019 294 44 344958 16282 16296 30 4 2019 19 8 2019 01 11 2020 01 11 2020 06 11 2019 01 11 2020 © 2019 Michalski et al. 2019 Michalski et al. Published under exclusive license by The American Society for Biochemistry and Molecular Biology, Inc. Insect-borne flaviviruses produce a 300–500–base long noncoding RNA, termed subgenomic flavivirus RNA (sfRNA), by stalling the cellular 5′–3′-exoribonuclease 1 (XRN1) via structures located in their 3′ UTRs. In this study, we demonstrate that sfRNA production by Zika virus represses XRN1 analogous to what we have previously shown for other flaviviruses. Using protein–RNA reconstitution and a stringent RNA pulldown assay with human choriocarcinoma (JAR) cells, we demonstrate that the sfRNAs from both dengue type 2 and Zika viruses interact with a common set of 21 RNA-binding proteins that contribute to the regulation of post-transcriptional processes in the cell, including splicing, RNA stability, and translation. We found that four of these sfRNA-interacting host proteins, DEAD-box helicase 6 (DDX6) and enhancer of mRNA decapping 3 (EDC3) (two RNA decay factors), phosphorylated adaptor for RNA export (a regulator of the biogenesis of the splicing machinery), and apolipoprotein B mRNA-editing enzyme catalytic subunit 3C (APOBEC3C, a nucleic acid–editing deaminase), inherently restrict Zika virus infection. Furthermore, we demonstrate that the regulations of cellular mRNA decay and RNA splicing are compromised by Zika virus infection as well as by sfRNA alone. Collectively, these results reveal the large extent to which Zika virus–derived sfRNAs interact with cellular RNA-binding proteins and highlight the potential for widespread dysregulation of post-transcriptional control that likely limits the effective response of these cells to viral infection. flavivirus RNA splicing RNA turnover RNA editing RNA virus 5′–3′-exoribonuclease (XRN1) post-transcriptional regulation subgenomic flavivirus RNA (sfRNA) Zika virus HHS | NIH | National Institute of Allergy and Infectious Diseases (NIAID) 10.13039/100000060 AI123136 AI130497 AI32668 Geiss Brian J. Wilusz Jeffrey NSF | Directorate for Biological Sciences (BIO) 10.13039/100000076 1450032 Heck Adam M. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

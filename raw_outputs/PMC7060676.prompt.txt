@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC7060676 PMC7060676.1 7060676 7060676 32071231 10.1073/pnas.1919563117 201919563 1 Biological Sciences Applied Biological Sciences Bisphenol A and bisphenol S disruptions of the mouse placenta and potential effects on the placenta–brain axis Mao Jiude a b http://orcid.org/0000-0001-8190-2978 Jain Ashish c d Denslow Nancy D. e f Nouri Mohammad-Zaman e f Chen Sixue g h Wang Tingting h Zhu Ning h Koh Jin h Sarma Saurav J. a i Sumner Barbara W. a i Lei Zhentian a i j Sumner Lloyd W. a i j Bivens Nathan J. k Roberts R. Michael a j l 1 Tuteja Geetu c d 1 http://orcid.org/0000-0002-4137-3933 Rosenfeld Cheryl S. a b m n 1 a University of Missouri MO b University of Missouri MO c Iowa State University IA d Iowa State University IA e University of Florida FL f University of Florida FL g University of Florida FL h University of Florida FL i University of Missouri MO j University of Missouri MO k University of Missouri MO l University of Missouri MO m University of Missouri MO n University of Missouri MO 1 robertsrm@missouri.edu geetu@iastate.edu rosenfeldc@missouri.edu Contributed by R. Michael Roberts, December 28, 2019 (sent for review November 7, 2019; reviewed by Alina Maloyan and Xiaoqin Ye) Author contributions: J.M., N.D.D., S.C., N.Z., L.W.S., R.M.R., G.T., and C.S.R. designed research; J.M., M.-Z.N., T.W., N.Z., J.K., S.J.S., B.W.S., Z.L., and N.J.B. performed research; J.M., A.J., N.D.D., M.-Z.N., S.C., T.W., N.Z., J.K., S.J.S., B.W.S., Z.L., L.W.S., N.J.B., R.M.R., G.T., and C.S.R. analyzed data; and J.M., A.J., M.-Z.N., S.C., T.W., N.Z., J.K., S.J.S., B.W.S., Z.L., L.W.S., N.J.B., R.M.R., G.T., and C.S.R. wrote the paper. Reviewers: A.M., Oregon Health & Science University; and X.Y., University of Georgia. The authors declare no competing interest. 3 3 2020 18 2 2020 117 9 353920 4642 4652 18 08 2020 18 08 2020 14 03 2020 22 04 2024 2020 https://www.pnas.org/site/aboutpnas/licenses.xhtml Published under the PNAS license Significance The mammalian placenta is a target for endocrine-disrupting chemicals, such as the widely prevalent plasticizer bisphenol A (BPA). Consumer unease with BPA has led to manufacture of substitutes, such as bisphenol S (BPS). Here, we used a multiomics approach to study effects of developmental exposure to BPA and BPS on midgestational mouse placenta. BPA and BPS caused almost identical changes in gene expression; similar morphological defects in the junctional zone, which forms the interface of the placenta with maternal endometrium; and marked alterations in placental content of neurotransmitters serotonin and dopamine. The results imply that in rodents there could be associated effects on the placental–fetal brain axis. We also conclude that BPS should be regarded as hazardous as BPA. Placental trophoblast cells are potentially at risk from circulating endocrine-disrupting chemicals, such as bisphenol A (BPA). To understand how BPA and the reputedly more inert bisphenol S (BPS) affect the placenta, C57BL6J mouse dams were fed 200 μg/kg body weight BPA or BPS daily for 2 wk and then bred. They continued to receive these chemicals until embryonic day 12.5, whereupon placental samples were collected and compared with unexposed controls. BPA and BPS altered the expression of an identical set of 13 genes. Both exposures led to a decrease in the area occupied by spongiotrophoblast relative to trophoblast giant cells (GCs) within the junctional zone, markedly reduced placental serotonin (5-HT) concentrations, and lowered 5-HT GC immunoreactivity. Concentrations of dopamine and 5-hydroxyindoleacetic acid, the main metabolite of serotonin, were increased. GC dopamine immunoreactivity was increased in BPA- and BPS-exposed placentas. A strong positive correlation between 5-HT + + trophoblast endocrine disruptor transcriptomics neurotransmitters labyrinth HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 R01 HD094937 R. Michael Roberts Geetu Tuteja HHS | NIH | National Institute of Environmental Health Sciences (NIEHS) 100000066 1R01ES025547 Nancy Denslow Cheryl S. Rosenfeld HHS | NIH | National Institute of Environmental Health Sciences (NIEHS) 100000066 1S10OD018141 Nancy Denslow Cheryl S. Rosenfeld HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 RHD096083A R. Michael Roberts Geetu Tuteja pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes titute of Child Health and Human Development (NICHD) 100009633 RHD096083A R. Michael Roberts Geetu Tuteja pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

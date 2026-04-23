@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Placenta 319 nihpa Placenta 0143-4004 1532-3102 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC2667803 PMC2667803.1 2667803 2667803 NIHMS89412 19027158 10.1016/j.placenta.2008.09.015 NIHMS89412 NIHPA89412 1 Article Altered Global Gene Expression in First Trimester Placentas of Women Destined to Develop Preeclampsia Founds Sandra A. 1 Conley Yvette P. 1 2 Lyons-Weiler James F. 3 Jeyabalan Arun 4 Hogge W. Allen 4 Conrad Kirk P. 5 1 2 3 4 5 Corresponding author: Dr. Sandra Founds, 440 Victoria Building, 3500 Victoria Street, University of Pittsburgh, Pittsburgh, PA 15261, Email: foundss@pitt.edu 21 11 2008 1 2009 30 1 178102 15 24 05 02 2009 01 01 2010 01 01 2010 12 03 2024 Background Preeclampsia is a pregnancy-specific disorder that remains a leading cause of maternal, fetal and neonatal morbidity and mortality, and is associated with risk for future cardiovascular disease. There are no reliable predictors, specific preventative measures or treatments other than delivery. A widely-held view is that the antecedents of preeclampsia lie with impaired placentation in early pregnancy. Accordingly, we hypothesized dysregulation of global gene expression in first trimester placentas of women who later manifested preeclampsia. Methods Surplus chorionic villus sampling (CVS) tissues were collected at 10–12 weeks gestation in 160 patients with singleton fetuses. Four patients developed preeclampsia, and their banked CVS specimens were matched to 8 control samples from patients with unaffected pregnancies. Affymetrix HG-U133 Plus 2.0 GeneChips were utilized for microarray analysis. Naïve Bayes prediction modeling and pathway analysis were conducted. qRT-PCR examined three of the dysregulated genes. Results Thirty-six differentially expressed genes were identified in the preeclampsia placentas. qRT-PCR verified the microarray analysis. Thirty-one genes were down-regulated. Many were related to inflammation/immunoregulation and cell motility. Decidual gene dysregulation was prominent. No evidence was found for alterations in hypoxia and oxidative stress regulated genes. Conclusions To our knowledge, this is the first study to show dysregulation of gene expression in the early placentas of women ~6 months before developing preeclampsia, thereby reinforcing a placental origin of the disorder. We hypothesize that placentation in preeclampsia is compromised in the first trimester by maternal and fetal immune dysregulation, abnormal decidualization, or both, thereby impairing trophoblast invasion. Several of the genes provide potential targets for the development of clinical biomarkers in maternal blood during the first trimester. Supplementary materials Oligonucleotide microarray chorionic villus sampling maternal-fetal interface immune regulation decidualization cell motility hypoxia inducible factor oxidative stress pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

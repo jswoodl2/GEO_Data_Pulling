@@ -1,0 +1,663 @@
+<?xml version="1.0"  ?><!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "https://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd"><pmc-articleset><article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:ali="http://www.niso.org/schemas/ali/1.0/" article-type="research-article" xml:lang="en" dtd-version="1.4"><front><journal-meta><journal-id journal-id-type="nlm-ta">Nature</journal-id><journal-id journal-id-type="iso-abbrev">Nature</journal-id><journal-id journal-id-type="pmc-domain-id">319</journal-id><journal-id journal-id-type="pmc-domain">nihpa</journal-id><journal-title-group><journal-title>Nature</journal-title></journal-title-group><issn pub-type="ppub">0028-0836</issn><issn pub-type="epub">1476-4687</issn><custom-meta-group><custom-meta><meta-name>pmc-is-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-collection-title</meta-name><meta-value>NIHPA Author Manuscripts</meta-value></custom-meta></custom-meta-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC6497049</article-id><article-id pub-id-type="pmcid-ver">PMC6497049.1</article-id><article-id pub-id-type="pmcaid">6497049</article-id><article-id pub-id-type="pmcaiid">6497049</article-id><article-id pub-id-type="manuscript-id">NIHMS1518854</article-id><article-id pub-id-type="pmid">30787433</article-id><article-id pub-id-type="doi">10.1038/s41586-019-0936-6</article-id><article-id pub-id-type="manuscript-id-alternative">NIHMS1518854</article-id><article-id pub-id-type="manuscript-id-alternative">NIHPA1518854</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Female-biased embryonic death from genomic instability-induced
+inflammation</article-title></title-group><contrib-group><contrib contrib-type="author"><name name-style="western"><surname>McNairn</surname><given-names initials="AJ">Adrian J.</given-names></name><xref ref-type="aff" rid="A1">1</xref></contrib><contrib contrib-type="author"><name name-style="western"><surname>Chuang</surname><given-names initials="CH">Chen-Hua</given-names></name><xref ref-type="aff" rid="A2">2</xref></contrib><contrib contrib-type="author"><name name-style="western"><surname>Bloom</surname><given-names initials="JC">Jordana C.</given-names></name><xref ref-type="aff" rid="A1">1</xref></contrib><contrib contrib-type="author"><name name-style="western"><surname>Wallace</surname><given-names initials="MD">Marsha D.</given-names></name><xref ref-type="aff" rid="A3">3</xref></contrib><contrib contrib-type="author"><name name-style="western"><surname>Schimenti</surname><given-names initials="JC">John C.</given-names></name><xref ref-type="aff" rid="A1">1</xref><xref ref-type="aff" rid="A4">4</xref><xref rid="CR1" ref-type="corresp">*</xref></contrib></contrib-group><aff id="A1"><label>1</label>Cornell University College of Veterinary Medicine, Dept. of
+Biomedical Sciences</aff><aff id="A2"><label>2</label>AbbVie Inc, Redwood City, CA</aff><aff id="A3"><label>3</label>University of Oxford.</aff><aff id="A4"><label>4</label>Cornell Center for Vertebrate Genomics.</aff><author-notes><corresp id="CR1"><label>*</label><bold>Corresponding author.</bold> All
+correspondence and requests for reagents or permissions should be directed to
+John Schimenti. <email>jcs92@cornell.edu</email></corresp><fn id="FN1" fn-type="con"><p id="P1"><bold>Author Contributions.</bold> C-H. C. made the original
+observations of sex skewing and performed studies with T and the
+<italic toggle="yes">Sry</italic> transgene while at Cornell University. A.M.
+discovered the link to inflammation and also the effect of maternal
+genotype, and performed all those related experiments; he also helped write
+and assemble the manuscript. M.W. performed the X inactivation study. J.B.
+developed the <italic toggle="yes">Fancm</italic> mice and analyzed sex ratios. J.S.
+supervised all aspects of the work and wrote the manuscript.</p></fn></author-notes><pub-date pub-type="epub"><day>20</day><month>2</month><year>2019</year></pub-date><pub-date pub-type="ppub"><month>3</month><year>2019</year></pub-date><volume>567</volume><issue>7746</issue><issue-id pub-id-type="pmc-issue-id">333871</issue-id><fpage>105</fpage><lpage>108</lpage><pub-history><event event-type="nihms-submitted"><date><day>16</day><month>01</month><year>2019</year></date></event><event event-type="pmc-release"><date><day>20</day><month>08</month><year>2019</year></date></event><event event-type="pmc-live"><date><day>20</day><month>08</month><year>2019</year></date></event><event event-type="pmc-released-under-embargo"><date><day>03</day><month>05</month><year>2019</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2024-06-15 23:25:33.200"><day>15</day><month>06</month><year>2024</year></date></event></pub-history><permissions><license><license-p>Users may view, print, copy, and download text and data-mine the
+content in such documents, for the purposes of academic research, subject
+always to the full Conditions of use:<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.nature.com/authors/editorial_policies/license.html#terms">http://www.nature.com/authors/editorial_policies/license.html#terms</uri></license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="nihms-1518854.pdf"/><abstract id="ABS1"><p id="P2">Genomic instability (GIN) can trigger cellular responses including
+checkpoint activation, senescence, and inflammation <sup><xref rid="R1" ref-type="bibr">1</xref>,<xref rid="R2" ref-type="bibr">2</xref></sup>.
+Though extensively studied in cell culture and cancer paradigms, little is known
+about the impact of GIN during embryonic development, a period of rapid cellular
+proliferation. We report that GIN-causing mutations in the MCM2&#8211;7 DNA
+replicative helicase <sup><xref rid="R3" ref-type="bibr">3</xref>,<xref rid="R4" ref-type="bibr">4</xref></sup> render female mouse embryos to be
+dramatically more susceptible than males to embryonic lethality. This bias was
+not attributable to X-inactivation defects, differential replication licensing,
+or X vs Y chromosome size, but rather &#8220;maleness,&#8221; since XX embryos
+could be rescued by transgene-mediated sex reversal or testosterone (T)
+administration. The ability of exogenous or endogenous T to protect embryos was
+related to its anti-inflammatory properties <sup><xref rid="R5" ref-type="bibr">5</xref></sup>. The NSAID ibuprofen rescued female embryos containing
+mutations not only in MCM genes but also <italic toggle="yes">Fancm,</italic> which like MCM
+mutants have elevated GIN (micronuclei) from compromised replication fork repair
+<sup><xref rid="R6" ref-type="bibr">6</xref></sup>. Additionally,
+deficiency for the anti-inflammatory IL10 receptor was synthetically lethal with
+the <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">Chaos3</italic></sup> helicase mutant. Our
+experiments indicate that DNA replication-associated DNA damage during
+development induces inflammation that is preferentially lethal to female
+embryos, whereas male embryos are protected by high levels of intrinsic T.</p></abstract><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta></custom-meta-group></article-meta></front><body><p id="P3">Mutations that compromise DNA replication or replication-associated repair can
+cause replication stress (RS) and GIN <sup><xref rid="R7" ref-type="bibr">7</xref>,<xref rid="R8" ref-type="bibr">8</xref></sup>. Resulting chronic DNA damage can lead
+to inflammation by activating the cGAS/STING pathway, potentially resulting in a
+&#8220;senescence-associated secretory phenotype&#8221; (SASP) <sup><xref rid="R1" ref-type="bibr">1</xref>,<xref rid="R9" ref-type="bibr">9</xref>,<xref rid="R10" ref-type="bibr">10</xref></sup>. Little is known about consequences of fetal or
+maternal GIN-induced inflammation during gestation.</p><p id="P4">DNA replication requires the heterohexameric minichromosome maintenance complex
+(MCM2&#8211;7), constituting the catalytic core of the replicative helicase. Reduction
+of MCMs causes RS by decreasing dormant (&#8220;backup&#8221;) origins that are
+important for completing DNA replication when replication forks stall or collapse
+<sup><xref rid="R11" ref-type="bibr">11</xref>&#8211;<xref rid="R13" ref-type="bibr">13</xref></sup>. Mice bearing the <italic toggle="yes">Chaos3</italic> allele
+of <italic toggle="yes">Mcm4</italic> (abbreviated
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic></sup>) have elevated micronuclei and
+are highly cancer prone <sup><xref rid="R4" ref-type="bibr">4</xref></sup>. This allele
+causes GIN by destabilizing the MCM2&#8211;7 helicase and triggering
+post-transcriptional pan-reduction (~40%) of <italic toggle="yes">Mcm2&#8211;7</italic> mRNAs
+and protein <sup><xref rid="R3" ref-type="bibr">3</xref></sup>. Although
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic></sup> homozygotes in strain C3H are
+fully viable, compound heterozygosity for certain other <italic toggle="yes">Mcm</italic> genes
+causes severe phenotypic consequences including pre- and postnatal lethality <sup><xref rid="R3" ref-type="bibr">3</xref></sup>. Upon closer examination of those and
+additional breeding data, we noticed that females of the MCM-depleted, semi-lethal
+genotypes <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/Gt</italic></sup>,
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> ,
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm6</italic><sup><italic toggle="yes">Gt/+</italic></sup>, and
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm7</italic><sup><italic toggle="yes">Gt/+</italic></sup> (Gt = gene trap allele) were
+drastically under-represented compared to males of the same mutant genotype (<xref rid="F1" ref-type="fig">Fig. 1a</xref>; <xref rid="SD3" ref-type="supplementary-material">Tables S1</xref>, <xref rid="SD5" ref-type="supplementary-material">S2</xref>, <xref rid="SD6" ref-type="supplementary-material">S3</xref>, <xref rid="SD7" ref-type="supplementary-material">S4</xref>). There was no gender skewing associated
+with non-lethal genotypes (<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm3</italic><sup><italic toggle="yes">Gt/+</italic></sup> and
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm5</italic><sup><italic toggle="yes">Gt/+</italic></sup>), i.e., those genotypes present in
+offspring at Mendelian ratios (<xref rid="F1" ref-type="fig">Fig. 1a</xref>; <xref rid="SD8" ref-type="supplementary-material">Table S5</xref>) <sup><xref rid="R3" ref-type="bibr">3</xref></sup>.</p><p id="P5">To determine when <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> females were dying during
+development, we conducted timed matings of
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> females to
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> males. Loss of
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> embryos was first evident at
+E14.5, and was already skewed against females; the male:female ratios of
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> embryos at E9.5, E12.5, E14.5 and
+birth were 1.0, 1.37, 2.0, and 3.11, respectively (<xref rid="F1" ref-type="fig">Fig.
+1b</xref>).</p><p id="P6">MEFs (mouse embryonic fibroblasts) bearing MCM mutations exhibit reduced dormant
+replication origins <sup><xref rid="R14" ref-type="bibr">14</xref>,<xref rid="R15" ref-type="bibr">15</xref></sup>. To test if dormant origin reduction contributes
+to the female-biased lethality, <italic toggle="yes">Mcm3</italic> heterozygosity was introduced into
+the semilethal genotypes. <italic toggle="yes">Mcm3</italic> heterozygosity ameliorates several
+deleterious phenotypes of MCM-deficient mutant mice and cells by increasing
+chromatin-bound MCMs (MCM3 participates in nuclear export of MCMs) <sup><xref rid="R3" ref-type="bibr">3</xref></sup>. This dramatically rescued viability of
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/Gt</italic></sup> and
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm6</italic><sup><italic toggle="yes">Gt/+</italic></sup> female embryos preferentially,
+increasing female viability from 0% to 27% in the former, and from 3% to 42% in the
+latter (<xref rid="F1" ref-type="fig">Fig. 1a</xref>, <xref rid="SD3" ref-type="supplementary-material">Tables S1</xref>,<xref rid="SD5" ref-type="supplementary-material">S2</xref>). <italic toggle="yes">Mcm3</italic> heterozygosity
+also increased viability of <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> newborns from 30% to 72%, but both
+sexes were rescued approximately proportionately (<xref rid="F1" ref-type="fig">Fig.
+1a</xref>; <xref rid="SD6" ref-type="supplementary-material">Table S3</xref>);
+preferential female rescue may be related to overall degree of lethality in compound
+mutants (93%, 82% and 70% lethality for
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/Gt</italic></sup> ,
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm6</italic><sup><italic toggle="yes">Gt/+</italic></sup> and
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup>, respectively) <sup><xref rid="R3" ref-type="bibr">3</xref></sup>.</p><p id="P7">We next hypothesized that the female-biased embryonic lethality was related to
+one of the following: 1) defects in X-inactivation caused by impaired or delayed DNA
+replication, 2) the larger size of the X (~171 Mb) vs the Y chromosome
+(~90 Mb), which might stress the compromised replication machinery, or 3)
+secondary sexual characteristics. Flow cytometric analysis of cells from E10.5 female
+embryos bearing an ubiquitously-expressed X-linked GFP transgene revealed no difference
+between non-lethal genotypes (<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup><italic toggle="yes">;
+Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">+/+</italic></sup><italic toggle="yes">;
+Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">+/+</italic></sup>) and the sex-biased lethal genotype
+(<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup>; <xref rid="F5" ref-type="fig">Extended Data Fig. 1</xref>), indicating that X-inactivation occurs normally. To
+distinguish between hypotheses 2 and 3, a single experiment was performed. We induced
+sex reversal of XX <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> embryos with an autosomal
+<italic toggle="yes">Sry</italic> transgene. Strikingly, this increased the proportion of XX
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> mice from 20% to 48% (<xref rid="F2" ref-type="fig">Fig 2a</xref>; <xref rid="SD9" ref-type="supplementary-material">Table S6</xref>). These results indicate that
+maleness, and not the presence of two X chromosomes <italic toggle="yes">per se</italic>, protects
+embryos from MCM deficiency. These data are consistent with the finding that
+preferential female embryo death occurs after sex determination (E9.5&#8211;12.5).</p><p id="P8">Since sex reversal rescued XX lethality, we hypothesized that testosterone (T)
+might be responsible. It is produced at high levels by Leydig cells in embryonic testes
+from ~E12.5 onward <sup><xref rid="R16" ref-type="bibr">16</xref></sup>. We
+injected pregnant females daily with T beginning at E7.5, and found that the viability
+of XX <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> E19.5 fetuses increased
+dramatically from 22% to 54% (<xref rid="F2" ref-type="fig">Fig. 2a</xref>; <xref rid="SD10" ref-type="supplementary-material">Table S7</xref>). We speculated that T
+might protect MCM-deficient embryos by increasing replication capacity, given a report
+that the androgen receptor stimulates proliferation of prostate cancer cells by acting
+as a replication factor <sup><xref rid="R17" ref-type="bibr">17</xref>,<xref rid="R18" ref-type="bibr">18</xref></sup>. However, we observed no increase of
+<italic toggle="yes">Mcm</italic> mRNA or chromatin-bound MCMs in T-treated MEFs (<xref rid="F2" ref-type="fig">Fig. 2b, c</xref>), and no sex-specific differences in MCM2 or MCM4
+protein levels in E13.5 fetuses or placentae of various genotypes (<xref rid="F6" ref-type="fig">Extended Data Fig. 2</xref>).</p><p id="P9">Next, we hypothesized that T was ameliorating certain consequences of GIN in the
+<italic toggle="yes">Mcm</italic> mutants. In particular, elevated micronuclei, the signature
+phenotype of <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">Chaos3</italic></sup> mice <sup><xref rid="R4" ref-type="bibr">4</xref></sup>, can trigger inflammation via the
+cGAS-STING pathway <sup><xref rid="R19" ref-type="bibr">19</xref></sup>. T, a steroid
+hormone, suppresses the expression of pro-inflammatory cytokines while increasing the
+anti-inflammatory molecule IL10 <sup><xref rid="R5" ref-type="bibr">5</xref>,<xref rid="R20" ref-type="bibr">20</xref>,<xref rid="R21" ref-type="bibr">21</xref></sup>. Indeed, T treatment of
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> MEFs caused &gt;2&#8211;3
+fold decreases in mRNAs for the pro-inflammatory cytokine IL6 and also PTGS2 (COX2),
+which is central for production of prostaglandins that cause inflammation and pain
+(<xref rid="F2" ref-type="fig">Fig. 2b</xref>). Strikingly, administration of
+ibuprofen to pregnant females (from 7.5 days post-coitus onward in drinking water)
+completely abolished sex bias of <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> offspring (<xref rid="F2" ref-type="fig">Fig. 2a</xref>, <xref rid="T1" ref-type="table">Extended Data Table
+1a</xref>) without affecting embryonic or placental MCM levels (<xref rid="F6" ref-type="fig">Extended Data Fig. 2b, c</xref>).</p><p id="P10">While these data indicate that GIN-driven inflammation underlies preferential
+female embryonic lethality, we considered the possibility that unrelated alterations in
+gene expression by ibuprofen and the androgen receptor (which is strongly induced by T;
+<xref rid="F2" ref-type="fig">Fig. 2c</xref>) <sup><xref rid="R22" ref-type="bibr">22</xref>,<xref rid="R23" ref-type="bibr">23</xref></sup> were responsible. We
+therefore took the orthogonal approach of increasing inflammation by ablating the
+receptor (<italic toggle="yes">Il10rb</italic>) for the anti-inflammatory molecule IL10,
+hypothesizing that this would exacerbate
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">+/&#8722;</italic></sup> lethality or sex bias.
+Remarkably, the genotype of <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Il10rb</italic><sup><italic toggle="yes">&#8722;/&#8722;</italic></sup> caused highly
+penetrant lethality to embryos of both sexes (<xref rid="T1" ref-type="table">Extended
+Data Table 1c</xref>). IL10 mediates a feedback loop under conditions of
+inflammation to induce degradation of <italic toggle="yes">Ptgs2</italic>/<italic toggle="yes">COX2</italic>
+transcripts <sup><xref rid="R24" ref-type="bibr">24</xref></sup>, and also counters the
+inflammation response triggered by the STING pathway <sup><xref rid="R25" ref-type="bibr">25</xref></sup>. This synthetic lethality was rescued by
+treating pregnant dams with NSAID, increasing viability of
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup><italic toggle="yes">Il10rb</italic><sup><italic toggle="yes">&#8722;/&#8722;</italic></sup>
+offspring (both sexes) from 8.9% to 94% (<xref rid="T1" ref-type="table">Extended Data
+Table 1c</xref>).</p><p id="P11">Successful pregnancy requires suppression of inflammation at the maternal:fetal
+interface. Because homozygosity for <italic toggle="yes">Chaos3</italic> alone causes a ~20
+fold increase in micronucleated erythrocytes without decreasing viability in the C3H
+background<sup><xref rid="R4" ref-type="bibr">4</xref></sup>, and IL10 is
+thought to play a role in suppressing maternal inflammation at the fetal:maternal
+interface <sup><xref rid="R26" ref-type="bibr">26</xref></sup>, we speculated that
+maternal genotype might influence viability of MCM compound mutant embryos. We mated
+females heterozygous for <italic toggle="yes">Chaos3</italic>
+(<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup>) to
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> males (all data presented
+heretofore were from reciprocal crosses). Surprisingly, this cross abolished the sex
+bias against <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> females (<xref rid="F3" ref-type="fig">Fig. 3a</xref>; <xref rid="T1" ref-type="table">Extended Data Table
+1b</xref>). We hypothesized that maternal homozygosity for <italic toggle="yes">Chaos3</italic>
+imposes additional stress on the placentae of genetically susceptible female embryos,
+possibly via DNA damage-induced inflammation. We examined double strand break (DSB)
+levels (marked by &#947;H2AX) in placentae of E13.5 embryos produced in various
+control and mutant reciprocal crosses. Regardless of fetal genotype, placentae from
+embryos within <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> dams had more
+&#947;H2AX-positive cells than when dams were of any other genotype (<xref rid="F4" ref-type="fig">Fig. 4</xref>). NSAID treatment did not reduce the level of
+&#947;H2AX staining, consistent with the rescue effect being related to inflammation,
+not GIN <italic toggle="yes">per se</italic> (<xref rid="F4" ref-type="fig">Fig. 4</xref>). We
+therefore hypothesized that GIN-induced placental inflammation might underlie the
+lethality in our mice. Consistent with this, we observed significant reductions in
+placental, but not embryonic MCM2 and MCM4 (especially MCM4) in <italic toggle="yes">Chaos3</italic>
+mutant genotypes, regardless of maternal genotype or whether the dams were NSAID-treated
+(<xref rid="F6" ref-type="fig">Extended Data Fig. 2a-c</xref>). Thus, placental
+cells may be particularly sensitive to DNA replication defects that trigger
+downregulation of MCM production and consequent increases in GIN and inflammation
+<sup><xref rid="R27" ref-type="bibr">27</xref>,<xref rid="R28" ref-type="bibr">28</xref></sup>. RNA-seq analysis of male vs female placentae from either
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup><italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup>
+or <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> dams revealed increased
+expression of hallmark inflammation gene sets only in the lethal genotype combination of
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> females from
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> dams (<xref rid="F3" ref-type="fig">Fig. 3b</xref>; <xref rid="F7" ref-type="fig">Extended Data Fig.
+3</xref>). The major upregulated gene sets included EMT transition (commonly
+associated with inflammatory responses <sup><xref rid="R29" ref-type="bibr">29</xref></sup>), allograft rejection, and interferon gamma response. All three of
+these categories contain genes involved in inflammation and the innate immune response
+(<xref rid="F7" ref-type="fig">Extended Data Fig. 3</xref>). Overall, the results
+indicate that the combination of maternal and fetal GIN causes lethal levels of
+inflammation. However, it remains possible that the parental genotype-dependent, sex
+biased lethality may have an epigenetic component (i.e. imprinting).</p><p id="P12">While the data presented thus far demonstrate that MCM depletion (e.g.
+<italic toggle="yes">Mcm2</italic> hemizygosity) in conjunction with a destabilized replicative
+helicase in <italic toggle="yes">Chaos3</italic> mice trigger inflammation and embryonic death, it is
+unclear exactly what defects are primarily responsible, and whether the sex-bias
+phenomena are entirely unique to these models. We therefore attempted to parse the key
+proximal defects that trigger the sex bias by exposing WT embryos to either exogenous RS
+alone or DSBs alone. Pregnant females, treated with hydroxyurea to induce RS, delivered
+pups without significant sex skewing (M:F 1.08; <xref rid="SD11" ref-type="supplementary-material">Table S8</xref>). Chronic exposure to ionizing
+radiation, which causes DSBs, also failed to produce a sex bias (M:F 1.00; <xref rid="SD11" ref-type="supplementary-material">Table S8</xref>). We then conjectured
+that replication-associated DNA damage that causes micronuclei might underlie the
+inflammation-driven lethality. Mice deficient for FANCM, involved in DNA replication
+fork repair, display elevated micronuclei <sup><xref rid="R6" ref-type="bibr">6</xref></sup> and underrepresentation of females <sup><xref rid="R30" ref-type="bibr">30</xref></sup>. We also observed a bias against
+<italic toggle="yes">Fancm</italic><sup><italic toggle="yes">&#8722;/&#8722;</italic></sup> females in
+heterozygote crosses (M:F 1.68; &#967;<sup>2</sup> p = 0.03; <xref rid="F1" ref-type="fig">Fig 1a</xref>, <xref rid="T1" ref-type="table">Extended Data Table
+1d</xref>) that was rescued by ibuprofen treatment of dams
+(<italic toggle="yes">Fancm</italic><sup><italic toggle="yes">&#8722;/&#8722;</italic></sup> M:F 1.13 vs
+<italic toggle="yes">Fancm</italic><sup><italic toggle="yes">+/+</italic></sup> 1.07; <xref rid="F2" ref-type="fig">Fig. 2a</xref>, <xref rid="T1" ref-type="table">Extended Data Table
+1d</xref>).</p><p id="P13">Our results indicate that DNA damage caused by defective DNA replication and/or
+replication-associated repair cause a level of inflammation compromising female embryos
+lacking anti-inflammatory protection of testosterone. We hypothesize that since both
+genetic models tested have elevated micronuclei, a known trigger of the cGAS-STING
+cytosolic DNA sensing pathway, that this may precipitate lethal inflammation in a key
+compartment(s) of the embryo and/or uterine environment. Future experiments exploiting
+mouse mutants and mosaics will help resolve these questions, and guide studies into
+whether similar phenomena occur in humans.</p><sec id="S1"><title>Methods</title><sec id="S2"><title>Mice.</title><p id="P14">All breeding and husbandry all crosses were performed in the same animal
+facility and room at Cornell&#8217;s Veterinary College (East Campus Research
+Facility), and under the same environmental conditions and health status. Use of
+mice was performed in compliance with all relevant ethical regulations, having
+been conducted under a protocol (0038&#8211;2004) approved by Cornell
+University&#8217;s Institutional Animal Care and Use Committee (IACUC). Sample
+sizes for original sex skewing observations, since they were taken from
+historical colony breeding data, were not planned, and selection of individuals
+was entirely genotype-based, thus not randomized. Sexing of animals was done
+before genotyping, thus there was no blinding. Sample sizes with T and ibuprofen
+were also not pre-determined, as potential effect size was unknown yet proved to
+be dramatic.</p></sec><sec id="S3"><title>Testosterone Injections and Sex Reversal.</title><p id="P15"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> males were mated to
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> females and 100uL of
+a 3mg/ml solution of testosterone propionate (Sigma) was injected
+sub-cutaneously into the hind leg of pregnant females daily from E7.5 to E.16.5
+(20&#181;g/g/day). This dose has been shown to increase female fetal
+testosterone by 80% in a rodent model without serious toxicological effect
+<sup><xref rid="R31" ref-type="bibr">31</xref></sup>. The testosterone
+propionate was dissolved in corn oil and filter sterilized prior to injection.
+MEFs were derived from E13.5 embryos using
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> males mated to
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> females. MEFs were
+genotyped and treated with Plasmocin (InvivoGen) to prevent mycoplasma. For
+treatment of MEFs, a 50mM solution of testosterone propionate was prepared in
+ethanol and cells were treated with 10nM for 1 hour. The media was then removed
+and the cells collected at indicated timepoints. Sex reversal of <italic toggle="yes">XX
+Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> embryos was carried out
+using an autosomally-linked <italic toggle="yes">Sry</italic> transgene
+(Tg(<italic toggle="yes">Sry129)4Ei</italic>) <sup><xref rid="R32" ref-type="bibr">32</xref></sup>.</p></sec><sec id="S4"><title>Ibuprofen Treatment.</title><p id="P16"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> males were mated to
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> females and at
+E7.5-E9.5 the pregnant females were provided with water bottles containing
+ibuprofen (Children&#8217;s Advil) 5mL(100mg) in 250mL. They were allowed to
+drink ad libitum (50&#8211;80mg/kg/day). Newborns were genotyped at birth for
+sex with <italic toggle="yes">Sry</italic> primers and <italic toggle="yes">Mcm</italic> mutation status.
+Control mice utilized the same male with another
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> female and no
+drug treatment. For <italic toggle="yes">Il10rb</italic>, the strain was obtained from Jax
+Mice (stock#005027) and backcrossed into the C3Heb/FeJ (Jax stock#000658)
+background for six generations (N6) before crossing into the
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic></sup> strain for 2 additional
+generations (N2).
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup><italic toggle="yes">Il10rb</italic><sup><italic toggle="yes">+/&#8722;</italic></sup>
+males were mated to
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup><italic toggle="yes">Il10rb</italic><sup><italic toggle="yes">+/&#8722;</italic></sup>
+females and provided with ibuprofen as described above. Newborns were genotyped
+with primers for <italic toggle="yes">Il10rb</italic> (<xref rid="SD12" ref-type="supplementary-material">Table S9</xref>).</p></sec><sec id="S5"><title>Genotyping.</title><p id="P17">Genomic DNA was isolated from animal tissue using the hot-shot lysis
+procedure <sup><xref rid="R33" ref-type="bibr">33</xref></sup>. Genotyping PCR
+was carried out using <italic toggle="yes">Taq</italic>1 and gene-specific primer pairs
+(<xref rid="SD12" ref-type="supplementary-material">Table S9</xref>). For
+<italic toggle="yes">Chaos3</italic> genotyping, the PCR products were digested with
+MboII to identify mutant alleles as <italic toggle="yes">Chaos3</italic> but not wild-type
+alleles are digestible with this enzyme. For <italic toggle="yes">Mcm5</italic>, ES cells
+were verified using primers containing regions outside of the gene trap
+insertion to verify. To determine the sex of early embryos, primers for
+<italic toggle="yes">Sry</italic> (Sex-determining region Y) were used to identify males,
+females are <italic toggle="yes">Sry</italic> negative. Genotyping for
+<italic toggle="yes">Mcm2&#8211;7</italic> genetraps has been previously described
+<sup><xref rid="R3" ref-type="bibr">3</xref></sup>.</p></sec><sec id="S6"><title>Generation of <italic toggle="yes">Mcm5</italic> mutant mice.</title><p id="P18"><italic toggle="yes">Mcm5</italic><sup><italic toggle="yes">tm1a(KOMP)Mbp</italic></sup> genetrap
+ES cells (Mcm5_F10, ESC#477873) were obtained from the Mouse Biology Program
+(MBP) at UC Davis and injected into
+B6(Cg)-<italic toggle="yes">Tyr</italic><sup><italic toggle="yes">c&#8722;2J</italic></sup><italic toggle="yes">/J</italic>
+blastocyst donors to generate chimeras. Disruption of <italic toggle="yes">Mcm5</italic> was
+confirmed by PCR as described in genotyping section (<xref rid="SD12" ref-type="supplementary-material">Table S9</xref>). Following germline
+transmission, the mutation was backcrossed into C3H for &#8805; 4 generations
+before crossing to C3H-<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">Chaos3</italic></sup>
+mice.</p></sec><sec id="S7"><title>Generation of <italic toggle="yes">FancM</italic> mice.</title><p id="P19"><italic toggle="yes">Fancm</italic><sup><italic toggle="yes">em1/Jcs</italic></sup> was generated
+using CRISPR/Cas9-mediated genome editing. In summary, an optimal guide sequence
+targeting the first exon of <italic toggle="yes">Fancm</italic> was designed using the
+<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://mit.crispr.edu">mit.crispr.edu</ext-link> website. Oligos to generate
+the sgRNA DNA template were ordered from Integrated DNA Technologies (IDT) and
+the sgRNA was <italic toggle="yes">in vitro</italic> transcribed as described previously
+<sup><xref rid="R34" ref-type="bibr">34</xref></sup> (CRISPR-FancF:
+GAAATTAATACGACTCACTATAGGCCAGCTGGTAGTCGCGCACGGTTTTAGAGCTAGAAATAGC, CRISPR-FancR:
+CAAAATCTCGATCTTTATCGTTCAATTTTATTCCGATCAGGCAATAGTTGAACTTTTTCACCGTGGCTCAGCCACGAAAA).
+Embryo microinjection into C57BL/6J zygotes was performed as described
+previously <sup><xref rid="R35" ref-type="bibr">35</xref></sup> using 50ng/uL of
+sgRNA and 50ng/uL of Cas9 mRNA (TriLink Biotechnologies). The resulting 7bp
+deletion was identified via Sanger sequencing and subsequent genotyping was
+performed with primers sets specific to the mutant and wild-type alleles. (<xref rid="SD12" ref-type="supplementary-material">Table S9</xref>).</p></sec><sec id="S8"><title>Flow cytometry to monitor X-inactivation.</title><p id="P20">A transgenic mouse <sup><xref rid="R36" ref-type="bibr">36</xref></sup>
+containing an X-linked <italic toggle="yes">EGFP</italic> was crossed to
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">Chaos3</italic></sup> mice, and FACS
+analysis of embryos was carried out as described in that citation.
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> males bearing an
+ubiquitously-expressed <italic toggle="yes">X</italic>-linked <italic toggle="yes">GFP</italic> transgene
+were bred to <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> females.
+E10.5 female embryos (littermates from 7 different pregnancies), all of which
+must bear the <italic toggle="yes">GFP</italic> transgene, were genotyped, dispersed into
+single cells, and analyzed by flow cytometry to determine the fraction of GFP+
+cells. Theoretical maximum of GFP-positive cells in controls is 50%.</p></sec><sec id="S9"><title>Quantitative real-time reverse transcription-PCR (qRT-PCR).</title><p id="P21">RNA was isolated from cells using a kit per manufacturer&#8217;s
+instructions (Zymo or Qiagen RNeasy). 500ng of RNA was reverse transcribed into
+cDNA using qScript (Quanta) and analyzed on an ABI7300 or a Bio-Rad CFX96 using
+the following primers and iTaq (Bio-Rad). All reactions were normalized to
+<italic toggle="yes">Gapdh</italic> and/or <italic toggle="yes">Tbp</italic>. Primer sequences are
+available in <xref rid="SD4" ref-type="supplementary-material">Table S10</xref>.
+<italic toggle="yes">Il6, Ptgs2, Mcm2, Mcm3, Mcm4, Mcm5</italic>.</p></sec><sec id="S10"><title>RNA-seq.</title><p id="P22">Total RNA was isolated from E13.5 placentas by homogenizing placentas in
+RNA lysis buffer followed by column purification per manufacturers&#8217;
+instructions (Omega Biotech). RNA sample quality was confirmed by
+spectrophotometry (Nanodrop) to determine concentration and chemical purity
+(A260/230 and A260/280 ratios) and with a Fragment Analyzer (Advanced
+Analytical) to determine RNA integrity. Ribosomal RNA was subtracted by
+hybridization from total RNA samples using the RiboZero Magnetic Gold H/M/R Kit
+(Illumina). Following cleanup by precipitation, rRNA-subtracted samples were
+quantified with a Qubit 2.0 (RNA HS kit; Thermo Fisher). TruSeq-barcoded RNAseq
+libraries were generated with the NEBNext Ultra II Directional RNA Library Prep
+Kit (New England Biolabs). Each library was be quantified with a Qubit 2.0
+(dsDNA HS kit; Thermo Fisher) and the size distribution was be determined with a
+Fragment Analyzer (Advanced Analytical) prior to pooling. Libraries will be
+sequenced on a NextSeq500 instrument (Illumina). At least 20M single-end 75bp
+reads were generated per library. For analysis, reads were trimmed for low
+quality and adaptor sequences with cutadapt v1.8 using parameters: -m 50 -q 20
+-a AGATCGGAAGAGCACACGTCTGAACTCCAG --match-read-wildcards. Reads were mapped to
+the mouse reference genome/transcriptome using tophat v2.1 with parameters:
+--library-type=fr-firststrand --no-novel-juncs -G &lt;ref_genes.gtf&gt;.
+For gene expression analysis: cufflinks v2.2 (cuffnorm/cuffdiff) was used to
+generate FPKM values and statistical analysis of differential gene expression
+<sup><xref rid="R37" ref-type="bibr">37</xref></sup>. For the GSEA
+analysis, all expressed genes were analyzed using the Hallmarks dataset
+<sup><xref rid="R38" ref-type="bibr">38</xref></sup>. The placental gene
+sets used were comparisons between male and female
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> placentae from
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> dams or
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> dams, and male versus
+female <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> from
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> dams.</p></sec><sec id="S11"><title>Immunoblotting.</title><p id="P23">Protein was isolated from E13.5 placentas and embryos by acetone
+precipitation from RNA-isolation buffer (Buffer RLT or TRK) and resuspending in
+SUTEB loading buffer (8M Urea, 1% SDS, 10mM EDTA, 10mM Tris-HCl, pH 6.8).
+Protein lysates were run on 4&#8211;20% SDS-PAGE acrylamide gels and
+transferred to PVDF membrane (Millipore). Immunoblots were probed with anti-Mcm2
+(Epitomics/Abcam), anti-MCM2(Cell Signaling Technology), anti-androgen receptor
+(Epitomics/Abcam), anti-SMAD2/3(Cell Signaling), anti-p21(Santa Cruz),
+anti-MCM4(Cell Signaling Technology), anti-actin (Sigma). Secondary antibodies
+used included goat anti-rabbit-HRP (Cell Signaling) and goat anti-mouse-HRP
+(Sigma). Crescendo ECL substrate(Millipore) was used and immunoblots digitally
+scanned using a cDigit scanner. Quantification of immunoblots was performed
+using ImageStudio software.</p></sec><sec id="S12"><title>&#947;H2ax Staining.</title><p id="P24">Placentae from E13.5 embryos were dissected from individual embryos and
+washed in PBS. Decidua were separated from placenta and uterine tissue with fine
+forceps. Genotyping was carried out using a piece of the embryo. Placentae were
+flash-frozen in OCT and 10&#956;M sections cut on a cryostat and affixed to
+slides. Sections were fixed for 10 minutes with 4% paraformaldehyde in PBS, and
+stained with mouse anti-&#947;H2ax-phospho ser41 (Millipore) using a M.O.M kit
+and Biotin-Streptavidin blocking kit (Vector Labs) according to
+manufacturer&#8217;s instructions. Alexa-488 or Alexa 647-streptavidin
+(Invitrogen) was used to visualize. Slides were scanned using a Scanscope FL
+with a 20X objective. Images were quantified using Fiji or HALO(Indica Labs) and
+foci were detected as described <sup><xref rid="R39" ref-type="bibr">39</xref></sup> with an added size parameter to differentiate between
+nuclei and cytoplasmic signals <sup><xref rid="R40" ref-type="bibr">40</xref></sup></p></sec><sec id="S13"><title>Hydroxyurea and IR treatment of embryos.</title><p id="P25">For irradiation experiments, pregnant females were irradiated with 5
+Rads (50mGy), 3 times a week during gestation, beginning at E1.5. For HU
+experiments, hydroxyurea (Sigma) was dissolved at 10mg/ml in sterile 1X PBS for
+injection. Pregnant C3H females were subjected to daily i.p. injections of
+30&#8211;50ug/kg beginning at E3.5. Control females received daily i.p
+injections of sterile 1X PBS alone. All pregnancies were carried to term and the
+number and sex of animals determined at birth.</p></sec><sec id="S14"><title>Data Availability.</title><p id="P26">All data underlying the findings of this study are presented in the
+paper, except for RNA-seq data, which has been deposited into the GEO database
+(accession number <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmc:entrez-geo" xlink:href="GSE119710">GSE119710</ext-link>). Note that a source data file is online for the
+&#947;H2AX and MCM protein quantifications.</p></sec></sec><sec sec-type="extended-data" id="S21"><title>Extended Data</title><fig id="F5" orientation="portrait" position="anchor"><label>Extended Data Fig. 1.</label><caption><title>X-inactivation is not perturbed in MCM mutant embryos.</title><p id="P27">Mouse female embryos bearing one X-linked GFP transgene were
+dispersed into single cells and examined by flow cytometry for GFP
+fluorescence. Control animals were female littermates with a genotype of
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">+/+</italic></sup> or
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">+/+</italic></sup>. The center line
+represents the mean, and error bars represent the standard deviation in
+GFP-positive cells among the individual embryos (N) used. There is no
+significance difference between the values by an unpaired 2-tailed
+T-test(P=0.926). C3 =
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">Chaos3</italic></sup>; M2 =
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt</italic></sup>.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="nihms-1518854-f0005.jpg"/></fig><fig id="F6" orientation="portrait" position="anchor"><label>Extended Data Fig 2.</label><caption><title>Placental, but not embryonic MCM levels are decreased in MCM mutants
+independent of maternal genotype, and NSAID does not rescue MCM
+levels.</title><p id="P28"><bold>a)</bold> Representative westerns blots of protein lysates
+from E13.5 embryos and placentas of the indicated genotypes (top of each
+lane) were immunolabeled with antibodies against MCM2, MCM4, and beta actin.
+The samples came from dams of two genotypes indicated at the top of the
+panel. C3 = <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">Chaos3</italic></sup>; M2 =
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt</italic></sup>. Note that MCM4
+levels are particularly affected. The experiment was repeated twice for each
+maternal genotype. For gel source data, see Supplementary Figure 1.
+<bold>b)</bold> Placental MCM2 and MCM4 protein levels from the
+indicated maternal genotypes were quantified from western blots (including
+some other than those in &#8220;a&#8221;) that were imaged (see <xref rid="S1" ref-type="sec">Methods</xref>) and normalized to actin and WT
+protein levels. Each plotted point represents a single placenta. P-values
+represent unpaired two-tailed T-test. Placentae corresponding to male or
+female <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> genotype are
+indicated. Centre values represent the mean and error bars indicate standard
+deviation. <bold>c)</bold> Embryonic MCM2 and MCM4 protein levels were
+determined as in (b). Each plotted point represents a single embryo. Embryos
+corresponding to male or female
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> genotype are
+indicated. The results were not significant (n.s.) by a one-way ANOVA.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="nihms-1518854-f0006.jpg"/></fig><fig id="F7" orientation="portrait" position="anchor"><label>Extended Data Fig 3.</label><caption><title>Sex specific altered expression of inflammation genes in mutants.</title><p id="P29"><bold>a)</bold> Heatmap of the ratio of FPKM of key genes from top
+ranking genes from the following 3 GSEA Hallmarks: EMT, allograft rejection,
+and interferon gamma response. The ratios are expressed as female:male for
+each of the indicated embryo and dam genotypes. Data is from RNA-seq on n=16
+placentas; n=6 <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> from
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> dams, n=6 from
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> dams, and n=4 from
+homozygous <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> matings.
+Equal numbers of male and females were used. C3 =
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic></sup>; M2 =
+<italic toggle="yes">Mcm2</italic><sup>Gt/+</sup>. <bold>b)</bold> Maternal genotype
+affects the expression of inflammation genes. Plotted are the female:male
+FPKM values of C3/C3 M2/+ embryos for C3/C3 dams compared to C3/+ M2 dams
+for the same gene sets as in (a). The highest and lowest genes are all
+related to inflammation responses.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="nihms-1518854-f0007.jpg"/></fig><table-wrap id="T1" position="anchor" orientation="landscape"><label>Extended Data Table 1.</label><caption><title>Segregation of genotypes from crosses.</title><p id="P30"><bold>a)</bold> Embryonic semilethality caused by the
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> genotype is rescued by
+ibuprofen treatment of pregnant females. Cross: &#9792;
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> X &#9794;
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup>. Red numbers are
+plotted in <xref rid="F2" ref-type="fig">Fig. 2A</xref> under
+&#8220;NSAID.&#8221; C3 = Chaos3. Data are from 29 litters.
+<bold>b)</bold> Embryonic semilethality caused by the
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> genotype is affected
+by maternal genotype. Cross: &#9792;
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> X &#9794;
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> Red numbers are
+plotted in <xref rid="F3" ref-type="fig">Fig. 3A</xref> under &#8220;C3/+
+M2/+.&#8221; C3 = Chaos3, M2= Mcm2. Data are from 32 litters.
+<bold>c)</bold> Embryonic semilethality caused by the
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Il10rb</italic><sup><italic toggle="yes">&#8722;/&#8722;</italic></sup>
+genotype is rescued by ibuprofen treatment of pregnant females. Cross:
+&#9792; <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Il10rb</italic><sup><italic toggle="yes">+/&#8722;</italic></sup> X &#9794;
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Il10rb</italic><sup><italic toggle="yes">+/&#8722;</italic></sup>.
+<bold>d)</bold> Embryonic semi-lethality and female sex bias caused by
+the <italic toggle="yes">FancM</italic><sup><italic toggle="yes">em1Jcs/em1Jcs</italic></sup> genotype
+(is rescued by ibuprofen treatment of pregnant females.) Cross: &#9792;
+<italic toggle="yes">Fancm</italic><sup><italic toggle="yes">em1Jcs/+</italic></sup> X &#9794;
+<italic toggle="yes">Fancm</italic><sup><italic toggle="yes">em1Jcs/+</italic></sup> . Red numbers
+are plotted in <xref rid="F2" ref-type="fig">Fig. 2A</xref>.</p></caption><table frame="void" rules="none"><colgroup span="1"><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/><col align="left" valign="middle" span="1"/></colgroup><thead><tr><th colspan="6" align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1">a</th><th align="left" valign="middle" rowspan="1" colspan="1">&#160;</th><th colspan="6" align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1">b</th></tr><tr><th align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"/><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic>/+</sup></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic>/+</sup><break/><italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt</italic>/+</sup></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup><break/><italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt</italic>/+</sup></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">Total</th><th align="center" valign="middle" rowspan="1" colspan="1"/><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"/><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic>/+</sup></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic>/+</sup><break/><italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt</italic>/+</sup></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4<sup>C3/C3</sup></italic></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup><break/><italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt</italic>/+</sup></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">Total</th></tr></thead><tbody><tr><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Males</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">29</td><td align="center" valign="middle" rowspan="1" colspan="1">38</td><td align="center" valign="middle" rowspan="1" colspan="1">21</td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">14</td><td align="center" valign="middle" rowspan="1" colspan="1">102</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Males</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">31</td><td align="center" valign="middle" rowspan="1" colspan="1">39</td><td align="center" valign="middle" rowspan="1" colspan="1">29</td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">10</td><td align="center" valign="middle" rowspan="1" colspan="1">109</td></tr><tr><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Females</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">17</td><td align="center" valign="middle" rowspan="1" colspan="1">38</td><td align="center" valign="middle" rowspan="1" colspan="1">26</td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">14</td><td align="center" valign="middle" rowspan="1" colspan="1">95</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Females</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">25</td><td align="center" valign="middle" rowspan="1" colspan="1">38</td><td align="center" valign="middle" rowspan="1" colspan="1">17</td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">14</td><td align="center" valign="middle" rowspan="1" colspan="1">94</td></tr><tr><td align="left" valign="middle" rowspan="1" colspan="1">&#8195;<bold>Total</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">46</td><td align="center" valign="middle" rowspan="1" colspan="1">76</td><td align="center" valign="middle" rowspan="1" colspan="1">47</td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">28</td><td align="center" valign="middle" rowspan="1" colspan="1">197</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1">&#8195;<bold>Total</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">56</td><td align="center" valign="middle" rowspan="1" colspan="1">77</td><td align="center" valign="middle" rowspan="1" colspan="1">46</td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">24</td><td align="center" valign="middle" rowspan="1" colspan="1">203</td></tr><tr><td align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">&#8194;<bold>%Female</bold></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">36.9</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">50</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">55.3</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><styled-content style="color:#FF0000">50</styled-content></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">48.2</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">&#8194;<bold>%Female</bold></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">44.6</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">49.4</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">36.9</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><styled-content style="color:#FF0000">58.3</styled-content></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">46.3</td></tr></tbody><tbody><tr><th colspan="5" align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1">c</th><th align="center" valign="middle" rowspan="1" colspan="1"/><th align="center" valign="middle" rowspan="1" colspan="1"/><th colspan="5" align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1">d</th><th align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"/><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4<sup>C3/C3</sup></italic><break/><italic toggle="yes">Il10rb<sup>&#8722;/&#8722;</sup></italic></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup>C3/C3</sup><break/><italic toggle="yes">Il10rb<sup>+/&#8722;</sup></italic></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Mcm4</italic><sup>C3/C3</sup><break/><italic toggle="yes">Il10rb<sup>+/+</sup></italic></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">Total</th><th align="center" valign="middle" rowspan="1" colspan="1"/><th align="center" valign="middle" rowspan="1" colspan="1"/><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"/><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Fancm<sup>&#8722;/&#8722;</sup></italic></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><italic toggle="yes">Fancm<sup>+/&#8722;</sup></italic></th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">+/+</th><th align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">Total</th><th align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Males</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">1</td><td align="center" valign="middle" rowspan="1" colspan="1">15</td><td align="center" valign="middle" rowspan="1" colspan="1">3</td><td align="center" valign="middle" rowspan="1" colspan="1">19</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Males</bold></td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">32</td><td align="center" valign="middle" rowspan="1" colspan="1">70</td><td align="center" valign="middle" rowspan="1" colspan="1">34</td><td align="center" valign="middle" rowspan="1" colspan="1">136</td><td align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Females</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">0</td><td align="center" valign="middle" rowspan="1" colspan="1">17</td><td align="center" valign="middle" rowspan="1" colspan="1">9</td><td align="center" valign="middle" rowspan="1" colspan="1">26</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Females</bold></td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">19</td><td align="center" valign="middle" rowspan="1" colspan="1">63</td><td align="center" valign="middle" rowspan="1" colspan="1">32</td><td align="center" valign="middle" rowspan="1" colspan="1">114</td><td align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="middle" rowspan="1" colspan="1"><bold>&#8195;Total</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">1</td><td align="center" valign="middle" rowspan="1" colspan="1">32</td><td align="center" valign="middle" rowspan="1" colspan="1">12</td><td align="center" valign="middle" rowspan="1" colspan="1">45</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1"><bold>&#8195;Total</bold></td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">51</td><td align="center" valign="middle" rowspan="1" colspan="1">133</td><td align="center" valign="middle" rowspan="1" colspan="1">66</td><td align="center" valign="middle" rowspan="1" colspan="1">250</td><td align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><bold>&#8195;%Female</bold></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">0</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">53.5</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">75</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">58</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><bold>&#8195;%Female</bold></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><styled-content style="color:#FF0000">37</styled-content></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">47</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">48</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">46</td><td align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"><bold>+NSAID</bold></td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"><bold>+NSAID</bold></td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Males</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">7</td><td align="center" valign="middle" rowspan="1" colspan="1">16</td><td align="center" valign="middle" rowspan="1" colspan="1">5</td><td align="center" valign="middle" rowspan="1" colspan="1">28</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Males</bold></td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">27</td><td align="center" valign="middle" rowspan="1" colspan="1">49</td><td align="center" valign="middle" rowspan="1" colspan="1">29</td><td align="center" valign="middle" rowspan="1" colspan="1">105</td><td align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Females</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">9</td><td align="center" valign="middle" rowspan="1" colspan="1">21</td><td align="center" valign="middle" rowspan="1" colspan="1">10</td><td align="center" valign="middle" rowspan="1" colspan="1">40</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1"><bold>Females</bold></td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">24</td><td align="center" valign="middle" rowspan="1" colspan="1">43</td><td align="center" valign="middle" rowspan="1" colspan="1">27</td><td align="center" valign="middle" rowspan="1" colspan="1">94</td><td align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="middle" rowspan="1" colspan="1"><bold>&#8195;Total</bold></td><td align="center" valign="middle" rowspan="1" colspan="1">16</td><td align="center" valign="middle" rowspan="1" colspan="1">37</td><td align="center" valign="middle" rowspan="1" colspan="1">15</td><td align="center" valign="middle" rowspan="1" colspan="1">68</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" rowspan="1" colspan="1"><bold>&#8195;Total</bold></td><td align="center" valign="middle" style="color:#FF0000" rowspan="1" colspan="1">51</td><td align="center" valign="middle" rowspan="1" colspan="1">92</td><td align="center" valign="middle" rowspan="1" colspan="1">56</td><td align="center" valign="middle" rowspan="1" colspan="1">199</td><td align="center" valign="middle" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><bold>&#8195;%Female</bold></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">56</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">57</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">67</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">59</td><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="center" valign="middle" rowspan="1" colspan="1"/><td align="left" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><bold>&#8195;%Female</bold></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1"><styled-content style="color:#FF0000">47</styled-content></td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">47</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">48</td><td align="center" valign="middle" style="border-bottom: solid 1px" rowspan="1" colspan="1">47</td><td align="center" valign="middle" rowspan="1" colspan="1"/></tr></tbody></table></table-wrap></sec><sec sec-type="supplementary-material" id="SM1"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="SD1" position="float" orientation="portrait"><label>Reporting Summary</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Reporting_Summary.pdf" orientation="portrait" id="d36e2242" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD10" position="float" orientation="portrait"><label>Sup Table 7</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_7.docx" orientation="portrait" id="d36e2246" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD11" position="float" orientation="portrait"><label>Sup Table 8</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_8.docx" orientation="portrait" id="d36e2250" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD12" position="float" orientation="portrait"><label>Sup Table 9</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_9.docx" orientation="portrait" id="d36e2254" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD13" position="float" orientation="portrait"><label>Supp fig 1</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Supp_fig_1.pdf" orientation="portrait" id="d36e2258" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD2" position="float" orientation="portrait"><label>SI guide</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-SI_guide.docx" orientation="portrait" id="d36e2262" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD3" position="float" orientation="portrait"><label>Sup Table 1</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_1.docx" orientation="portrait" id="d36e2266" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD4" position="float" orientation="portrait"><label>Sup Table 10</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_10.docx" orientation="portrait" id="d36e2270" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD5" position="float" orientation="portrait"><label>Sup Table 2</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_2.docx" orientation="portrait" id="d36e2274" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD6" position="float" orientation="portrait"><label>Sup Table 3</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_3.docx" orientation="portrait" id="d36e2278" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD7" position="float" orientation="portrait"><label>Sup Table 4</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_4.docx" orientation="portrait" id="d36e2283" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD8" position="float" orientation="portrait"><label>Sup Table 5</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_5.docx" orientation="portrait" id="d36e2287" position="anchor"/></supplementary-material><supplementary-material content-type="local-data" id="SD9" position="float" orientation="portrait"><label>Sup Table 6</label><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="NIHMS1518854-supplement-Sup_Table_6.docx" orientation="portrait" id="d36e2291" position="anchor"/></supplementary-material></sec></body><back><ack id="S15"><title>Acknowledgements.</title><p id="P31">We thank the Cornell Transgenic Core facility for help in producing the
+<italic toggle="yes">Fancm</italic> mutant mutant mice, and Jen Grenier from the RNA
+sequencing-seq Core. This work was supported by grants from NIH (R01 HD086609 and
+T32 HD057854 to JCS, the latter supporting MDW and JCB) and the Department of
+Defense (BC083376 to C-HC).</p></ack><fn-group><fn id="FN2"><p id="P32"><bold>Competing interests.</bold> The authors declare no competing
+interests.</p></fn></fn-group><ref-list><title>References</title><ref id="R1"><label>1.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Rodier</surname><given-names>F</given-names></name><etal/><article-title>Persistent DNA damage signalling triggers senescence-associated
+inflammatory cytokine secretion</article-title>. <source>Nat. Cell
+Biol</source><volume>11</volume>, <fpage>973</fpage>&#8211;<lpage>979</lpage>
+(<year>2009</year>).<pub-id pub-id-type="pmid">19597488</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/ncb1909</pub-id><pub-id pub-id-type="pmcid">PMC2743561</pub-id></mixed-citation></ref><ref id="R2"><label>2.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Nyberg</surname><given-names>KA</given-names></name>, <name name-style="western"><surname>Michelson</surname><given-names>RJ</given-names></name>, <name name-style="western"><surname>Putnam</surname><given-names>CW</given-names></name> &amp; <name name-style="western"><surname>Weinert</surname><given-names>TA</given-names></name><article-title>Toward maintaining the genome: DNA damage and replication
+checkpoints</article-title>. <source>Annu. Rev. Genet</source><volume>36</volume>, <fpage>617</fpage>&#8211;<lpage>656</lpage>
+(<year>2002</year>).<pub-id pub-id-type="pmid">12429704</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1146/annurev.genet.36.060402.113540</pub-id></mixed-citation></ref><ref id="R3"><label>3.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Chuang</surname><given-names>C-H</given-names></name>, <name name-style="western"><surname>Wallace</surname><given-names>MD</given-names></name>, <name name-style="western"><surname>Abratte</surname><given-names>C</given-names></name>, <name name-style="western"><surname>Southard</surname><given-names>T</given-names></name> &amp; <name name-style="western"><surname>Schimenti</surname><given-names>JC</given-names></name><article-title>Incremental genetic perturbations to MCM2&#8211;7 expression and
+subcellular distribution reveal exquisite sensitivity of mice to DNA
+replication stress</article-title>. <source>PLoS Genet</source>.
+<volume>6</volume>, <fpage>e1001110</fpage>
+(<year>2010</year>).<pub-id pub-id-type="pmid">20838603</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1371/journal.pgen.1001110</pub-id><pub-id pub-id-type="pmcid">PMC2936539</pub-id></mixed-citation></ref><ref id="R4"><label>4.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Shima</surname><given-names>N</given-names></name><etal/><article-title>A viable allele of Mcm4 causes chromosome instability and mammary
+adenocarcinomas in mice</article-title>. <source>Nat. Genet</source><volume>39</volume>, <fpage>93</fpage>&#8211;<lpage>98</lpage>
+(<year>2007</year>).<pub-id pub-id-type="pmid">17143284</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/ng1936</pub-id></mixed-citation></ref><ref id="R5"><label>5.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Bianchi</surname><given-names>VE</given-names></name><article-title>The Anti-Inflammatory Effects of Testosterone</article-title>.
+<source>Journal of the Endocrine Society</source><volume>3</volume>, <fpage>91</fpage>&#8211;<lpage>107</lpage>
+(<year>2019</year>).<pub-id pub-id-type="pmid">30582096</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1210/js.2018-00186</pub-id><pub-id pub-id-type="pmcid">PMC6299269</pub-id></mixed-citation></ref><ref id="R6"><label>6.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Luo</surname><given-names>Y</given-names></name><etal/><article-title>Hypersensitivity of primordial germ cells to compromised
+replication-associated DNA repair involves ATM-p53-p21
+signaling</article-title>. <source>PLoS Genet</source>. <volume>10</volume>,
+<fpage>e1004471</fpage> (<year>2014</year>).<pub-id pub-id-type="pmid">25010009</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1371/journal.pgen.1004471</pub-id><pub-id pub-id-type="pmcid">PMC4091704</pub-id></mixed-citation></ref><ref id="R7"><label>7.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Hills</surname><given-names>SA</given-names></name> &amp; <name name-style="western"><surname>Diffley</surname><given-names>JFX</given-names></name><article-title>DNA replication and oncogene-induced replicative
+stress</article-title>. <source>Curr. Biol</source><volume>24</volume>, <fpage>R435</fpage>&#8211;<lpage>44</lpage>
+(<year>2014</year>).<pub-id pub-id-type="pmid">24845676</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.cub.2014.04.012</pub-id></mixed-citation></ref><ref id="R8"><label>8.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Zeman</surname><given-names>MK</given-names></name> &amp; <name name-style="western"><surname>Cimprich</surname><given-names>KA</given-names></name><article-title>Causes and consequences of replication stress</article-title>.
+<source>Nat. Cell Biol</source><volume>16</volume>, <fpage>2</fpage>&#8211;<lpage>9</lpage>
+(<year>2014</year>).<pub-id pub-id-type="pmid">24366029</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/ncb2897</pub-id><pub-id pub-id-type="pmcid">PMC4354890</pub-id></mixed-citation></ref><ref id="R9"><label>9.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Kato</surname><given-names>K</given-names></name>, <name name-style="western"><surname>Omura</surname><given-names>H</given-names></name>, <name name-style="western"><surname>Ishitani</surname><given-names>R</given-names></name> &amp; <name name-style="western"><surname>Nureki</surname><given-names>O</given-names></name><article-title>Cyclic GMP-AMP as an Endogenous Second Messenger in Innate Immune
+Signaling by Cytosolic DNA</article-title>. <source>Annu. Rev.
+Biochem</source><volume>86</volume>, <fpage>541</fpage>&#8211;<lpage>566</lpage>
+(<year>2017</year>).<pub-id pub-id-type="pmid">28399655</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1146/annurev-biochem-061516-044813</pub-id></mixed-citation></ref><ref id="R10"><label>10.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Yang</surname><given-names>H</given-names></name>, <name name-style="western"><surname>Wang</surname><given-names>H</given-names></name>, <name name-style="western"><surname>Ren</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Chen</surname><given-names>Q</given-names></name> &amp; <name name-style="western"><surname>Chen</surname><given-names>ZJ</given-names></name><article-title>cGAS is essential for cellular senescence</article-title>.
+<source>Proc. Natl. Acad. Sci. USA</source><volume>114</volume>, <fpage>E4612</fpage>&#8211;<lpage>E4620</lpage>
+(<year>2017</year>).<pub-id pub-id-type="pmid">28533362</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1073/pnas.1705499114</pub-id><pub-id pub-id-type="pmcid">PMC5468617</pub-id></mixed-citation></ref><ref id="R11"><label>11.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Ibarra</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Schwob</surname><given-names>E</given-names></name> &amp; <name name-style="western"><surname>M&#233;ndez</surname><given-names>J</given-names></name><article-title>Excess MCM proteins protect human cells from replicative stress
+by licensing backup origins of replication</article-title>. <source>Proc.
+Natl. Acad. Sci. USA</source><volume>105</volume>, <fpage>8956</fpage>&#8211;<lpage>8961</lpage>
+(<year>2008</year>).<pub-id pub-id-type="pmid">18579778</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1073/pnas.0803978105</pub-id><pub-id pub-id-type="pmcid">PMC2449346</pub-id></mixed-citation></ref><ref id="R12"><label>12.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Woodward</surname><given-names>AM</given-names></name><etal/><article-title>Excess Mcm2&#8211;7 license dormant origins of replication that
+can be used under conditions of replicative stress</article-title>.
+<source>J. Cell Biol</source><volume>173</volume>, <fpage>673</fpage>&#8211;<lpage>683</lpage>
+(<year>2006</year>).<pub-id pub-id-type="pmid">16754955</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1083/jcb.200602108</pub-id><pub-id pub-id-type="pmcid">PMC2063885</pub-id></mixed-citation></ref><ref id="R13"><label>13.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Ge</surname><given-names>XQ</given-names></name>, <name name-style="western"><surname>Jackson</surname><given-names>DA</given-names></name> &amp; <name name-style="western"><surname>Blow</surname><given-names>JJ</given-names></name><article-title>Dormant origins licensed by excess Mcm2&#8211;7 are required for
+human cells to survive replicative stress</article-title>. <source>Genes
+Dev</source>. <volume>21</volume>,
+<fpage>3331</fpage>&#8211;<lpage>3341</lpage>
+(<year>2007</year>).<pub-id pub-id-type="pmid">18079179</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1101/gad.457807</pub-id><pub-id pub-id-type="pmcid">PMC2113033</pub-id></mixed-citation></ref><ref id="R14"><label>14.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Kunnev</surname><given-names>D</given-names></name><etal/><article-title>DNA damage response and tumorigenesis in Mcm2-deficient
+mice</article-title>. <source>Oncogene</source><volume>29</volume>, <fpage>3630</fpage>&#8211;<lpage>3638</lpage>
+(<year>2010</year>).<pub-id pub-id-type="pmid">20440269</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/onc.2010.125</pub-id><pub-id pub-id-type="pmcid">PMC2892019</pub-id></mixed-citation></ref><ref id="R15"><label>15.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Kawabata</surname><given-names>T</given-names></name><etal/><article-title>Stalled fork rescue via dormant replication origins in
+unchallenged S phase promotes proper chromosome segregation and tumor
+suppression</article-title>. <source>Mol. Cell</source><volume>41</volume>, <fpage>543</fpage>&#8211;<lpage>553</lpage>
+(<year>2011</year>).<pub-id pub-id-type="pmid">21362550</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.molcel.2011.02.006</pub-id><pub-id pub-id-type="pmcid">PMC3062258</pub-id></mixed-citation></ref><ref id="R16"><label>16.</label><mixed-citation publication-type="book"><name name-style="western"><surname>Gondos</surname><given-names>B</given-names></name> in <source>Testicular Development, Structure and Function</source> (eds. <name name-style="western"><surname>Steinberger</surname><given-names>A</given-names></name> &amp; <name name-style="western"><surname>Steinberger</surname><given-names>B</given-names></name>) <fpage>3</fpage>&#8211;<lpage>20</lpage> (<publisher-name>Raven
+Press</publisher-name>, <publisher-loc>NY</publisher-loc>,
+<year>1980</year>).</mixed-citation></ref><ref id="R17"><label>17.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Litvinov</surname><given-names>IV</given-names></name><etal/><article-title>Androgen receptor as a licensing factor for DNA replication in
+androgen-sensitive prostate cancer cells</article-title>. <source>Proc.
+Natl. Acad. Sci. USA</source><volume>103</volume>, <fpage>15085</fpage>&#8211;<lpage>15090</lpage>
+(<year>2006</year>).<pub-id pub-id-type="pmid">17015840</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1073/pnas.0603057103</pub-id><pub-id pub-id-type="pmcid">PMC1622781</pub-id></mixed-citation></ref><ref id="R18"><label>18.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Shi</surname><given-names>Y-K</given-names></name><etal/><article-title>MCM7 interacts with androgen receptor</article-title>.
+<source>Am. J. Pathol</source><volume>173</volume>, <fpage>1758</fpage>&#8211;<lpage>1767</lpage>
+(<year>2008</year>).<pub-id pub-id-type="pmid">18988800</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.2353/ajpath.2008.080363</pub-id><pub-id pub-id-type="pmcid">PMC2626387</pub-id></mixed-citation></ref><ref id="R19"><label>19.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Mackenzie</surname><given-names>KJ</given-names></name><etal/><article-title>cGAS surveillance of micronuclei links genome instability to
+innate immunity</article-title>. <source>Nature</source><volume>548</volume>, <fpage>461</fpage>&#8211;<lpage>465</lpage>
+(<year>2017</year>).<pub-id pub-id-type="pmid">28738408</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nature23449</pub-id><pub-id pub-id-type="pmcid">PMC5870830</pub-id></mixed-citation></ref><ref id="R20"><label>20.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Liva</surname><given-names>SM</given-names></name> &amp; <name name-style="western"><surname>Voskuhl</surname><given-names>RR</given-names></name><article-title>Testosterone acts directly on CD4+ T lymphocytes to increase
+IL-10 production</article-title>. <source>J. Immunol</source><volume>167</volume>, <fpage>2060</fpage>&#8211;<lpage>2067</lpage>
+(<year>2001</year>).<pub-id pub-id-type="pmid">11489988</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.4049/jimmunol.167.4.2060</pub-id></mixed-citation></ref><ref id="R21"><label>21.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Malkin</surname><given-names>CJ</given-names></name><etal/><article-title>The effect of testosterone replacement on endogenous inflammatory
+cytokines and lipid profiles in hypogonadal men</article-title>. <source>J.
+Clin. Endocrinol. Metab</source><volume>89</volume>, <fpage>3313</fpage>&#8211;<lpage>3318</lpage>
+(<year>2004</year>).<pub-id pub-id-type="pmid">15240608</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1210/jc.2003-031069</pub-id></mixed-citation></ref><ref id="R22"><label>22.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Grosse</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Bartsch</surname><given-names>S</given-names></name> &amp; <name name-style="western"><surname>Baniahmad</surname><given-names>A</given-names></name><article-title>Androgen receptor-mediated gene repression</article-title>.
+<source>Mol. Cell. Endocrinol</source><volume>352</volume>, <fpage>46</fpage>&#8211;<lpage>56</lpage>
+(<year>2012</year>).<pub-id pub-id-type="pmid">21784131</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.mce.2011.06.032</pub-id></mixed-citation></ref><ref id="R23"><label>23.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Palayoor</surname><given-names>ST</given-names></name><etal/><article-title>Gene expression profile of coronary artery cells treated with
+nonsteroidal anti-inflammatory drugs reveals off-target
+effects</article-title>. <source>J. Cardiovasc. Pharmacol</source><volume>59</volume>, <fpage>487</fpage>&#8211;<lpage>499</lpage>
+(<year>2012</year>).<pub-id pub-id-type="pmid">22668799</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1097/FJC.0b013e31824ba6b5</pub-id><pub-id pub-id-type="pmcid">PMC3370396</pub-id></mixed-citation></ref><ref id="R24"><label>24.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>MacKenzie</surname><given-names>KF</given-names></name><etal/><article-title>MSK1 and MSK2 inhibit lipopolysaccharide-induced prostaglandin
+production via an interleukin-10 feedback loop</article-title>. <source>Mol.
+Cell. Biol</source><volume>33</volume>, <fpage>1456</fpage>&#8211;<lpage>1467</lpage>
+(<year>2013</year>).<pub-id pub-id-type="pmid">23382072</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1128/MCB.01690-12</pub-id><pub-id pub-id-type="pmcid">PMC3624268</pub-id></mixed-citation></ref><ref id="R25"><label>25.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Ahn</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Son</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Oliveira</surname><given-names>SC</given-names></name> &amp; <name name-style="western"><surname>Barber</surname><given-names>GN</given-names></name><article-title>STING-Dependent Signaling Underlies IL-10 Controlled Inflammatory
+Colitis</article-title>. <source>Cell Rep</source>. <volume>21</volume>,
+<fpage>3873</fpage>&#8211;<lpage>3884</lpage>
+(<year>2017</year>).<pub-id pub-id-type="pmid">29281834</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.celrep.2017.11.101</pub-id><pub-id pub-id-type="pmcid">PMC6082386</pub-id></mixed-citation></ref><ref id="R26"><label>26.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Cadet</surname><given-names>P</given-names></name>, <name name-style="western"><surname>Rady</surname><given-names>PL</given-names></name>, <name name-style="western"><surname>Tyring</surname><given-names>SK</given-names></name>, <name name-style="western"><surname>Yandell</surname><given-names>RB</given-names></name> &amp; <name name-style="western"><surname>Hughes</surname><given-names>TK</given-names></name><article-title>Interleukin-10 messenger ribonucleic acid in human placenta:
+implications of a role for interleukin-10 in fetal allograft
+protection</article-title>. <source>Am. J. Obstet. Gynecol</source><volume>173</volume>, <fpage>25</fpage>&#8211;<lpage>29</lpage>
+(<year>1995</year>).<pub-id pub-id-type="pmid">7631699</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/0002-9378(95)90164-7</pub-id></mixed-citation></ref><ref id="R27"><label>27.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Bai</surname><given-names>G</given-names></name>, <name name-style="western"><surname>Smolka</surname><given-names>MB</given-names></name> &amp; <name name-style="western"><surname>Schimenti</surname><given-names>JC</given-names></name><article-title>Chronic DNA Replication Stress Reduces Replicative Lifespan of
+Cells by TRP53-Dependent, microRNA-Assisted MCM2&#8211;7
+Downregulation</article-title>. <source>PLoS Genet</source>.
+<volume>12</volume>, <fpage>e1005787</fpage>
+(<year>2016</year>).<pub-id pub-id-type="pmid">26765334</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1371/journal.pgen.1005787</pub-id><pub-id pub-id-type="pmcid">PMC4713100</pub-id></mixed-citation></ref><ref id="R28"><label>28.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Chuang</surname><given-names>C-H</given-names></name><etal/><article-title>Post-transcriptional homeostasis and regulation of MCM2&#8211;7
+in mammalian cells</article-title>. <source>Nucleic Acids Res</source>.
+<volume>40</volume>, <fpage>4914</fpage>&#8211;<lpage>4924</lpage>
+(<year>2012</year>).<pub-id pub-id-type="pmid">22362746</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/nar/gks176</pub-id><pub-id pub-id-type="pmcid">PMC3367205</pub-id></mixed-citation></ref><ref id="R29"><label>29.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Suarez-Carmona</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Lesage</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Cataldo</surname><given-names>D</given-names></name> &amp; <name name-style="western"><surname>Gilles</surname><given-names>C</given-names></name><article-title>EMT and inflammation: inseparable actors of cancer
+progression</article-title>. <source>Mol. Oncol</source><volume>11</volume>, <fpage>805</fpage>&#8211;<lpage>823</lpage>
+(<year>2017</year>).<pub-id pub-id-type="pmid">28599100</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/1878-0261.12095</pub-id><pub-id pub-id-type="pmcid">PMC5496491</pub-id></mixed-citation></ref><ref id="R30"><label>30.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Bakker</surname><given-names>ST</given-names></name><etal/><article-title>Fancm-deficient mice reveal unique features of Fanconi anemia
+complementation group M</article-title>. <source>Hum. Mol. Genet</source><volume>18</volume>, <fpage>3484</fpage>&#8211;<lpage>3495</lpage>
+(<year>2009</year>).<pub-id pub-id-type="pmid">19561169</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/hmg/ddp297</pub-id></mixed-citation></ref><ref id="R31"><label>31.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Wolf</surname><given-names>CJ</given-names></name>, <name name-style="western"><surname>Hotchkiss</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Ostby</surname><given-names>JS</given-names></name>, <name name-style="western"><surname>LeBlanc</surname><given-names>GA</given-names></name> &amp; <name name-style="western"><surname>Gray</surname><given-names>LE</given-names></name><article-title>Effects of prenatal testosterone propionate on the sexual
+development of male and female rats: a dose-response study</article-title>.
+<source>Toxicol. Sci</source><volume>65</volume>, <fpage>71</fpage>&#8211;<lpage>86</lpage>
+(<year>2002</year>).<pub-id pub-id-type="pmid">11752687</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/toxsci/65.1.71</pub-id></mixed-citation></ref><ref id="R32"><label>32.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Eicher</surname><given-names>EM</given-names></name>, <name name-style="western"><surname>Shown</surname><given-names>EP</given-names></name> &amp; <name name-style="western"><surname>Washburn</surname><given-names>LL</given-names></name><article-title>Sex reversal in C57BL/6J-YPOS mice corrected by a Sry
+transgene</article-title>. <source>Philos. Trans. R. Soc. Lond. B, Biol.
+Sci</source><volume>350</volume>, <fpage>263</fpage>&#8211;<lpage>8</lpage>; discussion 268
+(<year>1995</year>).<pub-id pub-id-type="pmid">8570690</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1098/rstb.1995.0160</pub-id></mixed-citation></ref><ref id="R33"><label>33.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Truett</surname><given-names>GE</given-names></name><etal/><article-title>Preparation of PCR-quality mouse genomic DNA with hot sodium
+hydroxide and tris (HotSHOT)</article-title>. <source>BioTechniques</source><volume>29</volume>, <fpage>52</fpage>&#8211;<lpage>54</lpage>
+(<year>2000</year>).<pub-id pub-id-type="pmid">10907076</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.2144/00291bm09</pub-id></mixed-citation></ref><ref id="R34"><label>34.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Varshney</surname><given-names>GK</given-names></name><etal/><article-title>High-throughput gene targeting and phenotyping in zebrafish using
+CRISPR/Cas9</article-title>. <source>Genome Res</source>.
+<volume>25</volume>, <fpage>1030</fpage>&#8211;<lpage>1042</lpage>
+(<year>2015</year>).<pub-id pub-id-type="pmid">26048245</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1101/gr.186379.114</pub-id><pub-id pub-id-type="pmcid">PMC4484386</pub-id></mixed-citation></ref><ref id="R35"><label>35.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Singh</surname><given-names>P</given-names></name>, <name name-style="western"><surname>Schimenti</surname><given-names>JC</given-names></name> &amp; <name name-style="western"><surname>Bolcun-Filas</surname><given-names>E</given-names></name><article-title>A mouse geneticist&#8217;s practical guide to CRISPR
+applications</article-title>. <source>Genetics</source><volume>199</volume>, <fpage>1</fpage>&#8211;<lpage>15</lpage>
+(<year>2015</year>).<pub-id pub-id-type="pmid">25271304</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1534/genetics.114.169771</pub-id><pub-id pub-id-type="pmcid">PMC4286675</pub-id></mixed-citation></ref><ref id="R36"><label>36.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Hadjantonakis</surname><given-names>AK</given-names></name>, <name name-style="western"><surname>Cox</surname><given-names>LL</given-names></name>, <name name-style="western"><surname>Tam</surname><given-names>PP</given-names></name> &amp; <name name-style="western"><surname>Nagy</surname><given-names>A</given-names></name><article-title>An X-linked GFP transgene reveals unexpected paternal
+X-chromosome activity in trophoblastic giant cells of the mouse
+placenta</article-title>. <source>Genesis</source><volume>29</volume>, <fpage>133</fpage>&#8211;<lpage>140</lpage>
+(<year>2001</year>).<pub-id pub-id-type="pmid">11252054</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/gene.1016</pub-id></mixed-citation></ref><ref id="R37"><label>37.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Trapnell</surname><given-names>C</given-names></name><etal/><article-title>Transcript assembly and quantification by RNA-Seq reveals
+unannotated transcripts and isoform switching during cell
+differentiation</article-title>. <source>Nat. Biotechnol</source><volume>28</volume>, <fpage>511</fpage>&#8211;<lpage>515</lpage>
+(<year>2010</year>).<pub-id pub-id-type="pmid">20436464</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nbt.1621</pub-id><pub-id pub-id-type="pmcid">PMC3146043</pub-id></mixed-citation></ref><ref id="R38"><label>38.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Subramanian</surname><given-names>A</given-names></name><etal/><article-title>Gene set enrichment analysis: a knowledge-based approach for
+interpreting genome-wide expression profiles</article-title>. <source>Proc.
+Natl. Acad. Sci. USA</source><volume>102</volume>, <fpage>15545</fpage>&#8211;<lpage>15550</lpage>
+(<year>2005</year>).<pub-id pub-id-type="pmid">16199517</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1073/pnas.0506580102</pub-id><pub-id pub-id-type="pmcid">PMC1239896</pub-id></mixed-citation></ref><ref id="R39"><label>39.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Rinaldi</surname><given-names>VD</given-names></name>, <name name-style="western"><surname>Bloom</surname><given-names>JC</given-names></name> &amp; <name name-style="western"><surname>Schimenti</surname><given-names>JC</given-names></name><article-title>Whole mount immunofluorescence and follicle quantification of
+cultured mouse ovaries</article-title>. <source>J. Vis. Exp</source>.
+(<year>2018</year>). doi:<pub-id pub-id-type="doi">10.3791/57593</pub-id><pub-id pub-id-type="pmcid">PMC6101098</pub-id><pub-id pub-id-type="pmid">29782020</pub-id></mixed-citation></ref><ref id="R40"><label>40.</label><mixed-citation publication-type="journal"><name name-style="western"><surname>Schindelin</surname><given-names>J</given-names></name><etal/><article-title>Fiji: an open-source platform for biological-image
+analysis</article-title>. <source>Nat. Methods</source><volume>9</volume>, <fpage>676</fpage>&#8211;<lpage>682</lpage>
+(<year>2012</year>).<pub-id pub-id-type="pmid">22743772</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nmeth.2019</pub-id><pub-id pub-id-type="pmcid">PMC3855844</pub-id></mixed-citation></ref></ref-list></back><floats-group><fig id="F1" orientation="portrait" position="float"><label>Fig. 1.</label><caption><title>Female-biased embryonic lethality in MCM-depleted mice.</title><p id="P33"><bold>(a)</bold> Female MCM-depleted mice are underrepresented at birth.
+Mice were bred to produce <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+(&#8220;C3/C3&#8221;) or <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">Chaos3
+/Gt</italic></sup> offspring (&#8220;C3/M4), some of which were
+heterozygous for null alleles in other MCMs (&#8220;M#&#8221;; for example,
+M2/+ = <italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup>). Graphed are
+percent viability at birth of males and females for each of the indicated
+genotypes versus C3/C3 littermates. For <italic toggle="yes">Fancm</italic>, the viability is
+versus WT littermates. The numbers on or over the bars = # males or females of
+the indicated genotype, and the N values below equal the total number of
+newborns with that genotype. Some of the data for all genotypes except that
+involving M5 were reported in <sup><xref rid="R3" ref-type="bibr">3</xref></sup>, but broken out by sex here and with added data that are
+enumerated in <xref rid="T1" ref-type="table">Extended Data Table 1</xref> and
+<xref rid="SD3" ref-type="supplementary-material">Tables S1</xref>-<xref rid="SD8" ref-type="supplementary-material">S5</xref>. P-values are from a
+Chi-Squared test that females are underrepresented vs males from that genotype.
+&#8220;&lt;&gt;&#8220; represents a significant two-sided Fisher Exact
+Test (C3/M4; P=0.011, C3/M6; P=0.018) between indicated groups in terms of the
+ability of <italic toggle="yes">Mcm3</italic> heterozygosity to decrease sex bias.
+<bold>(b)</bold> Timing of female death during embryogenesis. E = embryonic
+day. Numbers above bars are viable XY:XX embryos genotyped (they sum to the
+&#8220;N&#8221; values). P-values determined from Chi-Squared probability.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="nihms-1518854-f0001.jpg"/></fig><fig id="F2" orientation="portrait" position="float"><label>Fig. 2.</label><caption><title>Evidence that the anti-inflammatory activity of testosterone protects male
+embryos from genomic instability-induced lethality.</title><p id="P34"><bold>(a)</bold> Viability of genetically female (XX)
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> or
+<italic toggle="yes">Fancm</italic><sup><italic toggle="yes">&#8722;/&#8722;</italic></sup>
+embryos is rescued by <italic toggle="yes">Sry</italic> transgene-induced sex reversal (Sry
+Tg), and treatment of pregnant dams with either testosterone
+(&#8220;Testos&#8221;) or ibuprofen (&#8220;NSAID&#8221;). Values above each
+bar are total mice, and those inside bars are XX. Nontransgenics and transgenics
+in the Sry Tg experiment were from the same cross. The untreated mice in the
+testosterone and NSAID experiments are from <xref rid="SD6" ref-type="supplementary-material">Table S3</xref> and also plotted in <xref rid="F1" ref-type="fig">Fig. 1a</xref>. This aggregate value contains 8 male
+and 1 female <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> offspring that were
+produced contemporaneous to the NSAID cohort. P values are from two-tailed
+F.E.T. or an unpaired, 2-tailed T-test. The Sry Tg and testosterone crosses
+involved an <italic toggle="yes">Mcm3</italic><sup><italic toggle="yes">Gt</italic></sup> allele that was
+included to boost viability (but not sex skewing, see <xref rid="F1" ref-type="fig">Fig. 1a</xref>) of the lethal genotypes. <bold>(b)</bold>
+Testosterone treatment does not affect <italic toggle="yes">Mcm</italic> mRNA, but does lower
+the inflammation markers <italic toggle="yes">Il6</italic> and <italic toggle="yes">Ptgs2</italic>.
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> MEFs (n=6: 3 male, 3
+female) were treated with 10nM T for 1 hr, and mRNA collected 6 hrs later for
+qRT-PCR. Bars represent mean and error bars indicate standard deviation.
+Individual data points are indicated. <bold>(c)</bold> Same as (b), but protein
+was collected 24 hrs after T treatment, and Western analysis performed with
+indicated antibodies by stripping and re-probing the same blot. The experiment
+was repeated a minimum of 3 times with different MEF lines of the same genotype
+with similar results. For gel source data, see <xref rid="SD13" ref-type="supplementary-material">Supplemental Figure 1</xref>.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="nihms-1518854-f0002.jpg"/></fig><fig id="F3" orientation="portrait" position="float"><label>Fig 3.</label><caption><title>Maternal GIN genotype impacts female embryo viability and placental
+inflammation.</title><p id="P35"><bold>(a)</bold> Lethality of female (XX)
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> embryos is dependent upon
+maternal genotype. C3 = <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3</italic></sup> ; M2
+= <italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup>. Values above each bar
+are total mice, and those inside bars are XX. The P-value was calculated by a
+two-sided Fisher&#8217;s Exact Test. See <xref rid="SD5" ref-type="supplementary-material">Tables S2</xref> and <xref rid="T1" ref-type="table">Extended Data Table 1b</xref> for primary data from the
+crosses. <bold>(b)</bold> Placentae of female E13.5 embryos with the
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> lethal genotype have
+elevated expression of inflammation pathways when the dam has elevated GIN.
+RNA-seq was carried out on n=16 placentae: n=6
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> from
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> dams, n=6 from
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/+</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> dams, and n=4 from
+homozygous <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> matings. Equal
+numbers of male and females were used. Shown are heatmaps of GSEA (Gene Set
+Enrichment Analysis) analysis of RNA-seq data, using the Hallmarks dataset of
+the Molecular Signatures Database (MSigDB; <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://software.broadinstitute.org/gsea/msigdb/collections.jsp">http://software.broadinstitute.org/gsea/msigdb/collections.jsp</ext-link>).
+Only those Hallmark pathways that were significantly different between sexes
+(FDR &lt;0.25, nominal P value&lt;0.05) were used to generate the
+heatmap. Multiple pathways involving inflammation are upregulated in
+<italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup>
+<italic toggle="yes">Mcm2</italic><sup><italic toggle="yes">Gt/+</italic></sup> female vs male embryos
+from <italic toggle="yes">Mcm4</italic><sup><italic toggle="yes">C3/C3</italic></sup> dams, but not other
+combinations. Embryonic and maternal genotypes are listed at the top of the
+heatmaps.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="nihms-1518854-f0003.jpg"/></fig><fig id="F4" orientation="portrait" position="float"><label>Fig. 4.</label><caption><title>Dams with intrinsic GIN cause elevated DNA damage in the placenta.</title><p id="P36">&#947;H2AX staining in placentae from the indicated maternal
+genotypes. Each dot represents a single placenta. A minimum of 2 litters was
+examined per mating, total number of placentae analyzed is indicated.
+Significance was by unpaired, 2-tail t-tests. Centre value=mean, Error bars =
+standard deviation. ns = not significant.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="nihms-1518854-f0004.jpg"/></fig></floats-group></article></pmc-articleset>

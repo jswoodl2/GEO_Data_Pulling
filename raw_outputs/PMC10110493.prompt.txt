@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Development Development 864 develop DEV Development (Cambridge, England) 0950-1991 1477-9129 Company of Biologists PMC10110493 PMC10110493.1 10110493 10110493 36607602 10.1242/dev.201095 DEV201095 1 Version of Record Research Article The AKT1-FOXO4 axis reciprocally regulates hemochorial placentation http://orcid.org/0000-0003-2645-7431 Kozai Keisuke 1 ¶ * http://orcid.org/0000-0001-6810-6475 Moreno-Irusta Ayelen amoreno2@kumc.edu 1 ¶ ** Iqbal Khursheed 1 Winchester Mae-Lan 2 ‡ http://orcid.org/0000-0001-6294-5294 Scott Regan L. 1 http://orcid.org/0000-0001-5301-2724 Simon Mikaela E. 1 Muto Masanaga 1 § Parrish Marc R. 2 http://orcid.org/0000-0001-7158-1592 Soares Michael J. msoares@kumc.edu 1 2 3 ** 1 Institute for Reproductive and Developmental Sciences Department of Pathology & Laboratory Medicine University of Kansas Medical Center Kansas City, KS 66160 USA 2 Department of Obstetrics and Gynecology University of Kansas Medical Center Kansas City, KS 66160 USA 3 Center for Perinatal Research, Children's Mercy Research Institute, Children's Mercy Kansas City, MO 64108 USA * Present address: Department of Obstetrics and Gynecology, University of Missouri-Kansas City School of Medicine, Kansas City, MO 64108, USA. ‡ Present address: Department of Obstetrics and Gynecology, University Hospital, Case Western Reserve University, Beachwood, OH 44122, USA. § Present address: Department of Stem Cells and Human Disease Models, Research Center for Animal Life Science, Shiga University of Medical Science, Seta, Tsukinowa-cho, Otsu, Shiga 520-2192, Japan. ¶ These authors contributed equally to this work ** amoreno2@kumc.edu msoares@kumc.edu Handling Editor: Liz Robertson Competing interests The authors declare no competing or financial interests. 15 1 2023 19 1 2023 150 2 433696 dev201095 1 7 2022 21 12 2022 19 01 2024 19 01 2024 19 04 2023 13 10 2025 © 2023. Published by The Company of Biologists Ltd 2023 http://www.biologists.com/user-licence-1-1/ ABSTRACT Hemochorial placentation involves the differentiation of invasive trophoblast cells, specialized cells that possess the capacity to exit the placenta and invade into the uterus where they restructure the vasculature. Invasive trophoblast cells arise from a well-defined compartment within the placenta, referred to as the junctional zone in rat and the extravillous trophoblast cell column in human. In this study, we investigated roles for AKT1, a serine/threonine kinase, in placental development using a genome-edited/loss-of-function rat model. Disruption of AKT1 resulted in placental, fetal and postnatal growth restriction. Forkhead box O4 ( Foxo4 Foxo4 Summary: AKT1 FOXO4 Trophoblast Placenta Pregnancy Rat Genome editing Kansas IDeA Network of Biomedical Research Excellence P20 GM103418 Lalor Foundation http://dx.doi.org/10.13039/100012756 American Heart Association http://dx.doi.org/10.13039/100000968 National Institutes of Health http://dx.doi.org/10.13039/100000002 HD104495 HD105734 HD099638 HD079363 HD020676 Sosland Foundation http://dx.doi.org/10.13039/100001864 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

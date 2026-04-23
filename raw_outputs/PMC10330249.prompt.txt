@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Immunol J Immunol 319 nihpa Journal of immunology (Baltimore, Md. : 1950) 0022-1767 1550-6606 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC10330249 PMC10330249.319 10330249 10330249 NIHMS1898376 37195197 10.4049/jimmunol.2200061 NIHMS1898376 NIHPA1898376 319 Article Proteogenomic and V(D)J Analysis of Human Decidual T cells Highlights Unique Transcriptional Programming and Clonal Distribution Chasman Deborah A. * † ‖ Welch Schwartz Rene * † ‡ ‖ Vazquez Jessica * ‖ Chavarria Melina * Jenkins Eryne T. * Lopez Gladys E. * Tyler Chanel T. * Stanic Aleksandar K. * # Ong Irene M. * † ‡ ¶ # * † ‡ ¶ ‖ DAC, RWS, and JV should be considered joint first authors. IMO and AKS should be considered equal senior/corresponding authors. Author Contributions J.V, M.C., and A.K.S. designed study. M.C., G.E.L., and C.T.T., acquired tissue samples. J.V. and M.C. performed experiments. D.A.C., R.W.S., E.T.J., and I.M.O. analyzed CITE-seq, scRNA-seq and scV(D)J-seq data. J.V., D.A.C., R.W.S., I.M.O., and A.K.S. wrote manuscript. I.M.O. and A.K.S. supervised project. # irene.ong@wisc.edu stanickostic@wisc.edu Conflict of Interest All of the co-authors declare that they do not have any relationships that could be construed as resulting in an actual, potential, or perceived conflict of interest with regard to the manuscript being submitted for review. 01 7 2023 211 1 440315 154 162 09 05 2023 01 07 2024 01 07 2024 11 07 2023 01 07 2024 Immunological tolerance towards the semi-allogeneic fetus is one of many maternal adaptations required for a successful pregnancy. T cells are major players of the adaptive immune system and balance tolerance and protection at the maternal-fetal interface, however, their repertoire and subset programming is still poorly understood. Using emerging scRNA-seq technologies, we simultaneously obtained transcript, limited protein, and receptor repertoire at the single-cell level, from decidual and matched maternal peripheral human T cells. The decidua maintains a tissue- specific distribution of T cell subsets compared to the periphery. We find that decidual T cells maintain a unique transcriptome programming, characterized by restraint of inflammatory pathways by overexpression of negative regulators (DUSP, TNFAIP3, ZFP36) and expression of PD-1, CTLA-4, TIGIT and LAG3 in some CD8 clusters. Finally, analyzing T cell receptor clonotypes demonstrated decreased diversity in specific decidual T cell populations. Overall, our data demonstrate the power of multi-omic analysis in revealing regulation of fetal-maternal immune co-existence. Decidua CITE-seq scRNA-seq T cells maternal-fetal interface T cell receptor pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

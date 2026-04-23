@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Clin Endocrinol Metab J Clin Endocrinol Metab 561 jcem jcem The Journal of Clinical Endocrinology and Metabolism 0021-972X 1945-7197 The Endocrine Society PMC7571453 PMC7571453.1 7571453 7571453 32772088 10.1210/clinem/dgaa503 dgaa503 1 Clinical Research Articles AcademicSubjects/MED00250 Sexually Dimorphic Crosstalk at the Maternal-Fetal Interface Sun Tianyanxin 1 http://orcid.org/0000-0003-3825-8544 Gonzalez Tania L 1 Deng Nan 2 DiPentino Rosemarie 1 Clark Ekaterina L 3 Lee Bora 1 Tang Jie 4 Wang Yizhou 4 Stripp Barry R 4 5 Yao Changfu 5 Tseng Hsian-Rong 6 Karumanchi S Ananth 4 5 Koeppel Alexander F 7 Turner Stephen D 7 Farber Charles R 7 Rich Stephen S 7 Wang Erica T 1 3 Williams John III 1 3 8 http://orcid.org/0000-0003-1096-6506 Pisarska Margareta D 1 3 4 1 Division of Reproductive Endocrinology and Infertility; Department of Obstetrics and Gynecology, Cedars-Sinai Medical Center 2 Biostatistics and Bioinformatics Research Center, Cedars-Sinai Medical Center 3 University of California Los Angeles 4 Department of Biomedical Sciences, Cedars-Sinai Medical Center 5 Department of Medicine, Cedars-Sinai Medical Center 6 California NanoSystems Institute, Department of Molecular and Medical Pharmacology, University of California 7 Center for Public Health Genomics, University of Virginia 8 Division of Maternal Fetal Medicine; Department of Obstetrics and Gynecology, Cedars-Sinai Medical Center Correspondence and Reprint Requests: Margareta.Pisarska@cshs.org Equally contributing authors 12 2020 09 8 2020 105 12 365967 e4831 e4847 20 11 2019 04 8 2020 19 10 2020 09 08 2021 09 08 2021 05 10 2025 © The Author(s) 2020. Published by Oxford University Press on behalf of the Endocrine Society. All rights reserved. For permissions, please e-mail: journals.permissions@oup.com 2020 https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model Let’s Talk About Sex: Placentas’ Central Role in Sexually Dimorphic Responses to the Maternal Milieu 105 12 23 9 2020 e4973 e4974 The Journal of Clinical Endocrinology and Metabolism 10.1210/clinem/dgaa683 PMC7568658 32966581 Abstract Context Crosstalk through receptor ligand interactions at the maternal-fetal interface is impacted by fetal sex. This affects placentation in the first trimester and differences in outcomes. Sexually dimorphic signaling at early stages of placentation are not defined. Objective Investigate the impact of fetal sex on maternal-fetal crosstalk. Design Receptors/ligands at the maternal-fetal surface were identified from sexually dimorphic genes between fetal sexes in the first trimester placenta and defined in each cell type using single-cell RNA-Sequencing (scRNA-Seq). Setting Academic institution. Samples Late first trimester (~10-13 weeks) placenta (fetal) and decidua (maternal) from uncomplicated ongoing pregnancies. Main outcome measures Transcriptomic profiling at tissue and single-cell level; immunohistochemistry of select proteins. Results We identified 91 sexually dimorphic receptor-ligand pairs across the maternal-fetal interface. We examined fetal sex differences in 5 major cell types (trophoblasts, stromal cells, Hofbauer cells, antigen-presenting cells, and endothelial cells). Ligands from the CC family chemokine ligand (CCL) family were most highly representative in females, with their receptors present on the maternal surface. Sexually dimorphic trophoblast transcripts, Mucin-15 ( MUC15) (NOTUM) TGFB1 Conclusions Maternal-fetal crosstalk exhibits sexual dimorphism during placentation early in gestation. first trimester placenta sex differences human pregnancy single-cell RNA sequencing placenta cell types receptor-ligand National Institutes of Health 10.13039/100000002 U01 EB026421 Eunice Kennedy Shriver National Institute of Child Health and Human Development 10.13039/100009633 R01HD074368 R01HD091773 Ruth L. Kirschstein National Research Service Award T32DK007770 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes nned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

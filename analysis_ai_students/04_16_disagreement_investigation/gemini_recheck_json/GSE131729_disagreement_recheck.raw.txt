@@ -1,0 +1,103 @@
+[
+  {
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper provides fetal weights at embryonic day (E) 18.5, which is described as the day before delivery in this mouse model.",
+      "evidence": [
+        {
+          "quote": "Fetuses and placentas were dissected and weighed on E13.5, 16.5, and 18.5 (day before delivery).",
+          "source": "Main text, Materials and methods"
+        },
+        {
+          "quote": "Fig 3... (A) Fetal weights separated by sex and embryonic day (E).",
+          "source": "Main text, Figure 3 legend"
+        }
+      ]
+    },
+    "Gestational Age at delivery provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper defines embryonic days and notes that E18.5 is the day before delivery.",
+      "evidence": [
+        {
+          "quote": "The presence of a vaginal plug was defined as embryonic day (E) 0.5.",
+          "source": "Main text, Materials and methods"
+        },
+        {
+          "quote": "Fetuses and placentas were dissected and weighed on E13.5, 16.5, and 18.5 (day before delivery).",
+          "source": "Main text, Materials and methods"
+        }
+      ]
+    },
+    "Parity provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The study explicitly uses nulliparous female mice, indicating a parity of zero.",
+      "evidence": [
+        {
+          "quote": "Nulliparous females were randomly divided into two groups and fed a control (Con) (20%) (Envigo cat. No. TD.91352) or low protein (LP) (6%) (Envigo cat. No. TD.90016) diet for two weeks before mating.",
+          "source": "Main text, Materials and methods"
+        }
+      ]
+    },
+    "Number of offspring per pregnancy provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "While 'litter size' is mentioned as a covariate in statistical analysis, the specific number of offspring per pregnancy (or mean litter size) is not reported.",
+      "evidence": []
+    },
+    "Genetic ancestry or genetic strain provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper specifies the use of CD1 and C57BL/6 mouse strains.",
+      "evidence": [
+        {
+          "quote": "For studies of normal development, CD1 mice (Charles River) were mated...",
+          "source": "Main text, Materials and methods"
+        },
+        {
+          "quote": "C57BL/6 mice were used to assess the impact of a low protein diet during pregnancy.",
+          "source": "Main text, Materials and methods"
+        }
+      ]
+    },
+    "Maternal Pre-pregnancy Weight provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "Maternal weight is tracked starting two weeks before mating as shown in the supplementary data.",
+      "evidence": [
+        {
+          "quote": "Maternal weight trajectories in control and protein restricted pregnancies (n = 10).",
+          "source": "S4 Fig legend"
+        },
+        {
+          "quote": "Maternal weight was recorded before and after dissection of the uterus.",
+          "source": "Main text, Materials and methods"
+        }
+      ]
+    },
+    "Maternal age at sample collection provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The age of the mice at mating (10 weeks) can be determined from the provided timeline, and sample collection occurred at specific embryonic days thereafter.",
+      "evidence": [
+        {
+          "quote": "Four-week-old female mice (Charles River) were maintained on a 12-hour light: 12-hour dark cycle for four weeks. Nulliparous females were randomly divided into two groups and fed... for two weeks before mating.",
+          "source": "Main text, Materials and methods"
+        }
+      ]
+    },
+    "Fetal complications listed (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper explicitly identifies intrauterine growth restriction (IUGR) as a complication resulting from the low protein diet.",
+      "evidence": [
+        {
+          "quote": "Male fetuses showed intrauterine growth restriction (IUGR) by embryonic day (E) 18.5, just before term, whereas female fetuses showed IUGR as early as E16.5.",
+          "source": "Main text, Abstract"
+        }
+      ]
+    }
+  }
+]

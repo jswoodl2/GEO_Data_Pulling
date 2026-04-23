@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC4653227 PMC4653227.1 4653227 4653227 26504231 10.1073/pnas.1507397112 201507397 1 PNAS Plus Biological Sciences Developmental Biology PNAS Plus OVO-like 1 regulates progenitor cell fate in human trophoblast development OVO-like 1 and human trophoblast differentiation Renaud Stephen J. a b 1 2 Chakraborty Damayanti a b Mason Clifford W. a c Rumi M. A. Karim a b Vivian Jay L. a b Soares Michael J. a b c 2 a University of Kansas Medical Center KS b University of Kansas Medical Center KS c University of Kansas Medical Center KS 2 srenaud4@uwo.ca msoares@kumc.edu Edited by R. Michael Roberts, University of Missouri-Columbia, Columbia, MO, and approved October 1, 2015 (received for review April 20, 2015) Author contributions: S.J.R. and M.J.S. designed research; S.J.R., D.C., and C.W.M. performed research; C.W.M., M.A.K.R., J.L.V., and M.J.S. contributed new reagents/analytic tools; S.J.R. and M.J.S. analyzed data; and S.J.R. and M.J.S. wrote the paper. 1 The authors declare no conflict of interest. 10 11 2015 26 10 2015 112 45 261055 E6175 E6184 10 05 2016 10 05 2016 14 04 2016 15 07 2023 PNAS Plus Significance Statements 112 45 10 11 2015 13759 13761 Proceedings of the National Academy of Sciences of the United States of America PMC4653218 Significance Epithelial barrier integrity is dependent on progenitor cells that either divide to replenish themselves or differentiate into a functional epithelium. In the placenta, cytotrophoblast cells comprise this progenitor population, but the differentiation program they undertake is unlike any other in human tissues: acquisition of hormonogenesis and cell fusion to form a syncytialized (syncytio)trophoblast. Syncytiotrophoblast forms the primary epithelial barrier separating maternal and fetal tissue and performs functions vital for pregnancy. In the present study, we found that OVO-like 1 (OVOL1), a transcription factor homolog of Drosophila ovo, regulates the transition between progenitor and differentiated cytotrophoblast. It does so by repressing genes that maintain cytotrophoblast progenitor traits. This study provides insight into the role of OVOL1 in human trophoblast development. Epithelial barrier integrity is dependent on progenitor cells that either divide to replenish themselves or differentiate into a specialized epithelium. This paradigm exists in human placenta, where cytotrophoblast cells either propagate or undergo a unique differentiation program: fusion into an overlying syncytiotrophoblast. Syncytiotrophoblast is the primary barrier regulating the exchange of nutrients and gases between maternal and fetal blood and is the principal site for synthesizing hormones vital for human pregnancy. How trophoblast cells regulate their differentiation into a syncytium is not well understood. In this study, we show that the transcription factor OVO-like 1 (OVOL1), a homolog of Drosophila MYC ID1 TP63 ASCL2 epithelial barrier placenta trophoblast OVO-like 1 differentiation HHS | National Institutes of Health HD20676 HHS | National Institutes of Health (NIH) 100000002 HD079363 HHS | National Institutes of Health (NIH) 100000002 HD079850 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

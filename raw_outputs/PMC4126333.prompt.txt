@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Blood Blood 446 blood Blood Blood 0006-4971 1528-0020 The American Society of Hematology PMC4126333 PMC4126333.1 4126333 4126333 24916507 10.1182/blood-2013-11-539718 2013/539718 1 36 Red Cells, Iron, and Erythropoiesis Heme-bound iron activates placenta growth factor in erythroid cells via erythroid Krüppel-like factor Wang Xunde 1 Mendelsohn Laurel 1 Rogers Heather 2 Leitman Susan 3 Raghavachari Nalini 4 Yang Yanqin 1 Yau Yu Ying 3 Tallack Michael 5 Perkins Andrew 5 Taylor James G. VI 1 Noguchi Constance Tom 2 Kato Gregory J. 6 http://orcid.org/0000-0003-4465-3217 1 2 3 4 5 6 7 8 2014 10 6 2014 124 6 241383 946 954 20 11 2013 08 5 2014 07 08 2015 07 08 2015 20 02 2015 01 07 2023 2014 Ironing out placenta growth factor 124 6 7 8 2014 834 835 Blood Red Cells, Iron, & Erythropoiesis PMC4126322 25104863 Key Points Heme-bound iron activates placenta growth factor expression in erythroid cells via EKLF, a crucial erythroid-specific transcription factor. Markers of iron burden predict mortality in adults with sickle cell disease. In adults with sickle cell disease (SCD), markers of iron burden are associated with excessive production of the angiogenic protein placenta growth factor (PlGF) and high estimated pulmonary artery pressure. Enforced PlGF expression in mice stimulates production of the potent vasoconstrictor endothelin-1, producing pulmonary hypertension. We now demonstrate heme-bound iron (hemin) induces PlGF mRNA >200-fold in a dose- and time-dependent fashion. In murine and human erythroid cells, expression of erythroid Krüppel-like factor (EKLF) precedes PlGF, and its enforced expression in human erythroid progenitor cells induces PlGF mRNA. Hemin-induced expression of PlGF is abolished in EKLF-deficient murine erythroid cells but rescued by conditional expression of EKLF. Chromatin immunoprecipitation reveals that EKLF binds to the PlGF promoter region. SCD patients show higher level expression of both EKLF and PlGF mRNA in circulating blood cells, and markers of iron overload are associated with high PlGF and early mortality. Finally, PlGF association with iron burden generalizes to other human diseases of iron overload. Our results demonstrate a specific mechanistic pathway induced by excess iron that is linked in humans with SCD and in mice to markers of vasculopathy and pulmonary hypertension. These trials were registered at www.clinicaltrials.gov NCT00007150 NCT00023296 NCT00081523 NCT00352430 National Institutes of Health HL006162-01 HL006013-03 CL002107-12 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

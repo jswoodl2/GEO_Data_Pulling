@@ -1,0 +1,49 @@
+[
+  {
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The paper reports fetal weights at specific embryonic days (E13.5, E16.5, and E18.5) rather than birthweights, as the animals were sacrificed prior to delivery.",
+      "evidence": []
+    },
+    "Parity provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper explicitly states that the female mice used in the dietary study were nulliparous.",
+      "evidence": [
+        {
+          "quote": "Nulliparous females were randomly divided into two groups and fed a control (Con) (20%) (Envigo cat. No. TD.91352) or low protein (LP) (6%) (Envigo cat. No. TD.90016) diet for two weeks before mating.",
+          "source": "Main text, Materials and methods, Animals"
+        }
+      ]
+    },
+    "Number of offspring per pregnancy provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "While 'litter size' is mentioned as a covariate for statistical analysis and ANCOVA models, the specific numerical values for litter size are not reported in the text or tables.",
+      "evidence": []
+    },
+    "Genetic ancestry or genetic strain provided (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The study specifies the use of CD1 and C57BL/6 mouse strains.",
+      "evidence": [
+        {
+          "quote": "For studies of normal development, CD1 mice (Charles River) were mated... C57BL/6 mice were used to assess the impact of a low protein diet during pregnancy.",
+          "source": "Main text, Materials and methods, Animals"
+        }
+      ]
+    },
+    "Fetal complications listed (yes/no)": {
+      "answer": "Yes",
+      "confidence": "high",
+      "reason": "The paper explicitly reports that both male and female fetuses exhibited intrauterine growth restriction (IUGR) in response to the low protein diet.",
+      "evidence": [
+        {
+          "quote": "Male fetuses showed intrauterine growth restriction (IUGR) by embryonic day (E) 18.5, just before term, whereas female fetuses showed IUGR as early as E16.5.",
+          "source": "Main text, Abstract"
+        }
+      ]
+    }
+  }
+]

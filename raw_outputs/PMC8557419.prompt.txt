@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Mol Biol Evol Mol Biol Evol 762 molbiolevol molbev Molecular Biology and Evolution 0737-4038 1537-1719 Oxford University Press PMC8557419 PMC8557419.1 8557419 8557419 34320657 10.1093/molbev/msab223 msab223 1 Discoveries AcademicSubjects/SCI01130 AcademicSubjects/SCI01180 Endogenous Retroviruses Drive Lineage-Specific Regulatory Evolution across Primate and Rodent Placentae https://orcid.org/0000-0002-4661-3027 Sun Ming-an 1 2 3 Wolf Gernot 1 Wang Yejun 4 Senft Anna D 1 Ralls Sherry 1 Jin Jinpu 1 Dunn-Fletcher Caitlin E 5 6 Muglia Louis J 5 7 Macfarlan Todd S 1 1 The Eunice Kennedy Shriver National Institutes of Child Health and Human Development, NIH USA 2 Institute of Comparative Medicine, College of Veterinary Medicine, Yangzhou University China 3 Jiangsu Co-innovation Center for Prevention and Control of Important Animal Infectious Diseases and Zoonosis, Joint International Research Laboratory of Agriculture and Agri-Product Safety, The Ministry of Education of China, Yangzhou University China 4 School of Basic Medicine, Shenzhen University Health Science Center China 5 Division of Human Genetics, Center for Prevention of Preterm Birth, Perinatal Institute, Cincinnati Children’s Hospital Medical Center, Department of Pediatrics, University of Cincinnati College of Medicine USA 6 Physician-Scientist Training Program in Pediatrics, Department of Pediatrics, University of Texas Southwestern USA 7 Burroughs Wellcome Fund, Research Triangle Park USA Liu Li Associate Editor Present address: CeMM Research Center for Molecular Medicine of the Austrian Academy of Sciences, Vienna, Austria Corresponding authors: todd.macfarlan@nih.gov mingansun@yzu.edu.cn 11 2021 28 7 2021 38 11 392796 4992 5004 28 07 2022 28 07 2022 02 11 2021 28 07 2022 Published by Oxford University Press on behalf of the Society for Molecular Biology and Evolution 2021. 2021 This work is written by a US Government employee and is in the public domain in the US. Abstract In mammals, the placenta mediates maternal–fetal nutrient and waste exchange and acts in an immunomodulatory way to facilitate maternal–fetal tolerance. The placenta is highly diverse across mammalian species, yet the molecular mechanisms that distinguish the placenta of human from other mammals are not fully understood. Using an interspecies transcriptomic comparison of human, macaque, and mouse late-gestation placentae, we identified hundreds of genes with lineage-specific expression—including dozens that are placentally enriched and potentially related to pregnancy. We further annotated the enhancers for different human tissues using epigenomic data and demonstrate that the placenta and chorion are unique in that their enhancers display the least conservation. We identified numerous lineage-specific human placental enhancers and found they highly overlap with specific families of endogenous retroviruses (ERVs), including MER21A, MER41A/B, and MER39B that were previously linked to immune response and placental function. Among these ERV families, we further demonstrate that MER41A/B insertions create dozens of lineage-specific serum response factor-binding loci in human, including one adjacent to FBN2 placenta evolution endogenous retrovirus regulatory element transcription MER41 serum response factor NICHD 10.13039/100000071 NIH 10.13039/100000002 Priority Academic Program Development of Jiangsu Higher Education Institutions 10.13039/501100012246 NIH 10.13039/100000002 NICHD 10.13039/100000071 HD 091527 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

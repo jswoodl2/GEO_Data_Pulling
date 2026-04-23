@@ -1,0 +1,38 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Scott M. Gordon, Monica Mainigi",
+  "Supervisor/Contact/Corresponding author email": "gordons1@chop.edu, monica.mainigi@pennmedicine.upenn.edu",
+  "Main topic of the publication": "This study comprehensively compares the human uterine immune landscape of the endometrium during the window of implantation and the decidua during the first trimester of pregnancy using single-cell RNA-sequencing, revealing global and cell-type-specific gene signatures for each timepoint and demonstrating the role of uterine macrophages in promoting extravillous trophoblast invasion.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 6.2,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "No",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "endometrium",
+    "decidua",
+    "implantation"
+  ],
+  "Hospital/Center where samples were collected": "University of Pennsylvania, Perelman School of Medicine; Children’s Hospital of Philadelphia",
+  "Country where samples were collected": "United States",
+  "PMCID": "PMC10985329"
+}

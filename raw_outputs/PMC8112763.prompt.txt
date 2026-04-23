@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Nutr J Nutr 674 jnutr jn The Journal of Nutrition 0022-3166 1541-6100 American Society for Nutrition PMC8112763 PMC8112763.1 8112763 8112763 33693820 10.1093/jn/nxab005 nxab005 1 Genomics, Proteomics, and Metabolomics AcademicSubjects/MED00060 AcademicSubjects/SCI00960 Maternal Iron Deficiency Modulates Placental Transcriptome and Proteome in Mid-Gestation of Mouse Pregnancy Cao Chang Department of Pathology, Boston Children's Hospital USA Prado Miguel A Department of Cell Biology, Harvard Medical School USA Sun Liang Computational Health Informatics Program, Boston Children's Hospital USA The Manton Center for Orphan Disease Research, Boston Children's Hospital USA Rockowitz Shira Computational Health Informatics Program, Boston Children's Hospital USA The Manton Center for Orphan Disease Research, Boston Children's Hospital USA Sliz Piotr Computational Health Informatics Program, Boston Children's Hospital USA The Manton Center for Orphan Disease Research, Boston Children's Hospital USA Division of Molecular Medicine, Boston Children's Hospital USA Paulo Joao A Department of Cell Biology, Harvard Medical School USA Finley Daniel Department of Cell Biology, Harvard Medical School USA Fleming Mark D Department of Pathology, Boston Children's Hospital USA Address correspondence to CC (e-mail: chang.cao@childrens.harvard.edu 5 2021 09 3 2021 151 5 381622 1073 1083 29 9 2020 26 10 2020 06 1 2021 09 03 2022 09 03 2022 18 05 2021 01 04 2024 © The Author(s) 2021. Published by Oxford University Press on behalf of the American Society for Nutrition. 2021 https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model ABSTRACT Background Maternal iron deficiency (ID) is associated with poor pregnancy and fetal outcomes. The effect is thought to be mediated by the placenta but there is no comprehensive assessment of placental responses to maternal ID. Additionally, whether the influence of maternal ID on the placenta differs by fetal sex is unknown. Objectives To identify gene and protein signatures of ID mouse placentas at mid-gestation. A secondary objective was to profile the expression of iron genes in mouse placentas across gestation. Methods We used a real-time PCR-based array to determine the mRNA expression of all known iron genes in mouse placentas at embryonic day (E) 12.5, E14.5, E16.5, and E19.5 ( n n Results In female placentas, 6 genes, including transferrin receptor ( Tfrc Conclusions Our data demonstrate that the impact of maternal ID on placental gene expression in mice is limited in scope and magnitude at mid-gestation. We provide strong evidence for IRE-based transcriptional and translational coordination of iron gene expression in the mouse placenta. Finally, we discover sexually dimorphic effects of maternal ID on placental gene expression, with more genes and pathways altered in male compared with female mouse placentas. iron deficiency placenta gene expression proteomics iron metabolism National Heart, Lung, and Blood Institute 10.13039/100000050 5T32HL110852 National Institute of General Medical Sciences 10.13039/100000057 R01 GM132129 Harvard Catalyst 10.13039/100007299 Harvard Clinical and Translational Science Center 10.13039/100007299 National Center for Advancing Translational Sciences 10.13039/100006108 National Institutes of Health 10.13039/100000002 UL 1TR002541 Harvard University 10.13039/100007229 U54HD090255 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

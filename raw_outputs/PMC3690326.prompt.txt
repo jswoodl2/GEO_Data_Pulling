@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Immunol J. Immunol 1937 jimmunol JI The Journal of Immunology Author Choice 0022-1767 1550-6606 pmc-is-collection-domain yes pmc-collection-title J Immunol PMC3690326 PMC3690326.1 3690326 3690326 23733877 10.4049/jimmunol.1203165 ji_1203165 1 Clinical and Human Immunology Fetal–Maternal Alignment of Regulatory T Cells Correlates with IL-10 and Bcl-2 Upregulation in Pregnancy Santner-Nanan Brigitte * 1 Straubinger Kathrin † 1 Hsu Peter * ‡ 1 Parnell Grant * Tang Ben * Xu Bei § Makris Angela § Hennessy Annemarie § ¶ Peek Michael J. * Busch Dirk H. † ‖ Prazeres da Costa Clarissa † Nanan Ralph * * † ‡ § ¶ ‖ 1 B.S.-N., K.S., and P.H. contributed equally to this work. Address correspondence and reprint requests to Prof. Ralph Nanan, Sydney Medical School Nepean, University of Sydney, Kingswood 2747, New South Wales, Australia. E-mail address: Ralph.Nanan@sydney.edu.au 1 7 2013 3 6 2013 191 1 224301 145 153 16 11 2012 03 5 2013 03 06 2013 24 06 2013 30 06 2024 Copyright © 2013 by The American Association of Immunologists, Inc. 2013 Copyright © 2013 by The American Association of Immunologists, Inc. This article is distributed under The American Association of Immunologists, Inc., Reuse Terms and Conditions for Author Choice articles Transplacental immune regulation refers to the concept that during pregnancy, significant cross-talk occurs between the maternal and fetal immune system with potential long-term effects for both the mother and child. In this study, we made the surprising observation that there is a strong correlation of peripheral blood regulatory T (Treg) cells between the mother and the fetus. In contrast, there is no significant Treg cell correlation between paternal fetal dyads (pairs), suggesting that the specific context of pregnancy, rather than the genetic parental similarity to the fetus, is responsible for this correlation. Gene microarray analysis of Treg cells identified a typical IL-10–dependent signature in maternal and fetal Treg cells. In addition, a direct correlation of serum IL-10 protein levels between maternal fetal dyads was observed. Furthermore, we show that maternal serum IL-10 levels correlate with serum estradiol and estriol, implicating hormonal involvement in this alignment. Interestingly, we show that Treg cells possess higher expression of IL-10 receptor α and that Treg cell IL-10 receptor α expression directly correlates with their Bcl-2 expression. Indeed, in vitro data in both humans and mice demonstrate that IL-10 upregulates Bcl-2 specifically in Treg cells but not non-Treg cells. Our results provide evidence for transplacental regulation of cellular immunity and suggest that IL-10 may influence Treg cell homeostasis through its effect on Treg cell Bcl-2 expression. These novel findings have important implications on immune tolerance in pregnancy and beyond in areas of autoimmunity, allergy, and transplantation. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

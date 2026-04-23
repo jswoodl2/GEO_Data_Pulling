@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC3060255 PMC3060255.1 3060255 3060255 21368160 10.1073/pnas.1013224108 201013224 1 Biological Sciences Genetics Transcriptionally repressed genes become aberrantly methylated and distinguish tumors of different lineages in breast cancer Sproul Duncan a b Nestor Colm a c Culley Jayne a b Dickson Jacqueline H. a b Dixon J. Michael a d Harrison David J. a Meehan Richard R. a c Sims Andrew H. a b Ramsahoye Bernard H. a b 1 a b c d Western General Hospital United Kingdom 1 Bernard.Ramsahoye@ed.ac.uk Edited * Author contributions: D.S., D.J.H., R.R.M., A.H.S., and B.H.R. designed research; D.S., C.N., J.C., and J.H.D. performed research; J.M.D. contributed new reagents/analytic tools; D.S. analyzed data; and D.S. and B.H.R. wrote the paper. The authors declare no conflict of interest. 15 3 2011 28 2 2011 108 11 195171 4364 4369 28 02 2011 25 03 2011 28 04 2011 Freely available online through the PNAS open access option. Aberrant promoter hypermethylation is frequently observed in cancer. The potential for this mechanism to contribute to tumor development depends on whether the genes affected are repressed because of their methylation. Many aberrantly methylated genes play important roles in development and are bivalently marked in ES cells, suggesting that their aberrant methylation may reflect developmental processes. We investigated this possibility by analyzing promoter methylation in 19 breast cancer cell lines and 47 primary breast tumors. In cell lines, we defined 120 genes that were significantly repressed in association with methylation (SRAM). These genes allowed the unsupervised segregation of cell lines into epithelial (EPCAM+ve) and mesenchymal (EPCAM−ve) lineages. However, the methylated genes were already repressed in normal cells of the same lineage, and >90% could not be derepressed by treatment with 5-aza-2′-deoxycytidine. The tumor suppressor genes APC and CDH1 were among those methylated in a lineage-specific fashion. As predicted by the epithelial nature of most breast tumors, SRAM genes that were methylated in epithelial cell lines were frequently aberrantly methylated in primary tumors, as were genes specifically repressed in normal epithelial cells. An SRAM gene expression signature also correctly identified the rare claudin-low and metaplastic tumors as having mesenchymal characteristics. Our findings implicate aberrant DNA methylation as a marker of cell lineage rather than tumor progression and suggest that, in most cases, it does not cause the repression with which it is associated. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

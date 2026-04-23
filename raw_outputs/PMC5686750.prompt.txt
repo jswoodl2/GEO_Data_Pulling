@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+J Virol J. Virol 89 jvirol JVI Journal of Virology 0022-538X 1098-5514 American Society for Microbiology (ASM) PMC5686750 PMC5686750.1 5686750 5686750 28956761 10.1128/JVI.01296-17 01296-17 1 Pathogenesis and Immunity APOBEC3A Is Upregulated by Human Cytomegalovirus (HCMV) in the Maternal-Fetal Interface, Acting as an Innate Anti-HCMV Effector APOBEC3A Restricts HCMV Replication Weisblum et al. Weisblum Yiska a b c Oiknine-Djian Esther a b c Zakay-Rones Zichria b Vorontsov Olesya a b c Haimov-Kochman Ronit d Nevo Yuval e Stockheim David f Yagel Simcha d Panet Amos b Wolf Dana G. a c a b c d e f Jung Jae U. Editor University of Southern California Address correspondence to Dana G. Wolf, dana.wolf@ekmd.huji.ac.il Citation https://doi.org/10.1128/JVI.01296-17 27 9 2017 14 11 2017 1 12 2017 91 23 301603 e01296-17 27 7 2017 18 9 2017 14 05 2018 14 05 2018 18 11 2017 27 06 2025 Copyright © 2017 American Society for Microbiology. 2017 American Society for Microbiology All Rights Reserved ABSTRACT Human cytomegalovirus (HCMV) is the leading cause of congenital infection and is associated with a wide range of neurodevelopmental disabilities and intrauterine growth restriction. Yet our current understanding of the mechanisms modulating transplacental HCMV transmission is poor. The placenta, given its critical function in protecting the fetus, has evolved effective yet largely uncharacterized innate immune barriers against invading pathogens. Here we show that the intrinsic cellular restriction factor apo e c ex vivo ex vivo in vivo IMPORTANCE KEYWORDS APOBEC HCMV antiviral cellular restrictions congenital infection decidua intrinsic immunity placental innate immunity viral placental transmission European Union Seventh Framework Programme 316655 Dana G. Wolf Israeli Ministry of Health 310998 Dana G. Wolf Israel Science Foundation (ISF) https://doi.org/10.13039/501100003977 275/13 Dana G. Wolf pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes cover-date December 2017
+---

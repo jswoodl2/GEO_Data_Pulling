@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Biol Reprod Biol Reprod 675 biolreprod biolreprod Biology of Reproduction 0006-3363 1529-7268 Oxford University Press PMC11094392 PMC11094392.1 11094392 11094392 38271627 10.1093/biolre/ioae007 ioae007 1 Research Article AcademicSubjects/MED00773 AcademicSubjects/SCI01070 High-throughput mRNA-seq atlas of human placenta shows vast transcriptome remodeling from first to third trimester † Gonzalez Tania L Department of Obstetrics and Gynecology Cedars-Sinai Medical Center Los Angeles, CA USA Wertheimer Sahar Department of Obstetrics and Gynecology Cedars-Sinai Medical Center Los Angeles, CA USA Flowers Amy E Department of Obstetrics and Gynecology Cedars-Sinai Medical Center Los Angeles, CA USA Wang Yizhou Department of Computational Biomedicine, Cedars-Sinai Medical Center Los Angeles, CA USA Santiskulvong Chintda CS Cancer Applied Genomics Shared Resource, CS Cancer, Cedars-Sinai Medical Center Los Angeles, CA USA Clark Ekaterina L Department of Obstetrics and Gynecology Cedars-Sinai Medical Center Los Angeles, CA USA Jefferies Caroline A Division of Rheumatology, Department of Medicine Kao Autoimmune Institute, Cedars-Sinai Medical Center, Los Angeles, CA USA Department of Biomedical Sciences, Cedars-Sinai Medical Center Los Angeles, CA USA Lawrenson Kate Division of Gynecologic Oncology Cedars-Sinai Medical Center Los Angeles, CA USA Center for Bioinformatics and Functional Genomics, Samuel Oschin Comprehensive Cancer Institute, Cedars-Sinai Medical Center Los Angeles, CA USA Women’s Cancer Research Program, Samuel Oschin Comprehensive Cancer Institute, Cedars-Sinai Medical Center Los Angeles, CA USA Chan Jessica L Department of Obstetrics and Gynecology Cedars-Sinai Medical Center Los Angeles, CA USA David Geffen School of Medicine, University of California, Los Angeles Los Angeles, CA USA Joshi Nikhil V Department of Obstetrics and Gynecology Cedars-Sinai Medical Center Los Angeles, CA USA Zhu Yazhen David Geffen School of Medicine, University of California, Los Angeles Los Angeles, CA USA California NanoSystems Institute University of California, Los Angeles Los Angeles, CA USA Tseng Hsian-Rong California NanoSystems Institute University of California, Los Angeles Los Angeles, CA USA Karumanchi S Ananth Department of Medicine, Cedars-Sinai Medical Center Los Angeles, CA USA Williams III John David Geffen School of Medicine, University of California, Los Angeles Los Angeles, CA USA Department of Obstetrics and Gynecology Cedars-Sinai Medical Center Los Angeles, CA USA Pisarska Margareta D Department of Obstetrics and Gynecology Cedars-Sinai Medical Center Los Angeles, CA USA Department of Biomedical Sciences, Cedars-Sinai Medical Center Los Angeles, CA USA David Geffen School of Medicine, University of California, Los Angeles Los Angeles, CA USA Correspondence: +1-310-423-5763 margareta.pisarska@cshs.org 5 2024 25 1 2024 110 5 462380 936 949 30 6 2023 15 12 2023 2 1 2024 06 2 2024 25 01 2025 25 01 2025 16 05 2024 25 01 2025 © The Author(s) 2024. Published by Oxford University Press on behalf of Society for the Study of Reproduction. All rights reserved. For permissions, please e-mail: journals.permissions@oup.com. 2024 https://academic.oup.com/pages/standard-publication-reuse-rights This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/pages/standard-publication-reuse-rights High-throughput mRNA-seq atlas of human placenta shows vast transcriptome remodeling from first to third trimester 7 6 2023 2023.06.06.543972 bioRxiv 10.1101/2023.06.06.543972 PMC10274746 37333287 Abstract The placenta, composed of chorionic villi, changes dramatically across gestation. Understanding differences in ongoing pregnancies are essential to identify the role of chorionic villi at specific times in gestation and develop biomarkers and prognostic indicators of maternal–fetal health. The normative mRNA profile is established using next-generation sequencing of 124 first trimester and 43 third trimester human placentas from ongoing healthy pregnancies. Stably expressed genes (SEGs) not different between trimesters and with low variability are identified. Differential expression analysis of first versus third trimester adjusted for fetal sex is performed, followed by a subanalysis with 23 matched pregnancies to control for subject variability using the same genetic and environmental background. Placenta expresses 14,979 polyadenylated genes above sequencing noise (transcripts per million > 0.66), with 10.7% SEGs across gestation. Differentially expressed genes (DEGs) account for 86.7% of genes in the full cohort [false discovery rate (FDR) < 0.05]. Fold changes highly correlate between the full cohort and subanalysis (Pearson = 0.98). At stricter thresholds (FDR < 0.001, fold change > 1.5), there remains 50.1% DEGs (3353 upregulated in first and 4155 upregulated in third trimester). This is the largest mRNA atlas of healthy human s above sequencing noise (transcripts per million > 0.66), with 10.7% SEGs across gestation. Differentially expressed genes (DEGs) account for 86.7% of genes in the full cohort [false discovery rate (FDR) < 0.05]. Fold changes highly correlate between the full cohort and subanalysis (Pearson = 0.98). At stricter thresholds (FDR < 0.001, fold change > 1.5), there remains 50.1% DEGs (3353 upregulated in first and 4155 upregulated in third trimester). This is the largest mRNA atlas of healthy human placenta across gestation, controlling for genetic and environmental factors, demonstrating substantial changes from first to third trimester in chorionic villi. Specific differences and SEGs may be used to understand the specific role of the chorionic villi throughout gestation and develop first trimester biomarkers of placental health that transpire across gestation, which can be used for future development of biomarkers for maternal–fetal health. Comparison of first versus third trimester human placenta mRNA finds a subset of SEGs as well as significant changes in 86.7% of transcripts, highlighting the dynamic nature of placental function across gestation. Graphical Abstract Graphical Abstract mRNA placenta pregnancy chorionic villi gestational differences human transcriptome National Institutes of Health 10.13039/100000002 Eunice Kennedy Shriver National Institute of Child Health and Human Development 10.13039/100009633 R01HD091773 National Institute of Allergy and Infectious Disease R01AI154535 R01AI164504 National Institute of Biomedical Imaging and Bioengineering 10.13039/100000070 U01EB026421 National Heart Lung and Blood Institute R01HL167268 Training Program in Endocrinology, Diabetes, and Metabolism T32DK007770 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

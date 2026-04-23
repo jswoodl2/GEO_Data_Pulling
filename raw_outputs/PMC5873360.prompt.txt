@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Epigenetics Epigenetics 1363 epig KEPI kepi20 Epigenetics 1559-2294 1559-2308 Taylor & Francis PMC5873360 PMC5873360.1 5873360 5873360 28678681 10.1080/15592294.2017.1344803 1344803 1 Research Paper Profiling of oxBS-450K 5-hydroxymethylcytosine in human placenta and brain reveals enrichment at imprinted loci J. R. HERNANDEZ MORA ET AL. EPIGENETICS Hernandez Mora Jose Ramon a * Sanchez-Delgado Marta a * Petazzi Paolo a * http://orcid.org/0000-0003-4192-8983 Moran Sebastian b Esteller Manel b c d Iglesias-Platas Isabel e http://orcid.org/0000-0001-8991-0497 Monk David a a Imprinting and Cancer group, Cancer Epigenetics and Biology Program (PEBC), Institut d'Investigació Biomedica de Bellvitge (IDIBELL) Avinguda Granvia Spain b Cancer Epigenetics group, Cancer Epigenetics and Biology Program (PEBC), Institut d'Investigació Biomedica de Bellvitge (IDIBELL) Avinguda Granvia Spain c Department of Physiological Sciences II, School of Medicine, University of Barcelona Spain d Institucio Catalana de Recerca i Estudis Avançats (ICREA) Spain e Servicio de Neonatología, Sant Joan de Déu, Centro de Medicina Maternofetal y Neonatal Barcelona (BCN-Natal), Hospital Sant Joan de Déu y Hospital Clínic Universitat de Barcelona Spain David Monk dmonk@idibell.cat * These authors contributed equally to this work. Supplemental data for this article can be accessed at https://doi.org/10.1080/15592294.2017.1344803 2018 5 3 2018 13 2 309349 182 191 14 4 2017 8 6 2017 15 6 2017 05 03 2019 05 03 2019 04 04 2018 01 07 2025 © 2018 Informa UK Limited, trading as Taylor & Francis Group 2018 Informa UK Limited, trading as Taylor & Francis Group ABSTRACT DNA methylation (5-methylcytosine, 5 mC) is involved in many cellular processes and is an epigenetic mechanism primarily associated with transcriptional repression. The recent discovery that 5 mC can be oxidized to 5-hydromethylcytosine (5hmC) by TET proteins has revealed the “sixth base” of DNA and provides additional complexity to what was originally thought to be a stable repressive mark. However, our knowledge of the genome-wide distribution of 5hmC in different tissues is currently limited. Here, we sought to define loci enriched for 5hmC in the placenta genome by combining oxidative bisulphite (oxBS) treatment with high-density Illumina Infinium HumanMethylation450 methylation arrays and to compare our results with those obtained in brain. Despite identifying over 17,000 high-confidence CpG sites with consistent 5hmC enrichment, the distribution of this modification in placenta is relatively sparse when compared to cerebellum and frontal cortex. Supported by validation using allelic T4 β-glucosyltransferase assays we identify 5hmC at numerous imprinted loci, often overlapping regions associated with parent-of-origin allelic 5 mC in both placenta and brain samples. Furthermore, we observe tissue-specific monoallelic enrichment of 5hmC overlapping large clusters of imprinted snoRNAs-miRNAs processed from long noncoding RNAs (lncRNAs) within the DLK1-DIO3 SNRPN-UBE3A www.humanimprints.net KEYWORDS 5-hydroxymethylcytosine 5hmC 5-methylcytosine 5 mC DNA methylation imprinting placenta brain Ministerio de Educacion y Competitividad 10.13039/501100006667 BFU2014-53093 This work was supported by the Ministerio de Educacion y Competitividad [grant number BFU2014-53093]. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

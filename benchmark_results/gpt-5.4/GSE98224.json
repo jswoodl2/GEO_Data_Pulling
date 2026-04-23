@@ -1,0 +1,140 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Brian J. Cox",
+    "confidence": "high"
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "b.cox@utoronto.ca",
+    "confidence": "high"
+  },
+  "Main topic of the publication": {
+    "answer": "This study investigates DNA methylation changes in placental transcriptional subtypes of preeclampsia and integrates methylation with gene expression data. It identifies epigenetic alterations associated with distinct preeclampsia subtypes, including canonical early-onset and immunological forms of the disease.",
+    "confidence": "high"
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "Term",
+      "Premature"
+    ],
+    "confidence": "medium"
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The paper refers to a highly annotated cohort and includes abbreviations such as AGA and SGA, but the provided text does not explicitly report birthweight values."
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "low",
+    "reasoning": "Gestational age is clearly discussed and used as a covariate, but no single representative delivery week is explicitly stated in the provided text."
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "low",
+    "reasoning": "Samples are placentas collected at delivery, so sample collection coincides with delivery, but the text does not provide a specific mean or representative gestational week."
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The cohort is described as highly annotated, but parity is not explicitly reported in the provided text."
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "No explicit mention of gravidity appears in the provided text."
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "The text discusses placentas and fetal sex but does not explicitly state singleton versus multiple gestations."
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "low",
+    "reasoning": "Although the cohort is described as highly annotated, maternal age is not explicitly reported in the provided text."
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high"
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high"
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Preeclampsia"
+    ],
+    "confidence": "high"
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium"
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Chromosomal abnormalities",
+      "Small-for-gestational-age"
+    ],
+    "confidence": "medium"
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Placental gene expression subtypes/clusters",
+      "DNA methylation profiles",
+      "Fetal sex",
+      "Gestational age",
+      "Average-for-gestational-age",
+      "Small-for-gestational-age"
+    ],
+    "confidence": "medium"
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Research Centre for Women\u2019s and Infants\u2019 Health (RCWIH) BioBank",
+    "confidence": "high"
+  },
+  "Country where samples were collected": {
+    "answer": "Canada",
+    "confidence": "medium"
+  }
+}

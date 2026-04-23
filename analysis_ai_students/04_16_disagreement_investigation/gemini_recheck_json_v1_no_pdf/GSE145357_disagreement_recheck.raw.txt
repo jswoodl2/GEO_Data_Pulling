@@ -1,0 +1,32 @@
+{
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The paper explicitly identifies the genetic strains of the mice used, including the specific transgenic strain (B6.129(Cg)-Foxp3 tm3(DTR/GFP)Ayr) and the mating pairs (C57BL/6 and BALB/c).",
+    "evidence": [
+      {
+        "quote": "B6.129(Cg)-Foxp3 tm3(DTR/GFP)Ayr Foxp3 DTR EGFP Foxp3 DTR EGFP post coitum",
+        "source": "Main text, STAR Methods, Experimental Model and Subject Details"
+      },
+      {
+        "quote": "C57BL/6 female mice were mated with BALB/c males as described above.",
+        "source": "Main text, STAR Methods, Method Details"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The human cohort is explicitly categorized into labor (PTL/TIL) and non-labor (PTNL/TNL) groups, which correspond to vaginal birth and cesarean section, respectively.",
+    "evidence": [
+      {
+        "quote": "we collected decidual tissues from women with PTL and birth or term labor/birth (TIL), as well as gestational age-matched non-labor controls (preterm without labor [PTNL] or term without labor [TNL])",
+        "source": "Main text, Results"
+      },
+      {
+        "quote": "Comparison of decidual leukocytes following spontaneous vaginal delivery and elective cesarean section in uncomplicated human term pregnancy",
+        "source": "Main text, STAR Methods, Method Details"
+      }
+    ]
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Brian J. Cox",
+    "confidence": "high",
+    "reason": "Brian J. Cox is listed as a corresponding author with contact information (email and phone) in the author affiliations section.",
+    "evidence": [
+      {
+        "quote": "Cox Brian J. 416-978-3241 b.cox@utoronto.ca 1 6",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "b.cox@utoronto.ca",
+    "confidence": "high",
+    "reason": "The email for Brian J. Cox is explicitly provided in the author list.",
+    "evidence": [
+      {
+        "quote": "b.cox@utoronto.ca",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Epigenetic regulation of placental gene expression in transcriptional subtypes of preeclampsia",
+    "confidence": "high",
+    "reason": "The title and abstract explicitly state the focus on DNA methylation and gene expression in subtypes of preeclampsia.",
+    "evidence": [
+      {
+        "quote": "Epigenetic regulation of placental gene expression in transcriptional subtypes of preeclampsia",
+        "source": "Main text, Title"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "3rd",
+      "Term",
+      "Premature"
+    ],
+    "confidence": "high",
+    "reason": "The study included term healthy controls and premature preeclampsia cases, all delivered in the third trimester (averages of 29.8, 34.0, and 39.1 weeks).",
+    "evidence": [
+      {
+        "quote": "transcriptional cluster 1 patients (N = 19) were healthy and delivered at term (average 39.1 weeks), cluster 2 (N = 11) and cluster 3 (N = 5) patients were diagnosed with PE and delivered prematurely (average 29.8 and 34.0 weeks, respectively).",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Neither the main text nor the provided supplementary tables list birthweights for the cohort.",
+    "evidence": []
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The average gestational age at delivery is reported for each of the clinical clusters in the results section.",
+    "evidence": [
+      {
+        "quote": "delivered at term (average 39.1 weeks), cluster 2 (N = 11) and cluster 3 (N = 5) patients were diagnosed with PE and delivered prematurely (average 29.8 and 34.0 weeks, respectively).",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "29.8-39.1",
+    "confidence": "high",
+    "reason": "Averages for the studied groups range from 29.8 to 39.1 weeks.",
+    "evidence": [
+      {
+        "quote": "delivered at term (average 39.1 weeks), cluster 2 (N = 11) and cluster 3 (N = 5) patients were diagnosed with PE and delivered prematurely (average 29.8 and 34.0 weeks, respectively).",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Placental samples were collected at delivery, for which gestational ages are provided.",
+    "evidence": [
+      {
+        "quote": "delivered at term (average 39.1 weeks), cluster 2 (N = 11) and cluster 3 (N = 5) patients were diagnosed with PE and delivered prematurely (average 29.8 and 34.0 weeks, respectively).",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "29.8-39.1",
+    "confidence": "high",
+    "reason": "Samples were collected at delivery, with ages ranging from 29.8 to 39.1 weeks.",
+    "evidence": [
+      {
+        "quote": "delivered at term (average 39.1 weeks), cluster 2 (N = 11) and cluster 3 (N = 5) patients were diagnosed with PE and delivered prematurely (average 29.8 and 34.0 weeks, respectively).",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "While fetal sex was controlled for in the statistical analysis, individual sex or total counts per sex are not explicitly reported in the provided text or tables.",
+    "evidence": [
+      {
+        "quote": "controlling for fetal sex and gestational age in the identification of differentially methylated sites",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Parity is not mentioned in the provided text or supplements.",
+    "evidence": []
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Gravidity is not mentioned in the provided text or supplements.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The number of offspring per pregnancy is not explicitly stated.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Mother's race or ethnicity is not mentioned.",
+    "evidence": []
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No genetic ancestry or strain data is provided for the human subjects.",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal height is not reported.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal pre-pregnancy weight is not reported.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal height is not reported.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal weight is not reported.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal age is not provided in the paper or supplementary snippets.",
+    "evidence": []
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal age is not mentioned.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Samples were collected from women with preeclampsia and those with fetal chromosomal abnormalities.",
+    "evidence": [
+      {
+        "quote": "cluster 2 (N = 11) and cluster 3 (N = 5) patients were diagnosed with PE",
+        "source": "Main text, Results"
+      },
+      {
+        "quote": "cluster 5, with known chromosomal abnormalities",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The mode of delivery is not provided for the samples.",
+    "evidence": []
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Preeclampsia"
+    ],
+    "confidence": "high",
+    "reason": "The study focuses on subtypes of preeclampsia (PE).",
+    "evidence": [
+      {
+        "quote": "cluster 2 (N = 11) and cluster 3 (N = 5) patients were diagnosed with PE",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Cluster 5 is explicitly defined by the presence of chromosomal abnormalities.",
+    "evidence": [
+      {
+        "quote": "cluster 5, with known chromosomal abnormalities",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Chromosomal abnormalities"
+    ],
+    "confidence": "high",
+    "reason": "One patient cluster was characterized by chromosomal abnormalities.",
+    "evidence": [
+      {
+        "quote": "cluster 5, with known chromosomal abnormalities, no longer formed a cohesive group.",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Transcriptional clusters (1, 2, 3, 5)"
+    ],
+    "confidence": "high",
+    "reason": "The samples are categorized based on previously defined molecular transcriptional subtypes.",
+    "evidence": [
+      {
+        "quote": "we recently identified five clusters of placentas within a large gene expression microarray dataset",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Research Centre for Women\u2019s and Infants\u2019 Health (RCWIH) BioBank",
+    "confidence": "high",
+    "reason": "The paper states that placentas were purchased/sourced from the RCWIH BioBank at Mount Sinai Hospital.",
+    "evidence": [
+      {
+        "quote": "A total of 48 (out of 157) placentas from our highly annotated cohort purchased from the Research Centre for Women\u2019s and Infants\u2019 Health (RCWIH) BioBank",
+        "source": "Main text, Methods"
+      },
+      {
+        "quote": "Ethics approval was granted from the Research Ethics Boards of Mount Sinai Hospital (#13-0211-E)",
+        "source": "Main text, Ethics approval and consent to participate"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "Canada",
+    "confidence": "high",
+    "reason": "The collection centers (Mount Sinai Hospital, University of Toronto) are located in Canada.",
+    "evidence": [
+      {
+        "quote": "Department of Physiology, University of Toronto",
+        "source": "Main text, Affiliations"
+      }
+    ]
+  }
+}

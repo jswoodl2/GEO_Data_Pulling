@@ -1,0 +1,310 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Aisagbonhi Omonigho",
+    "confidence": "high",
+    "reason": "The author is listed with an asterisk and contact information in the author list.",
+    "evidence": [
+      {
+        "quote": "Aisagbonhi Omonigho MD., Ph.D. 1 2 * ... * oaisagbonhi@health.ucsd.edu",
+        "source": "Main text, Author List"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "oaisagbonhi@health.ucsd.edu",
+    "confidence": "high",
+    "reason": "The email is explicitly provided for the corresponding author.",
+    "evidence": [
+      {
+        "quote": "* oaisagbonhi@health.ucsd.edu",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Placental gene expression differences (bulk RNA sequencing) in severe preeclampsia across different ancestral groups (African, Asian, and European).",
+    "confidence": "high",
+    "reason": "The abstract and methods describe comparing placental RNA-seq data between sPE and normotensive controls across three ancestries.",
+    "evidence": [
+      {
+        "quote": "To elucidate placental contribution to worse PE outcomes in African ancestry pregnancies, we performed bulk RNA sequencing on 50 placentas from persons with severe PE (sPE) of African (n=9), Asian (n=18) and European (n=23) ancestries and 73 normotensive controls.",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "3rd",
+      "Term",
+      "Premature"
+    ],
+    "confidence": "high",
+    "reason": "The gestational ages range from 32.3 to 38.4 weeks, covering premature, third trimester, and full-term deliveries.",
+    "evidence": [
+      {
+        "quote": "Gestational age 33.5 + 4.8 [sPE] 38.4 + 3.0 [Control]",
+        "source": "Supplemental Table 1"
+      },
+      {
+        "quote": "Gestational age 32.3 + 5.2 [African sPE] 38.1 + 1.3 [Control]",
+        "source": "Supplemental Table 3"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Birth weights are reported in Supplemental Tables 1 and 3 for all ancestral and clinical groups.",
+    "evidence": [
+      {
+        "quote": "Birth weight (g) 1916.3 + 1006.1 3284.0 + 695.4",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Gestational age is provided in Supplemental Tables 1, 3, and 4.",
+    "evidence": [
+      {
+        "quote": "Gestational age 33.5 + 4.8 38.4 + 3.0",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "32.3 - 38.4",
+    "confidence": "high",
+    "reason": "This range reflects the means of the various sub-groups (sPE and controls) reported in the supplemental tables.",
+    "evidence": [
+      {
+        "quote": "Gestational age 32.3 + 5.2 [African sPE] 38.1 + 1.3 [Normotensive control]",
+        "source": "Supplemental Table 3"
+      }
+    ]
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Placentas were collected at delivery, and GA at delivery is provided.",
+    "evidence": [
+      {
+        "quote": "Placenta disc villous tissue... was collected and stored in RNAlater.",
+        "source": "Supplemental Methods"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "32.3 - 38.4",
+    "confidence": "high",
+    "reason": "Placentas were collected at the time of delivery.",
+    "evidence": [
+      {
+        "quote": "Gestational age 33.5 + 4.8 [African sPE]",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Infant sex is reported for all study groups in the supplemental tables.",
+    "evidence": [
+      {
+        "quote": "Infant sex Male Female 8 (53%) 7 (47%)",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Parity is reported in Supplemental Tables 1, 3, and 4.",
+    "evidence": [
+      {
+        "quote": "Parity 1.2 + 1.4 1.7 + 1.5",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Gravidity is reported in Supplemental Tables 1, 3, and 4.",
+    "evidence": [
+      {
+        "quote": "Gravidity 3.2 + 2.5 3.1 + 2.0",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "While it is implied the participants were singleton pregnancies, the number of offspring per pregnancy is not explicitly stated.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Participants were categorized into African, Asian, and European ancestry groups.",
+    "evidence": [
+      {
+        "quote": "African Severe preeclampsia (n=15) Normotensive control (n=39)",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "RNA sequencing-based ancestry inference was explicitly performed to determine/verify ancestry.",
+    "evidence": [
+      {
+        "quote": "RNA sequencing-based ancestry inference was performed following the workflow previously outlined by Barral-Arca et al18.",
+        "source": "Supplemental Methods"
+      }
+    ]
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal height is not reported; only BMI is provided.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal weight is not explicitly reported; BMI at <20 weeks and at delivery are provided instead.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal height is not mentioned.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal weight is not mentioned.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Maternal age at delivery is provided in Supplemental Tables 1, 3, and 4.",
+    "evidence": [
+      {
+        "quote": "Maternal age at delivery 28.6 + 5.2 28.9 + 6.1",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal age is not mentioned.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Samples were collected from persons with severe preeclampsia.",
+    "evidence": [
+      {
+        "quote": "we performed bulk RNA sequencing on 50 placentas from persons with severe PE (sPE)",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Mode of delivery (C-section vs Vaginal) is reported in the supplemental tables.",
+    "evidence": [
+      {
+        "quote": "Mode of delivery C-section Vaginal",
+        "source": "Supplemental Table 1"
+      }
+    ]
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Severe preeclampsia",
+      "Chronic hypertension (cHTN)",
+      "Diabetes mellitus (DM)"
+    ],
+    "confidence": "high",
+    "reason": "These complications are listed as clinical characteristics in the supplemental tables.",
+    "evidence": [
+      {
+        "quote": "Maternal history of cHTN Maternal history of DM",
+        "source": "Supplemental Table 3"
+      },
+      {
+        "quote": "Severe preeclampsia (sPE)",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "Specific fetal complications like distress or restricted growth are not explicitly listed, though birth weight percentiles are provided.",
+    "evidence": []
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "medium",
+    "reason": "No specific fetal complications are listed.",
+    "evidence": []
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Maternal BMI (at <20 weeks and at delivery)",
+      "Birth weight percentile",
+      "Placental histologic findings (MVM, PVFD)",
+      "CD123 IHC scores"
+    ],
+    "confidence": "high",
+    "reason": "These variables were recorded and reported in the supplemental materials.",
+    "evidence": [
+      {
+        "quote": "Maternal BMI (at <20 weeks) Maternal BMI (at delivery) ... Birth weight percentile",
+        "source": "Supplemental Table 3"
+      },
+      {
+        "quote": "Supplemental Table 2: Placenta histologic findings in severe preeclampsia compared to normotensive controls per ancestry. ... MVM: maternal vascular malperfusion, PVFD: perivillous fibrin deposition.",
+        "source": "Supplemental Table 2"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "University of California San Diego",
+    "confidence": "high",
+    "reason": "The study was conducted by researchers at UCSD, and genomics work was performed at the UCSD genomics center.",
+    "evidence": [
+      {
+        "quote": "IGM Genomics Center, UCSD",
+        "source": "Supplemental Methods"
+      },
+      {
+        "quote": "5. University of California San Diego, La Jolla, CA, USA",
+        "source": "Main text, Affiliations"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "USA",
+    "confidence": "high",
+    "reason": "The study affiliations and medical group are located in San Diego, CA, USA.",
+    "evidence": [
+      {
+        "quote": "University of California San Diego, La Jolla, CA, USA",
+        "source": "Main text, Affiliations"
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC2840328 PMC2840328.1 2840328 2840328 20133625 10.1073/pnas.0915033107 200915033 1 Biological Sciences Developmental Biology Histone H3 lysine 36 methyltransferase Hypb/Setd2 is required for embryonic vascular remodeling Hu Ming a 1 Sun Xiao-Jian a b 1 Zhang Yuan-Liang a 1 Kuang Ying c 1 Hu Chao-Quan d Wu Wei-Li a Shen Shu-Hong a Du Ting-Ting a Li Hong e He Fei f Xiao Hua-Sheng f Wang Zhu-Gang c Liu Ting-Xi a g Lu He d Huang Qiu-Hua a 2 Chen Sai-Juan a b 2 Chen Zhu a b 2 a Shanghai Jiao Tong University School of Medicine China b Shanghai Jiao Tong University China c Shanghai Research Center for Model Organisms China d Université de Diderot France e Université de Rouen France f National Engineering Center for Biochip at Shanghai China g Chinese Academy of Sciences and Shanghai Jiao Tong University School of Medicine China 2 zchen@stn.sh.cn sjchen@stn.sh.cn HQH10632@rjh.com.cn Contributed by Zhu Chen, December 28, 2009 (sent for review December 9, 2009) Author contributions: M.H., X.-J.S., H.L., Q.-H.H., S.-J.C., and Z.C. designed research; M.H., Y.-L.Z., Y.K., C.-Q.H., W.-L.W., S.-H.S., T.-T.D., H.L., and F.H. performed research; X.-J.S., H.-S.X., Z.-G.W., and T.-X.L. analyzed data; and H.M., X.-J.S., Q.-H.H., S.-J.C. and Z.C. wrote the paper. 1 The authors declare no conflict of interest. 28 1 2010 16 2 2010 107 7 185801 2956 2961 16 08 2010 16 08 2010 07 03 2011 HYPB is a human histone H3 lysine 36 (H3K36)–specific methyltransferase and acts as the ortholog of yeast Set2. This study explored the physiological function of mammalian HYPB using knockout mice. Homozygous disruption of Hypb Hypb −/− Hypb −/− Hypb Hypb −/− HYPB Hypb knockout mice embryonic lethality vasculogenesis angiogenesis capillary tubule formation pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc Natl Acad Sci U S A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC7958375 PMC7958375.1 7958375 7958375 33649217 10.1073/pnas.2016517118 202016517 1 412 Biological Sciences Developmental Biology ASCL2 reciprocally controls key trophoblast lineage decisions during hemochorial placenta development https://orcid.org/0000-0001-9672-4158 Varberg Kaela M. a b 1 https://orcid.org/0000-0002-6742-4591 Iqbal Khursheed a b Muto Masanaga a b https://orcid.org/0000-0001-5301-2724 Simon Mikaela E. a b Scott Regan L. a b https://orcid.org/0000-0003-2645-7431 Kozai Keisuke a b https://orcid.org/0000-0003-1472-9743 Choudhury Ruhul H. c d https://orcid.org/0000-0001-8777-9261 Aplin John D. c d https://orcid.org/0000-0002-1164-8190 Biswell Rebecca e Gibson Margaret e Okae Hiroaki f Arima Takahiro f Vivian Jay L. a b https://orcid.org/0000-0001-5415-7896 Grundberg Elin b e g https://orcid.org/0000-0001-7158-1592 Soares Michael J. a b g h i 1 a University of Kansas Medical Center KS b University of Kansas Medical Center KS c University of Manchester United Kingdom d e Children’s Mercy Research Institute MO f Tohoku University Graduate School of Medicine Japan g Children’s Mercy Research Institute MO h University of Kansas Medical Center KS i University of Kansas Medical Center KS 1 kvarberg@kumc.edu msoares@kumc.edu Edited by R. Michael Roberts, University of Missouri, Columbia, MO, and approved January 27, 2021 (received for review August 4, 2020) Author contributions: K.M.V., K.I., M.M., J.L.V., and M.J.S. designed research; K.M.V., K.I., M.M., M.E.S., R.L.S., K.K., R.B., M.G., and M.J.S. performed research; R.H.C., J.D.A., H.O., T.A., and E.G. contributed new reagents/analytic tools; K.M.V., K.I., E.G., and M.J.S. analyzed data; and K.M.V. and M.J.S. wrote the paper. The authors declare no competing interest. 09 3 2021 01 3 2021 118 10 377552 e2016517118 01 09 2021 01 09 2021 20 03 2021 02 05 2024 Copyright © 2021 the Author(s). Published by PNAS. 2021 https://www.pnas.org/site/aboutpnas/licenses.xhtml Published under the PNAS license Significance Defective placentation, including impaired uterine spiral artery remodeling, leads to pregnancy disorders such as pregnancy loss, preeclampsia, intrauterine growth restriction, and preterm birth, all of which cause significant morbidity and mortality for the mother and fetus. Trophoblast cells are central to executing placental functions and can differentiate into two conserved specialized lineages: invasive/extravillous trophoblast cells, which guide uterine transformation, and syncytiotrophoblast, which serve a barrier function. We leveraged model systems to identify achaete-scute homolog 2 as a conserved regulator of the invasive/extravillous trophoblast cell lineage and a modulator of the syncytiotrophoblast phenotype. A key upstream regulator of trophoblast-engineered uterine transformation has been identified representing an entry point into the etiology of pregnancy complications resulting from defective placentation. Invasive trophoblast cells are critical to spiral artery remodeling in hemochorial placentation. Insufficient trophoblast cell invasion and vascular remodeling can lead to pregnancy disorders including preeclampsia, preterm birth, and intrauterine growth restriction. Previous studies in mice identified achaete-scute homolog 2 (ASCL2) as essential to extraembryonic development. We hypothesized that ASCL2 is a critical and conserved regulator of invasive trophoblast cell lineage development. In contrast to the mouse, the rat possesses deep intrauterine trophoblast cell invasion and spiral artery remodeling similar to human placentation. In this study, we investigated invasive/extravillous trophoblast (EVT) cell differentiation using human trophoblast stem (TS) cells and a loss-of-function mutant Ascl2 ASCL2 ASCL2 trophoblast invasion placenta differentiation HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 F32HD096809 Kaela M Varberg Michael J Soares HHS | NIH | Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) 100009633 HD020676 HD079363 HD099638 Kaela M Varberg Michael J Soares Sosland Foundation 100001864 N/A Michael J Soares pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes  no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

@@ -1,0 +1,37 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Vasilis Sitras",
+  "Supervisor/Contact/Corresponding author email": "Vasilis.Sitras@ahus.no",
+  "Main topic of the publication": "This study investigates the differences in global gene expression profile, the expression of imprinted genes, and the effect of smoking in first and third trimester normal human placentas using microarray analysis and real-time polymerase chain reaction.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "Term"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 39.3,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 10.14,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "Yes",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "No",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Smoking status"
+  ],
+  "Hospital/Center where samples were collected": "Akershus University Hospital; University Hospital of North Norway",
+  "Country where samples were collected": "Norway",
+  "PMCID": "PMC3307733"
+}

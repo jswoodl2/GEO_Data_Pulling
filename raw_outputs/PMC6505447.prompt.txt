@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Hum Reprod Hum. Reprod 741 humrep humrep Human Reproduction (Oxford, England) 0268-1161 1460-2350 Oxford University Press PMC6505447 PMC6505447.1 6505447 6505447 30989206 10.1093/humrep/dez036 dez036 1 Original Article Reproductive Biology Moderate maternal folic acid supplementation ameliorates adverse embryonic and epigenetic outcomes associated with assisted reproduction in a mouse model Rahimi Sophia 1 2 Martel Josée 1 Karahan Gurbet 1 2 Angle Camille 3 Behan Nathalie A 5 Chan Donovan 1 MacFarlane Amanda J 5 Trasler Jacquetta M 1 2 3 4 1 2 3 4 5 Correspondence address. Research Institute of the McGill University Health Centre, 1001 Décarie Boulevard, Room EM0.2236, Montréal QC H4A 3J1, Canada. Tel.: + 514-934-1934 ext. 25235 jacquetta.trasler@mcgill.ca 5 2019 16 4 2019 34 5 334346 851 862 24 9 2018 14 1 2019 01 05 2020 01 05 2020 14 05 2019 01 05 2020 © The Author(s) 2019. Published by Oxford University Press on behalf of the European Society of Human Reproduction and Embryology. All rights reserved. For Permissions, please e-mail: journals.permissions@oup.com 2019 This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model Abstract STUDY QUESTION Could clinically-relevant moderate and/or high dose maternal folic acid supplementation prevent aberrant developmental and epigenetic outcomes associated with assisted reproductive technologies (ART)? SUMMARY ANSWER Our results demonstrate dose-dependent and sex-specific effects of folic acid supplementation in ART and provide evidence that moderate dose supplements may be optimal for both sexes. WHAT IS KNOWN ALREADY Children conceived using ART are at an increased risk for growth and genomic imprinting disorders, often associated with DNA methylation defects. Folic acid supplementation is recommended during pregnancy to prevent adverse offspring outcomes; however, the effects of folic acid supplementation in ART remain unclear. STUDY DESIGN, SIZE, DURATION Outbred female mice were fed three folic acid-supplemented diets, control (rodent daily recommended intake or DRI; CD), moderate (4-fold DRI; 4FASD) or high (10-fold DRI; 10FASD) dose, for six weeks prior to ART and throughout gestation. Mouse ART involved a combination of superovulation, in vitro PARTICIPANTS/MATERIALS, SETTING, METHODS Midgestation embryos and placentas ( n Snrpn Kcnq1ot1 Peg1 H19 n n n n MAIN RESULTS AND THE ROLE OF CHANCE Moderate, but not high dose supplementation, was associated with a decrease in the proportion of developmentally delayed embryos. Although moderate dose folic acid supplementation reduced DNA methylation variance at certain imprinted genes in embryonic and placental tissues, high dose supplementation exacerbated the negative effects of ART at imprinted loci. Furthermore, folic acid supplements resolved female-biased aberrant imprinted gene methylation. Supplementation was more effective at correcting ART-induced genome-wide methylation defects in male versus female placentas; however, folic acid supplementation also led to additional methylation perturbations which were more pronounced in males. LARGE-SCALE DATA The RRBS data from this study have been submitted to the NCBI Gene Expression Omnibus under the accession number GSE123143 LIMITATIONS REASONS FOR CAUTION Although the combination of mouse ART utilised in this study consisted of techniques commonly used in human fertility clinics, there may be species differences. Therefore, human studies, designed to determine the optimal levels of folic acid supplementation for ART pregnancies, and taking into account foetal sex, are warranted. WIDER IMPLICATIONS OF THE FINDINGS Taken together, our findings support moderation in the dose of folic acid supplements taken during ART. STUDY FUNDING/COMPETING INTEREST(S) This work was funded by the Canadian Institutes of Health Research (FDN-148425). The authors declare no conflict of interest. folic acid supplementation assisted reproductive technologies DNA methylation genomic imprinting embryo development Canadian Institutes of Health Research 10.13039/501100000024 J.M.T. FDN-148425 McGill Centre for Research in Reproduction Child Health Research 10.13039/501100002845 Ferring Foundation Fellowship pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes  no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

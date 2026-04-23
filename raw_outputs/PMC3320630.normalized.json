@@ -1,0 +1,41 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Stephen S. C. Chim",
+  "Supervisor/Contact/Corresponding author email": "sschim@cuhk.edu.hk",
+  "Main topic of the publication": "This study profiles RNA expression in spontaneous preterm birth (SPB) placentas compared to spontaneous term birth (STB) placentas to identify SPB-associated RNA transcripts detectable in maternal plasma, finding 36 such transcripts and illustrating the potential of IL1RL1 as a marker.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "Premature",
+    "Term"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 31.2,
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 30.9,
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [
+    "Preeclampsia",
+    "Intrauterine growth restriction"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Fetal chromosomal abnormalities",
+    "Fetal structural abnormalities"
+  ],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "Prince of Wales Hospital, Hong Kong",
+  "Country where samples were collected": "China",
+  "PMCID": "PMC3320630"
+}

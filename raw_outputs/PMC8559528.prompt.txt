@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Endocrinology Endocrinology 562 endo endo Endocrinology 0013-7227 1945-7170 The Endocrine Society PMC8559528 PMC8559528.1 8559528 8559528 34647996 10.1210/endocr/bqab215 bqab215 1 Research Article AcademicSubjects/MED00250 Maternal Iron Deficiency Alters Trophoblast Differentiation and Placental Development in Rat Pregnancy Roberts Hannah 1 https://orcid.org/0000-0002-1476-1850 Woodman Andrew G 2 3 4 Baines Kelly J 1 Jeyarajah Mariyan J 1 Bourque Stephane L 2 3 4 https://orcid.org/0000-0001-7257-5354 Renaud Stephen J 1 5 1 Department of Anatomy and Cell Biology, Schulich School of Medicine and Dentistry, University of Western Ontario London, Ontario, N6A5C1 Canada 2 Department of Anesthesiology & Pain Medicine, University of Alberta Edmonton, Alberta, T6G2E1 Canada 3 Department of Pharmacology, University of Alberta Edmonton, Alberta, T6G2E1 Canada 4 Department of Pediatrics, University of Alberta Edmonton, Alberta, T6G2E1 Canada 5 Children’s Health Research Institute, Lawson Health Research Institute London, Ontario, N6C2V5 Canada Correspondence: srenaud4@uwo.ca These authors contributed equally and share first authorship. These authors contributed equally. 12 2021 14 10 2021 162 12 390837 bqab215 12 8 2021 11 10 2021 01 11 2021 14 10 2022 14 10 2022 02 11 2021 07 05 2024 © The Author(s) 2021. Published by Oxford University Press on behalf of the Endocrine Society. All rights reserved. For permissions, please e-mail: journals.permissions@oup.com 2021 https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model Abstract Iron deficiency, which occurs when iron demands chronically exceed intake, is prevalent in pregnant women. Iron deficiency during pregnancy poses major risks for the baby, including fetal growth restriction and long-term health complications. The placenta serves as the interface between a pregnant mother and her baby, and it ensures adequate nutrient provisions for the fetus. Thus, maternal iron deficiency may impact fetal growth and development by altering placental function. We used a rat model of diet-induced iron deficiency to investigate changes in placental growth and development. Pregnant Sprague-Dawley rats were fed either a low-iron or iron-replete diet starting 2 weeks before mating. Compared with controls, both maternal and fetal hemoglobin were reduced in dams fed low-iron diets. Iron deficiency decreased fetal liver and body weight, but not brain, heart, or kidney weight. Placental weight was increased in iron deficiency, due primarily to expansion of the placental junctional zone. The stimulatory effect of iron deficiency on junctional zone development was recapitulated in vitro, as exposure of rat trophoblast stem cells to the iron chelator deferoxamine increased differentiation toward junctional zone trophoblast subtypes. Gene expression analysis revealed 464 transcripts changed at least 1.5-fold ( P iron deficiency nutrient placenta anemia trophoblast pregnancy Canadian Institutes of Health Research 10.13039/501100000024 MOP142396 PJT376512 Natural Sciences and Engineering Research Council of Canada 10.13039/501100000038 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

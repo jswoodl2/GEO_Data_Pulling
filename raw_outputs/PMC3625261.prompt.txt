@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC3625261 PMC3625261.1 3625261 3625261 23530188 10.1073/pnas.1215145110 201215145 1 Biological Sciences Genetics The human placenta methylome The human placenta methylome Schroeder Diane I. a b c Blair John D. d Lott Paul b Yu Hung On Ken b Hong Danna a Crary Florence a b c Ashwood Paul a c e Walker Cheryl c f Korf Ian b Robinson Wendy P. d LaSalle Janine M. a b c 1 a UC Davis School of Medicine CA b University of California CA c University of California Davis CA d University of British Columbia Canada e UC Davis School of Medicine CA f UC Davis School of Medicine CA 1 jmlasalle@ucdavis.edu Edited by Jasper Rine, University of California, Berkeley, CA, and approved March 4, 2013 (received for review September 4, 2012) Author contributions: D.I.S. and J.M.L. designed research; D.I.S., J.D.B., D.H., and F.C. performed research; J.D.B., P.L., P.A., C.W., I.K., and W.P.R. contributed new reagents/analytic tools; D.I.S., P.L., and H.O.K.Y. analyzed data; and D.I.S. and J.M.L. wrote the paper. The authors declare no conflict of interest. 9 4 2013 25 3 2013 110 15 221792 6037 6042 09 10 2013 09 10 2013 22 08 2013 09 10 2013 Tissue-specific DNA methylation is found at promoters, enhancers, and CpG islands but also over larger genomic regions. In most human tissues, the vast majority of the genome is highly methylated (>70%). Recently, sequencing of bisulfite-treated DNA (MethylC-seq) has revealed large partially methylated domains (PMDs) in some human cell lines. PMDs cover up to 40% of the genome and are associated with gene repression and inactive chromatin marks. However, to date, only cultured cells and cancers have shown evidence for PMDs. Here, we performed MethylC-seq in full-term human placenta and demonstrate it is the first known normal tissue showing clear evidence of PMDs. We found that PMDs cover 37% of the placental genome, are stable throughout gestation and between individuals, and can be observed with lower sensitivity in Illumina 450K Infinium data. RNA-seq analysis confirmed that genes in PMDs are repressed in placenta. Using a hidden Markov model to map placental PMDs genome-wide and compare them to PMDs in other cell lines, we found that genes within placental PMDs have tissue-specific functions. For regulatory regions, methylation levels in promoter CpG islands are actually higher for genes within placental PMDs, despite the lower overall methylation of surrounding regions. Similar to PMDs, polycomb-regulated regions are hypomethylated but smaller and distinct from PMDs, with some being hypermethylated in placenta compared with other tissues. These results suggest that PMDs are a developmentally dynamic feature of the methylome that are relevant for understanding both normal development and cancer and may be of use as epigenetic biomarkers. epigenomics hypomethylation pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

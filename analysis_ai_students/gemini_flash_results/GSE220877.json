@@ -1,0 +1,336 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Kartik Shankar; Nancy F. Krebs",
+    "confidence": "high",
+    "reason": "Both are listed as the individuals to whom correspondence should be addressed.",
+    "evidence": [
+      {
+        "quote": "To whom correspondence should be addressed: Email: Kartik.Shankar@cuanschutz.edu To whom correspondence should be addressed: Email: Nancy.Krebs@cuanschutz.edu",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "Kartik.Shankar@cuanschutz.edu; Nancy.Krebs@cuanschutz.edu",
+    "confidence": "high",
+    "reason": "Both emails are provided in the correspondence section.",
+    "evidence": [
+      {
+        "quote": "Email: Kartik.Shankar@cuanschutz.edu To whom correspondence should be addressed: Email: Nancy.Krebs@cuanschutz.edu",
+        "source": "Main text, Author Information"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "The interaction between maternal nutritional status and ambient heat exposure on fetal growth and placental function.",
+    "confidence": "high",
+    "reason": "The study examines how heat stress during pregnancy affects birth anthropometry and how nutritional supplementation modifies these effects.",
+    "evidence": [
+      {
+        "quote": "In the present study, we examined associations between ambient temperature during pregnancy trimesters and birth anthropometry of infants in a resource-limited setting.",
+        "source": "Main text, Introduction"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "1st",
+      "2nd",
+      "3rd",
+      "Term"
+    ],
+    "confidence": "high",
+    "reason": "The study analyzes heat exposure across all three trimesters and collects placental samples at term delivery.",
+    "evidence": [
+      {
+        "quote": "we examined associations between ambient temperature during pregnancy trimesters and birth anthropometry",
+        "source": "Main text, Introduction"
+      },
+      {
+        "quote": "Global transcriptomic analysis of term villous placentas was conducted",
+        "source": "Main text, Figure 5 caption"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Birth weight was measured and reported as gestational-age-adjusted Z-scores (WGAZ).",
+    "evidence": [
+      {
+        "quote": "Newborn weight was measured in triplicate using a Seca 334 electronic scale",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "Neonatal outcomes of birth weight, length, and head circumference were converted to gestational-age-appropriate Z-scores",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study explicitly states that ultrasound-based gestational age was available and used to calculate Z-scores.",
+    "evidence": [
+      {
+        "quote": "The present analysis focused on a subcohort of mothers from the Pakistan site for whom ultrasound based gestational age was available",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reason": "While the paper states GA was recorded and used for calculations, the specific mean or median GA at delivery is not explicitly listed in the provided text.",
+    "evidence": []
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "GAs for ultrasound (1st trimester), blood collection (34 weeks), and placenta (delivery/term) are provided.",
+    "evidence": [
+      {
+        "quote": "Gestational age was determined by first-trimester ultrasound using crown-rump length.",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "Nonfasting blood samples were collected by venipuncture at 34 wk gestation",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "Placental dimensions were obtained after delivery",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "1st trimester, 34 weeks, Term",
+    "confidence": "high",
+    "reason": "Different samples were collected at 1st trimester (ultrasound), 34 weeks (blood), and at term delivery (placenta).",
+    "evidence": [
+      {
+        "quote": "Gestational age was determined by first-trimester ultrasound",
+        "source": "Main text, Materials and methods"
+      },
+      {
+        "quote": "Nonfasting blood samples were collected by venipuncture at 34 wk gestation",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Infant sex was used as a covariate in the statistical models.",
+    "evidence": [
+      {
+        "quote": "Models were adjusted for cluster of recruitment, maternal age, parity, infant sex, mode of delivery",
+        "source": "Main text, Table 2 footnote"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Parity was recorded and used as a covariate in the linear regression models.",
+    "evidence": [
+      {
+        "quote": "Models were adjusted for maternal age, parity, and recruitment cluster.",
+        "source": "Main text, Table 1 footnote"
+      }
+    ]
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Gravidity is not mentioned in the text or tables.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "The text implies singleton pregnancies (n=459 women and their neonates) but does not explicitly state that multiple pregnancies were excluded or provide the number of offspring per pregnancy.",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "The study provides the geographic location (Thatta, Sindh, Pakistan) but does not report a specific self-identified race or ethnicity variable.",
+    "evidence": [
+      {
+        "quote": "trial ... conducted in Thatta, Pakistan, where both nutritional deficits and heat stress are prevalent.",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "No genetic ancestry analysis or strain information (for animal models) is provided.",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Maternal height was measured at enrolment as part of the anthropometric measurements.",
+    "evidence": [
+      {
+        "quote": "Maternal height and weight were measured at enrolment.",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Weight at enrolment (preconception or early pregnancy) was measured.",
+    "evidence": [
+      {
+        "quote": "Maternal height and weight were measured at enrolment.",
+        "source": "Main text, Materials and methods"
+      }
+    ]
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal height was not recorded or reported.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal weight was not recorded or reported.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The average maternal age at enrolment is reported.",
+    "evidence": [
+      {
+        "quote": "The average maternal age at enrolment was 23.6 \u00b1 4.1 y",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Paternal age was not recorded or reported.",
+    "evidence": []
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study specifically focuses on women with chronic malnutrition, anemia, and heat-associated growth restriction.",
+    "evidence": [
+      {
+        "quote": "Both underweight (BMI < 18.5; \u223c35% at preconception baseline with mean BMI 19.7) and anemia (72% at baseline) were common in women",
+        "source": "Main text, Discussion"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Mode of delivery was used as an adjustment factor in the statistical models.",
+    "evidence": [
+      {
+        "quote": "Models were adjusted for cluster, maternal age, parity, infant sex, mode of delivery",
+        "source": "Main text, Table 3 footnote"
+      }
+    ]
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Chronic malnutrition",
+      "Anemia",
+      "Heat stress exposure",
+      "Fetal growth restriction"
+    ],
+    "confidence": "high",
+    "reason": "These complications are the central focus of the analysis and described in the cohort characteristics.",
+    "evidence": [
+      {
+        "quote": "Both underweight (BMI < 18.5... ) and anemia (72% at baseline) were common in women",
+        "source": "Main text, Discussion"
+      },
+      {
+        "quote": "HS detrimentally impacts intrauterine growth",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Reduced birth length, weight, and head circumference (growth restriction) are listed.",
+    "evidence": [
+      {
+        "quote": "Both maternal malnutrition and heat stress during pregnancy contribute to poor fetal growth",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [
+      "Heat-associated growth restriction",
+      "Lower birth length (LGAZ)",
+      "Lower birth weight (WGAZ)",
+      "Lower head circumference (HCGAZ)"
+    ],
+    "confidence": "high",
+    "reason": "These specific anthropometric outcomes are used to define the impact of the studied stressors on the fetus.",
+    "evidence": [
+      {
+        "quote": "exposure to excessive ambient heat in early pregnancy is associated with lower length and head circumference at birth.",
+        "source": "Main text, Significance Statement"
+      }
+    ]
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Maternal BMI",
+      "Maternal weight gain (12-32 wk gestation)",
+      "Placental gene expression (mRNA-seq)",
+      "Maternal blood metabolites (LC\u2013MS/MS)",
+      "Placental dimensions (length, width)",
+      "Placental protein expression (phosphorylated p70-S6K, EIF2a, 4EB-P1, AMPK)"
+    ],
+    "confidence": "high",
+    "reason": "The study includes detailed maternal physiology, placental molecular data, and environmental metadata.",
+    "evidence": [
+      {
+        "quote": "Targeted metabolomics was carried out using LC\u2013MS/MS in blood at 34 wk of pregnancy",
+        "source": "Main text, Figure 7 caption"
+      },
+      {
+        "quote": "Global transcriptomic analysis of term villous placentas was conducted using mRNA-sequencing",
+        "source": "Main text, Figure 5 caption"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Aga Khan University",
+    "confidence": "high",
+    "reason": "The study was conducted at the Aga Khan University site in Thatta, Pakistan.",
+    "evidence": [
+      {
+        "quote": "leveraged maternal and neonatal anthropometry data from a randomized controlled trial... conducted in Thatta, Pakistan... [by] Aga Khan University",
+        "source": "Main text, Abstract and Author affiliations"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "Pakistan",
+    "confidence": "high",
+    "reason": "The study site is explicitly identified as Thatta, Sindh, Pakistan.",
+    "evidence": [
+      {
+        "quote": "conducted in Thatta, Pakistan",
+        "source": "Main text, Abstract"
+      }
+    ]
+  }
+}

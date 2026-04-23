@@ -1,0 +1,37 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Daniel Vaiman",
+  "Supervisor/Contact/Corresponding author email": "daniel.vaiman@inserm.fr",
+  "Main topic of the publication": "This study addresses transcriptional alterations induced by IUGR in a multi-organ perspective, by systematic analysis of 20-days rat fetuses. The study suggests that a combination of tissue-specific mechanisms contributes to bring about tissue-driven modifications of gene cascades.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "No",
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 20.0,
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Intrauterine growth restriction"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "Organ development",
+    "Transcriptome alterations"
+  ],
+  "Hospital/Center where samples were collected": "Hôpital la Conception, Assistance Publique-Hôpitaux de Marseille",
+  "Country where samples were collected": "France",
+  "PMCID": "PMC3120850"
+}

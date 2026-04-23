@@ -1,0 +1,36 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Annemieke de Vries",
+  "Supervisor/Contact/Corresponding author email": "Jeroen.Pennings@rivm.nl",
+  "Main topic of the publication": "This study analyzes gene expression in embryos of wild type mice and the Down Syndrome model Ts1Cje, focusing on placenta and fetal liver tissues at 15.5 days gestation to identify novel potential biomarkers for prenatal Down Syndrome screening.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "No",
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 15.5,
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "No",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Down Syndrome"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "Gene expression",
+    "hematological abnormalities"
+  ],
+  "Hospital/Center where samples were collected": "National Institute for Public Health and the Environment (RIVM)",
+  "Country where samples were collected": "The Netherlands"
+}

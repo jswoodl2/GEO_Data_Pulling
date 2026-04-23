@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A 2 pnas pnas Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC1323209 PMC1323209.1 1323209 1323209 16365291 10.1073/pnas.0509603102 19075 1 Biological Sciences Medical Sciences The role of microRNA genes in papillary thyroid carcinoma He Huiling * Jazdzewski Krystian * Li Wei * Liyanarachchi Sandya * Nagy Rebecca * Volinia Stefano * Calin George A. * Liu Chang-gong * Franssila Kaarle † Suster Saul ‡ Kloos Richard T. § Croce Carlo M. * de la Chapelle Albert * ¶ * ‡ § † ¶ To whom correspondence should be addressed. E-mail: albert.delachapelle@osumc.edu Contributed by Albert de la Chapelle, November 9, 2005 27 12 2005 19 12 2005 102 52 125436 19075 19080 27 06 2006 27 06 2006 12 03 2025 Copyright © 2005, The National Academy of Sciences 2005 Apart from alterations in the RET/PTC-RAS-BRAF pathway, comparatively little is known about the genetics of papillary thyroid carcinoma (PTC). We show that numerous microRNAs (miRNAs) are transcriptionally up-regulated in PTC tumors compared with unaffected thyroid tissue. A set of five miRNAs, including the three most up-regulated ones (miR-221, -222, and -146), distinguished unequivocally between PTC and normal thyroid. Additionally, miR-221 was up-regulated in unaffected thyroid tissue in several PTC patients, presumably an early event in carcinogenesis. Tumors in which the up-regulation (11- to 19-fold) of miR-221, -222, and -146 was strongest showed dramatic loss of KIT KIT KIT gene expression KIT DNA polymorphism pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes PDF filename zpq05205019075 Author contributions: H.H., C.M.C., and A.d.l.C. designed research; H.H., K.J., W.L., R.N., C.-G.L., K.F., S.S., and R.T.K. performed research; H.H., K.J., S.L., S.V., G.A.C., and A.d.l.C. analyzed data; and H.H., K.J., and A.d.l.C. wrote the paper. Conflict of interest statement: No conflicts declared. Abbreviations: miRNA, microRNA; PTC, papillary thyroid carcinoma; N-PTC, normal thyroid tissue adjacent to PTC tumors; T-PTC, tumor tissue PTC. Data deposition: Gene expression data with Affymetrix chips were deposited in the National Center for Biotechnology Information Gene Expression Omnibus database (NCBI GEO accession no. GSE3467). MicroRNA chip data have been deposited at the ArrayExpress database (accession no. E-TABM-68).
+---

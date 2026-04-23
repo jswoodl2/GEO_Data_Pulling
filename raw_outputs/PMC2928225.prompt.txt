@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Microcirculation 319 nihpa Microcirculation (New York, N.Y. : 1994) 1073-9688 1549-8719 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC2928225 PMC2928225.1 2928225 2928225 NIHMS226878 20618694 10.1111/j.1549-8719.2010.00038.x NIHMS226878 NIHPA226878 1 Article Explant Outgrowth, Propagation and Characterization of Human Pericytes Maier Cheryl L. M.Phil. 1 * Shepherd Benjamin R. Ph.D. 1 * + Yi Tai M.D. 1 Pober Jordan S. M.D., Ph.D. 1 2 3 1 2 3 Address correspondence to: Jordan S. Pober, M.D., Ph.D., Yale University School of Medicine, 10 Amistad Street, Room 401 D, New Haven, CT, 06520, USA. Phone: (203) 737-2292; Fax: (203) 737-2293; jordan.pober@yale.edu * These authors contributed equally to this work. + Current Address: Benjamin R. Shepherd, Ph.D., Organovo, Inc., 5871 Oberlin Drive, San Diego, California, 92121, USA. 7 2010 17 5 189400 367 380 16 08 2010 01 07 2011 01 07 2011 15 06 2011 06 06 2024 Objective Pericytes are critical cellular components of the microvasculature that play a major role in vascular development and pathologies, yet their study has been hindered by lack of a standardized method for their isolation and growth. Here we report a method for culturing human pericytes from a readily available tissue source, placenta, and provide a thorough characterization of resultant cell populations. Methods We developed an optimized protocol for obtaining pericytes by outgrowth from microvessel fragments recovered after enzymatic digestion of human placental tissue. We characterized outgrowth populations by immunostaining, by gene expression analysis, and by functional evaluation of cells implanted in vivo. Results Our approach yields human pericytes that may be serially expanded in culture and that uniformly express the cellular markers NG2, CD90, CD146, α-SMA, and PDGFR-β , but lack markers of smooth muscle cells, endothelial cells, and leukocytes. When co-implanted with human endothelial cells into C.B-17 SCID/bg mice, human pericytes invest and stabilize developing human endothelial cell-lined microvessels. Conclusions We conclude that our method for culturing pericytes from human placenta results in the expansion of functional pericytes that may be used to study a variety of questions related to vascular biology. microvessel endothelial cell placenta pericyte isolation pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

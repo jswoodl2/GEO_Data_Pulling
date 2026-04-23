@@ -1,0 +1,41 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Rebecca A. Simmons",
+  "Supervisor/Contact/Corresponding author email": "rsimmons@pennmedicine.upenn.edu",
+  "Main topic of the publication": "This paper investigates the placental transcriptome in male and female placentas from women with spontaneous preterm birth (SPTB) compared to normal pregnancies, focusing on Black women to assess alterations in gene expression profiles related to inflammation, energy metabolism, and fetal sex differences in SPTB.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 29.4,
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": [],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [
+    "inflammation",
+    "oxidative stress",
+    "detoxification",
+    "mitochondrial function",
+    "energy metabolism",
+    "extracellular matrix"
+  ],
+  "Hospital/Center where samples were collected": "University of Pennsylvania",
+  "Country where samples were collected": "Switzerland"
+}

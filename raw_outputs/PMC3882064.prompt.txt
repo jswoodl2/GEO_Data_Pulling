@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Diabetologia Diabetologia 319 nihpa Diabetologia 0012-186X 1432-0428 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC3882064 PMC3882064.1 3882064 3882064 NIHMS313942 21491160 10.1007/s00125-011-2132-6 NIHMS313942 NIHPA313942 1 Article Altered gene expression and spongiotrophoblast differentiation in placenta from a mouse model of diabetes in pregnancy Salbaum J. M. Laboratory of Regulation of Gene Expression, Pennington Biomedical Research Center, Baton Rouge, LA, USA Kruger C. Department of Maternal Biology, Pennington Biomedical Research Center, 6400 Perkins Road, Baton Rouge, LA 70808, USA Zhang X. Department of Maternal Biology, Pennington Biomedical Research Center, 6400 Perkins Road, Baton Rouge, LA 70808, USA Delahaye N. Arbour Laboratory of Regulation of Gene Expression, Pennington Biomedical Research Center, Baton Rouge, LA, USA Pavlinkova G. Department of Pediatrics, University of Nebraska Medical Center, Omaha, NE, USA Burk D. H. Cell Biology and Bioimaging Core, Pennington Biomedical Research Center, Baton Rouge, LA, USA Kappen C. Department of Maternal Biology, Pennington Biomedical Research Center, 6400 Perkins Road, Baton Rouge, LA 70808, USA claudia.kappen@pbrc.edu 14 4 2011 7 2011 54 7 231775 10.1007/s00125-011-2132-6 06 12 2013 06 01 2014 06 01 2014 05 06 2024 © Springer-Verlag 2011 2011 Aims/hypothesis Pregnancies complicated by diabetes have a higher risk of adverse outcomes for mothers and children, including predisposition to disease later in life, e.g. metabolic syndrome and hypertension. We hypothesised that adverse outcomes from diabetic pregnancies may be linked to compromised placental function, and sought to identify cellular and molecular abnormalities in diabetic placenta. Methods Using a mouse model of diabetic pregnancy, placental gene expression was assayed at mid-gestation and cellular composition analysed at various stages. Genome-wide expression profiling was validated by quantitative PCR and tissue localisation studies were performed to identify cellular correlates of altered gene expression in diabetic placenta. Results We detected significantly altered gene expression in diabetic placenta for genes expressed in the maternal and those expressed in the embryonic compartments. We also found altered cellular composition of the decidual compartment. In addition, the junctional and labyrinth layers were reduced in diabetic placenta, accompanied by aberrant differentiation of spongiotrophoblast cells. Conclusions/interpretation Diabetes during pregnancy alters transcriptional profiles in the murine placenta, affecting cells of embryonic and maternal origin, and involving several genes not previously implicated in diabetic pregnancies. The molecular changes and abnormal differentiation of multiple cell types precede impaired growth of junctional zone and labyrinth, and of placenta overall. Regardless of whether these changes represent direct responses to hyperglycaemia or are physiological adaptations, they are likely to play a role in pregnancy complications and outcomes, and to have implications for developmental origins of adult disease. Diabetic placenta Diabetic pregnancy Gene expression profiling Gene regulation Hyperglycaemia Junctional layer Maternal diabetes Placental insufficiency Spongiotrophoblast Transcription factors National Institute of Child Health & Human Development : NICHD R01 HD055528-05 || HD National Institute of Child Health & Human Development : NICHD R01 HD037804-10 || HD pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

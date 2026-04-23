@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Stem Cells Dev 1171 scd scd Stem Cells and Development 1547-3287 1557-8534 Mary Ann Liebert, Inc. PMC3128320 PMC3128320.1 3128320 3128320 20128659 10.1089/scd.2009.0426 10.1089/scd.2009.0426 1 Original Research Reports Characterization of microRNAs Involved in Embryonic Stem Cell States Stadler Bradford 1, 2 Ivanovska Irena 3 Mehta Kshama 4 Song Sunny 4 Nelson Angelique 2, 5 Tan Yunbing 6 Mathieu Julie 1, 2 Darby Christopher 1, 2 Blau C. Anthony 2, 5 Ware Carol 2, 5 Peters Garrick 4 Miller Daniel G. 7 Shen Lanlan 8 Cleary Michele A. 3 Ruohola-Baker Hannele 1, 2 1 University of Washington 2 University of Washington 3 Rosetta Inpharmatics LLC 4 Agilent Technologies, Inc 5 University of Washington 6 Washington State University 7 University of Washington 8 Baylor College of Medicine Address correspondence to: Dr. Hannele Ruohola-Baker, University of Washington, 815 Mercer Street, South Research Bldg, Room A581, Seattle, WA 98109. E-mail: hannele@u.washington.edu 7 2010 03 2 2010 19 7 198143 935 950 04 2 2009 02 2 2010 01 07 2011 19 07 2011 25 06 2024 Copyright 2010, Mary Ann Liebert, Inc. 2010 Studies of embryonic stem cells (ESCs) reveal that these cell lines can be derived from differing stages of embryonic development. We analyzed common changes in the expression of microRNAs (miRNAs) and mRNAs in 9 different human ESC (hESC) lines during early commitment and further examined the expression of key ESC-enriched miRNAs in earlier developmental states in several species. We show that several previously defined hESC-enriched miRNA groups (the miR-302, −17, and −515 families, and the miR-371–373 cluster) and several other hESC-enriched miRNAs are down-regulated rapidly in response to differentiation. We further found that mRNAs up-regulated upon differentiation are enriched in potential target sites for these hESC-enriched miRNAs. Interestingly, we also observed that the expression of ESC-enriched miRNAs bearing identical seed sequences changed dynamically while the cells transitioned through early embryonic states. In human and monkey ESCs, as well as human-induced pluripotent stem cells (iPSCs), the miR-371–373 cluster was consistently up-regulated, while the miR-302 family was mildly down-regulated when the cells were chemically treated to regress to an earlier developmental state. Similarly, miR-302b, but not mmu-miR-295, was expressed at higher levels in murine epiblast stem cells (mEpiSC) as compared with an earlier developmental state, mouse ESCs. These results raise the possibility that the relative expression of related miRNAs might serve as diagnostic indicators in defining the developmental state of embryonic cells and other stem cell lines, such as iPSCs. These data also raise the possibility that miRNAs bearing identical seed sequences could have specific functions during separable stages of early embryonic development. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

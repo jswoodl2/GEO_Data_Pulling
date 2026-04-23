@@ -1,0 +1,52 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Liangpu Xu",
+  "Supervisor/Contact/Corresponding author email": "xiliangpu@fjmu.edu.cn",
+  "Main topic of the publication": "This study explores the molecular etiology of fetal talipes equinovarus (TE) using Chromosomal Microarray Analysis (CMA) to provide information for clinical screening and genetic counseling.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "2nd",
+    "3rd"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "No",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": 9.0,
+  "Sex of Offspring Provided (yes/no)": "Yes",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Oligohydramnios",
+    "Twin pregnancy"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Cardiac axis to the left",
+    "Mild tricuspid and pulmonary valve regurgitation",
+    "Increased echo of parenchyma of both kidneys",
+    "Intestinal hyperechogenicity",
+    "Ventriculomegaly",
+    "Cerebellar vermis dysplasia",
+    "Smaller magenblase",
+    "Hydramnios",
+    "Renal pelvis cysts"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "Talipes equinovarus",
+    "clubfoot"
+  ],
+  "Hospital/Center where samples were collected": "Fujian Provincial Maternity and Children’s Hospital",
+  "Country where samples were collected": "China",
+  "PMCID": "PMC10658977"
+}

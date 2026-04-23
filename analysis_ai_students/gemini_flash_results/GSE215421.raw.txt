@@ -1,0 +1,317 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Margareta D. Pisarska",
+    "confidence": "high",
+    "reason": "Listed in the correspondence section of the main text.",
+    "evidence": [
+      {
+        "quote": "Correspondence: Margareta D. Pisarska, M.D., Division of Reproductive Endocrinology and Infertility, Department of Obstetrics and Gynecology, Cedars-Sinai Medical Center",
+        "source": "Main text, Correspondence"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "pisarskam@cshs.org",
+    "confidence": "high",
+    "reason": "Listed in the correspondence section of the main text.",
+    "evidence": [
+      {
+        "quote": "pisarskam@cshs.org",
+        "source": "Main text, Correspondence"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Differential gene expression in first trimester placenta (placentation) between pregnancies conceived spontaneously versus those using fertility treatments (IVF and NIFT).",
+    "confidence": "high",
+    "reason": "Stated in the abstract and title.",
+    "evidence": [
+      {
+        "quote": "To identify differences in the transcriptomic profiles during placentation from pregnancies conceived spontaneously to those with infertility, using non-in vitro fertilization (NIFT) or in vitro fertilization (IVF).",
+        "source": "Main text, Abstract"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": [
+      "1st",
+      "Term"
+    ],
+    "confidence": "high",
+    "reason": "Samples were collected in the first trimester (11-13 weeks), and offspring delivery outcomes are reported at term.",
+    "evidence": [
+      {
+        "quote": "Women undergoing chorionic villus sampling at gestational age 11–13 weeks (n=141)",
+        "source": "Main text, Abstract"
+      },
+      {
+        "quote": "Gestational age at delivery (days) 273 \u00b1 13",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Birthweight means and standard deviations are reported for all groups in Table 1.",
+    "evidence": [
+      {
+        "quote": "Birthweight (grams) 3430 \u00b1 590 3192 \u00b1 623",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Reported in days in Table 1.",
+    "evidence": [
+      {
+        "quote": "Gestational age at delivery (days) 273 \u00b1 13 270 \u00b1 14",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "39",
+    "confidence": "high",
+    "reason": "Calculated from the mean gestational age at delivery (273 days / 7 = 39 weeks; 270 days / 7 = 38.6 weeks).",
+    "evidence": [
+      {
+        "quote": "Gestational age at delivery (days) 273 \u00b1 13",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Reported in both weeks and days.",
+    "evidence": [
+      {
+        "quote": "Women undergoing chorionic villus sampling at gestational age 11\u201313 weeks",
+        "source": "Main text, Abstract"
+      },
+      {
+        "quote": "Gestational age at CVS (days) 83 \u00b1 6.1",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "11.9",
+    "confidence": "high",
+    "reason": "Table 1 reports 83 days, which is approximately 11.9 weeks (83/7). Abstract also notes 11-13 weeks.",
+    "evidence": [
+      {
+        "quote": "Gestational age at CVS (days) 83 \u00b1 6.1",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Fetal sex distribution is reported in Table 1.",
+    "evidence": [
+      {
+        "quote": "Sex of fetus Male 40, 54% 32, 48% Female 34, 46% 35, 52%",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Parity is not listed in demographic tables or text.",
+    "evidence": []
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Gravidity is not listed in demographic tables or text.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The study specifies that only singleton pregnancies were included.",
+    "evidence": [
+      {
+        "quote": "Our SMAART Study cohort consisted of 409 singleton pregnancies",
+        "source": "Main text, Materials and Methods"
+      }
+    ]
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Maternal race is explicitly reported in Table 1.",
+    "evidence": [
+      {
+        "quote": "Maternal race Caucasian Asian African American Biracial",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "medium",
+    "reason": "Fetal race is provided, and the study notes clustering by race was used to select a subset for transcriptomic analysis, which functions as an ancestry control.",
+    "evidence": [
+      {
+        "quote": "there was clustering due to fetal race so we selected to use our largest populations that clustered together which included Caucasian and Caucasian-Asian fetuses.",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Only maternal BMI is provided.",
+    "evidence": []
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Only maternal BMI is provided.",
+    "evidence": []
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Not reported.",
+    "evidence": []
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Not reported.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Maternal age is provided in Table 1.",
+    "evidence": [
+      {
+        "quote": "Maternal age (years) 39 \u00b1 2.2",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Paternal age is provided in Table 1.",
+    "evidence": [
+      {
+        "quote": "Paternal age (years) 41 \u00b1 4.9",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Table 1 includes subjects with hypertension, diabetes, and coagulation disorders.",
+    "evidence": [
+      {
+        "quote": "Pregnancy complications 10, 14% 18, 27% ... Hypertension Diabetes Coagulation disorders Placenta previa Placental abruption",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Reported in Table 1.",
+    "evidence": [
+      {
+        "quote": "Mode of delivery Vaginal, Spontaneous Cesarean Section",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "Hypertension",
+      "Pregnancy-related diabetes",
+      "Coagulation disorders",
+      "Placenta previa",
+      "Placental abruption"
+    ],
+    "confidence": "high",
+    "reason": "Complications are listed in Table 1 under 'Pregnancy Outcomes'.",
+    "evidence": [
+      {
+        "quote": "Pregnancy complications... Hypertension... Diabetes... Coagulation disorders... Placenta previa... Placental abruption",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "The paper focuses on birth weight and gestational age but notes that all subjects delivered 'viable offspring' with 'normal birth outcomes'.",
+    "evidence": [
+      {
+        "quote": "all subjects had a fetus with normal karyotype analysis and birth outcomes",
+        "source": "Main text, Results"
+      }
+    ]
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high",
+    "reason": "No specific fetal complications are listed other than birth weight differences, which are categorized as outcomes.",
+    "evidence": []
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "Maternal BMI",
+      "Maternal thyroid disease",
+      "Crown rump length",
+      "Paternal race",
+      "Fetal race"
+    ],
+    "confidence": "high",
+    "reason": "These additional characteristics are reported in the demographic tables.",
+    "evidence": [
+      {
+        "quote": "Maternal BMI 22 \u00b1 3.2",
+        "source": "Main text, Table 1"
+      },
+      {
+        "quote": "Thyroid disease 16, 22% 14, 21%",
+        "source": "Main text, Table 1"
+      },
+      {
+        "quote": "Crown rump length (mm) 56 \u00b1 11",
+        "source": "Main text, Table 1"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Cedars-Sinai Prenatal Diagnostic Center",
+    "confidence": "high",
+    "reason": "Specified in the CVS collection section of methods.",
+    "evidence": [
+      {
+        "quote": "Chorionic villus samples were collected at 11\u201313 weeks gestation at the Cedars-Sinai Prenatal Diagnostic Center",
+        "source": "Main text, Methods"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "USA",
+    "confidence": "high",
+    "reason": "The center is located in Los Angeles, CA, USA.",
+    "evidence": [
+      {
+        "quote": "Cedars-Sinai Medical Center, Los Angeles, CA, USA",
+        "source": "Main text, Author Information"
+      }
+    ]
+  }
+}

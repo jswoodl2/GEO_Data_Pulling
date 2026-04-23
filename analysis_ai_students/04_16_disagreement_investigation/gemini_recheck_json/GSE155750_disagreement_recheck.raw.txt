@@ -1,0 +1,46 @@
+{
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper mentions that fetal sex was used as a matching criterion for the study groups, but the specific sex (e.g., male or female) or the distribution of sexes is never reported.",
+    "evidence": []
+  },
+  "Parity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal parity is not mentioned in the provided text or supplementary materials.",
+    "evidence": []
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal gravidity is not mentioned in the provided text or supplementary materials.",
+    "evidence": []
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "While the paper discusses pregnancies and live births, it never explicitly states the number of offspring per pregnancy (e.g., singleton vs. multiple gestations).",
+    "evidence": []
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "Maternal race or ethnicity is not reported in the main text or supplements.",
+    "evidence": []
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper states that subjects were matched based on maternal age, but no specific ages, mean ages, or age ranges are provided for the cohort.",
+    "evidence": []
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "No",
+    "confidence": "high",
+    "reason": "The paper mentions 'deliveries at term' but does not specify the mode (e.g., vaginal or cesarean).",
+    "evidence": []
+  }
+}
+
+}

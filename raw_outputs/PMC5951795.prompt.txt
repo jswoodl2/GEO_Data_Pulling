@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Cell Res Cell Res 1475 cellres Cell Research 1001-0602 1748-7838 Nature Publishing Group PMC5951795 PMC5951795.1 5951795 5951795 29463899 10.1038/s41422-018-0010-1 10 1 Letter to the Editor Silencing of developmental genes by H3K27me3 and DNA methylation reflects the discrepant plasticity of embryonic and extraembryonic lineages http://orcid.org/0000-0002-6843-8055 Yang Xianfa 1 2 Hu Boqiang 3 http://orcid.org/0000-0001-7875-7087 Hou Yu 3 Qiao Yunbo +86-020-39366251 ybqiao@gzhu.edu.cn 1 4 Wang Ran 1 Chen Yingying 1 Qian Yun 1 Feng Su 1 Chen Jun 1 5 Liu Chang 1 http://orcid.org/0000-0002-8586-0637 Peng Guangdun 1 http://orcid.org/0000-0002-8625-7717 Tang Fuchou +86-010-62744062 tangfuchou@pku.edu.cn 3 6 7 Jing Naihe +86-021-54921381 njing@sibcb.ac.cn 1 2 1 0000000119573309 grid.9227.e State Key Laboratory of Cell Biology, CAS Center for Excellence in Molecular Cell Science, Shanghai Institute of Biochemistry and Cell Biology, Chinese Academy of Sciences; University of Chinese Academy of Sciences, 2 grid.440637.2 School of Life Science and Technology, ShanghaiTech University, 3 0000 0001 2256 9319 grid.11135.37 Beijing Advanced Innovation Center for Genomics (ICG) and Biomedical Institute for Pioneering Investigation via Convergence, College of Life Sciences, Peking University, 4 0000 0001 0067 3588 grid.411863.9 Precise Genome Engineering Center, School of Life Sciences, Guangzhou University, Guangzhou, 5 0000 0000 9878 7032 grid.216938.7 Department of Genetics and Cell Biology, College of Life Sciences, Nankai University, 6 0000 0004 0369 313X grid.419897.a Ministry of Education Key Laboratory of Cell Proliferation and Differentiation, 7 0000 0001 2256 9319 grid.11135.37 Peking-Tsinghua Center for Life Sciences, Peking University, 20 2 2018 5 2018 28 5 312495 593 596 8 10 2017 17 12 2017 20 12 2017 01 05 2019 01 05 2019 27 05 2018 20 07 2024 © IBCB, SIBS, CAS 2018 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes issue-copyright-statement © IBCB, SIBS, CAS 2018
+---

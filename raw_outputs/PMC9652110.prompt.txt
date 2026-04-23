@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Hum Mol Genet Hum Mol Genet 740 hmg hmg Human Molecular Genetics 0964-6906 1460-2083 Oxford University Press PMC9652110 PMC9652110.1 9652110 9652110 35717573 10.1093/hmg/ddac138 ddac138 1 Original Article AcademicSubjects/SCI01140 Embryo cryopreservation leads to sex-specific DNA methylation perturbations in both human and mouse placentas Mani Sneha Department of Obstetrics and Gynecology PA 19104 USA Center for Research on Reproduction and Women’s Health PA 19104 USA Ghosh Jayashri Cancer and Cellular Biology PA 19140 USA Rhon-Calderon Eric A Department of Cell and Developmental Biology PA 19104 USA Lan Yemin Department of Cell and Developmental Biology PA 19104 USA Ord Teri Department of Obstetrics and Gynecology PA 19104 USA Center for Research on Reproduction and Women’s Health PA 19104 USA Kalliora Charikleia Department of Obstetrics and Gynecology PA 19104 USA Center for Research on Reproduction and Women’s Health PA 19104 USA Chan Joe Cancer and Cellular Biology PA 19140 USA Schultz Bryant Cancer and Cellular Biology PA 19140 USA Vaughan-Williams Elaine Cancer and Cellular Biology PA 19140 USA Coutifaris Christos Department of Obstetrics and Gynecology PA 19104 USA Center for Research on Reproduction and Women’s Health PA 19104 USA Sapienza Carmen Cancer and Cellular Biology PA 19140 USA Senapati Suneeta Department of Obstetrics and Gynecology PA 19104 USA Center for Research on Reproduction and Women’s Health PA 19104 USA Bartolomei Marisa S Center for Research on Reproduction and Women’s Health PA 19104 USA Department of Cell and Developmental Biology PA 19104 USA https://orcid.org/0000-0003-3306-4791 Mainigi Monica Department of Obstetrics and Gynecology PA 19104 USA Center for Research on Reproduction and Women’s Health PA 19104 USA To whom correspondence should be addressed at: Department of Obstetrics and Gynecology, Perelman School of Medicine, University of Pennsylvania, 3701 Market Street, 8th floor, Philadelphia, PA 19104, USA. Tel: +1 2156622972 +1 2153495512 Monica.Mainigi@pennmedicine.upenn.edu 15 11 2022 18 6 2022 31 22 421379 3855 3872 1 3 2022 27 5 2022 30 5 2022 16 7 2022 18 06 2023 18 06 2023 15 11 2022 01 07 2024 © The Author(s) 2022. Published by Oxford University Press. All rights reserved. For Permissions, please email: journals.permissions@oup.com 2022 https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model This article is published and distributed under the terms of the Oxford University Press, Standard Journals Publication Model ( https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model Abstract In vitro fertilization (IVF) is associated with DNA methylation abnormalities and a higher incidence of adverse pregnancy outcomes. However, which exposure(s), among the many IVF interventions, contributes to these outcomes remains unknown. Frozen embryo transfer (ET) is increasingly utilized as an alternative to fresh ET, but reports suggest a higher incidence of pre-eclampsia and large for gestational age infants. This study examines DNA methylation in human placentas using the 850K Infinium MethylationEPIC BeadChip array obtained after 65 programmed frozen ET cycles, 82 fresh ET cycles and 45 unassisted conceptions. Nine patients provided placentas following frozen and fresh ET from consecutive pregnancies for a paired subgroup analysis. In parallel, eight mouse placentas from fresh and frozen ET were analyzed using the Infinium Mouse Methylation BeadChip array. Human and mouse placentas were significantly hypermethylated after frozen ET compared with fresh. Paired analysis showed similar trends. Sex-specific analysis revealed that these changes were driven by male placentas in humans and mice. Frozen and fresh ET placentas were significantly different from controls, with frozen samples hypermethylated compared with controls driven by males and fresh samples being hypomethylated compared with controls, driven by females. Sexually dimorphic epigenetic changes could indicate differential susceptibility to IVF-associated perturbations, which highlights the importance of sex-specific evaluation of adverse outcomes. Similarities between changes in mice and humans underscore the suitability of the mouse model in evaluating how IVF impacts the epigenetic landscape, which is valuable given limited access to human tissue and the ability to isolate specific interventions in mice. National Institutes of Health 10.13039/100000002 P50 HD068157-06A1 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes .13039/100000002 P50 HD068157-06A1 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

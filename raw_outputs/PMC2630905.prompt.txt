@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Endocrinology 562 endo Endocrinology 0013-7227 1945-7170 The Endocrine Society PMC2630905 PMC2630905.1 2630905 2630905 18818296 10.1210/en.2008-0990 4514 1 Article Reproduction - Development Severe Preeclampsia-Related Changes in Gene Expression at the Maternal-Fetal Interface Include Sialic Acid-Binding Immunoglobulin-Like Lectin-6 and Pappalysin-2 Winn Virginia D. Gormley Matthew Paquet Agnes C. Kjaer-Sorensen Kasper Kramer Anita Rumer Kristen K. Haimov-Kochman Ronit Yeh Ru-Fang Overgaard Michael T. Varki Ajit Oxvig Claus Fisher Susan J. Departments of Obstetrics, Gynecology, and Reproductive Sciences (V.D.W., M.G., R.H.-K.), Cell and Tissue Biology (R.H.-K., S.J.F.), Medicine Lung Biology Center (A.C.P., R.-F.Y.), and Anatomy and Pharmaceutical Chemistry (S.J.F.), University of California, San Francisco, San Francisco, California 94143; Department of Obstetrics and Gynecology (V.D.W., A.K., K.K.R.), University of Colorado Denver, Aurora, Colorado 80045; Department of Molecular and Cellular Medicine (A.V.), University of California, San Diego, San Diego, California 92093; and Department of Molecular Biology (K.K.-S., M.T.O., C.O.), University of Aarhus, DK-8000 Aarhus C, Denmark Address all correspondence and requests for reprints to: Virginia D. Winn, M.D., Ph.D., University of Colorado Denver, Department of Obstetrics and Gynecology, Reproductive Sciences, Mail Stop 8309, 12800 East 19th Avenue, P.O. Box 6511, Aurora, Colorado 80045. E-mail: Virginia.Winn@ucdenver.edu 1 2009 25 9 2008 150 1 175844 452 462 2 7 2008 15 9 2008 01 01 2010 01 01 2010 31 05 2024 Copyright © 2009 by The Endocrine Society 2009 Preeclampsia (PE), which affects 4–8% of human pregnancies, causes significant maternal and neonatal morbidity and mortality. Within the basal plate, placental cytotrophoblasts (CTBs) of fetal origin invade the uterus and extensively remodel the maternal vasculature. In PE, CTB invasion is often shallow, and vascular remodeling is rudimentary. To better understand possible causes, we conducted a global analysis of gene expression at the maternal-fetal interface in placental samples from women with PE (n = 12; 24–36 wk) vs e.g e.g Gene expression analysis of placental basal plates from severe preeclamptic pregnancies and controls revealed differential expression of 55 genes, including Siglec-6 and pappalysin-2. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf no pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

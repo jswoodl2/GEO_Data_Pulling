@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Biol Reprod Biol. Reprod 675 biolreprod bire Biol Reprod Biology of Reproduction 0006-3363 1529-7268 Oxford University Press PMC3431427 PMC3431427.1 3431427 3431427 22674387 10.1095/biolreprod.112.101147 1 Research Article Pregnancy Comprehensive Analysis of Genes Expressed by Rare Microchimeric Fetal Cells in the Maternal Mouse Lung 1 GENE EXPRESSION OF FETAL CELLS IN MATERNAL LUNG Pritchard Stephanie 3, 4 Wick Heather C. 5 Slonim Donna K. 5 Johnson Kirby L. 3 Bianchi Diana W. 2, 3 3 4 5 2 dbianchi@tuftsmedicalcenter.org 6 6 2012 8 2012 87 2 213531 42 19 4 2012 16 5 2012 22 5 2012 01 08 2013 01 08 2013 26 08 2014 © 2012 by the Society for the Study of Reproduction, Inc. 2012 ABSTRACT During pregnancy, cells from each fetus travel into the maternal circulation and organs, resulting in the development of microchimerism. Identification of the cell types in this microchimeric population would permit better understanding of possible mechanisms by which they affect maternal health. However, comprehensive analysis of fetal cells has been hampered by their rarity. In this study, we sought to overcome this obstacle by combining flow cytometry with multidimensional gene expression microarray analysis of fetal cells isolated from the murine maternal lung during late pregnancy. Fetal cells were collected from the lungs of pregnant female mice. cDNA was amplified and hybridized to gene expression microarrays. The resulting fetal cell core transcriptome was interrogated using multiple methods including Ingenuity Pathway Analysis, the BioGPS gene expression database, principal component analysis, the Eurexpress gene expression atlas, and primary literature. Here we report that small numbers of fetal cells can be flow sorted from the maternal lung, facilitating discovery-driven gene expression analysis. We additionally show that gene expression data can provide functional information about fetal cells. Our results suggest that fetal cells in the murine maternal lung are a mixed population, consisting of trophoblasts, mesenchymal stem cells, and cells of the immune system. Detection of trophoblasts and immune cells in the maternal lung may facilitate future mechanistic studies related to the development of immune tolerance and pregnancy-related complications, such as pre-eclampsia. Furthermore, the presence and persistence of mesenchymal stem cells in maternal organs may have implications for long-term postpartum maternal health. Comprehensive gene expression microarray analysis of fetal cells isolated from the pregnant murine maternal lung shows the major cell populations to be trophoblasts, mesenchymal stem cells, and cells of the immune system. mesenchymal stem cells microarray microchimerism reproductive immunology trophoblasts pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement no pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

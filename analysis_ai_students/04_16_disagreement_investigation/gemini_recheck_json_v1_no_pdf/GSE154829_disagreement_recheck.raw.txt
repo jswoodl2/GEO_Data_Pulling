@@ -1,0 +1,40 @@
+[
+  {
+    "Birthweight of offspring provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "While the paper analyzes birth weight as a primary variable and specifies the units (grams) and transformation (logarithmic scale) used for regression, it does not explicitly report any summary statistics (e.g., mean, SD, range) or individual values for the infants' birth weights in the provided text or supplement.",
+      "evidence": []
+    },
+    "Gestational Age at delivery provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The provided text and supplement do not mention gestational age at delivery for the study population.",
+      "evidence": []
+    },
+    "Gestational Age at sample collection provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The provided text and supplement do not explicitly report the gestational age at the time of sample collection.",
+      "evidence": []
+    },
+    "Number of offspring per pregnancy provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The provided text and supplement do not specify whether the pregnancies were singletons or multiples, nor do they provide a count of offspring per pregnancy.",
+      "evidence": []
+    },
+    "Self-reported race/ethnicity of mother provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The provided text and supplement do not mention maternal race or ethnicity.",
+      "evidence": []
+    },
+    "Maternal age at sample collection provided (yes/no)": {
+      "answer": "No",
+      "confidence": "high",
+      "reason": "The provided text and supplement do not mention the age of the mothers at the time of sample collection.",
+      "evidence": []
+    }
+  }
+]

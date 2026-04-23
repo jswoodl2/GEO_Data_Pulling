@@ -1,0 +1,50 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Nandor Gabor Than, Roberto Romero, and Zoltan Papp",
+  "Supervisor/Contact/Corresponding author email": "than.gabor@ttk.mta.hu, prbchiefstaff@med.wayne.edu, and pzorvosihetilap@maternity.hu",
+  "Main topic of the publication": "This study uses a systems biology approach to investigate maternal and placental compartments in preeclampsia, aiming to identify novel pathways involved in the disease and its various aspects, including placental disease, fetal and maternal outcomes, and environmental factors.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "1st",
+    "3rd",
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": [
+    39.7,
+    34.9,
+    38.7,
+    38.1,
+    40.3,
+    32.4
+  ],
+  "Gestational Age at sample collection provided (yes/no)": "Yes",
+  "GA at sample collection (weeks)": [
+    10,
+    8,
+    8,
+    9,
+    12.6,
+    12.4
+  ],
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "Yes",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "Yes",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "Yes",
+  "Pregnancy complications in data set (list)": ["Preeclampsia", "HELLP syndrome"],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": ["Fetal growth restriction"],
+  "Other Phenotypes Provided (list)": ["Blood pressure", "Proteinuria"],
+  "Hospital/Center where samples were collected": "First Department of Obstetrics and Gynaecology, Semmelweis University; Eunice Kennedy Shriver National Institute of Child Health and Human Development; Department of Obstetrics and Gynaecology of the University of Debrecen; Andras Josa Teaching Hospital in Nyiregyhaza",
+  "Country where samples were collected": "Hungary"
+}

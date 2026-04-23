@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Proc Natl Acad Sci U S A Proc. Natl. Acad. Sci. U.S.A 2 pnas PNAS Proceedings of the National Academy of Sciences of the United States of America 0027-8424 1091-6490 National Academy of Sciences PMC5187692 PMC5187692.1 5187692 5187692 27940919 10.1073/pnas.1520945114 201520945 1 1 Biological Sciences Agricultural Sciences Inaugural Article Massive dysregulation of genes involved in cell signaling and placental development in cloned cattle conceptus and maternal endometrium Gene expression in pregnancies bearing clones Biase Fernando H. a 1 Rabel Chanaka b Guillomot Michel c Hue Isabelle c Andropolis Kalista b Olmstead Colleen A. b Oliveira Rosane b Wallace Richard b Le Bourhis Daniel c Richard Christophe c d Campion Evelyne c Chaulot-Talmon Aurélie c Giraud-Delville Corinne c Taghouti Géraldine c Jammes Hélène c Renard Jean-Paul c Sandra Olivier c Lewin Harris A. a b e 2 a University of Illinois at Urbana–Champaign IL b University of Illinois at Urbana–Champaign IL c Institut National de la Recherche Agronomique (INRA) Paris Saclay France d France e University of California, Davis CA 2 lewin@ucdavis.edu This contribution is part of the special series of Inaugural Articles by members of the National Academy of Sciences elected in 2012. Contributed by Harris A. Lewin, November 7, 2016 (sent for review October 23, 2015; reviewed by Douglas F. Antczak and Thomas E. Spencer) Author contributions: J.-P.R., O.S., and H.A.L. designed research; F.H.B., C. Rabel, M.G., I.H., K.A., C.A.O., R.O., R.W., D.L.B., C. Richard, E.C., A.C.-T., C.G.-D., G.T., H.J., and O.S. performed research; F.H.B. analyzed data; and F.H.B. and H.A.L. wrote the paper. Reviewers: D.F.A., Cornell University; and T.E.S., University of Missouri–Columbia. 1 The authors declare no conflict of interest. 20 12 2016 8 12 2016 113 51 282115 14492 14501 20 06 2017 20 06 2017 04 01 2017 25 03 2024 Profile of Harris A. Lewin 113 51 12 12 2016 14468 14470 Proceedings of the National Academy of Sciences of the United States of America 10.1073/pnas.1618868114 PMC5187711 27956630 Significance Cloning cattle by somatic cell nuclear transfer (SCNT) is an agriculturally important technology and is also used as a model system for the study of mammalian development. The SCNT process is inefficient, typically yielding fewer than 10% live offspring. The majority of losses are the result of embryonic death, failure of the implantation process, and development of a defective placenta. A critical period is the implantation window, when survival of the conceptus depends on factors including genetics, epigenetics, and the communication between conceptus and the endometrium. Our study of gene expression in cloned conceptuses and endometrial tissues during the periimplantation period enhances understanding of the mechanisms that lead to pregnancy failure in SCNT cloning. The results have wide implications for cloning of other mammals. A major unresolved issue in the cloning of mammals by somatic cell nuclear transfer (SCNT) is the mechanism by which the process fails after embryos are transferred to the uterus of recipients before or during the implantation window. We investigated this problem by using RNA sequencing (RNA-seq) to compare the transcriptomes in cattle conceptuses produced by SCNT and artificial insemination (AI) at day (d) 18 (preimplantation) and d 34 (postimplantation) of gestation. In addition, endometrium was profiled to identify the communication pathways that might be affected by the presence of a cloned conceptus, ultimately leading to mortality before or during the implantation window. At d 18, the effects on the transcriptome associated with SCNT were massive, involving more than 5,000 differentially expressed genes (DEGs). Among them are 121 genes that have embryonic lethal phenotypes in mice, cause defects in trophoblast and placental development, and/or affect conceptus survival in mice. In endometria at d 18, <0.4% of expressed genes were affected by the presence of a cloned conceptus, whereas at d 34, ∼36% and <0.7% of genes were differentially expressed in intercaruncular and caruncular tissues, respectively. Functional analysis of DEGs in placental and endometrial tissues suggests a major disruption of signaling between the cloned conceptus and the endometrium, particularly the intercaruncular tissue. Our results support a “bottleneck” model for cloned conceptus survival during the periimplantation period determined by gene expression levels in extraembryonic tissues and the endometrial response to altered signaling from clones. somatic cell nuclear transfer conceptus placentation conceptus–maternal communication U.S. Department of Agriculture (USDA) 100000199 AG58-1265-7-027 European Program SABRE CT-2006-0162 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc mbryonic tissues and the endometrial response to altered signaling from clones. somatic cell nuclear transfer conceptus placentation conceptus–maternal communication U.S. Department of Agriculture (USDA) 100000199 AG58-1265-7-027 European Program SABRE CT-2006-0162 pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript no pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

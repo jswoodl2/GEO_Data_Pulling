@@ -1,0 +1,39 @@
+{
+  "Supervisor/Contact/Corresponding author name": "Henry N. Jabbour",
+  "Supervisor/Contact/Corresponding author email": "h.jabbour@hrsu.mrc.ac.uk",
+  "Main topic of the publication": "This paper investigates the role of prokineticin 1 (PROK1) in inducing an inflammatory response in human myometrium, suggesting its potential involvement in initiating both term and preterm parturition. The study demonstrates that PROK1 up-regulates inflammatory mediators in the myometrium and placenta during labor.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "No",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": 37.0,
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "No",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Diabetes",
+    "Hypertension",
+    "Infection"
+  ],
+  "Fetal complications listed (yes/no)": "No",
+  "Fetal complications in data set (list)": [],
+  "Other Phenotypes Provided (list)": [],
+  "Hospital/Center where samples were collected": "Lothian Local Research Ethics Committee",
+  "Country where samples were collected": "UK",
+  "PMCID": "PMC3228917"
+}

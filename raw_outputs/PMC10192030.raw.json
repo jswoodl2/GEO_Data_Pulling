@@ -1,0 +1,42 @@
+{
+  "Supervisor/Contact/Corresponding author name": "William E. Ackerman IV",
+  "Supervisor/Contact/Corresponding author email": "weackerm@uic.edu",
+  "Main topic of the publication": "This study applies transcriptomics with weighted gene correlation network analysis (WGCNA) to clarify placental dysfunction in early-onset preeclampsia (EOPE) with and without fetal growth restriction (FGR), identifying a glycolytic metabolic shift in a subset of EOPE±FGR placental specimens.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": [
+    "Term",
+    "Premature"
+  ],
+  "Birthweight of offspring provided (yes/no)": "Yes",
+  "Gestational Age at delivery provided (yes/no)": "Yes",
+  "GA at delivery (weeks)": "No",
+  "Gestational Age at sample collection provided (yes/no)": "No",
+  "GA at sample collection (weeks)": "No",
+  "Sex of Offspring Provided (yes/no)": "No",
+  "Parity provided (yes/no)": "No",
+  "Gravidity provided (yes/no)": "No",
+  "Number of offspring per pregnancy provided (yes/no)": "No",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "No",
+  "Genetic ancestry or genetic strain provided (yes/no)": "No",
+  "Maternal Height provided (yes/no)": "No",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "No",
+  "Paternal Height provided (yes/no)": "No",
+  "Paternal Weight provided (yes/no)": "No",
+  "Maternal age at sample collection provided (yes/no)": "No",
+  "Paternal age at sample collection provided (yes/no)": "No",
+  "Samples from pregnancy complications collected": "Yes",
+  "Mode of delivery provided (yes/no)": "No",
+  "Pregnancy complications in data set (list)": [
+    "Preeclampsia",
+    "Fetal growth restriction",
+    "Preterm birth"
+  ],
+  "Fetal complications listed (yes/no)": "Yes",
+  "Fetal complications in data set (list)": [
+    "Fetal growth restriction"
+  ],
+  "Other Phenotypes Provided (list)": [
+    "Maternal blood pressure"
+  ],
+  "Hospital/Center where samples were collected": "No",
+  "Country where samples were collected": "No"
+}

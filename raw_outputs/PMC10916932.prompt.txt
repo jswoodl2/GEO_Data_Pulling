@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Cell Cell 319 nihpa Cell 0092-8674 1097-4172 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC10916932 PMC10916932.319 10916932 10916932 NIHMS1944016 38052213 10.1016/j.cell.2023.11.008 NIHMS1944016 NIHPA1944016 319 Article Dissecting embryonic and extra-embryonic lineage crosstalk with stem cell co-culture Wei Yulei 1 2 † * Zhang E 3 † Yu Leqian 1 4 5 6 † Ci Baiquan 3 † Sakurai Masahiro 1 Guo Lei 7 Zhang Xin 2 Lin Sirui 2 Takii Shino 8 Liu Lizhong 1 Liu Jian 3 Schmitz Daniel A. 1 Su Ting 3 Zhang Junmei 2 4 5 Shen Qiaoyan 4 5 Ding Yi 1 Zhan Linfeng 3 Sun Hai-Xi 9 Zheng Canbin 1 Xu Lin 7 Okamura Daiji 8 Ji Weizhi 3 * Tan Tao 3 * Wu Jun 1 10 11 12 * 1 2 3 4 5 6 7 8 9 10 11 12 AUTHOR CONTRIBUTIONS J.W., T.T., Y.W. and L.Y. conceptualized the idea, designed, analyzed, interpreted the experimental results. Y.W. and L.Y. performed most of the mouse cell culture experiments. E.Z. performed most of the monkey cell culture experiments. Y.W. and L.Y. generated and characterized FTW-hXENs from human naïve ESCs. L.L. generated and characterized FTW-hXENs from EPSCs. B.C., L.G., J.L., H.S., L. X. and T.T. performed RNA-seq analysis. S.T. and D.O. performed mouse E6.5-6.75 embryo with/remove EXE in vitro † These authors contributed equally to this work. * Yulei.Wei@cau.edu.cn wji@lpbr.cn tant@lpbr.cn Jun2.Wu@UTSouthwestern.edu DECLARATION OF INTERESTS Y.W., L.Y., T.T. and J.W. are inventors on a patent application (applied through the Board of Regents of The University of Texas System, application number 63/488,401) entitled “Methods For the Derivation Culture Of Embryonic and Extra-Embryonic Stem Cells” arising from this work. The other authors declare no competing interests. 21 12 2023 04 12 2023 186 26 457232 5859 5875.e24 28 02 2024 21 12 2024 21 12 2024 07 03 2024 24 12 2024 Dissecting embryonic and extra-embryonic lineage crosstalk with stem cell co-culture 8 3 2023 2023.03.07.531525 bioRxiv 10.1101/2023.03.07.531525 PMC10028955 36945498 SUMMARY Embryogenesis necessitates harmonious coordination between embryonic and extraembryonic tissues. Although stem cells of both embryonic and extraembryonic origins have been generated 1 14 F T W Macaca fascicularis Graphical Abstract A unified culture condition for all three primary tissues of mouse and cynomolgus monkey blastocysts is established, facilitating stem cell co-culture experiments and uncovering intricate interactions between embryonic and extra-embryonic lineages. pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

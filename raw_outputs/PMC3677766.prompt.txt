@@ -1,0 +1,56 @@
+
+You are an expert biomedical data extractor.
+
+Return ONLY a single valid JSON object (no surrounding text, no code fences).
+STRICT OUTPUT CONTRACT:
+- Yes/No keys: return exactly "Yes" or "No". If it is not explicitly reported, return "No".
+- List keys: return a JSON array of strings ([]) if none.
+- Pregnancy trimester: return one of "1st","2nd","3rd","Term","Premature", OR an array of those (e.g., ["1st","3rd"]). If unclear, return "No".
+- GA fields (weeks): return a bare number (e.g., 38.5). If a value appears like "38 weeks" return 38. If there are multiple samples, return a list, otherwise use the main value. If unclear, return "No".
+- Do not invent values. Prefer "No" if the paper does not explicitly state it.
+
+EXAMPLES (follow exactly):
+- "Gestational Age at delivery provided (yes/no)": "Yes"
+- "GA at delivery (weeks)": 38.5
+- "Pregnancy trimester": "Term"
+- "Pregnancy complications in data set (list)": ["Preeclampsia","Gestational diabetes"]
+- "Country where samples were collected": "United States"
+- Missing/unclear: "No", use your best judgment
+
+Fields to extract (keys) and their instructions (values):
+{
+  "Supervisor/Contact/Corresponding author name": "Find the designated corresponding author. If not explicit, use the last author.",
+  "Supervisor/Contact/Corresponding author email": "Find the corresponding author's email.",
+  "Main topic of the publication": "A brief, 1-2 sentence summary of the paper's main topic.",
+  "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)": "Return '1st', '2nd', '3rd', 'Term', 'Premature', or a list if multiple are studied. Example: ['1st', '3rd'], Please answer question best according to paper.",
+  "Birthweight of offspring provided (yes/no)": "Yes or No.",
+  "Gestational Age at delivery provided (yes/no)": "Yes or No.",
+  "GA at delivery (weeks)": "Return the value as a number (e.g., 38.5) or 'Not Provided'.Answer question best according to paper.",
+  "Gestational Age at sample collection provided (yes/no)": "Yes or No.",
+  "GA at sample collection (weeks)": "Return the value as a number (e.g., 34.2) or 'Not Provided'.Answer question best according to paper.",
+  "Sex of Offspring Provided (yes/no)": "Yes or No.",
+  "Parity provided (yes/no)": "Yes or No.",
+  "Gravidity provided (yes/no)": "Yes or No.",
+  "Number of offspring per pregnancy provided (yes/no)": "Yes or No.",
+  "Self-reported race/ethnicity of mother provided (yes/no)": "Yes or No.",
+  "Genetic ancestry or genetic strain provided (yes/no)": "Yes or No.",
+  "Maternal Height provided (yes/no)": "Yes or No.",
+  "Maternal Pre-pregnancy Weight provided (yes/no)": "Yes or No.",
+  "Paternal Height provided (yes/no)": "Yes or No.",
+  "Paternal Weight provided (yes/no)": "Yes or No.",
+  "Maternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Paternal age at sample collection provided (yes/no)": "Yes or No.",
+  "Samples from pregnancy complications collected": "Yes or No.",
+  "Mode of delivery provided (yes/no)": "Yes or No.",
+  "Pregnancy complications in data set (list)": "Return a list of strings.",
+  "Fetal complications listed (yes/no)": "Yes or No.",
+  "Fetal complications in data set (list)": "Return a list of strings.",
+  "Other Phenotypes Provided (list)": "Return a list of other key phenotypes studied.",
+  "Hospital/Center where samples were collected": "The name of the institution.",
+  "Country where samples were collected": "The name of the country."
+}
+
+---
+PAPER TEXT:
+Placenta Placenta 319 nihpa Placenta 0143-4004 1532-3102 pmc-is-collection-domain yes pmc-collection-title NIHPA Author Manuscripts PMC3677766 PMC3677766.1 3677766 3677766 NIHMS474608 23639576 10.1016/j.placenta.2013.04.007 NIHMS474608 NIHPA474608 1 Article Differentially expressed microRNAs and affected biological pathways revealed by modulated modularity clustering (MMC) analysis of human preeclamptic and IUGR placentas Guo Ling 1 2 3 Tsai Shengdar 5 Harding Nicholas 4 James Andra 6 Motsinger-Reif Alison 4 Thames Betty 6 Stone Eric 4 Deng Changyan 3 Piedrahita Jorge A. 1 2 1 2 3 4 5 6 30 4 2013 7 2013 34 7 223804 599 605 20 05 2013 01 07 2014 01 07 2014 25 06 2014 05 06 2024 © 2013 Elsevier Ltd. All rights reserved. 2013 Introduction This study focuses on the implementation of modulated modularity clustering (MMC) a new cluster algorithm for the identification of molecular signatures of preeclampsia and intrauterine growth restriction (IUGR), and the identification of affected microRNAs Methods Eighty-six human placentas from normal (40), growth-restricted (27), and preeclamptic (19) term pregnancies were profiled using Illumina Human-6 Beadarrays. MMC was utilized to generate modules based on similarities in placental transcriptome. Gene Set Enrichment Analysis (GSEA) was used to predict affected microRNAs. Expression levels of these candidate microRNAs were investigated in seventy-one human term placentas as follows: control (29); IUGR (26); and preeclampsia (16). Results MMC identified two modules, one representing IUGR placentas and one representing preeclamptic placentas. 326 differentially expressed genes in the module representing IUGR and 889 differentially expressed genes in a module representing preeclampsia were identified. Functional analysis of molecular signatures associated with IUGR identified P13K/AKT, mTOR, p70S6K, apoptosis and IGF-1 signaling as being affected. Analysis of variance of GSEA-predicted microRNAs indicated that miR-194 was significantly down-regulated both in preeclampsia (p=0.0001) and IUGR (p=0.0304), and miR-149 was significantly down-regulated in preeclampsia (p=0.0168). Discussion Implementation of MMC, allowed identification of genes disregulated in IUGR and preeclampsia. The reliability of MMC was validated by comparing to previous linear modeling analysis of preeclamptic placentas. Conclusion MMC allowed the elucidation of a molecular signature associated with preeclampsia and a subset of IUGR samples. This allowed the identification of genes, pathways, and microRNAs affected in these diseases. Placenta preeclampsia IUGR miR-194 miR-149 National Institute of Child Health & Human Development : NICHD R01 HD048510 || HD pmc-status-qastatus 0 pmc-status-live yes pmc-status-embargo no pmc-status-released yes pmc-prop-open-access no pmc-prop-olf no pmc-prop-manuscript yes pmc-prop-legally-suppressed no pmc-prop-has-pdf yes pmc-prop-has-supplement yes pmc-prop-pdf-only no pmc-prop-suppress-copyright no pmc-prop-is-real-version no pmc-prop-is-scanned-article no pmc-prop-preprint no pmc-prop-in-epmc yes
+---

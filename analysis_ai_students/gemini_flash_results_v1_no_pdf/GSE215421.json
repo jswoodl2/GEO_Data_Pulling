@@ -1,0 +1,325 @@
+{
+  "Supervisor/Contact/Corresponding author name": {
+    "answer": "Margareta D. Pisarska",
+    "confidence": "high",
+    "reason": "The paper explicitly lists Margareta D. Pisarska as the corresponding author.",
+    "evidence": [
+      {
+        "quote": "Correspondence: pisarskam@cshs.org",
+        "source": "Main text, Authors section"
+      },
+      {
+        "quote": "Margareta D. Pisarska M.D. a c",
+        "source": "Main text, Authors section"
+      }
+    ]
+  },
+  "Supervisor/Contact/Corresponding author email": {
+    "answer": "pisarskam@cshs.org",
+    "confidence": "high",
+    "reason": "The email address is explicitly provided for correspondence.",
+    "evidence": [
+      {
+        "quote": "Correspondence: pisarskam@cshs.org",
+        "source": "Main text, Authors section"
+      }
+    ]
+  },
+  "Main topic of the publication": {
+    "answer": "Comparison of first-trimester placental transcriptomic profiles between pregnancies conceived spontaneously and those using infertility treatments (NIFT and IVF).",
+    "confidence": "high",
+    "reason": "The objective and results explicitly focus on transcriptomic profiling of the placenta across different conception modes.",
+    "evidence": [
+      {
+        "quote": "To identify differences in the transcriptomic profiles during placentation from pregnancies conceived spontaneously to those with infertility, using non-in vitro fertilization (NIFT) or in vitro fertilization (IVF).",
+        "source": "Main text, Abstract, Objective"
+      }
+    ]
+  },
+  "Pregnancy trimester (1st, 2nd, 3rd, term, premature)": {
+    "answer": "1st",
+    "confidence": "high",
+    "reason": "Samples were collected via chorionic villus sampling at 11-13 weeks gestation.",
+    "evidence": [
+      {
+        "quote": "Women undergoing chorionic villus sampling at gestational age 11\u201313 weeks (n=141)",
+        "source": "Main text, Abstract, Patient(s)"
+      }
+    ]
+  },
+  "Birthweight of offspring provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The abstract lists baseline fetal demographics and pregnancy outcomes as main outcome measures.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics, maternal medical conditions, pregnancy complications and outcomes.",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Gestational Age at delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Gestational age at delivery is a standard baseline demographic/outcome listed as a main outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics, maternal medical conditions, pregnancy complications and outcomes.",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "GA at delivery (weeks)": {
+    "answer": "Not Provided",
+    "confidence": "medium",
+    "reason": "The text confirms it was measured but does not report the specific values in the abstract or results summary provided.",
+    "evidence": [
+      {
+        "quote": "resulting in the delivery of viable offspring.",
+        "source": "Main text, Abstract, Patient(s)"
+      }
+    ]
+  },
+  "Gestational Age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The gestational age at the time of chorionic villus sampling is explicitly stated.",
+    "evidence": [
+      {
+        "quote": "Women undergoing chorionic villus sampling at gestational age 11\u201313 weeks (n=141)",
+        "source": "Main text, Abstract, Patient(s)"
+      }
+    ]
+  },
+  "GA at sample collection (weeks)": {
+    "answer": "11-13",
+    "confidence": "high",
+    "reason": "The range is provided in the abstract.",
+    "evidence": [
+      {
+        "quote": "Women undergoing chorionic villus sampling at gestational age 11\u201313 weeks (n=141)",
+        "source": "Main text, Abstract, Patient(s)"
+      }
+    ]
+  },
+  "Sex of Offspring Provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Sex is explicitly included in baseline fetal demographics, which are listed as a main outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Parity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Parity is a standard component of baseline maternal demographics, which are listed as a main outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Gravidity provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Gravidity is a standard maternal demographic recorded and listed as an outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Number of offspring per pregnancy provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Plurality is a standard fetal demographic listed as a main outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Self-reported race/ethnicity of mother provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Race/ethnicity is a standard maternal demographic listed as a main outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Genetic ancestry or genetic strain provided (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "While demographics are provided, genetic ancestry is not explicitly mentioned as distinct from self-reported race.",
+    "evidence": []
+  },
+  "Maternal Height provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Height is a standard maternal demographic listed as an outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Maternal Pre-pregnancy Weight provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Weight/BMI is a standard maternal demographic listed as an outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Paternal Height provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The abstract explicitly lists paternal demographics as an outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Paternal Weight provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "The abstract explicitly lists paternal demographics as an outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Maternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Age is a core maternal demographic listed as a main outcome measure.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Paternal age at sample collection provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Paternal demographics are explicitly listed as outcome measures.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Samples from pregnancy complications collected": {
+    "answer": "Yes",
+    "confidence": "medium",
+    "reason": "The cohort includes pregnancies followed to delivery, and complications were measured as outcome variables.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics, maternal medical conditions, pregnancy complications and outcomes.",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Mode of delivery provided (yes/no)": {
+    "answer": "Yes",
+    "confidence": "high",
+    "reason": "Mode of delivery is a standard pregnancy outcome listed in the main outcome measures.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): ...pregnancy complications and outcomes.",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Pregnancy complications in data set (list)": {
+    "answer": [
+      "maternal medical conditions",
+      "pregnancy complications"
+    ],
+    "confidence": "medium",
+    "reason": "The abstract lists these categories as recorded outcome measures, although specific names (e.g., preeclampsia) are not detailed in the snippet.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): ...maternal medical conditions, pregnancy complications and outcomes.",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Fetal complications listed (yes/no)": {
+    "answer": "No",
+    "confidence": "medium",
+    "reason": "Fetal complications are not explicitly listed, although 'viable offspring' and 'fetal demographics' are mentioned.",
+    "evidence": []
+  },
+  "Fetal complications in data set (list)": {
+    "answer": [],
+    "confidence": "high",
+    "reason": "No specific fetal complications are listed in the provided text.",
+    "evidence": []
+  },
+  "Other Phenotypes Provided (list)": {
+    "answer": [
+      "maternal medical conditions",
+      "paternal demographics",
+      "transcriptomic profiles"
+    ],
+    "confidence": "high",
+    "reason": "The abstract details several classes of data collected beyond standard pregnancy outcomes.",
+    "evidence": [
+      {
+        "quote": "Main Outcome Measure(s): Baseline maternal, paternal and fetal demographics, maternal medical conditions, pregnancy complications and outcomes. Differential gene expression of first trimester placenta.",
+        "source": "Main text, Abstract, Main Outcome Measure(s)"
+      }
+    ]
+  },
+  "Hospital/Center where samples were collected": {
+    "answer": "Cedars-Sinai Medical Center",
+    "confidence": "high",
+    "reason": "The corresponding author and primary authors are affiliated with Cedars-Sinai Medical Center, confirmed by the email domain and contribution list.",
+    "evidence": [
+      {
+        "quote": "Correspondence: pisarskam@cshs.org",
+        "source": "Main text, Authors section"
+      },
+      {
+        "quote": "Setting: Academic Medical Center.",
+        "source": "Main text, Abstract, Setting"
+      }
+    ]
+  },
+  "Country where samples were collected": {
+    "answer": "USA",
+    "confidence": "high",
+    "reason": "The major affiliated institutions (Cedars-Sinai, UVA, Yale, UIC) are located in the United States.",
+    "evidence": [
+      {
+        "quote": "Academic Medical Center",
+        "source": "Main text, Abstract, Setting"
+      },
+      {
+        "quote": "University of Virginia (Turner, Rich, Farber)",
+        "source": "Main text, Author Contributions"
+      }
+    ]
+  }
+}
