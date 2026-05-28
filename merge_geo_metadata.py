@@ -45,7 +45,7 @@ def merge_files(
     merged = meta.merge(final, on=id_column, how="left", suffixes=("", "_final"))
     print(f"Merged rows (left on metadata): {len(merged)}")
 
-    # columns present in both inputs (except the id column) will have a
+    # Columns present in both inputs (except the ID column) will have a
     # duplicate with suffix '_final' after the merge.
     overlapping = [c for c in meta.columns if c in final.columns and c != id_column]
 
@@ -65,11 +65,11 @@ def merge_files(
         if n_mismatch:
             mismatch_records.append((col, n_mismatch))
 
-        # prefer annotations from the final-paper sheet wherever present.
+        # Prefer annotations from the final-paper sheet wherever present.
         merged[col] = merged[final_col].combine_first(merged[col])
         merged.drop(columns=[final_col], inplace=True)
 
-    # special handling for doi vs 'doi (link)' which have different names.
+    # Special handling for DOI vs 'doi (link)' which have different names.
     if "DOI" in merged.columns and "doi (link)" in merged.columns:
         col = "DOI"
         final_col = "doi (link)"
@@ -82,7 +82,7 @@ def merge_files(
         if n_mismatch:
             mismatch_records.append((f"{col}/{final_col}", n_mismatch))
 
-        # prefer doi from the final-paper sheet where available.
+        # Prefer DOI from the final-paper sheet where available.
         merged[col] = merged[final_col].combine_first(merged[col])
         merged.drop(columns=[final_col], inplace=True)
 

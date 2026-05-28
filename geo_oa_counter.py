@@ -1,21 +1,4 @@
-"""
-Count pmids, dois, and likely open-access coverage for the placenta sheet.
-"""
-
-import pandas as pd 
-
-df = pd.read_excel("~/Desktop/placenta_sheet.xlsx")
-
-# count rows with pmid
-with_pmid = df["PMID"].notna().sum()
-
-# count rows with both pmid and doi
-with_pmid_and_doi = df[df["PMID"].notna() & df["doi (link)"].notna()].shape[0]
-
-print("Total GEO Series IDs:", df.shape[0])
-print("With PubMed ID:", with_pmid)
-print("With PubMed ID + DOI:", with_pmid_and_doi)
-
+import os
 import time
 import json
 import pandas as pd
@@ -26,16 +9,29 @@ from urllib3.exceptions import ProtocolError
 from urllib3.util.retry import Retry
 
 
-INPUT_XLSX  = "~/Desktop/placenta_sheet.xlsx"          # your file
-SHEET_NAME  = 0                          # or a name
-OUTPUT_XLSX = "geo_master_access.xlsx"
-UNPAYWALL_EMAIL = "jjosep31@asu.edu"      # required for unpaywall
+def first_existing(paths):
+    for path in paths:
+        if path and os.path.exists(os.path.expanduser(path)):
+            return os.path.expanduser(path)
+    return os.path.expanduser(paths[-1])
+
+
+INPUT_XLSX = first_existing([
+    os.environ.get("GEO_METADATA_INPUT", ""),
+    "gse_metadata_full_checkpoint_MERGED.xlsx",
+    "gse_metadata_full_checkpoint.xlsx",
+    "gse_metadata_full.xlsx",
+    "~/Desktop/placenta_sheet.xlsx",
+])
+SHEET_NAME = os.environ.get("GEO_METADATA_SHEET", "Metadata")
+OUTPUT_XLSX = os.environ.get("PIPELINE_EXCEL_FILE", "geo_master_access.xlsx")
+UNPAYWALL_EMAIL = os.environ.get("UNPAYWALL_EMAIL", "jjosep31@asu.edu")
 NCBI_TOOL = "geo_oa_counter"
 NCBI_EMAIL = UNPAYWALL_EMAIL
 
 NCBI_SLEEP = 0.34
 UNPAYWALL_SLEEP = 0.2
-ALLOW_NC = False  # set true only if non-commercial licenses are allowed
+ALLOW_NC = False  # set True only if PI/librarian approves non-commercial use
 
 
 def make_session():
@@ -221,40 +217,66 @@ def decide_ok(pmc_oa_subset, oa_status, license_str, allow_nc=False):
     return False
 
 
-# run
-df = pd.read_excel(INPUT_XLSX, sheet_name=SHEET_NAME)
+# ---- run ----
+print(f"Reading GEO/access input workbook: {INPUT_XLSX}")
+try:
+    df = pd.read_excel(INPUT_XLSX, sheet_name=SHEET_NAME)
+except ValueError:
+    df = pd.read_excel(INPUT_XLSX, sheet_name=0)
 
-# try to discover columns by header text
-col_pmid = [c for c in df.columns if c.strip().lower() == "pmid"][0]
-col_doi = [c for c in df.columns if "doi" in c.lower()][0]
+# Try to discover identifier columns by header text. GEO_Extraction writes PMID/PMCID/DOI;
+# older hand sheets may use doi (link).
+def find_col(exact=None, contains=None):
+    for c in df.columns:
+        name = str(c).strip().lower()
+        if exact and name == exact:
+            return c
+        if contains and contains in name:
+            return c
+    return None
 
-# check if pmcid column already exists
-col_pmc_existing = next((c for c in df.columns if c.strip().lower()=="pmcid"), None)
+col_pmid = find_col(exact="pmid")
+col_doi = find_col(exact="doi") or find_col(contains="doi")
+col_pmc_existing = find_col(exact="pmcid")
 
-# normalize ids ahead of lookups
-df["PMID_norm"] = df[col_pmid].map(norm_str)
-df["DOI_norm"] = df[col_doi].map(norm_str)
+if col_pmid is None:
+    df["pmid"] = ""
+    col_pmid = "pmid"
+if col_doi is None:
+    df["doi"] = ""
+    col_doi = "doi"
+if col_pmc_existing is None:
+    df["pmcid"] = ""
+    col_pmc_existing = "pmcid"
+
+# Canonical lowercase columns used by later Python steps.
+df["pmid"] = df[col_pmid].map(norm_str)
+df["doi"] = df[col_doi].map(norm_str)
+df["pmcid"] = df[col_pmc_existing].map(norm_str)
+
+# Normalize IDs ahead of lookups
+df["PMID_norm"] = df["pmid"]
+df["DOI_norm"] = df["doi"]
 
 df["has_pmid"] = df["PMID_norm"].ne("")
 df["has_doi"] = df["DOI_norm"].ne("")
 
-# initialize output columns
-df["pmcid"] = ""
+# Initialize output columns
 df["in_pmc"] = False
 
-# tri-state column (true / false / none) so we can represent "unknown"
+# Tri-state column (True / False / None) so we can represent "unknown"
 df["pmc_oa_subset"] = pd.Series([None] * len(df), dtype="object")
 
 df["unpaywall_oa_status"] = ""
 df["best_oa_url"] = ""
 df["license"] = ""
 
-# also tri-state for ok (true/false/none) so unknowns don't get counted as false
+# Also tri-state for OK (True/False/None) so unknowns don't get counted as False
 df["ok_to_text_mine"] = pd.Series([None] * len(df), dtype="object")
 
-# look up pmc for pmids
+# Look up PMC for PMIDs
 for ctr, (i, row) in enumerate(df[df["has_pmid"]].iterrows(), start=1):
-    # check if we already have a pmcid value
+    # Check if we already have a PMCID value
     pmcid_existing = norm_str(row[col_pmc_existing]) if col_pmc_existing else ""
     if pmcid_existing:
         pmcid, in_pmc = pmcid_existing, True
@@ -268,17 +290,17 @@ for ctr, (i, row) in enumerate(df[df["has_pmid"]].iterrows(), start=1):
     df.loc[i, "pmc_oa_subset"] = is_pmc_open_access_subset(pmcid) if in_pmc else False
 
     if ctr % 200 == 0:
-        df.to_excel("geo_master_access_checkpoint.xlsx", index=False)
+        df.to_excel(os.path.splitext(OUTPUT_XLSX)[0] + "_checkpoint.xlsx", index=False)
 
-# look up oa/license for dois
+# Look up OA/license for DOIs
 for ctr, (i, row) in enumerate(df[df["has_doi"]].iterrows(), start=1):
     info = unpaywall_lookup(row["DOI_norm"], UNPAYWALL_EMAIL)
     for k, v in info.items():
         df.loc[i, k] = v
     if ctr % 200 == 0:
-        df.to_excel("geo_master_access_checkpoint.xlsx", index=False)
+        df.to_excel(os.path.splitext(OUTPUT_XLSX)[0] + "_checkpoint.xlsx", index=False)
 
-# determine mining eligibility with the new metadata
+# Determine mining eligibility with the new metadata
 df["ok_to_text_mine"] = df.apply(
     lambda r: decide_ok(r["pmc_oa_subset"], r["unpaywall_oa_status"], r["license"], allow_nc=ALLOW_NC),
     axis=1
@@ -307,13 +329,4 @@ print(f"Mining status unknown: {unknown_ok}")
 
 df.to_excel(OUTPUT_XLSX, index=False)
 print(f"Wrote: {OUTPUT_XLSX}")
-
-# sanity test: single pmid you know has a pmcid
-test_pmid = "PMC6191930"  # replace with one you’re sure of
-pmcid, in_pmc = map_pmid_to_pmcid_via_idconv(test_pmid)
-if not in_pmc:
-    pmcid, in_pmc = map_pmid_to_pmcid_via_elink(test_pmid)
-print("PMID:", test_pmid)
-print("PMCID:", pmcid, "in_pmc:", in_pmc)
-print("pmc_oa_subset:", is_pmc_open_access_subset(pmcid) if in_pmc else False)
 

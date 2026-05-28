@@ -179,9 +179,17 @@ def main() -> None:
         if ext == ".xml":
             text = extract_text_from_xml(fpath)
             if is_truncated(text):
-                print(f"  -> TRUNCATED ({len(text or ''):,} chars), will scrape HTML")
-                truncated_pmcids.append(pmcid)
-                local_results[pmcid] = None  # placeholder
+                if pmcid.startswith("PMC"):
+                    print(f"  -> TRUNCATED ({len(text or ''):,} chars), will scrape HTML")
+                    truncated_pmcids.append(pmcid)
+                    local_results[pmcid] = None  # placeholder
+                elif text:
+                    print(f"  -> SHORT/NON-PMC ({len(text):,} chars), keeping extracted text")
+                    local_results[pmcid] = text
+                    stats["xml_ok"] += 1
+                else:
+                    print("  -> no extractable XML text")
+                    stats["failed"] += 1
             else:
                 print(f"  -> OK ({len(text):,} chars)")
                 local_results[pmcid] = text
@@ -193,9 +201,17 @@ def main() -> None:
                 local_results[pmcid] = text
                 stats["html_file"] += 1
             else:
-                print(f"  -> HTML too short ({len(text or ''):,} chars), will scrape PMC")
-                truncated_pmcids.append(pmcid)
-                local_results[pmcid] = None
+                if pmcid.startswith("PMC"):
+                    print(f"  -> HTML too short ({len(text or ''):,} chars), will scrape PMC")
+                    truncated_pmcids.append(pmcid)
+                    local_results[pmcid] = None
+                elif text:
+                    print(f"  -> SHORT/NON-PMC HTML ({len(text):,} chars), keeping extracted text")
+                    local_results[pmcid] = text
+                    stats["html_file"] += 1
+                else:
+                    print("  -> HTML extraction failed")
+                    stats["failed"] += 1
         elif ext == ".pdf":
             text = extract_text_from_pdf(fpath)
             if text and len(text) > MIN_FULLTEXT_CHARS:
@@ -203,9 +219,17 @@ def main() -> None:
                 local_results[pmcid] = text
                 stats["pdf_file"] += 1
             else:
-                print(f"  -> PDF too short ({len(text or ''):,} chars), will scrape PMC")
-                truncated_pmcids.append(pmcid)
-                local_results[pmcid] = None
+                if pmcid.startswith("PMC"):
+                    print(f"  -> PDF too short ({len(text or ''):,} chars), will scrape PMC")
+                    truncated_pmcids.append(pmcid)
+                    local_results[pmcid] = None
+                elif text:
+                    print(f"  -> SHORT/NON-PMC PDF ({len(text):,} chars), keeping extracted text")
+                    local_results[pmcid] = text
+                    stats["pdf_file"] += 1
+                else:
+                    print("  -> PDF extraction failed")
+                    stats["failed"] += 1
 
     # second pass: scrape truncated papers from pmc html using playwright
     if truncated_pmcids:

@@ -22,10 +22,10 @@ import seaborn as sns
 import textwrap
 
 
-# geo id column name (both sheets use this)
+# GEO ID column name (both sheets use this)
 GEO_COL = "GEO Series ID (GSE___)"
 
-# canonical question fields we want to compare (exact column names in ai sheet)
+# Canonical question fields we want to compare (exact column names in AI sheet)
 CANON_QUESTIONS: List[str] = [
     "Pregnancy trimester (1st, 2nd, 3rd, term (for full-term delivery), premature (for early delivery due to complications)",
     "Birthweight of offspring provided (yes/no)",
@@ -55,7 +55,7 @@ CANON_QUESTIONS: List[str] = [
 
 TRIMESTER_FIELD = CANON_QUESTIONS[0]
 
-# choose which of the above are interpreted as yes/no style
+# Choose which of the above are interpreted as Yes/No style
 YESNO_FIELDS = {
     q
     for q in CANON_QUESTIONS
@@ -63,7 +63,7 @@ YESNO_FIELDS = {
 }
 YESNO_FIELDS.add("Samples from pregnancy complications collected")
 
-# pairs of metadata fields (label, student-column-name, ai-column-name)
+# Pairs of metadata fields (label, student-column-name, ai-column-name)
 METADATA_FIELD_PAIRS: List[Tuple[str, str, str]] = [
     ("Data type", "Data Type", "Data type"),
     (
@@ -202,7 +202,7 @@ def build_comparison(
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     merged = _load_and_merge(student_path, ai_path, verbose=True)
 
-    # per-study comparison table
+    # Per-study comparison table
     records: List[dict] = []
     stats = {q: {"n": 0, "matches": 0} for q in CANON_QUESTIONS}
 
@@ -229,7 +229,7 @@ def build_comparison(
 
     per_study_df = pd.DataFrame.from_records(records)
 
-    # field-level summary
+    # Field-level summary
     summary_rows = []
     for field, d in stats.items():
         n = d["n"]
@@ -298,10 +298,10 @@ def build_metadata_comparison(
 def make_figures(
     per_study_df: pd.DataFrame, summary_df: pd.DataFrame, output_prefix: str = "comparison_figs"
 ) -> None:
-    # defensive copy
+    # Defensive copy
     df = per_study_df.copy()
 
-    # 1) agreement rate by field (bigger canvas + wrapped labels)
+    # 1) Agreement Rate by Field (bigger canvas + wrapped labels)
     plt.figure(figsize=(12, max(8, 0.55 * len(summary_df))))
     plot_df = summary_df.copy().sort_values("AgreementRate", ascending=True)
     sns.barplot(data=plot_df, y="Field", x="AgreementRate")
@@ -317,7 +317,7 @@ def make_figures(
     plt.savefig(f"{output_prefix}_agreement_by_field.png", dpi=300)
     plt.close()
 
-    # 2) yes/no confusion matrix (counts + percentages)
+    # 2) Yes/No confusion matrix (counts + percentages)
     yesno_match_cols = [
         c
         for c in df.columns
@@ -360,7 +360,7 @@ def make_figures(
         )
         plt.close()
 
-    # 3) per-study agreement histogram
+    # 3) Per-study agreement histogram
     match_cols = [c for c in df.columns if " — Match" in c]
     if match_cols:
         rates = (
@@ -377,7 +377,7 @@ def make_figures(
         plt.savefig(f"{output_prefix}_perstudy_hist.png", dpi=300)
         plt.close()
 
-    # 4) trimester distribution — normalized and tidy
+    # 4) Trimester distribution — normalized and tidy
     field = TRIMESTER_FIELD
     s_col = f"{field} — Student"
     a_col = f"{field} — AI"
@@ -390,7 +390,7 @@ def make_figures(
         )
         long = tidy.melt(var_name="Source", value_name="Trimester")
 
-        # count per (source, trimester), then convert to percent within each source.
+        # Count per (Source, Trimester), then convert to percent within each Source.
         counts = (
             long.groupby(["Source", "Trimester"])
             .size()
@@ -464,7 +464,7 @@ def main() -> None:
 
     per_study_df, summary_df = build_comparison(args.student, args.ai)
 
-    # save questionnaire-style comparison excel
+    # Save questionnaire-style comparison Excel
     args.out_xlsx.parent.mkdir(parents=True, exist_ok=True)
     with pd.ExcelWriter(args.out_xlsx, engine="xlsxwriter") as xw:
         per_study_df.to_excel(xw, index=False, sheet_name="PerStudyComparison")
@@ -472,10 +472,10 @@ def main() -> None:
 
     print(f"Wrote comparison workbook to: {args.out_xlsx}")
 
-    # make plots for questionnaire-style fields
+    # Make plots for questionnaire-style fields
     make_figures(per_study_df, summary_df, output_prefix=args.out_prefix)
 
-    # ---- additional comparison for high-level metadata fields ----
+    # ---- Additional comparison for high-level metadata fields ----
     meta_per_study_df, meta_summary_df = build_metadata_comparison(args.student, args.ai)
 
     meta_out_xlsx = args.out_xlsx.with_name(args.out_xlsx.stem + "_metadata.xlsx")

@@ -1,10 +1,11 @@
 """
-SIMPLE OPEN ACCESS PAPER DOWNLOADER (PMC / EUROPE PMC / UNPAYWALL ONLY)
+OPEN ACCESS PAPER DOWNLOADER (PMC / EUROPE PMC / UNPAYWALL / ELSEVIER)
 
-Only uses legitimate, free open access sources:
+Uses legitimate full-text sources:
 - PubMed Central (PMC)
 - Europe PMC
 - Unpaywall
+- Elsevier TDM API (when ELSEVIER_API_KEY is set)
 
 INSTALLATION:
 pip install requests pandas biopython openpyxl
@@ -20,43 +21,49 @@ import requests
 from typing import Optional, Dict, Any, Tuple, List
 from Bio import Entrez
 
-
-# configuration
-
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
 NCBI_EMAIL = "jjosep31@asu.edu"         # email for NCBI Entrez & PMC idconv
-UNPAYWALL_EMAIL = "jjosep31@asu.edu"    # required email for Unpaywall API
-EXCEL_FILE = os.path.expanduser("~/Desktop/placenta_sheet.xlsx")
+UNPAYWALL_EMAIL = os.environ.get("UNPAYWALL_EMAIL", "jjosep31@asu.edu")    # required email for Unpaywall API
+EXCEL_FILE = os.environ.get("PIPELINE_EXCEL_FILE", "geo_master_access.xlsx")
 OUTPUT_DIR = "downloaded_papers"
 
-# networking & retry
+# Networking & retry
 API_DELAY = 0.3
 MAX_RETRIES = 5
 BASE_BACKOFF = 0.75
 TIMEOUT = 30
 
-# behavior
+# Behavior
 USE_PMID_TO_PMCID = True
 
-# content validation thresholds (to avoid saving stubs/tocs)
+# Content validation thresholds (to avoid saving stubs/TOCs)
 MIN_HTML_BYTES = 2000
 MIN_PTAG_COUNT = 20
 MIN_WORDS = 1500
 
+# Post-save short-flag thresholds. A paper that passes the save filter above can
+# still be a thin stub — these thresholds let downstream steps (Failures sheet)
+# spot papers that "downloaded" but probably have no useful content.
+PAPER_SHORT_BYTES_XML  = 10_000   # XML/HTML
+PAPER_SHORT_BYTES_PDF  = 50_000   # PDFs (figures + headers alone often exceed this)
+
 Entrez.email = NCBI_EMAIL
 
-
-# http session & retry logic
-
+# ============================================================================
+# HTTP SESSION & RETRY LOGIC
+# ============================================================================
 SESSION = requests.Session()
 SESSION.headers.update({
-    # some repositories are picky about ua/accept headers
+    # Some repositories are picky about UA/accept headers
     "User-Agent": f"oa-scraper/1.0 (+{UNPAYWALL_EMAIL}) Mozilla/5.0",
     "Accept": "*/*",
     "Accept-Language": "en-US,en;q=0.9",
 })
 
 def backoff_sleep(attempt: int) -> None:
-    # exponential backoff with a tiny linear term
+    # Exponential backoff with a tiny linear term
     delay = BASE_BACKOFF * (2 ** (attempt - 1)) + (0.05 * (attempt - 1))
     time.sleep(delay)
 
@@ -77,11 +84,11 @@ def retrying_get(
                 stream=stream,
                 headers=headers
             )
-            # handle soft rate-limits
+            # Handle soft rate-limits
             if r.status_code == expected_status:
                 return r
             if r.status_code in (429, 500, 502, 503, 504):
-                # respect retry-after if present
+                # Respect Retry-After if present
                 ra = r.headers.get("Retry-After")
                 if ra:
                     try:
@@ -115,9 +122,9 @@ def retrying_entrez_efetch(db: str, id_: str, rettype: str, retmode: str) -> Opt
             backoff_sleep(attempt)
     return None
 
-
-# utilities
-
+# ============================================================================
+# UTILITIES
+# ============================================================================
 def ensure_dir(path: str) -> None:
     pathlib.Path(path).mkdir(parents=True, exist_ok=True)
 
@@ -134,10 +141,41 @@ def save_text(content: str, path: str) -> None:
         f.write(content)
 
 def as_clean_str(x) -> Optional[str]:
-    if pd.isna(x):
+    if x is None:
         return None
+    try:
+        if pd.isna(x):
+            return None
+    except ValueError:
+        pass
     s = str(x).strip()
     return s if s else None
+
+
+def row_value(row: pd.Series, *names: str) -> Optional[str]:
+    """Return the first non-empty value for a row, robust to duplicate columns after lowercasing."""
+    for name in names:
+        if name not in row.index:
+            continue
+        val = row.get(name)
+        values = list(val) if isinstance(val, pd.Series) else [val]
+        for v in values:
+            cleaned = as_clean_str(v)
+            if cleaned:
+                return cleaned
+    return None
+
+
+def coalesce_duplicate_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """After lowercasing headers, combine duplicate columns by taking the first non-empty value per row."""
+    out = pd.DataFrame(index=df.index)
+    for name in dict.fromkeys(df.columns):
+        cols = df.loc[:, df.columns == name]
+        if isinstance(cols, pd.Series) or cols.shape[1] == 1:
+            out[name] = cols.iloc[:, 0] if hasattr(cols, "iloc") and getattr(cols, "ndim", 1) == 2 else cols
+        else:
+            out[name] = cols.bfill(axis=1).iloc[:, 0]
+    return out
 
 def is_jats_xml(xml_text: str) -> bool:
     if not xml_text:
@@ -145,18 +183,18 @@ def is_jats_xml(xml_text: str) -> bool:
     low = xml_text.lower()
     return ("<article" in low) and ("<body" in low or "journal-meta" in low or "article-meta" in low)
 
-# doi normalization
+# DOI normalization
 _DOI_PAT = re.compile(r'(10\.\d{4,9}/\S+)', re.IGNORECASE)
 def normalize_doi(raw: Optional[str]) -> Optional[str]:
     if not raw or pd.isna(raw):
         return None
     s = str(raw).strip()
-    # strip common url wrappers
+    # Strip common URL wrappers
     for pref in ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/"):
         if s.lower().startswith(pref):
             s = s[len(pref):]
             break
-    # trim common trailing punctuation/brackets
+    # Trim common trailing punctuation/brackets
     s = s.strip().strip(").,;]}>")
     m = _DOI_PAT.search(s)
     return m.group(1) if m else (s if s.lower().startswith("10.") else None)
@@ -167,9 +205,9 @@ def force_https(url: str) -> str:
 def doi_resolver_url(doi: str) -> str:
     return f"https://doi.org/{doi}"
 
-
-# html/pdf validation & sniffing
-
+# ============================================================================
+# HTML/PDF VALIDATION & SNIFFING
+# ============================================================================
 _META_CIT_PDF = re.compile(
     r'<meta[^>]+name=["\']citation_pdf_url["\'][^>]+content=["\']([^"\']+)["\']',
     re.I
@@ -229,9 +267,9 @@ def looks_like_fulltext_html(html: str, url: str = "") -> bool:
         signals += 1
     return signals >= 2
 
-
-# pmc id converter
-
+# ============================================================================
+# PMC ID CONVERTER
+# ============================================================================
 def pmcid_from_pmid_via_idconv(pmid: str) -> Optional[str]:
     url = (
         "https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/"
@@ -250,9 +288,9 @@ def pmcid_from_pmid_via_idconv(pmid: str) -> Optional[str]:
     pmcid = recs[0].get("pmcid")
     return pmcid or None
 
-
-# pmc (entrez)
-
+# ============================================================================
+# PMC (ENTREZ)
+# ============================================================================
 def fetch_pmc_xml_via_entrez(pmcid: str) -> Optional[str]:
     xml_text = retrying_entrez_efetch(db="pmc", id_=pmcid, rettype="xml", retmode="text")
     if xml_text and is_jats_xml(xml_text):
@@ -270,9 +308,9 @@ def download_via_pmc(pmcid: str, out_dir: str) -> Optional[str]:
     print("    No PMC XML.")
     return None
 
-
-# europe pmc
-
+# ============================================================================
+# EUROPE PMC
+# ============================================================================
 def europe_pmc_search(doi: Optional[str], pmid: Optional[str], pmcid: Optional[str]) -> Optional[Dict[str, Any]]:
     base = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
     queries = []
@@ -379,12 +417,12 @@ def download_via_europe_pmc(pmcid: Optional[str], doi: Optional[str], pmid: Opti
     print("    Europe PMC content not recognized.")
     return None
 
-
-# unpaywall (repository-priority)
-
+# ============================================================================
+# UNPAYWALL (repository-priority)
+# ============================================================================
 def unpaywall_lookup(doi: str) -> Optional[Dict[str, Any]]:
     url = f"https://api.unpaywall.org/v2/{doi}?email={UNPAYWALL_EMAIL}"
-    # use a slightly more browser-like header set to avoid some hosts blocking
+    # Use a slightly more browser-like header set to avoid some hosts blocking
     headers = {
         "User-Agent": "Mozilla/5.0",
         "Accept": "application/json,text/plain,*/*",
@@ -455,7 +493,7 @@ def unpaywall_candidate_locations(data: Dict[str, Any]) -> List[Tuple[str, str]]
         if bp:
             _push("repo_pdf" if bh == "repository" else "pub_pdf", bp)
 
-    # deduplicate and prioritize
+    # Deduplicate and prioritize
     seen = set()
     ordered: List[Tuple[str, str]] = []
     for k, u in cands:
@@ -499,7 +537,7 @@ def download_via_unpaywall(doi: Optional[str], out_dir: str) -> Optional[str]:
         ct = (r.headers.get("Content-Type") or "").lower()
         data_bytes = r.content
 
-        # html path
+        # HTML path
         if "html" in ct and not is_pdfish_url(url):
             html = data_bytes.decode("utf-8", errors="ignore")
             if looks_like_fulltext_html(html, url):
@@ -507,13 +545,13 @@ def download_via_unpaywall(doi: Optional[str], out_dir: str) -> Optional[str]:
                 save_text(html, out)
                 print(f"      OK full-text HTML: {out}")
                 return out
-            # try meta/href pdf from the html page
+            # Try meta/href PDF from the HTML page
             pdf_meta, _ = sniff_citation_meta(html)
             pdf_href = find_pdf_href(html)
             pdf_url = pdf_meta or pdf_href
             if pdf_url:
                 if not pdf_url.startswith("http"):
-                    # make relative links absolute (simple heuristic)
+                    # Make relative links absolute (simple heuristic)
                     try:
                         base = url.rsplit("/", 1)[0]
                         pdf_url = base + "/" + pdf_url.lstrip("/")
@@ -529,7 +567,7 @@ def download_via_unpaywall(doi: Optional[str], out_dir: str) -> Optional[str]:
             print("      HTML not full-text (or no PDF found), continuing...")
             continue
 
-        # pdf path
+        # PDF path
         if is_pdf_bytes(data_bytes, ct) or is_pdfish_url(url):
             out = base_path + ".pdf"
             save_binary(data_bytes, out)
@@ -541,9 +579,73 @@ def download_via_unpaywall(doi: Optional[str], out_dir: str) -> Optional[str]:
     print("    All Unpaywall candidates exhausted.")
     return None
 
+# ============================================================================
+# ELSEVIER TDM API (fallback for paywalled Elsevier journals)
+# ============================================================================
+ELSEVIER_URL_TEMPLATE = "https://api.elsevier.com/content/article/doi/{doi}"
 
-# orchestration per row
 
+def download_via_elsevier(doi: Optional[str], out_dir: str) -> Optional[str]:
+    """Last-resort fallback for Elsevier-published papers that aren't on PMC.
+    Requires the ELSEVIER_API_KEY env var; silently skips if unset."""
+    if not doi:
+        return None
+    api_key = os.environ.get("ELSEVIER_API_KEY", "").strip()
+    if not api_key:
+        return None  # quietly disabled
+
+    url = ELSEVIER_URL_TEMPLATE.format(doi=doi)
+    print(f"  > Elsevier TDM: querying {doi} ...")
+    headers = {
+        "X-ELS-APIKey": api_key,
+        "Accept": "text/xml",
+    }
+    r = retrying_get(url, headers=headers)
+    if not r or r.status_code != 200 or not r.content:
+        print(f"    Elsevier API: no full text (status: {r.status_code if r else 'no response'})")
+        return None
+
+    text = r.content.decode("utf-8", errors="ignore")
+    # very rough sanity check — Elsevier sometimes returns a tiny error envelope
+    if len(text) < MIN_HTML_BYTES:
+        print(f"    Elsevier response too short ({len(text)} bytes); treating as failure.")
+        return None
+
+    out_path = os.path.join(out_dir, sanitize_filename(doi) + ".xml")
+    save_text(text, out_path)
+    print(f"    OK Elsevier full-text XML: {out_path}")
+    return out_path
+
+
+# ============================================================================
+# POST-SAVE VALIDATION (short-flag for stubs that slipped past the save filter)
+# ============================================================================
+def flag_short(outcome: Dict[str, Any]) -> Dict[str, Any]:
+    """Inspect a successfully-downloaded paper file and flag it as short if its
+    size is suspiciously below the per-format threshold. Mutates and returns outcome."""
+    path = outcome.get("saved_path")
+    if not path or not os.path.exists(path):
+        outcome["bytes"] = 0
+        outcome["short_flag"] = True
+        outcome.setdefault("notes", "")
+        outcome["notes"] = (outcome["notes"] + " | file missing after save").strip(" |")
+        return outcome
+
+    size = os.path.getsize(path)
+    fmt = (outcome.get("format") or "").lower()
+    threshold = PAPER_SHORT_BYTES_PDF if fmt == "pdf" else PAPER_SHORT_BYTES_XML
+    is_short = size < threshold
+    outcome["bytes"] = size
+    outcome["short_flag"] = is_short
+    if is_short:
+        outcome["notes"] = (outcome.get("notes", "") +
+                            f" | suspiciously short for {fmt} ({size} < {threshold} bytes)").strip(" |")
+    return outcome
+
+
+# ============================================================================
+# ORCHESTRATION PER ROW
+# ============================================================================
 def process_row(pmcid: Optional[str], pmid: Optional[str], doi: Optional[str]) -> Dict[str, Any]:
     outcome = {
         "pmcid": pmcid,
@@ -553,10 +655,12 @@ def process_row(pmcid: Optional[str], pmid: Optional[str], doi: Optional[str]) -
         "source": None,
         "format": None,
         "status": "failed",
+        "bytes": 0,
+        "short_flag": False,
         "notes": ""
     }
 
-    # normalize pmcid
+    # Normalize PMCID
     if pmcid:
         pmcid = pmcid.strip().upper().replace(" ", "")
         if pmcid.startswith("PMCPMC"):
@@ -565,7 +669,7 @@ def process_row(pmcid: Optional[str], pmid: Optional[str], doi: Optional[str]) -
             pmcid = "PMC" + pmcid
         outcome["pmcid"] = pmcid
 
-    # map pmid to pmcid if needed
+    # Map PMID to PMCID if needed
     if not pmcid and pmid and USE_PMID_TO_PMCID:
         conv = pmcid_from_pmid_via_idconv(pmid)
         time.sleep(API_DELAY)
@@ -574,50 +678,59 @@ def process_row(pmcid: Optional[str], pmid: Optional[str], doi: Optional[str]) -
             pmcid = conv
             outcome["pmcid"] = pmcid
 
-    # strategy 1: pmc xml
+    # Strategy 1: PMC XML
     if pmcid:
         path = download_via_pmc(pmcid, OUTPUT_DIR)
         time.sleep(API_DELAY)
         if path:
             outcome.update({"saved_path": path, "source": "PMC", "format": "xml", "status": "ok"})
-            return outcome
+            return flag_short(outcome)
 
-    # strategy 2: europe pmc (xml / html / pdf)
+    # Strategy 2: Europe PMC (XML / HTML / PDF)
     path = download_via_europe_pmc(pmcid=pmcid, doi=doi, pmid=pmid, out_dir=OUTPUT_DIR)
     time.sleep(API_DELAY)
     if path:
         fmt = "xml" if path.lower().endswith(".xml") else ("pdf" if path.lower().endswith(".pdf") else "html")
         outcome.update({"saved_path": path, "source": "Europe PMC", "format": fmt, "status": "ok"})
-        return outcome
+        return flag_short(outcome)
 
-    # strategy 3: unpaywall (repository-first)
+    # Strategy 3: Unpaywall (repository-first)
     if doi:
         path = download_via_unpaywall(doi=doi, out_dir=OUTPUT_DIR)
         time.sleep(API_DELAY)
         if path:
             fmt = "pdf" if path.lower().endswith(".pdf") else "html"
             outcome.update({"saved_path": path, "source": "Unpaywall", "format": fmt, "status": "ok"})
-            return outcome
+            return flag_short(outcome)
 
-    outcome["notes"] = "No full text found via PMC, Europe PMC, or Unpaywall."
+    # Strategy 4: Elsevier TDM API (paywalled Elsevier journals — needs ELSEVIER_API_KEY)
+    if doi:
+        path = download_via_elsevier(doi=doi, out_dir=OUTPUT_DIR)
+        time.sleep(API_DELAY)
+        if path:
+            outcome.update({"saved_path": path, "source": "Elsevier", "format": "xml", "status": "ok"})
+            return flag_short(outcome)
+
+    outcome["notes"] = "No full text found via PMC, Europe PMC, Unpaywall, or Elsevier."
     return outcome
 
-
-# main
-
+# ============================================================================
+# MAIN
+# ============================================================================
 def main():
     ensure_dir(OUTPUT_DIR)
     print(f"Loading data from {EXCEL_FILE} ...")
     df = pd.read_excel(EXCEL_FILE)
 
-    # normalize columns
+    # Normalize columns
     df.columns = df.columns.str.strip().str.lower()
     if "doi (link)" in df.columns and "doi" not in df.columns:
         df = df.rename(columns={"doi (link)": "doi"})
+    df = coalesce_duplicate_columns(df)
 
     df = df.replace(r"^\s*$", pd.NA, regex=True)
 
-    # keep rows with at least one identifier
+    # Keep rows with at least one identifier
     need_cols = [c for c in ["pmcid", "pmid", "doi"] if c in df.columns]
     if need_cols:
         df = df.dropna(subset=need_cols, how="all")
@@ -629,6 +742,7 @@ def main():
     print("  - PubMed Central (PMC)")
     print("  - Europe PMC")
     print("  - Unpaywall (repository priority)")
+    print("  - Elsevier TDM API (if ELSEVIER_API_KEY is set)")
     print("="*70 + "\n")
 
     results = []
@@ -637,9 +751,9 @@ def main():
         print(f"Processing {i+1} / {total}")
         print(f"{'='*70}")
 
-        pmcid = as_clean_str(row.get("pmcid"))
-        pmid  = as_clean_str(row.get("pmid"))
-        doi   = normalize_doi(as_clean_str(row.get("doi")))
+        pmcid = row_value(row, "pmcid")
+        pmid  = row_value(row, "pmid", "pmid_norm")
+        doi   = normalize_doi(row_value(row, "doi", "doi_norm", "doi (link)"))
 
         if pmid and pmid.isdigit():
             pmid = str(int(pmid))
@@ -649,7 +763,7 @@ def main():
         outcome = process_row(pmcid=pmcid, pmid=pmid, doi=doi)
         results.append(outcome)
 
-    # save results
+    # Save results
     summary_csv = os.path.join(OUTPUT_DIR, "download_summary.csv")
     results_df = pd.DataFrame(results)
     results_df.to_csv(summary_csv, index=False)
@@ -662,7 +776,7 @@ def main():
     ok_df.to_csv(successes_csv, index=False)
     fail_df.to_csv(failures_csv,  index=False)
 
-    # stats by source/format
+    # Stats by source/format
     by_source = ok_df["source"].value_counts().to_dict() if not ok_df.empty else {}
     by_format = ok_df["format"].value_counts().to_dict() if not ok_df.empty else {}
 
