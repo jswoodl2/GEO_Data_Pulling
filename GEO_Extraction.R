@@ -22,6 +22,11 @@ library(jsonlite)
 handlers(global = TRUE)
 handlers("progress")
 
+GEO_R_WORKERS <- suppressWarnings(as.integer(Sys.getenv("GEO_R_WORKERS", "1")))
+if (is.na(GEO_R_WORKERS) || GEO_R_WORKERS < 1) GEO_R_WORKERS <- 1L
+USE_PARALLEL <- GEO_R_WORKERS > 1L
+
+
 #---------------------------------
 # Clear GEOquery cache helper
 #---------------------------------
@@ -77,7 +82,7 @@ dir.create(gsm_cache_dir, showWarnings = FALSE, recursive = TRUE)
 
 extract_gsm_fields = function(gsm_id) {
   cache_file = file.path(gsm_cache_dir, paste0(gsm_id, ".rds"))
-
+  
   if (file.exists(cache_file)) {
     text = readRDS(cache_file)
   } else {
@@ -90,7 +95,7 @@ extract_gsm_fields = function(gsm_id) {
     saveRDS(text, cache_file)
     Sys.sleep(0.2)
   }
-
+  
   known_labels <- c(
     "Title","Sample type","Source name","Organism","Characteristics",
     "Molecule","Extracted molecule","Treatment protocol","Growth protocol",
@@ -99,7 +104,7 @@ extract_gsm_fields = function(gsm_id) {
     "Description","Data processing","Contact name","Organization","Department",
     "Lab","Address","Email","Phone","Fax","URL"
   )
-
+  
   grab_block <- function(label) {
     out <- tryCatch({
       next_labels <- setdiff(known_labels, label)
@@ -112,7 +117,7 @@ extract_gsm_fields = function(gsm_id) {
     }, error = function(e) NA_character_)
     out
   }
-
+  
   grab_line <- function(label) {
     out <- tryCatch({
       pat <- paste0("(?is)", label, "\\s*[:\\s]?\\s*([^\\n]+)")
@@ -123,7 +128,7 @@ extract_gsm_fields = function(gsm_id) {
     }, error = function(e) NA_character_)
     out
   }
-
+  
   library_strategy    <- grab_line("Library strategy")
   library_selection   <- grab_line("Library selection")
   library_source      <- grab_line("Library source")
@@ -131,7 +136,7 @@ extract_gsm_fields = function(gsm_id) {
   extracted_molecule  <- grab_line("Extracted molecule")
   extraction_protocol <- grab_block("Extraction protocol")            # multi-line
   assay_desc_gsm      <- grab_block("Library construction protocol")  # not used, kept for completeness
-
+  
   c(library_strategy,
     library_selection,
     library_source,
@@ -147,13 +152,13 @@ extract_gsm_fields = function(gsm_id) {
 get_single_gse_full = function(geo_id) {
   cache_file = file.path("geo_cache", paste0(geo_id, ".rds"))
   if (file.exists(cache_file)) return(readRDS(cache_file))
-
+  
   out = tryCatch({
     gse = getGEO(geo_id, GSEMatrix = FALSE, AnnotGPL = FALSE)
     meta_data = Meta(gse)
     gsm_list = GSMList(gse)
     gsm_ids = names(gsm_list)
-
+    
     # placenta sample count
     placenta_keywords = c("placenta","chorionic","decidua","trophoblast","chorion")
     placenta_pattern = paste(placenta_keywords, collapse = "|")
@@ -161,44 +166,44 @@ get_single_gse_full = function(geo_id) {
       map_lgl(gsm_list, ~ str_detect(tolower(.x@header$title %||% ""), placenta_pattern) |
                 str_detect(tolower(.x@header$source_name_ch1 %||% ""), placenta_pattern))
     )
-
+    
     # GSM characteristics aggregation (defensive)
     gsm_chars <- tryCatch(
       unique(na.omit(unlist(lapply(gsm_list, function(x) x@header$characteristics_ch1 %||% NA)))),
       error = function(e) character(0)
     )
     characteristics <- if (length(gsm_chars) == 0) NA_character_ else paste(unique(str_squish(gsm_chars)), collapse = " | ")
-
+    
     # Scrape GSMs (7 fields)
-    gsm_values = future_map(gsm_ids, extract_gsm_fields)
-
+    gsm_values = purrr::map(gsm_ids, extract_gsm_fields)
+    
     collapse_gsm <- function(idx) {
       vals <- tryCatch(vapply(gsm_values, function(x) x[[idx]], character(1)), error = function(e) character(0))
       vals <- vals[!is.na(vals) & vals != ""]
       if (length(vals) == 0) NA_character_ else paste(unique(vals), collapse = if (idx == 6) "\n\n" else ", ")
     }
-
+    
     library_strategy    <- collapse_gsm(1)
     library_selection   <- collapse_gsm(2)
     library_source      <- collapse_gsm(3)
     instrument_model    <- collapse_gsm(4)
     extracted_molecule  <- collapse_gsm(5)
     extraction_protocol <- collapse_gsm(6)
-
-
+ 
+    
     # GSE-level parses
     rel_text <- if (!is.null(meta_data$relation)) paste(meta_data$relation, collapse = " | ") else ""
-
+    
     # SRA Study ID
     sra_ids <- unique(unlist(stringr::str_extract_all(rel_text, "SRP\\d+")))
     sra_study_id <- if (length(sra_ids) == 0) NA_character_ else paste(sra_ids, collapse = ", ")
-
+    
     # BioSample + BioProject
     biosample_ids  <- unique(unlist(stringr::str_extract_all(rel_text, "(SAMN\\d+|SAMEA\\d+|SAMD\\d+)")))
     bioproject_ids <- unique(unlist(stringr::str_extract_all(rel_text, "PRJ[A-Z]+\\d+")))
     biosample_bioproject <- c(biosample_ids, bioproject_ids)
     biosample_bioproject <- if (length(biosample_bioproject) == 0) NA_character_ else paste(unique(biosample_bioproject), collapse = ", ")
-
+    
     # File types/resources provided
     supp <- meta_data$supplementary_file
     file_types <- if (!is.null(supp)) {
@@ -206,15 +211,15 @@ get_single_gse_full = function(geo_id) {
       exts <- exts[exts != ""]
       if (length(exts) == 0) NA_character_ else paste(unique(exts), collapse = ", ")
     } else NA_character_
-
+    
     # Organization & contacts
     organization_name <- meta_data$contact_organization %||% meta_data$contact_institute %||% NA
-
+    
     # Data processing, Data type, Assay description (Overall design)
     data_processing  <- if (!is.null(meta_data$data_processing)) paste(meta_data$data_processing, collapse = "\n\n") else NA
     data_type        <- if (!is.null(meta_data$type)) paste(meta_data$type, collapse = ", ") else NA
     assay_description <- meta_data$overall_design %||% NA
-
+    
     # Build tibble
     tibble(
       GEO_ID = geo_id,
@@ -234,7 +239,7 @@ get_single_gse_full = function(geo_id) {
       main_topic = meta_data$summary %||% NA,
       supplementary_file = if (!is.null(meta_data$supplementary_file)) paste(meta_data$supplementary_file, collapse=", ") else NA,
       title = meta_data$title %||% NA,
-
+      
       data_type = data_type,
       characteristics = characteristics,
       library_strategy = library_strategy,
@@ -250,7 +255,7 @@ get_single_gse_full = function(geo_id) {
       file_types = file_types,
       placenta_samples = placenta_samples_count
     )
-
+    
   }, error = function(e) {
     tibble(GEO_ID = geo_id, error = as.character(e))
   })
@@ -265,17 +270,35 @@ gse_df = read.csv("ids.csv", header = FALSE, stringsAsFactors = FALSE)
 geo_ids = convert_to_gse(as.character(gse_df[[1]]))
 # geo_ids = geo_ids[1:10]  # testing only; full pipeline processes all IDs
 
-plan(multisession, workers = 4)
-handlers(global = TRUE)
+message(sprintf("Loaded %d GEO IDs from ids.csv", length(geo_ids)))
+flush.console()
 
-with_progress({
-  p = progressor(along = geo_ids)
-  results = future_map(geo_ids, function(id) {
-    out = get_single_gse_full(id)
-    p()
-    out
-  }, .options = furrr_options(seed = TRUE))
-})
+if (USE_PARALLEL) {
+  message(sprintf("Using %d parallel R worker(s). If this crashes, rerun without GEO_R_WORKERS or set GEO_R_WORKERS=1.", GEO_R_WORKERS))
+  flush.console()
+  plan(multisession, workers = GEO_R_WORKERS)
+  handlers(global = TRUE)
+  with_progress({
+    p = progressor(along = geo_ids)
+    results = future_map(geo_ids, function(id) {
+      out = get_single_gse_full(id)
+      p(message = id)
+      out
+    }, .options = furrr_options(seed = TRUE))
+  })
+} else {
+  message("Using sequential GEO extraction for stability.")
+  flush.console()
+  plan(sequential)
+  total_ids <- length(geo_ids)
+  results <- vector("list", total_ids)
+  for (idx in seq_along(geo_ids)) {
+    id <- geo_ids[[idx]]
+    message(sprintf("[%d/%d] %s", idx, total_ids, id))
+    flush.console()
+    results[[idx]] <- get_single_gse_full(id)
+  }
+}
 
 #---------------------------------
 # Combine results + diagnostics (robust)
@@ -410,7 +433,7 @@ output_df <- metadata_df %>%
     `Library source` = library_source,
     `Library selection` = library_selection,
     `Instrument model` = instrument_model,
-    `Assay description` = assay_description,
+    `Assay description` = assay_description,    
     `Data processing` = data_processing,
     `Platform ID (list)` = platform_id,
     `SRA Study ID (raw data)` = sra_study_id,

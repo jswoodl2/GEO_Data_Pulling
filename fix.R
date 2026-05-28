@@ -9,15 +9,15 @@
 options(stringsAsFactors = FALSE)
 
 # ---- paths / toggles ----
-base_dir <- "~/Desktop/geo_2025_Oct_31"
+base_dir <- normalizePath(getwd(), mustWork = TRUE)
 KEEP_ONLY_IDS_IN_CSV   <- TRUE
 MAX_GSMS_PER_GSE       <- 10       # cap per your test; raise if needed
 VERBOSE                <- TRUE
-USE_PARALLEL           <- TRUE     # set FALSE to debug sequentially
+USE_PARALLEL           <- as.integer(Sys.getenv("GEO_R_WORKERS", "1")) > 1     # default sequential for macOS stability
 INCLUDE_404_HTTP_TRY   <- TRUE     # <--- try HTTP salvage for IDs that 404'd via FTP/GEOquery
 
 # Networking / performance
-GSE_WORKERS     <- max(2, min(6, parallel::detectCores() - 1))
+GSE_WORKERS     <- max(1, suppressWarnings(as.integer(Sys.getenv("GEO_R_WORKERS", "1"))))
 SERIES_TRIES    <- 3
 GSM_TRIES       <- 3
 SERIES_TIMEOUT  <- 12
@@ -228,26 +228,26 @@ fetch_pmc_map <- function(pmids) {
 build_gse_row <- function(gse) {
   logf <- file.path(LOG_DIR, paste0(gse, ".log"))
   cat(sprintf("[%s] start\n", gse), file = logf, append = TRUE)
-
+  
   s_txt <- http_get_text_cached(series_text_url(gse),
                                 file.path(SERIES_CACHE, paste0(gse, ".rds")),
                                 tries = SERIES_TRIES, timeout_secs = SERIES_TIMEOUT)
   s_lines <- unlist(strsplit(s_txt, "\n", fixed = TRUE), use.names = FALSE)
   ser <- parse_series_block(s_lines)
-
+  
   html_txt <- try(http_get_text_cached(series_html_url(gse),
                                        file.path(HTML_CACHE, paste0(gse, ".rds")),
                                        tries = SERIES_TRIES, timeout_secs = SERIES_TIMEOUT), silent = TRUE)
   html_fb <- list(organism_html = NA_character_, contact_org_html = NA_character_)
   if (!inherits(html_txt, "try-error")) html_fb <- parse_series_html_fallbacks(html_txt)
-
+  
   gsm_ids <- unique(ser$sample_ids)
   if (!length(gsm_ids) || is.na(gsm_ids[1])) gsm_ids <- find_gsm_ids_html(gse)
   if (is.finite(MAX_GSMS_PER_GSE) && length(gsm_ids) > MAX_GSMS_PER_GSE)
     gsm_ids <- head(gsm_ids, MAX_GSMS_PER_GSE)
   sample_total <- length(gsm_ids)
   cat(sprintf("[%s] GSMs: %d\n", gse, sample_total), file = logf, append = TRUE)
-
+  
   gsm_rows <- list()
   if (length(gsm_ids)) {
     for (gsm in gsm_ids) {
@@ -259,9 +259,9 @@ build_gse_row <- function(gse) {
       Sys.sleep(runif(1, POLITE_DELAY_GSM[1], POLITE_DELAY_GSM[2]))
     }
   }
-
+  
   gsm_df <- if (length(gsm_rows)) bind_rows(gsm_rows) else tibble()
-
+  
   organisms_gsm       <- if (nrow(gsm_df)) collapse_uniq(gsm_df$organisms, sep = " | ") else NA_character_
   characteristics     <- if (nrow(gsm_df)) collapse_uniq(gsm_df$characteristics, sep = " | ", max_items = 999) else NA_character_
   molecule            <- if (nrow(gsm_df)) collapse_uniq(gsm_df$molecule,  sep = " | ") else NA_character_
@@ -270,38 +270,38 @@ build_gse_row <- function(gse) {
   lib_source          <- if (nrow(gsm_df)) collapse_uniq(gsm_df$lib_source,   sep = " | ") else NA_character_
   instrument          <- if (nrow(gsm_df)) collapse_uniq(gsm_df$instrument,   sep = " | ") else NA_character_
   extract_protocol    <- if (nrow(gsm_df)) collapse_uniq(gsm_df$extract_protocol, sep = "\n\n", max_items = 999) else NA_character_
-
+  
   placenta_n <- if (nrow(gsm_df)) sum(mapply(is_placenta_record, gsm_df$title, gsm_df$source_name, gsm_df$characteristics)) else NA_integer_
   placenta_n <- if (is.na(placenta_n)) sample_total else placenta_n
-
+  
   ser_rel_text <- collapse_uniq(ser$series_rel, sep = " | ")
   gsm_rel_text <- if (nrow(gsm_df)) collapse_uniq(gsm_df$rel_text, sep = " | ") else NA_character_
   combined_rel <- paste(ser_rel_text %||% "", gsm_rel_text %||% "", sep = " | ")
-
+  
   sra_srp <- unique(na.omit(stringr::str_extract_all(combined_rel, "SRP\\d+")[[1]]))
   sra_srx <- unique(na.omit(stringr::str_extract_all(combined_rel, "SRX\\d+")[[1]]))
   sra_srr <- unique(na.omit(stringr::str_extract_all(combined_rel, "SRR\\d+")[[1]]))
   prj_ids <- unique(na.omit(stringr::str_extract_all(combined_rel, "PRJ[A-Z]+\\d+")[[1]]))
   bio_ids <- unique(na.omit(stringr::str_extract_all(combined_rel, "(SAMN\\d+|SAMEA\\d+|SAMD\\d+)")[[1]]))
   super_gse <- unique(na.omit(stringr::str_extract_all(ser_rel_text %||% "", "GSE\\d+")[[1]]))
-
+  
   sra_study_id <- if (length(sra_srp)) paste(sra_srp, collapse = ", ")
   else if (length(sra_srx)) paste(sra_srx, collapse = ", ")
   else if (length(sra_srr)) paste(sra_srr, collapse = ", ")
   else NA_character_
   biosample_biop  <- collapse_uniq(unique(c(bio_ids, prj_ids)), sep = ", ")
   superseries_val <- if (length(super_gse)) paste(super_gse, collapse = ", ") else NA_character_
-
+  
   file_types <- if (length(ser$supp_files)) {
     exts <- tolower(tools::file_ext(ser$supp_files)); exts <- exts[exts != ""]
     if (length(exts)) paste(unique(exts), collapse = ", ") else NA_character_
   } else NA_character_
-
+  
   organisms_final    <- organisms_gsm %||% collapse_uniq(ser$series_organisms, sep = " | ") %||% html_fb$organism_html
   contact_org_final  <- ser$contact_org %||% html_fb$contact_org_html
   pmid_primary       <- if (length(ser$pmids)) ser$pmids[1] else NA_character_
   pmids_all          <- if (length(ser$pmids)) paste(unique(ser$pmids), collapse = ", ") else NA_character_
-
+  
   out <- tibble(
     `GEO Series ID (GSE___)` = gse,
     `Data type` = ser$series_type,
@@ -411,15 +411,24 @@ pkgs_for_workers <- c(
 message(sprintf("Processing %d GSEs with %d worker(s) …", length(gse_ids),
                 if (USE_PARALLEL) GSE_WORKERS else 1)); flush.console()
 
-res <- progressr::with_progress({
-  p <- progressr::progressor(along = gse_ids)
-  furrr::future_map(
-    gse_ids,
-    function(gse) { on.exit(p(message = gse), add = TRUE); try(build_gse_row(gse), silent = TRUE) },
-    .options  = furrr::furrr_options(seed = TRUE, packages = pkgs_for_workers),
-    .progress = FALSE
-  )
-})
+if (USE_PARALLEL) {
+  res <- progressr::with_progress({
+    p <- progressr::progressor(along = gse_ids)
+    furrr::future_map(
+      gse_ids,
+      function(gse) { on.exit(p(message = gse), add = TRUE); try(build_gse_row(gse), silent = TRUE) },
+      .options  = furrr::furrr_options(seed = TRUE, packages = pkgs_for_workers),
+      .progress = FALSE
+    )
+  })
+} else {
+  res <- vector("list", length(gse_ids))
+  for (idx in seq_along(gse_ids)) {
+    gse <- gse_ids[[idx]]
+    message(sprintf("[%d/%d] patch %s", idx, length(gse_ids), gse)); flush.console()
+    res[[idx]] <- try(build_gse_row(gse), silent = TRUE)
+  }
+}
 
 ok_idx   <- which(purrr::map_lgl(res, ~ !inherits(.x, "try-error") && is.data.frame(.x)))
 fail_idx <- which(purrr::map_lgl(res, ~  inherits(.x, "try-error")))

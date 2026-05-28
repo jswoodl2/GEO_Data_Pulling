@@ -34,6 +34,11 @@ fi
 echo "Root dir: $ROOT_DIR"
 echo
 
+# Default R GEO extraction to one worker for stability on macOS.
+# Override only if you accept the risk of parallel R worker crashes.
+export GEO_R_WORKERS="${GEO_R_WORKERS:-1}"
+echo "R GEO workers: $GEO_R_WORKERS"
+
 # Canonical pipeline handoff files. Python scripts read these env vars.
 export GEO_METADATA_INPUT="$ROOT_DIR/gse_metadata_full_checkpoint_MERGED.xlsx"
 export PIPELINE_EXCEL_FILE="$ROOT_DIR/geo_master_access.xlsx"
