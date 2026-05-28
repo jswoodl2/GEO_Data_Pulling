@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+*.pem
+__pycache__/
+*.pyc
+.DS_Store
+~$*
+.claude/
+.ipynb_checkpoints/
+.venv/
+raw_outputs/
+downloaded_papers/
+downloaded_supplements/
+geo_cache/
