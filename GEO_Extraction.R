@@ -33,6 +33,23 @@ USE_PARALLEL <- GEO_R_WORKERS > 1L
 # Keep geo_cache across runs so large batches can resume after interruption.
 dir.create("geo_cache", showWarnings = FALSE)
 
+
+# Excel cells cannot exceed 32,767 characters. Keep CSV outputs complete,
+# but truncate workbook cells so writexl can save large GEO metadata rows.
+excel_char_limit <- 32767L
+truncate_vec <- function(v) {
+  if (is.null(v)) return(v)
+  if (!is.character(v)) { if (is.factor(v)) v <- as.character(v) else return(v) }
+  idx <- !is.na(v) & nchar(v, type = "chars", allowNA = TRUE) > excel_char_limit
+  v[idx] <- substr(v[idx], 1L, excel_char_limit)
+  v
+}
+sanitize_for_excel <- function(df) {
+  if (is.null(df) || !nrow(df)) return(df)
+  for (nm in names(df)) df[[nm]] <- truncate_vec(df[[nm]])
+  df
+}
+
 #---------------------------------
 # Utility functions
 #---------------------------------
@@ -319,7 +336,7 @@ if (nrow(metadata_df) == 0) {
   writexl::write_xlsx(
     list(
       Metadata = tibble::tibble(),
-      Failed   = if (length(fail) > 0) dplyr::bind_rows(fail) else tibble::tibble()
+      Failed   = sanitize_for_excel(if (length(fail) > 0) dplyr::bind_rows(fail) else tibble::tibble())
     ),
     "gse_metadata_full.xlsx"
   )
@@ -456,7 +473,7 @@ output_df <- metadata_df %>%
 # Save.  Keep both the historic full filename and the checkpoint filename
 # because fix.R consumes the checkpoint workbook for its second pass.
 failed_df <- if (length(fail) > 0) dplyr::bind_rows(fail) else tibble::tibble(GEO_ID = failed_ids)
-out_sheets <- list(Metadata = output_df, Failed = failed_df)
+out_sheets <- list(Metadata = sanitize_for_excel(output_df), Failed = sanitize_for_excel(failed_df))
 
 writexl::write_xlsx(out_sheets, "gse_metadata_full.xlsx")
 writexl::write_xlsx(out_sheets, "gse_metadata_full_checkpoint.xlsx")
