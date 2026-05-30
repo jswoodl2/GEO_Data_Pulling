@@ -3,9 +3,10 @@
 Bulk LLM annotation pipeline for placental papers.
 
 For every PMCID in processed_papers.json, asks an LLM to extract the
-metadata listed in JSON_STRUCTURE. The model also sees:
+metadata listed in JSON_STRUCTURE. The model sees:
   - full paper text (with HTML/Elsevier fallbacks)
   - all supplementary files (.docx/.xlsx/.pdf parsed by lib.supplements)
+  - a narrow publication-ID context only for the multiple-publications question
 and is asked to back each answer with a quote + source (evidence schema).
 
 The Excel template gets only the final "answer" per question (one cell each).
@@ -57,6 +58,7 @@ BACKOFF_CAP_SEC = 60.0
 # resume behavior
 OVERWRITE = False                # if False, skip PMCID with a complete cache file
 RESUME_REQUIRES_ALL_FIELDS = True  # if a cached result is missing any field, re-do
+PROMPT_VERSION = "paper_only_v2_pub_context_only"
 
 # supplements + paper-text
 USE_SUPPLEMENTS = True
@@ -178,8 +180,7 @@ JSON_STRUCTURE: Dict[str, Any] = {
   "Pregnancy complications in data set (list)": "Return a list of strings.",
   "Fetal complications listed (yes/no)": "Yes or No.",
   "Fetal complications in data set (list)": "Return a list of strings.",
-  "Associated with multiple publications (PMIDs/PMCIDs) (yes/no)": "Yes if the GEO entry or paper text is associated with more than one publication/PMID/PMCID; otherwise No.",
-  "Abstract(s) of associated publication(s)": "Return the publication abstract text if available. If multiple associated publications are present, concatenate them separated by ' || '. Return Not Provided if unavailable.",
+  "Associated with multiple publications (PMIDs/PMCIDs) (yes/no)": "Yes if the publication-ID context or paper text is associated with more than one publication/PMID/PMCID; otherwise No.",
   "Hospital/Center where samples were collected": "The name of the institution.",
   "Country where samples were collected": "The name of the country.",
 }
@@ -188,12 +189,13 @@ JSON_STRUCTURE: Dict[str, Any] = {
 
 PROMPT_TEMPLATE = """You are an expert biomedical data extractor specializing in placental and pregnancy research.
 
-Read the GEO metadata row, the main paper text, AND the supplementary material below, then answer every question.
+Answer the questions from the main paper text and supplementary material.
 
 IMPORTANT: Supplementary tables often contain critical metadata (demographics, gestational
 ages, birthweights, delivery modes, etc.) that are NOT in the main paper text. You MUST
-check the supplements carefully. GEO metadata may contain organism, associated PMIDs/PMCIDs/DOIs,
-and publication metadata not repeated in the paper text.
+check the supplements carefully. Do not use GEO metadata for the paper-extraction questions.
+The only GEO-derived context provided is a narrow publication-ID context, and it may be used
+ONLY for the question "Associated with multiple publications (PMIDs/PMCIDs) (yes/no)".
 
 Return ONLY a single valid JSON object. No markdown fences, no commentary.
 
@@ -224,14 +226,15 @@ ANSWER RULES
 
 EVIDENCE RULES
 - Copy the EXACT text from the paper or supplement (1-2 sentences max).
-- "source": be specific (Methods section, Table 1, Supplemental Table S1, etc.).
+- Exception: for "Associated with multiple publications (PMIDs/PMCIDs) (yes/no)", evidence may quote the publication-ID context.
+- "source": be specific (Methods section, Table 1, Supplemental Table S1, publication-ID context, etc.).
 - For "No" answers, evidence may be an empty array.
 
 QUESTIONS (use the EXACT key for each):
 {questions}
 
-GEO METADATA ROW:
-{geo_metadata}
+PUBLICATION-ID CONTEXT FOR ONLY THE MULTIPLE-PUBLICATIONS QUESTION:
+{publication_context}
 
 MAIN PAPER TEXT:
 {paper_text}
@@ -241,11 +244,11 @@ SUPPLEMENTARY MATERIAL:
 """
 
 
-def build_prompt(paper_text: str, supplement_text: str, geo_metadata: str = "") -> str:
+def build_prompt(paper_text: str, supplement_text: str, publication_context: str = "") -> str:
     questions = "\n".join(f'- "{q}"  ({hint})' for q, hint in JSON_STRUCTURE.items())
     return PROMPT_TEMPLATE.format(
         questions=questions,
-        geo_metadata=geo_metadata or "Not Provided",
+        publication_context=publication_context or "Not Provided",
         paper_text=paper_text[:PAPER_CHAR_CAP],
         supplement_text=supplement_text,
     )
@@ -378,7 +381,9 @@ def cache_path(pmcid: str, model: str) -> pathlib.Path:
 
 
 def is_complete(cached: Dict[str, Any]) -> bool:
-    """True if every question key has a non-empty answer."""
+    """True if every current question key has a non-empty answer from this prompt version."""
+    if cached.get("_prompt_version") != PROMPT_VERSION:
+        return False
     for q in JSON_STRUCTURE.keys():
         v = cached.get(q)
         if v is None:
@@ -430,13 +435,26 @@ def call_with_retries(model: str, prompt: str) -> Optional[str]:
         return None
 
 
-def format_geo_metadata(row: Optional[pd.Series]) -> str:
+PUBLICATION_CONTEXT_COLUMNS = [
+    "GEO Series ID (GSE___)",
+    "PMID",
+    "All PMIDs",
+    "PMCID",
+    "All PMCIDs",
+    "DOI",
+    "All DOIs",
+]
+
+
+def format_publication_context(row: Optional[pd.Series]) -> str:
+    """Return only publication-link fields needed for the multiple-publications question."""
     if row is None:
         return ""
     parts: List[str] = []
-    for key, value in row.items():
-        if key is None or str(key).startswith("__"):
+    for key in PUBLICATION_CONTEXT_COLUMNS:
+        if key not in row.index:
             continue
+        value = row.get(key)
         try:
             missing = pd.isna(value)
         except Exception:
@@ -446,7 +464,7 @@ def format_geo_metadata(row: Optional[pd.Series]) -> str:
         text = str(value).strip()
         if text:
             parts.append(f"{key}: {text}")
-    return "\n".join(parts[:120])
+    return "\n".join(parts)
 
 
 # main per-paper flow
@@ -457,7 +475,7 @@ def extract_one(
     doi: Optional[str],
     paper_text: str,
     model: str,
-    geo_metadata: str = "",
+    publication_context: str = "",
 ) -> Optional[Dict[str, Any]]:
     """Returns a normalized answer dict; also writes raw + normalized caches.
     Evidence rows are attached under the private key '_evidence_rows' for the caller."""
@@ -485,7 +503,7 @@ def extract_one(
                              f"Supplement text only {stripped_len} chars "
                              f"(< {SUPPLEMENT_MIN_USEFUL_CHARS}); likely no real metadata")
 
-    prompt = build_prompt(paper_text, suppl, geo_metadata=geo_metadata)
+    prompt = build_prompt(paper_text, suppl, publication_context=publication_context)
     raw = call_with_retries(model, prompt)
     if raw is None:
         mark_failure(pmcid, model, f"call_model returned None for {model}")
@@ -502,6 +520,7 @@ def extract_one(
     normalized["PaperKey"] = pmcid
     normalized["PMCID"] = pmcid
     normalized["_model"] = model
+    normalized["_prompt_version"] = PROMPT_VERSION
     normalized["_evidence_rows"] = build_evidence_rows(pmcid, model, parsed)
     save_cache(pmcid, model, normalized, raw, prompt)
     return normalized
@@ -700,7 +719,7 @@ def main() -> None:
 
             normalized = extract_one(
                 pmcid, geo_id, doi, paper_text, model,
-                geo_metadata=format_geo_metadata(template_row_by_key.get(pmcid)),
+                publication_context=format_publication_context(template_row_by_key.get(pmcid)),
             )
             if normalized is None:
                 failures += 1
