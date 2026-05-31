@@ -21,7 +21,7 @@ from typing import Optional
 
 # default model list (OpenAI models disabled — Gemini only)
 DEFAULT_MODELS = [
-    "gemini-3-flash-preview",
+    "gemini-3.5-flash",
     # "gpt-5.4",
     # "gpt-5.4-mini",
 ]
