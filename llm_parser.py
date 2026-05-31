@@ -6,7 +6,6 @@ For every PMCID in processed_papers.json, asks an LLM to extract the
 metadata listed in JSON_STRUCTURE. The model sees:
   - full paper text (with HTML/Elsevier fallbacks)
   - all supplementary files (.docx/.xlsx/.pdf parsed by lib.supplements)
-  - a narrow publication-ID context only for the multiple-publications question
 and is asked to back each answer with a quote + source (evidence schema).
 
 The Excel template gets only the final "answer" per question (one cell each).
@@ -58,7 +57,7 @@ BACKOFF_CAP_SEC = 60.0
 # resume behavior
 OVERWRITE = False                # if False, skip PMCID with a complete cache file
 RESUME_REQUIRES_ALL_FIELDS = True  # if a cached result is missing any field, re-do
-PROMPT_VERSION = "paper_only_v2_pub_context_only"
+PROMPT_VERSION = "paper_only_v3_no_geo_context"
 
 # supplements + paper-text
 USE_SUPPLEMENTS = True
@@ -180,7 +179,6 @@ JSON_STRUCTURE: Dict[str, Any] = {
   "Pregnancy complications in data set (list)": "Return a list of strings.",
   "Fetal complications listed (yes/no)": "Yes or No.",
   "Fetal complications in data set (list)": "Return a list of strings.",
-  "Associated with multiple publications (PMIDs/PMCIDs) (yes/no)": "Yes if the publication-ID context or paper text is associated with more than one publication/PMID/PMCID; otherwise No.",
   "Hospital/Center where samples were collected": "The name of the institution.",
   "Country where samples were collected": "The name of the country.",
 }
@@ -193,9 +191,7 @@ Answer the questions from the main paper text and supplementary material.
 
 IMPORTANT: Supplementary tables often contain critical metadata (demographics, gestational
 ages, birthweights, delivery modes, etc.) that are NOT in the main paper text. You MUST
-check the supplements carefully. Do not use GEO metadata for the paper-extraction questions.
-The only GEO-derived context provided is a narrow publication-ID context, and it may be used
-ONLY for the question "Associated with multiple publications (PMIDs/PMCIDs) (yes/no)".
+check the supplements carefully. Answer only from the main paper and supplementary material.
 
 Return ONLY a single valid JSON object. No markdown fences, no commentary.
 
@@ -226,15 +222,11 @@ ANSWER RULES
 
 EVIDENCE RULES
 - Copy the EXACT text from the paper or supplement (1-2 sentences max).
-- Exception: for "Associated with multiple publications (PMIDs/PMCIDs) (yes/no)", evidence may quote the publication-ID context.
-- "source": be specific (Methods section, Table 1, Supplemental Table S1, publication-ID context, etc.).
+- "source": be specific (Methods section, Table 1, Supplemental Table S1, etc.).
 - For "No" answers, evidence may be an empty array.
 
 QUESTIONS (use the EXACT key for each):
 {questions}
-
-PUBLICATION-ID CONTEXT FOR ONLY THE MULTIPLE-PUBLICATIONS QUESTION:
-{publication_context}
 
 MAIN PAPER TEXT:
 {paper_text}
@@ -244,11 +236,10 @@ SUPPLEMENTARY MATERIAL:
 """
 
 
-def build_prompt(paper_text: str, supplement_text: str, publication_context: str = "") -> str:
+def build_prompt(paper_text: str, supplement_text: str) -> str:
     questions = "\n".join(f'- "{q}"  ({hint})' for q, hint in JSON_STRUCTURE.items())
     return PROMPT_TEMPLATE.format(
         questions=questions,
-        publication_context=publication_context or "Not Provided",
         paper_text=paper_text[:PAPER_CHAR_CAP],
         supplement_text=supplement_text,
     )
@@ -435,38 +426,6 @@ def call_with_retries(model: str, prompt: str) -> Optional[str]:
         return None
 
 
-PUBLICATION_CONTEXT_COLUMNS = [
-    "GEO Series ID (GSE___)",
-    "PMID",
-    "All PMIDs",
-    "PMCID",
-    "All PMCIDs",
-    "DOI",
-    "All DOIs",
-]
-
-
-def format_publication_context(row: Optional[pd.Series]) -> str:
-    """Return only publication-link fields needed for the multiple-publications question."""
-    if row is None:
-        return ""
-    parts: List[str] = []
-    for key in PUBLICATION_CONTEXT_COLUMNS:
-        if key not in row.index:
-            continue
-        value = row.get(key)
-        try:
-            missing = pd.isna(value)
-        except Exception:
-            missing = False
-        if missing:
-            continue
-        text = str(value).strip()
-        if text:
-            parts.append(f"{key}: {text}")
-    return "\n".join(parts)
-
-
 # main per-paper flow
 
 def extract_one(
@@ -475,7 +434,6 @@ def extract_one(
     doi: Optional[str],
     paper_text: str,
     model: str,
-    publication_context: str = "",
 ) -> Optional[Dict[str, Any]]:
     """Returns a normalized answer dict; also writes raw + normalized caches.
     Evidence rows are attached under the private key '_evidence_rows' for the caller."""
@@ -503,7 +461,7 @@ def extract_one(
                              f"Supplement text only {stripped_len} chars "
                              f"(< {SUPPLEMENT_MIN_USEFUL_CHARS}); likely no real metadata")
 
-    prompt = build_prompt(paper_text, suppl, publication_context=publication_context)
+    prompt = build_prompt(paper_text, suppl)
     raw = call_with_retries(model, prompt)
     if raw is None:
         mark_failure(pmcid, model, f"call_model returned None for {model}")
@@ -719,7 +677,6 @@ def main() -> None:
 
             normalized = extract_one(
                 pmcid, geo_id, doi, paper_text, model,
-                publication_context=format_publication_context(template_row_by_key.get(pmcid)),
             )
             if normalized is None:
                 failures += 1

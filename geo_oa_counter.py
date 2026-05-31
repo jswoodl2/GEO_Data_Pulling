@@ -105,6 +105,41 @@ def norm_str(x):
         pass
     return s
 
+MULTIPLE_PUBLICATIONS_COL = "Associated with multiple publications (PMIDs/PMCIDs) (yes/no)"
+
+
+def split_identifier_values(value):
+    """Split a GEO publication-ID cell into unique values without mixing ID types."""
+    s = norm_str(value)
+    if not s:
+        return []
+    parts = []
+    for piece in __import__("re").split(r"[,;|]\s*|\s+\|\s+", s):
+        piece = piece.strip()
+        if piece and piece.lower() not in {"nan", "na", "n/a", "none", "not provided"}:
+            parts.append(piece)
+    seen = set()
+    out = []
+    for part in parts:
+        key = part.lower()
+        if key not in seen:
+            seen.add(key)
+            out.append(part)
+    return out
+
+
+def associated_with_multiple_publications(row):
+    """Per-GSE answer from this GEO record's own publication identifiers.
+
+    Count within identifier type. A single PMID plus its matching PMCID/DOI is
+    still one publication; multiple PMIDs or multiple PMCIDs/DOIs means Yes.
+    """
+    counts = []
+    for col in ["All PMIDs", "All PMCIDs", "All DOIs", "PMID", "PMCID", "DOI"]:
+        if col in row.index:
+            counts.append(len(split_identifier_values(row.get(col))))
+    return "Yes" if counts and max(counts) > 1 else "No"
+
 
 def map_pmid_to_pmcid_via_idconv(pmid):
     """
@@ -299,6 +334,9 @@ for ctr, (i, row) in enumerate(df[df["has_doi"]].iterrows(), start=1):
         df.loc[i, k] = v
     if ctr % 200 == 0:
         df.to_excel(os.path.splitext(OUTPUT_XLSX)[0] + "_checkpoint.xlsx", index=False)
+
+# Deterministic per-GSE metadata answer. This is not an LLM question.
+df[MULTIPLE_PUBLICATIONS_COL] = df.apply(associated_with_multiple_publications, axis=1)
 
 # Determine mining eligibility with the new metadata
 df["ok_to_text_mine"] = df.apply(
